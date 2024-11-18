@@ -6,11 +6,12 @@ import { Trans, useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import Footer from "../components/Footer"
 import Link from "next/link"
+import nextI18nextConfig from "../next-i18next.config"
 
 export async function getStaticProps({ locale }: any) {
     return {
         props: {
-            ...(await serverSideTranslations(locale, ["resources", "common"])),
+            ...(await serverSideTranslations(locale, ["resources", "common"], nextI18nextConfig)),
             // Will be passed to the page component as props
             // About used in content, common used in header
         },

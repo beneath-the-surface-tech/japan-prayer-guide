@@ -11,7 +11,7 @@ const PrayerResponse = ({ topicTrans }: { topicTrans: TFunction }) => {
     const emailPlaceholder: string = common("response.feedbackEmailPlaceholder", "")
 
     const topicVideoSrc: string = topicTrans("videoSrc", "")
-    const couldLoadVideo: boolean = topicVideoSrc !== ""
+    const couldLoadVideo: boolean = !!topicVideoSrc
 
     return (
         <Container fluid id="prayer-response" data-testid="prayer-response" className="pb-5">

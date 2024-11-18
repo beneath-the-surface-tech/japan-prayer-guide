@@ -19,8 +19,8 @@ export default function PrayerPoints({ topicTrans, displayStyle }: prayerProps) 
     const { t, i18n } = useTranslation("common")
     const router = useRouter()
 
-    const prayerPoints: string[] = topicTrans("prayerSummary", { returnObjects: true })
-    const featuredImg: string = topicTrans("heroPhoto", { returnObjects: true })
+    const prayerPoints: string = topicTrans("prayerSummary")
+    const featuredImg: string = topicTrans("heroPhoto") as string
     const featuredTopicUrl: string = "topics/" + topicTrans("path", "all")
 
     let alignLeft: boolean = false
@@ -73,13 +73,9 @@ export default function PrayerPoints({ topicTrans, displayStyle }: prayerProps) 
                         <Image alt="praying hands" src="/icons/prayer.png" style={{ height: "20px" }} />
                         <Trans t={t} i18nKey="prayerSummary.subtitle" />
                     </Card.Text>
-                    <ul className="bullet-points" data-testid={"prayer-points-points"}>
-                        {prayerPoints.map((point: string, idx: number) => (
-                            <li key={idx + point} className="my-2 bullet-point">
-                                <Trans>{point}</Trans>
-                            </li>
-                        ))}
-                    </ul>
+
+                    <div dangerouslySetInnerHTML={{ __html: prayerPoints }} />
+
                     {buttonPrompts && (
                         <>
                             <Button

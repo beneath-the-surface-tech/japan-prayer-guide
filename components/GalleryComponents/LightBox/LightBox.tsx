@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useCallback, useEffect } from "react"
 import { Cross } from "../../icons"
 import { Trans } from "next-i18next"
 import Image from "next/image"
@@ -17,14 +17,17 @@ interface LightBoxProps {
 }
 
 const LightBox = ({ index, setImage, images, lightBox, setLightBox }: LightBoxProps) => {
-    const handleSwitch = (type: string) => {
-        if (type === "inc" && index + 1 !== images.length) {
-            setImage(index + 1)
-        }
-        if (type === "dec" && index !== 0) {
-            setImage(index - 1)
-        }
-    }
+    const handleSwitch = useCallback(
+        (type: string) => {
+            if (type === "inc" && index + 1 !== images.length) {
+                setImage(index + 1)
+            }
+            if (type === "dec" && index !== 0) {
+                setImage(index - 1)
+            }
+        },
+        [images.length, index, setImage],
+    )
 
     useEffect(() => {
         const keyDownHandler = (e: KeyboardEvent) => {
@@ -41,7 +44,7 @@ const LightBox = ({ index, setImage, images, lightBox, setLightBox }: LightBoxPr
         return () => {
             document.removeEventListener("keydown", keyDownHandler)
         }
-    }, [index])
+    }, [handleSwitch, index])
 
     return (
         <div className="lightbox">
