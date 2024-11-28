@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": [
       "dom",
       "dom.iterable",
@@ -18,6 +18,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "plugins": [
       {
         "name": "next"
@@ -29,7 +31,7 @@
     "**/*.tsx",
     "components/audioPlayer.tsx",
     "next-env.d.ts",
-    "next-i18next.config.js",
+    "next-i18next.config.ts",
     "scss/styles.js",
     ".next/types/**/*.ts"
   ],

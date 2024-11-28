@@ -8,7 +8,7 @@ import Footer from "../components/Footer"
 import Link from "next/link"
 import nextI18nextConfig from "../next-i18next.config"
 
-export async function getStaticProps({ locale }: any) {
+export async function getServerSideProps({ locale }: any) {
     return {
         props: {
             ...(await serverSideTranslations(locale, ["resources", "common"], nextI18nextConfig)),

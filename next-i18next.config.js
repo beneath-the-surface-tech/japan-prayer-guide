@@ -45,10 +45,17 @@ module.exports = {
             /** @type {any} */ _payload,
             /** @type {(arg0: null, arg1: { status: number; data: any; }) => void} */ callback,
         ) {
-            callback(null, { status: 200, data: await getTranslations(url) })
+            if (isBrowser) {
+                const response = await fetch(url, {
+                    next: { tags: ["translations"] },
+                })
+                return response.json()
+            } else {
+                callback(null, { status: 200, data: await getTranslations(url) })
+            }
         },
     },
-    use: isBrowser ? [HttpBackend.default] : [HttpBackend],
+    use: isBrowser ? [] : [HttpBackend],
     // use: [{ back}],
 
     /**

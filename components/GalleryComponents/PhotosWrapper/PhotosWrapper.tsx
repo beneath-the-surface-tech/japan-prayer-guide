@@ -27,10 +27,9 @@ export const PhotosWrapper = ({
     subTitle = "",
     galleryTitle = "",
     imageText = "",
-    uncropped = [],
 }: PhotosWrapperProps) => {
     if (type === "mosaic") {
-        return <Mosaic images={images} subTitle={subTitle} blocks={blocks} uncropped={uncropped} />
+        return <Mosaic images={images} subTitle={subTitle} blocks={blocks} />
     }
     if (type === "gallery") {
         return <NestedModal images={images} subTitle={subTitle} galleryTitle={galleryTitle} imageText={imageText} />

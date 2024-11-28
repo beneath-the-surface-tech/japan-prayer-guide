@@ -18,7 +18,7 @@ import pioneersLogo from "../public/photos/about/about_pioneers.png"
 import NextImage from "../components/common/NextImage/NextImage"
 import nextI18nextConfig from "../next-i18next.config"
 
-export async function getStaticProps({ locale }: any) {
+export async function getServerSideProps({ locale }: any) {
     return {
         props: {
             ...(await serverSideTranslations(locale, ["about", "common"], nextI18nextConfig)),

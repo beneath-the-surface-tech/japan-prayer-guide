@@ -3,10 +3,10 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "next dev",
-        "build": "next lint && next build",
-        "start": "next start",
-        "lint": "next lint",
+        "dev": "NODE_OPTIONS='--require reflect-metadata' next dev",
+        "build": "NODE_OPTIONS='--require reflect-metadata' next lint && next build",
+        "start": "NODE_OPTIONS='--require reflect-metadata' next start",
+        "lint": "NODE_OPTIONS='--require reflect-metadata' next lint",
         "test": "jest",
         "updateSnapshot": "jest --updateSnapshot",
         "format": "prettier --write '**/*.{ts,tsx,jsx}'"
@@ -15,6 +15,7 @@
         "@emotion/react": "^11.11.1",
         "@emotion/styled": "^11.11.0",
         "@mui/material": "^5.14.18",
+        "@next/env": "^15.0.3",
         "@types/react-slick": "^0.23.10",
         "@vercel/analytics": "^1.0.2",
         "bootstrap": "^5.3.3",
@@ -38,9 +39,11 @@
         "react-markdown": "^8.0.4",
         "react-responsive": "^9.0.2",
         "react-slick": "^0.29.0",
+        "reflect-metadata": "^0.2.2",
         "sass-embedded": "^1.80.6",
         "server-only": "^0.0.1",
-        "slick-carousel": "^1.8.1"
+        "slick-carousel": "^1.8.1",
+        "typeorm": "^0.3.20"
     },
     "devDependencies": {
         "@jest/globals": "^29.4.2",
