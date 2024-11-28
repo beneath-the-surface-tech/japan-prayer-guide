@@ -6,7 +6,7 @@ const { unstable_cache } = require("next/cache")
 
 const isBrowser = typeof window !== "undefined"
 const isDev = process.env.NODE_ENV === "development"
-const BASE_URL = isDev ? "http://localhost:3000" : "http://localhost:3000"
+const BASE_URL = isDev ? "http://localhost:3000" : "https://japan-prayer-guide.netlify.app"
 
 const getTranslations = unstable_cache(
     async (url) => {
