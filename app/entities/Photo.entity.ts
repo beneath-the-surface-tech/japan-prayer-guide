@@ -12,6 +12,12 @@ export class PhotoEntity {
     image?: string
 
     @Column({ type: "text", nullable: true })
+    image_name?: string
+
+    @Column({ type: "text", nullable: true })
+    image_id?: string
+
+    @Column({ type: "text", nullable: true })
     en?: string
 
     @Column({ type: "text", nullable: true })
