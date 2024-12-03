@@ -5,8 +5,7 @@ const HttpBackend = require("i18next-http-backend")
 const { unstable_cache } = require("next/cache")
 
 const isBrowser = typeof window !== "undefined"
-const isDev = process.env.NODE_ENV === "development"
-const BASE_URL = isDev ? "http://localhost:3000" : "https://japan-prayer-guide.netlify.app"
+const BASE_URL = "http://localhost:3000"
 
 const getTranslations = unstable_cache(
     async (url) => {
@@ -33,7 +32,6 @@ module.exports = {
         locales: ["en", "ja"],
     },
     serializeConfig: false,
-    partialBundledLanguages: isBrowser && true,
     /** To avoid issues when deploying to some paas (vercel...) */
     // localePath: typeof window === "undefined" ? require("path").resolve("./public/locales") : "/locales",
     reloadOnPrerender: true,
@@ -45,14 +43,7 @@ module.exports = {
             /** @type {any} */ _payload,
             /** @type {(arg0: null, arg1: { status: number; data: any; }) => void} */ callback,
         ) {
-            if (isBrowser) {
-                const response = await fetch(url, {
-                    next: { tags: ["translations"] },
-                })
-                return response.json()
-            } else {
-                callback(null, { status: 200, data: await getTranslations(url) })
-            }
+            callback(null, { status: 200, data: await getTranslations(url) })
         },
     },
     use: isBrowser ? [] : [HttpBackend],

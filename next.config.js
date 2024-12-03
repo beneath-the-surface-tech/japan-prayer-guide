@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const sass = require("sass-embedded")
 const { i18n } = require("./next-i18next.config")
+const isDev = process.env.NODE_ENV === "development"
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -8,6 +9,7 @@ const nextConfig = {
         implementation: "sass-embedded",
         logger: sass.Logger.silent,
     },
+    // assetPrefix: isDev ? undefined : "https://d3bmwz0l8kbz95.cloudfront.net",
     images: {
         remotePatterns: [
             {
@@ -30,7 +32,7 @@ const nextConfig = {
       };
 
       return config;
-    },
+    }
 }
 
 module.exports = nextConfig

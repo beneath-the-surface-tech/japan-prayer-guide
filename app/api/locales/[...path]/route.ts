@@ -77,7 +77,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ path: s
             heroPhoto: topicPage?.heroPhoto,
             heroFocus: topicPage?.heroFocus,
             photos: topicPage?.photos.map((photo) => ({
-                src: `https://prayforjapan.retool.com/api/file/${photo.photo.image_id}`,
+                src: `https://d3rljda0pe0qw5.cloudfront.net/uploads/${photo.photo.image_name}`,
                 title: photo.photo?.[locale as "en" | "ja"],
             })),
             related,
