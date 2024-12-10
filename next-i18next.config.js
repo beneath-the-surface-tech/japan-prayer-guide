@@ -5,7 +5,8 @@ const HttpBackend = require("i18next-http-backend")
 const { unstable_cache } = require("next/cache")
 
 const isBrowser = typeof window !== "undefined"
-const BASE_URL = "http://localhost:3000"
+const isDev = process.env.NODE_ENV === "development"
+const BASE_URL = isDev ? "http://localhost:3000" : "https://japan-prayer-guide-beneath-the-surface.vercel.app"
 
 const getTranslations = unstable_cache(
     async (url) => {
@@ -45,9 +46,9 @@ module.exports = {
         ) {
             callback(null, { status: 200, data: await getTranslations(url) })
         },
+        reloadInterval: isDev ? 0 : 1000 * 60 * 60 * 24,
     },
     use: isBrowser ? [] : [HttpBackend],
-    // use: [{ back}],
 
     /**
      * @link https://github.com/i18next/next-i18next#6-advanced-configuration
