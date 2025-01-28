@@ -59,12 +59,18 @@ interface MosaicProps {
     images: {
         src: string
         title: string
+        alt?: string
+    }[]
+    uncropped: {
+        src: string
+        title: string
+        alt?: string
     }[]
     blocks: number[]
     subTitle: string
 }
 
-export const Mosaic = ({ images, blocks, subTitle }: MosaicProps) => {
+export const Mosaic = ({ images, blocks, uncropped, subTitle }: MosaicProps) => {
     const [lightBox, setLightBox] = React.useState(false)
     const [index, setImage] = React.useState(0)
 
@@ -142,7 +148,7 @@ export const Mosaic = ({ images, blocks, subTitle }: MosaicProps) => {
                             <LightBox
                                 index={index}
                                 setImage={setImage}
-                                images={images}
+                                images={uncropped}
                                 lightBox={lightBox}
                                 setLightBox={setLightBox}
                                 setGallery={() => {}}

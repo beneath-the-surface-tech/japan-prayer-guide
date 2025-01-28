@@ -55,7 +55,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ path: s
                 if (relatedTopicLocale) {
                     acc.labels.push(relatedTopicLocale.title)
                     acc.links.push(relatedPage.path)
-                    acc.thumbs.push(relatedPage.thumbnail ?? "")
+                    acc.thumbs.push(relatedPage.heroPhoto ?? "")
                 }
                 return acc
             },
@@ -76,10 +76,20 @@ export async function GET(_req: Request, { params }: { params: Promise<{ path: s
             infographic: topicLocale?.infographic,
             heroPhoto: topicPage?.heroPhoto,
             heroFocus: topicPage?.heroFocus,
-            photos: topicPage?.photos.map((photo) => ({
-                src: `https://d3rljda0pe0qw5.cloudfront.net/uploads/${photo.photo.image_name}`,
-                title: photo.photo?.[locale as "en" | "ja"],
-            })),
+            photos: topicPage?.photos
+                .filter((photo) => photo.type === "main")
+                .map((photo) => ({
+                    src: `https://d3rljda0pe0qw5.cloudfront.net/uploads/${photo.photo.image_name}`,
+                    title: photo.photo?.[locale as "en" | "ja"],
+                    alt: photo.photo?.[`alt_${locale}` as "alt_en" | "alt_ja"],
+                })),
+            uncroppedPhotos: topicPage?.photos
+                .filter((photo) => photo.type === "uncropped")
+                .map((photo) => ({
+                    src: `https://d3rljda0pe0qw5.cloudfront.net/uploads/${photo.photo.image_name}`,
+                    title: photo.photo?.[locale as "en" | "ja"],
+                    alt: photo.photo?.[`alt_${locale}` as "alt_en" | "alt_ja"],
+                })),
             related,
         }
 

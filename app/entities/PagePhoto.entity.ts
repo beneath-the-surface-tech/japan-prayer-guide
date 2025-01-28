@@ -12,6 +12,9 @@ export class PagePhotoEntity {
     @Column({ type: "int4", default: 0 })
     order!: number
 
+    @Column({ type: "varchar" })
+    type!: "main" | "uncropped"
+
     @ManyToOne(() => PageEntity, (page) => page.photos)
     @JoinColumn({ name: "page_id" })
     page!: Relation<PageEntity>

@@ -24,7 +24,10 @@ export class PhotoEntity {
     ja?: string
 
     @Column({ type: "varchar", nullable: true })
-    alt?: string
+    alt_en?: string
+
+    @Column({ type: "varchar", nullable: true })
+    alt_ja?: string
 
     @OneToMany(() => PagePhotoEntity, (photo) => photo.photo)
     pages!: Relation<PagePhotoEntity>[]
