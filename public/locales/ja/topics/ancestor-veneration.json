@@ -30,32 +30,38 @@
             "/topics/aging-society"
         ],
         "thumbs": [
-            "/photos/topic-nav/culture/japanese-culture-and-christianity.png",
             "/photos/topic-nav/culture/popular-religious-practices.png",
-            "/photos/topic-nav/church/placeholder.png"
+            "/photos/topic-nav/culture/japanese-culture-and-christianity.png",
+            "/photos/topic-nav/culture/aging-society.png"
         ]
     },
+    "heroPhoto": "/photos/topics/topic4/TP04-Hero.jpg",
+    "heroFocus": "70% 50%",
     "photos": [
-        { "src": "/images/0.png", "title": "scrambled it to make a type specimen book" },
-        { "src": "/images/1.png", "title": "now use Lorem Ipsum as their default model text" },
-        { "src": "/images/2.png", "title": "Various versions have evolved over the years" },
-        { "src": "/images/3.png", "title": "Lorem Ipsum available" },
-        { "src": "/images/4.png", "title": "you need to be sure there" },
-        { "src": "/images/5.png", "title": "making this the first true generator on the Internet" },
-        { "src": "/images/3.png", "title": "look even slightly believable" },
-        { "src": "/images/2.png", "title": "Various versions have evolved" },
-        { "src": "/images/4.png", "title": "Ipsum as their default model tex" },
-        { "src": "/images/0.png", "title": "scrambled it to make a type" },
-        { "src": "/images/5.png", "title": "making this the first true" },
-        { "src": "/images/1.png", "title": "Various versions have evolved" },
-        { "src": "/images/3.png", "title": "making this the first true" },
-        { "src": "/images/0.png", "title": "scrambled it to make a type" },
-        { "src": "/images/1.png", "title": "Various versions have evolved" },
-        { "src": "/images/2.png", "title": "Ipsum as their default model tex" },
-        { "src": "/images/4.png", "title": "making this the first true" },
-        { "src": "/images/5.png", "title": "scrambled it to make a type" }
+        { "src": "/photos/topics/topic4/TP04-Album-01.jpg", "title": "Yanaka cemetery, located in a quiet area of Tokyo, is an example of a public cemetery managed by the city." },
+        { "src": "/photos/topics/topic4/TP04-Album-02.jpg", "title": "An example of a family grave. In Japan, graves are usually for families rather than individuals." },
+        { "src": "/photos/topics/topic4/TP04-Album-03.jpg", "title": "Open bottles of green tea placed at a family grave. Flowers, drinks, or memorabilia are often placed at graves, either in remembrance or as an offering." },
+        { "src": "/photos/topics/topic4/TP04-Album-04.jpg", "title": "Two women passing through Yanaka cemetery. This cemetery is known as a lovely place for quiet walks." },
+        { "src": "/photos/topics/topic4/TP04-Album-05.jpg", "title": "Children playing on the swings at a local cemetery." },
+        { "src": "/photos/topics/topic4/TP04-Album-06.jpg", "title": "A bicycle carrying supplies for cleaning graves. Taking care of graves is an important part of honoring the deceased." },
+        { "src": "/photos/topics/topic4/TP04-Album-07.jpg", "title": "A graveyard at a Buddhist temple in Kamakura. Temple grounds commonly include graveyards, as traditionally Buddhist priests are entrusted with caring for graves and offering prayers on behalf of the deceased." },
+        { "src": "/photos/topics/topic4/TP04-Album-08.jpg", "title": "A large store in Tokyo selling Buddhist family altars (butsudan). " },
+        { "src": "/photos/topics/topic4/TP04-Album-09.jpg", "title": "Examples of larger, traditional-style butsudan." },
+        { "src": "/photos/topics/topic4/TP04-Album-10.jpg", "title": "Examples of smaller, modern butsudan, which are popular with families living in apartments or smaller homes." },
+        { "src": "/photos/topics/topic4/TP04-Album-11.jpg", "title": "A modern columbarium at Koukokuji temple in Tokyo, where LED statues take the place of physical gravestones. Urns are placed behind the statues, and a specific urn's location can be identified by scanning a QR code. This columbarium is one response to the lack of physical space for graves in cities." },
+        { "src": "/photos/topics/topic4/TP04-Album-12.jpg", "title": "A gate at Meiji shrine, one of Japan's most significant shrines. It is dedicated to Emperor Meiji and Empress Shoken, who are enshrined there as deities." },
+        { "src": "/photos/topics/topic4/TP04-Album-13.jpg", "title": "The worship room, or sanctuary, at the Nikko Tamozawa Imperial Villa Memorial Park. The sign reads, 'This is the room where the imperial family worshipped their ancestors.'" },
+        { "src": "/photos/topics/topic4/TP04-Album-14.jpg", "title": "The tomb of Ieyasu Tokugawa, one of the most significant figures in Japanese history. He founded a line of generals called the Tokugawa shogunate, which ruled Japan for over 250 years. This tomb is located at Nikko Toshogu shrine, where he is enshrined as a deity named the Great Deity of Eastern Light." },
+        { "src": "/photos/topics/topic4/TP04-Album-15.jpg", "title": "Nikko Toshogu, one of many Shinto shrines where shogun Ieyasu Tokugawa is deified. This shrine is part of a UNESCO World Heritage Site called 'Shrines and Temples of Nikko.'" },
+        { "src": "/photos/topics/topic4/TP04-Album-16.jpg", "title": "Lanterns at the Mitama festival, held every July at Yasukuni shrine, a controversial shrine that deifies the war dead, including those who have been charged as war criminals." },
+        { "src": "/photos/topics/topic4/TP04-Album-17.jpg", "title": "The bon odori dance festival at Tsukiji Hongwanji temple during a Buddhist holiday called Obon. Obon is traditionally a time for families to gather in their hometowns to honor their ancestors through visiting graves, praying at the butsudan, or holding a Buddhist memorial service." }
     ],
-    "galleryType": "mosaic",
+    "galleryType": "gallery",
     "blockOrder": [6, 7, 6, 6],
-    "videoSrc": "https://player.vimeo.com/video/87253223?h=54bcde9d3a"
+    "videoSrc": "https://player.vimeo.com/video/87253223?h=54bcde9d3a",
+    "infographic": {
+        "desktop": "/photos/topics/topic1/topic-1-desktop.svg",
+        "tablet": "/photos/topics/topic1/topic-1-tablet.svg",
+        "mobile": "/photos/topics/topic1/topic-1-mobile.svg"
+    }
 }

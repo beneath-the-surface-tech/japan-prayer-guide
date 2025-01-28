@@ -55,6 +55,10 @@
     overflow: hidden;
     border-radius: 4px;
 
+    img {
+        object-fit: cover;
+    }
+
     @media screen and (max-width: 1439px) {
         width: 353px;
     }

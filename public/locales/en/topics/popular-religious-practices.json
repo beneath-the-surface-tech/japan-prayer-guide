@@ -28,8 +28,8 @@
         ],
         "thumbs": [
             "/photos/topic-nav/culture/japanese-culture-and-christianity.png",
-            "/photos/topic-nav/culture/popular-religious-practices.png",
-            "/photos/topic-nav/church/placeholder.png"
+            "/photos/topic-nav/culture/ancestor-veneration.png",
+            "/photos/topic-nav/culture/self-reliance-and-materialism.png"
         ]
     },
     "heroPhoto": "/photos/topics/topic1/TP01-Hero.jpg",
@@ -41,11 +41,11 @@
         },
         {
             "src": "/photos/topics/topic1/TP01-Album-02.jpg",
-            "title": "A gate at a Shinto shrine, called <i>torii</i>. <i>Torii</i> can be found at many places in Japan: city streets, staircases, forests, rivers, fields, and more."
+            "title": "A gate, called <i>torii</i>, at a Shinto shrine. Torii can be found in many different places: city streets, forests, rivers, fields, and more."
         },
         {
             "src": "/photos/topics/topic1/TP01-Album-03.jpg",
-            "title": "A visitor at Meiji shrine bows before passing through the <i>torii</i> gate. A <i>torii</i> gate is seen as an entryway into sacred space."
+            "title": "A visitor at Meiji shrine in Tokyo bows before passing through the <i>torii</i> gate. A <i>torii</i> is seen as an entryway into sacred space."
         },
         {
             "src": "/photos/topics/topic1/TP01-Album-04.jpg",
@@ -58,7 +58,7 @@
         { "src": "/photos/topics/topic1/TP01-Album-06.jpg", "title": "Sensoji, a popular Buddhist temple in Tokyo." },
         {
             "src": "/photos/topics/topic1/TP01-Album-07.jpg",
-            "title": "A child and his guardian wave incense over themselves. This is a common purification or healing ritual at Buddhist temples."
+            "title": "An adult and child wave incense over themselves. This is a common purification or healing ritual at Buddhist temples."
         },
         {
             "src": "/photos/topics/topic1/TP01-Album-08.jpg",
@@ -87,11 +87,11 @@
         },
         {
             "src": "/photos/topics/topic1/TP01-Album-15.jpg",
-            "title": "Shrines often feature in important celebrations and rites of passage for Japanese families. "
+            "title": "Many important celebrations and rites of passage for Japanese families take place at shrines."
         },
         {
             "src": "/photos/topics/topic1/TP01-Album-16.jpg",
-            "title": "A couple takes wedding photographs at a shrine. In Japan, important life events are often celebrated at shrines."
+            "title": "A couple having their wedding photographs taken at a shrine. Traditional Japanese wedding ceremonies are held in shrines before the Shinto deities."
         },
         {
             "src": "/photos/topics/topic1/TP01-Album-17.jpg",
@@ -103,11 +103,11 @@
         },
         {
             "src": "/photos/topics/topic1/TP01-Album-19.jpg",
-            "title": "The <i>Bon</i> dance festival at Tsukiji Hongwanji temple. "
+            "title": "The <i>bon odori</i> dance festival at Tsukiji Hongwanji temple. Traditionally the <i>bon odori</i> welcomes the spirits of ancestors back home during a Buddhist holiday called <i>Obon</i>. This dance holds spiritual meaning for some; for others, it is mainly a community festivity. "
         },
         {
             "src": "/photos/topics/topic1/TP01-Album-20.jpg",
-            "title": "Festivals and community events often take place at shrines or temples."
+            "title": "Festivals and community events sometimes take place at shrines or temples."
         }
     ],
     "galleryType": "gallery",

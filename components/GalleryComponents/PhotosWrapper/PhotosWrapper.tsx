@@ -7,6 +7,7 @@ interface PhotosWrapperProps {
     images: {
         src: string
         title: string
+        alt?: string
     }[]
     blocks?: number[]
     subTitle?: string
@@ -15,6 +16,7 @@ interface PhotosWrapperProps {
     uncropped?: {
         src: string
         title: string
+        alt?: string
     }[]
 }
 

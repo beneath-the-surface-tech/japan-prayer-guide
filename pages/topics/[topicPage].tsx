@@ -71,13 +71,15 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
     const galleryImageText: string = topicCommon("galleryImageText")
     const localeImages: any[] = t("photos", { returnObjects: true })
     const images = Array.isArray(localeImages) && localeImages.length > 0 ? localeImages : null
-    const timeline: string = t("timeline")
+    // const timeline: string = t("timeline")
     const galleryType: string = t("galleryType")
     const blockOrder: number[] = t("blockOrder", { returnObjects: true })
     const uncropped: any[] = t("uncroppedPhotos", { returnObjects: true })
 
     const heroPhoto: string = t("heroPhoto")
     const heroFocus: string = t("heroFocus")
+
+    const quote: string = t("quote.content")
 
     const infographicDesktop: string = t("infographic.desktop")
     const infographicTablet: string = t("infographic.tablet")
@@ -116,20 +118,22 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
                 <StickyNav tabs={navTabs} />
 
                 <Container className="main-section-container">
-                    {/* Placeholder for a quote */}
-                    <Container
-                        id="about-topic"
-                        className="d-flex flex-column justify-content-center align-items-center py-4 mt-4"
-                    >
-                        <p className="text-primary-blue quote text-center">
-                            <Trans t={t} i18nKey="quote.content" />
-                        </p>
-                        <p className="text-primary-blue fs-5 text-center">
-                            <Trans t={t} i18nKey="quote.source" />
-                        </p>
-                    </Container>
+                    {quote !== "" ? (
+                        <Container
+                            id="about-topic"
+                            className="d-flex flex-column justify-content-center align-items-center py-4 mt-4"
+                        >
+                            <p className="text-primary-blue quote text-center">
+                                <Trans t={t} i18nKey="quote.content" />
+                            </p>
+                            <p className="text-primary-blue fs-5 text-center">
+                                <Trans t={t} i18nKey="quote.source" />
+                            </p>
+                        </Container>
+                    ) : (
+                        <div style={{ height: "40px" }} />
+                    )}
 
-                    {/* Placeholder text */}
                     <Container className="main-content mt-0">
                         {textContent.map((text: string, idx: number) => (
                             <p key={idx + text}>
@@ -160,9 +164,10 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
                         </CollapseBlock>
                     )}
                     {/* Timeline */}
-                    {timeline !== "timeline" && <h1>timeline</h1>}
+                    {/* {timeline !== "timeline" && <h1>timeline</h1>} */}
 
-                    {/* Infographics Placeholder */}
+                    {/* Infographics: Uncomment after conference */}
+
                     <CollapseBlock title={factsLabel} startOpened={true} galleryType={"infographic"}>
                         <Container className="mt-3 d-flex justify-content-center px-0">
                             <Image className="d-none d-xl-block w-100" src={infographicDesktop} alt="infographic" />

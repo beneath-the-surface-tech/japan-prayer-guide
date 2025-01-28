@@ -10,6 +10,7 @@ interface CarouselProps {
     images: {
         src: string
         title: string
+        alt?: string
     }[]
     topic?: boolean
     subTitle?: string
@@ -42,7 +43,7 @@ export const ImageCarousel = ({ images, topic = false, subTitle }: CarouselProps
                                 <CarouselItem className="w-100 d-flex justify-content-center" key={index}>
                                     <Image
                                         className="carousel-image"
-                                        alt={"hero image" + index}
+                                        alt={img?.alt || img.title}
                                         src={img.src}
                                         width={1800}
                                         height={1200}

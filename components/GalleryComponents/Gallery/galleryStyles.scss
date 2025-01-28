@@ -131,7 +131,7 @@
 }
 
 .galleryImage {
-    // aspect-ratio: 1.5;
+    aspect-ratio: 1.45;
     cursor: pointer;
     position: relative;
     padding: 0;
@@ -275,7 +275,7 @@
         gap: 16px;
     }
     .lightbox-box {
-        height: 100%;
+        height: calc(100% - 20px);
         width: 100%;
         display: flex;
         align-items: center;

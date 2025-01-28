@@ -22,6 +22,7 @@ interface NestedModalProps {
     images: {
         src: string
         title: string
+        alt?: string
     }[]
     subTitle: string
     galleryTitle: string
@@ -56,7 +57,7 @@ export const NestedModal = ({ images, subTitle, galleryTitle, imageText }: Neste
                                         width={1800}
                                         height={1200}
                                         className="galleryImage"
-                                        alt="logo"
+                                        alt={item?.alt || item.title}
                                     />
                                     <div className="galleryImageOverlay"></div>
                                 </div>
@@ -70,7 +71,7 @@ export const NestedModal = ({ images, subTitle, galleryTitle, imageText }: Neste
                                         width={1800}
                                         height={1200}
                                         className="galleryImage"
-                                        alt="logo"
+                                        alt={item?.alt || item.title}
                                     />
                                     <div className="galleryMoreOverlay">
                                         <div className="galleryMoreNumber">{`+${images.length - 4}`}</div>

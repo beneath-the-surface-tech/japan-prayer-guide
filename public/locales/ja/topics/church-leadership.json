@@ -13,49 +13,44 @@
         "日本の牧師は非常に大きな責任を負っているにもかかわらず、サポート体制が整っていません。聖書を忠実に解き明かし、教会を導く牧師が必要ですが、召命を受けた若い牧師が、長く奉仕を続けることができるようにサポートと励ましが必要なのです。"
     ],
     "quote": {
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-        "source": "-Bible verse or quote."
+        "content": "わたしは彼らの上に牧者たちを立てて、彼らを牧させる。彼らは二度と恐れることなく、おびえることなく、失われることもない──主のことば。",
+        "source": "エレミヤ23:4"
     },
-    "downloads": {
-        "title": "Downloads",
-        "labels": ["Infographics", "PDF of prayer topics", "Photography", "Video files"],
-        "links": ["/", "/", "/", "/", "/"],
-        "headers": ["View all downloadables", "Download All"]
-    },
+    "downloads": {},
     "related": {
         "labels": ["高齢化社会", "伸び悩む教会", "教会開拓"],
         "links": ["/topics/aging-society", "/topics/struggling-churches", "/topics/church-planting"],
         "thumbs": [
-            "/photos/topic-nav/culture/japanese-culture-and-christianity.png",
-            "/photos/topic-nav/culture/popular-religious-practices.png",
-            "/photos/topic-nav/church/placeholder.png"
+            "/photos/topic-nav/culture/aging-society.png",
+            "/photos/topic-nav/church/struggling-churches.png",
+            "/photos/topic-nav/church/church-planting.png"
         ]
     },
     "photos": [
-        { "src": "/photos/topics/topic19/TP00-Mosaic-01.jpg", "title": "ADD LATER" },
-        { "src": "/photos/topics/topic19/TP00-Mosaic-02.jpg", "title": "ADD LATER" },
-        { "src": "/photos/topics/topic19/TP00-Mosaic-03.jpg", "title": "ADD LATER" },
-        { "src": "/photos/topics/topic19/TP00-Mosaic-04.jpg", "title": "ADD LATER" },
-        { "src": "/photos/topics/topic19/TP00-Mosaic-05.jpg", "title": "ADD LATER" },
-        { "src": "/photos/topics/topic19/TP00-Mosaic-06.jpg", "title": "ADD LATER" },
-        { "src": "/photos/topics/topic19/TP00-Mosaic-07.jpg", "title": "ADD LATER" },
-        { "src": "/photos/topics/topic19/TP00-Mosaic-08.jpg", "title": "ADD LATER" },
-        { "src": "/photos/topics/topic19/TP00-Mosaic-09.jpg", "title": "ADD LATER" }
+        { "src": "/photos/topics/topic19/TP00-Mosaic-01.jpg", "title": "", "alt": "" },
+        { "src": "/photos/topics/topic19/TP00-Mosaic-02.jpg", "title": "", "alt": "" },
+        { "src": "/photos/topics/topic19/TP00-Mosaic-03.jpg", "title": "", "alt": "" },
+        { "src": "/photos/topics/topic19/TP00-Mosaic-04.jpg", "title": "", "alt": "" },
+        { "src": "/photos/topics/topic19/TP00-Mosaic-05.jpg", "title": "", "alt": "" },
+        { "src": "/photos/topics/topic19/TP00-Mosaic-06.jpg", "title": "", "alt": "" },
+        { "src": "/photos/topics/topic19/TP00-Mosaic-07.jpg", "title": "", "alt": "" },
+        { "src": "/photos/topics/topic19/TP00-Mosaic-08.jpg", "title": "", "alt": "" },
+        { "src": "/photos/topics/topic19/TP00-Mosaic-09.jpg", "title": "", "alt": "" }
     ],
     "uncroppedPhotos": [
-        { "src": "/photos/topics/topic19/TP19-Uncropped-01.jpg", "title": "ADD LATER" },
-        { "src": "/photos/topics/topic19/TP19-Uncropped-02.jpg", "title": "ADD LATER" },
-        { "src": "/photos/topics/topic19/TP19-Uncropped-03.jpg", "title": "ADD LATER" },
-        { "src": "/photos/topics/topic19/TP19-Uncropped-04.jpg", "title": "ADD LATER" },
-        { "src": "/photos/topics/topic19/TP19-Uncropped-05.jpg", "title": "ADD LATER" },
-        { "src": "/photos/topics/topic19/TP19-Uncropped-06.jpg", "title": "ADD LATER" },
-        { "src": "/photos/topics/topic19/TP19-Uncropped-07.jpg", "title": "ADD LATER" },
-        { "src": "/photos/topics/topic19/TP19-Uncropped-08.jpg", "title": "ADD LATER" },
-        { "src": "/photos/topics/topic19/TP19-Uncropped-09.jpg", "title": "ADD LATER" }
+        { "src": "/photos/topics/topic19/TP19-Uncropped-01.jpg", "title": "", "alt": "" },
+        { "src": "/photos/topics/topic19/TP19-Uncropped-02.jpg", "title": "", "alt": "" },
+        { "src": "/photos/topics/topic19/TP19-Uncropped-03.jpg", "title": "", "alt": "" },
+        { "src": "/photos/topics/topic19/TP19-Uncropped-04.jpg", "title": "", "alt": "" },
+        { "src": "/photos/topics/topic19/TP19-Uncropped-05.jpg", "title": "", "alt": "" },
+        { "src": "/photos/topics/topic19/TP19-Uncropped-06.jpg", "title": "", "alt": "" },
+        { "src": "/photos/topics/topic19/TP19-Uncropped-07.jpg", "title": "", "alt": "" },
+        { "src": "/photos/topics/topic19/TP19-Uncropped-08.jpg", "title": "", "alt": "" },
+        { "src": "/photos/topics/topic19/TP19-Uncropped-09.jpg", "title": "", "alt": "" }
     ],
     "galleryType": "mosaic",
     "blockOrder": [7, 1, 3, 9],
-    "videoSrc": "https://player.vimeo.com/video/87253223?h=54bcde9d3a",
+    "videoSrc": "https://player.vimeo.com/video/947282857",
     "heroPhoto": "/photos/topics/topic19/TP19-Hero.jpg",
     "heroFocus": "60% 50%",
     "infographic": {

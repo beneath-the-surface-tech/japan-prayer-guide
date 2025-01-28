@@ -14,6 +14,7 @@ interface GalleryProps {
     images: {
         src: string
         title: string
+        alt?: string
     }[]
     setGallery: React.Dispatch<React.SetStateAction<boolean>>
     setLightBox: React.Dispatch<React.SetStateAction<boolean>>
@@ -79,7 +80,7 @@ function Gallery({
                                             width={1800}
                                             height={1200}
                                             className="galleryImage"
-                                            alt="logo"
+                                            alt={item?.alt || item.title}
                                         />
                                         <div className="galleryImageOverlay"></div>
                                     </div>
@@ -99,7 +100,7 @@ function Gallery({
                                             width={1800}
                                             height={1200}
                                             className="galleryImage"
-                                            alt="logo"
+                                            alt={item?.alt || item.title}
                                         />
                                         <div className="galleryImageOverlay"></div>
                                     </div>
@@ -115,7 +116,7 @@ function Gallery({
                                                 width={1800}
                                                 height={1200}
                                                 className="galleryImage"
-                                                alt="logo"
+                                                alt={images[index + 1]?.alt || images[index + 1]?.title}
                                             />
                                             <div className="galleryImageOverlay"></div>
                                         </div>

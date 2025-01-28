@@ -9,6 +9,7 @@ interface LightBoxProps {
     images: {
         src: string
         title: string
+        alt?: string
     }[]
     setGallery: React.Dispatch<React.SetStateAction<boolean>>
     setLightBox: React.Dispatch<React.SetStateAction<boolean>>
@@ -66,7 +67,12 @@ const LightBox = ({ index, setImage, images, lightBox, setLightBox }: LightBoxPr
                         )}
                     </div>
                     <div className="lightbox-box">
-                        <Image src={images[index].src} width={1800} height={1200} alt="light box" />
+                        <Image
+                            src={images[index].src}
+                            width={1800}
+                            height={1200}
+                            alt={images[index]?.alt || images[index].title}
+                        />
                     </div>
                     <h1>
                         <Trans>{images[index].title}</Trans>

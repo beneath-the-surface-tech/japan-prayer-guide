@@ -5,7 +5,7 @@
         "After surveying missionaries, pastors, and Christian leaders in Japan, we collected over 500 prayer points and grouped them into topics for Japanese culture and society, and church and mission.",
         "The 30 topics chosen were those prioritized by Japanese leaders as key opportunities and challenges for the gospel in Japan today.",
         "",
-        "Coming soon.\nFull website launch in 2024."
+        "Coming soon.\nFull website launch in 2025."
     ],
     "cultureHeading": "Culture and society",
     "churchHeading": "Church and mission",
@@ -13,16 +13,16 @@
         { "label": "Popular religious practices", "link": "popular-religious-practices", "disabled": false },
         { "label": "Japanese views of Chrisianity", "link": "japanese-views-of-chrisianity", "disabled": true },
         { "label": "Japanese culture and Christianity", "link": "japanese-culture-and-christianity", "disabled": true },
-        { "label": "Ancestor veneration", "link": "ancestor-veneration", "disabled": true },
+        { "label": "Ancestor veneration", "link": "ancestor-veneration", "disabled": false },
         { "label": "Harmony", "link": "harmony", "disabled": true },
-        { "label": "Social conformity", "link": "social-conformity", "disabled": true },
+        { "label": "Social conformity", "link": "social-conformity", "disabled": false },
         { "label": "Self-reliance and materialism", "link": "self-reliance-and-materialism", "disabled": true },
-        { "label": "Mental and emotional health", "link": "mental-and-emotional-health", "disabled": true },
+        { "label": "Mental and emotional health", "link": "mental-and-emotional-health", "disabled": false },
         { "label": "Aging society", "link": "aging-society", "disabled": true },
         {
             "label": "Politics and international relations",
             "link": "politics-and-international-relations",
-            "disabled": true
+            "disabled": false
         },
         { "label": "Immigration and foreign nationals", "link": "immigration-and-foreign-nationals", "disabled": true },
         { "label": "Natural disasters", "link": "natural-disasters", "disabled": true },

@@ -60,7 +60,7 @@ export default function RelatedContent({ topicTrans }: relatedProps) {
                 <h1 data-testid={"related-content-title"} className="text-primary my-4 fs-1 fw-bold">
                     <Trans t={common} i18nKey="relatedTopics.heading" />
                 </h1>
-                <Link href={"/topics"} className="text-secondary" locale={i18n.language}>
+                <Link href={"/topics/all"} className="text-secondary" locale={i18n.language}>
                     <Trans t={common} i18nKey="relatedTopics.viewAll" />
                 </Link>
             </Container>
@@ -76,10 +76,10 @@ export default function RelatedContent({ topicTrans }: relatedProps) {
             >
                 {topics.map((topic, idx) => (
                     <Link
-                        href={links[idx]}
                         key={idx + topic}
                         className="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
                         locale={i18n.language}
+                        href={links[idx]}
                     >
                         <Card className={"related-topic-card"}>
                             <Card.Body className="m-0 p-0">
@@ -87,7 +87,7 @@ export default function RelatedContent({ topicTrans }: relatedProps) {
                                     src={thumbnails[idx]}
                                     alt={`${topic} thumbnail`}
                                     className="w-100 bg-secondary"
-                                    style={{ height: "200px" }}
+                                    style={{ height: "210px" }}
                                 />
                             </Card.Body>
                             <Card.Body className="m-2 p-1">

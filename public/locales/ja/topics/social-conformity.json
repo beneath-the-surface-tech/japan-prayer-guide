@@ -13,44 +13,47 @@
         "キリストにあって、私たちは受け入れられており、恵みと安らぎが与えられています。しかし様々な圧力がかかる社会にあって、それを信じることは簡単なことではなく、そのように生きることはさらに難しいのです。"
     ],
     "quote": {
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-        "source": "-Bible verse or quote."
+        "content": "私たちの父なる神と、主イエス・キリストから、恵みと平安があなたがたにありますように。",
+        "source": "ピレモン1:3"
     },
-    "downloads": {
-        "infographicsUrl": "www.google.com",
-        "photographyUrl": "www.google.com",
-        "pdfUrl": "www.google.com",
-        "prayerPtsUrl": "www.google.com",
-        "prayerVidUrl": "www.google.com",
-        "slidesUrl": "www.google.com"
-    },
+    "downloads": {},
     "related": {
         "labels": ["和を重んじる文化", "精神と心の健康", "日常生活と信仰"],
-        "links": ["/topics/harmony", "/topics/mental-and-emotional-health", "/topics/daily-christian-life-and-faith"]
+        "links": ["/topics/harmony", "/topics/mental-and-emotional-health", "/topics/daily-christian-life-and-faith"],
+        "thumbs": [
+            "/photos/topic-nav/culture/harmony.png",
+            "/photos/topic-nav/culture/mental-and-emotional-health.png",
+            "/photos/topic-nav/church/daily-christian-life-and-faith.png"
+        ]
     },
     "heroPhoto": "/photos/topics/topic6/TP06-Hero.jpg",
-    "heroFocus": "50% 50%",
+    "heroFocus": "20% 50%",
     "photos": [
-        { "src": "/photos/topics/topic6/TP06-Album-01.jpg", "title": "Placeholder Caption" },
-        { "src": "/photos/topics/topic6/TP06-Album-02.jpg", "title": "Placeholder Caption" },
-        { "src": "/photos/topics/topic6/TP06-Album-03.jpg", "title": "Placeholder Caption" },
-        { "src": "/photos/topics/topic6/TP06-Album-04.jpg", "title": "Placeholder Caption" },
-        { "src": "/photos/topics/topic6/TP06-Album-05.jpg", "title": "Placeholder Caption" },
-        { "src": "/photos/topics/topic6/TP06-Album-06.jpg", "title": "Placeholder Caption" },
-        { "src": "/photos/topics/topic6/TP06-Album-07.jpg", "title": "Placeholder Caption" },
-        { "src": "/photos/topics/topic6/TP06-Album-08.jpg", "title": "Placeholder Caption" },
-        { "src": "/photos/topics/topic6/TP06-Album-09.jpg", "title": "Placeholder Caption" },
-        { "src": "/photos/topics/topic6/TP06-Album-10.jpg", "title": "Placeholder Caption" },
-        { "src": "/photos/topics/topic6/TP06-Album-11.jpg", "title": "Placeholder Caption" },
-        { "src": "/photos/topics/topic6/TP06-Album-12.jpg", "title": "Placeholder Caption" },
-        { "src": "/photos/topics/topic6/TP06-Album-13.jpg", "title": "Placeholder Caption" },
-        { "src": "/photos/topics/topic6/TP06-Album-14.jpg", "title": "Placeholder Caption" },
-        { "src": "/photos/topics/topic6/TP06-Album-15.jpg", "title": "Placeholder Caption" },
-        { "src": "/photos/topics/topic6/TP06-Album-16.jpg", "title": "Placeholder Caption" },
-        { "src": "/photos/topics/topic6/TP06-Album-17.jpg", "title": "Placeholder Caption" },
-        { "src": "/photos/topics/topic6/TP06-Album-18.jpg", "title": "Placeholder Caption" }
+        { "src": "/photos/topics/topic6/TP06-Album-01.jpg", "title": "" },
+        { "src": "/photos/topics/topic6/TP06-Album-02.jpg", "title": "" },
+        { "src": "/photos/topics/topic6/TP06-Album-03.jpg", "title": "" },
+        { "src": "/photos/topics/topic6/TP06-Album-04.jpg", "title": "" },
+        { "src": "/photos/topics/topic6/TP06-Album-05.jpg", "title": "" },
+        { "src": "/photos/topics/topic6/TP06-Album-06.jpg", "title": "" },
+        { "src": "/photos/topics/topic6/TP06-Album-07.jpg", "title": "" },
+        { "src": "/photos/topics/topic6/TP06-Album-08.jpg", "title": "" },
+        { "src": "/photos/topics/topic6/TP06-Album-09.jpg", "title": "" },
+        { "src": "/photos/topics/topic6/TP06-Album-10.jpg", "title": "" },
+        { "src": "/photos/topics/topic6/TP06-Album-11.jpg", "title": "" },
+        { "src": "/photos/topics/topic6/TP06-Album-12.jpg", "title": "" },
+        { "src": "/photos/topics/topic6/TP06-Album-13.jpg", "title": "" },
+        { "src": "/photos/topics/topic6/TP06-Album-14.jpg", "title": "" },
+        { "src": "/photos/topics/topic6/TP06-Album-15.jpg", "title": "" },
+        { "src": "/photos/topics/topic6/TP06-Album-16.jpg", "title": "" },
+        { "src": "/photos/topics/topic6/TP06-Album-17.jpg", "title": "" },
+        { "src": "/photos/topics/topic6/TP06-Album-18.jpg", "title": "" }
     ],
     "galleryType": "gallery",
     "blockOrder": [6, 7, 6, 6],
-    "videoSrc": "https://player.vimeo.com/video/87253223?h=54bcde9d3a"
+    "videoSrc": "https://player.vimeo.com/video/947278770",
+    "infographic": {
+        "desktop": "/photos/topics/topic1/topic-1-desktop.svg",
+        "tablet": "/photos/topics/topic1/topic-1-tablet.svg",
+        "mobile": "/photos/topics/topic1/topic-1-mobile.svg"
+    }
 }

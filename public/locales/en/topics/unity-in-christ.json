@@ -48,11 +48,13 @@
         },
         {
             "src": "/photos/topics/topic28/TP28-Carousel-05.jpg",
-            "title": "A man prays at a local neighborhood shrine in Chiba prefecture. "
+            "title": "",
+            "alt": "An elderly woman at a church service, standing with her hands folded in prayer."
         },
         {
             "src": "/photos/topics/topic28/TP28-Carousel-06.jpg",
-            "title": "Sensoji, a popular Buddhist temple in Tokyo."
+            "title": "",
+            "alt": "Sheet music for a Japanese worship song entitled, 'Be of One Heart.'"
         }
     ],
     "galleryType": "carousel",
