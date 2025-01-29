@@ -118,6 +118,7 @@ function useBetterMediaQuery(query: string) {
 const TabletOrMobileMediaQuery = "(min-width: 992px)"
 const Booklet: React.FC = () => {
     const { t, i18n } = useTranslation("booklet")
+    const webpageTitle = t("webpageTitle", "Booklet")
     const introTextParagraphs: string[] = t("introText", { returnObjects: true })
     const isTabletOrMobile = useBetterMediaQuery(TabletOrMobileMediaQuery)
     const isInEnglish = i18n.language === "en"
@@ -139,9 +140,12 @@ const Booklet: React.FC = () => {
     return (
         <div>
             <Head>
-                <title>{t("webpageTitle")}</title>
+                <title>{webpageTitle}</title>
                 <meta name="description" content="Japan prayer guide" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta property="og:title" content={webpageTitle} />
+                <meta property="og:description" content="30 ways to pray for Japan" />
+                <meta property="og:image" content={coverEN.src} />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <ToggleHeader />

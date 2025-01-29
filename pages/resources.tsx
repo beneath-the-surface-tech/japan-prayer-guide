@@ -19,13 +19,16 @@ export async function getStaticProps({ locale }: any) {
 
 const Downloads: React.FC = () => {
     const { t } = useTranslation("resources")
+    const webpageTitle = t("webpageTitle", "Resources")
 
     return (
         <div>
             <Head>
-                <title>{t("webpageTitle")}</title>
+                <title>{webpageTitle}</title>
                 <meta name="description" content="Japan prayer guide" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta property="og:title" content={webpageTitle} />
+                <meta property="og:description" content="30 ways to pray for Japan" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main id="about" role="main">

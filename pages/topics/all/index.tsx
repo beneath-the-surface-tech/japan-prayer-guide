@@ -29,6 +29,7 @@ export default function Overview() {
     cultureTopics = Array.isArray(cultureTopics) ? cultureTopics : []
     churchTopics = Array.isArray(churchTopics) ? churchTopics : []
 
+    const webpageTitle = t("webpageTitle", "Topic Overview")
     const cultureHeading = t("cultureHeading")
     const churchHeading = t("churchHeading")
     const navTabs = [
@@ -41,9 +42,12 @@ export default function Overview() {
     return (
         <>
             <Head>
-                <title>{t("webpageTitle")}</title>
+                <title>{webpageTitle}</title>
                 <meta name="description" content="Japan prayer guide" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta property="og:title" content={webpageTitle} />
+                <meta property="og:description" content="30 ways to pray for Japan" />
+                <meta property="og:image" content={bannerHeroLowRes.src} />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main role="main">

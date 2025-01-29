@@ -65,6 +65,7 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
 
     const navTabs: Tab[] = topicCommon("nav", { returnObjects: true })
 
+    const title: string = t("title")
     const galleryLabel: string = topicCommon("galleryLabel")
     const factsLabel: string = topicCommon("factsLabel")
     const galleryClickInstructions: string = topicCommon("galleryClickInstructions")
@@ -91,9 +92,12 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
     return (
         <>
             <Head>
-                <title>{t("title")}</title>
+                <title>{title}</title>
                 <meta name="description" content="Japan prayer guide" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta property="og:title" content={title} />
+                <meta property="og:description" content="30 ways to pray for Japan" />
+                <meta property="og:image" content={heroPhoto} />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main role="main">
