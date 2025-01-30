@@ -181,7 +181,10 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
                     </CollapseBlock>
                     <Container className="">
                         <hr />
-                        <ReferencesSection />
+                        {/* TODO: remove after testing */}
+                        {localeRef === "topics/mental-and-emotional-health" && (
+                            <ReferencesSection localeRef={localeRef} />
+                        )}
                     </Container>
                     <Container className={"bottom-spacing"}></Container>
                 </Container>

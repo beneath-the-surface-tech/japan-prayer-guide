@@ -28,7 +28,7 @@
         { "label": "Natural disasters", "link": "natural-disasters", "disabled": false },
         { "label": "Technology and media", "link": "technology-and-media", "disabled": false },
         { "label": "Workplace pressure", "link": "workplace-pressure", "disabled": false },
-        { "label": "Family life", "link": "family-life", "disabled": true },
+        { "label": "Family life", "link": "family-life", "disabled": false },
         { "label": "Youth and young adults", "link": "youth-and-young-adults", "disabled": false }
     ],
     "churchTopics": [

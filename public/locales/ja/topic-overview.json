@@ -24,7 +24,7 @@
         { "label": "自然災害", "link": "natural-disasters", "disabled": false },
         { "label": "テクノロジーとメディア", "link": "technology-and-media", "disabled": false },
         { "label": "仕事のプレッシャー", "link": "workplace-pressure", "disabled": false },
-        { "label": "家庭生活", "link": "family-life", "disabled": true },
+        { "label": "家庭生活", "link": "family-life", "disabled": false },
         { "label": "若者たち", "link": "youth-and-young-adults", "disabled": false }
     ],
     "churchTopics": [

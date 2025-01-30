@@ -62,5 +62,44 @@
         "desktop": "/photos/topics/topic1/topic-1-desktop.svg",
         "tablet": "/photos/topics/topic1/topic-1-tablet.svg",
         "mobile": "/photos/topics/topic1/topic-1-mobile.svg"
-    }
+    },
+    "photoCredits": [
+        "Photos by Thomas Bak, used with permission."
+    ],
+    "articleReferences": [
+        {
+            "body": "Tomoe Ishikawa, “1.46 million social recluses in Japan, or 1 in 50 of the population,” The Asahi Shimbun,  1 April  2023, ",
+            "link": "https://bit.ly/40FY2dB"
+        },
+        {
+            "body": "“Child suicides in Japan hit record high of 514 in 2022,” <i>Kyodo News</i>, 14 March 2023,  ",
+            "link": "https://bit.ly/41O1rFg"
+        },
+        {
+            "body": "Ministry of Health, Labour and Welfare, 令和5年（2023）人口動態統計月報年計（概数）の概況 [<i>2023 Annual Report on Population Demographics (Estimate)</i>], June 2024, table 7 (36), ",
+            "link": "https://bit.ly/3W7BqA4"
+        }
+    ],
+    "infographicReferences": [
+        {
+            "body": "Ministry of Health, Labour and Welfare, 令和6年版厚生労働白書（令和5年度厚生労働行政年次報告）こころの健康と向き合い、健やかに暮らすことのできる社会に [<i>2024 White Paper (2023 Fiscal Year Annual Report): Addressing mental health, toward a society of healthy lifestyles</i>], 60-65, 93-171, 172-173, fig. 1-4-4 (84), fig. 1-4-5 (85), fig. 1-4-12 (91), fig. 1-4-13 (92), ",
+            "link": "https://bit.ly/40xEbgX"
+        },
+        {
+            "body": "Tomoe Ishikawa, “1.46 million social recluses in Japan, or 1 in 50 of the population,” <i>The Asahi Shimbun</i>, 1 April  2023, ",
+            "link": "https://bit.ly/40FY2dB"
+        },
+        {
+            "body": "Ministry of Health, Labour and Welfare, 令和5年版厚生労働白書（令和4年度厚生労働行政年次報告）「つながり・支え合いのある地域共生社会」 [<i>2023 White Paper (2022 Fiscal Year Annual Report): A society of interconnected and supportive communities</i>], fig. 2-2-1 (59), fig. 2-2-2 (60), fig. 2-2-6 (63),",
+            "link": "https://bit.ly/3zhQZwv"
+        },
+        {
+            "body": "Ministry of Health, Labour and Welfare, 令和5年版厚生労働白書（令和4年度厚生労働行政年次報告）「つながり・支え合いのある地域共生社会」 [<i>2023 White Paper (2022 Fiscal Year Annual Report): A society of interconnected and supportive communities</i>], fig. 2-2-1 (59), fig. 2-2-2 (60), fig. 2-2-6 (63),",
+            "link": "https://bit.ly/4b7nivi"
+        },
+        {
+            "body": "Ministry of Health, Labour and Welfare, 令和5年（2023）人口動態統計月報年計（概数）の概況 [<i>2023 Annual Report on Population Demographics (Estimate)</i>], June 2024, table 6-1 (9), table 7 (36), ",
+            "link": "https://bit.ly/3W7BqA4v"
+        }
+    ]
 }
