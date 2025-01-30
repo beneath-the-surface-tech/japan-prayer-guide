@@ -29,6 +29,7 @@ const Downloads: React.FC = () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta property="og:title" content={webpageTitle} />
                 <meta property="og:description" content="30 ways to pray for Japan" />
+                <meta property="og:type" content="website" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main id="about" role="main">

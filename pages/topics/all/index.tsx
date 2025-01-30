@@ -46,7 +46,8 @@ export default function Overview() {
                 <meta name="description" content="Japan prayer guide" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta property="og:title" content={webpageTitle} />
-                <meta property="og:description" content="30 ways to pray for Japan" />
+                <meta property="og:description" content="test description" />
+                <meta property="og:type" content="website" />
                 <meta property="og:image" content={bannerHeroLowRes.src} />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
