@@ -49,6 +49,9 @@ export default function Overview() {
                 <meta property="og:description" content="test description" />
                 <meta property="og:type" content="website" />
                 <meta property="og:image" content={bannerHeroLowRes.src} />
+                <meta property="og:image:width" content="600" />
+                <meta property="og:image:height" content="400" />
+                <meta property="og:image:type" content="image/png" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main role="main">

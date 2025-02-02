@@ -76,6 +76,9 @@ const Home = ({ featuredTopicRef }: { featuredTopicRef: string }) => {
                 <meta property="og:description" content="30 ways to pray for Japan" />
                 <meta property="og:type" content="website" />
                 <meta property="og:image" content={bannerHeroHighRes.src} />
+                <meta property="og:image:width" content="2400" />
+                <meta property="og:image:height" content="1600" />
+                <meta property="og:image:type" content="image/png" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main id="home" role="main">
