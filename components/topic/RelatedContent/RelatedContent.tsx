@@ -5,7 +5,7 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { TFunction, Trans, useTranslation } from "next-i18next"
-import { Image } from "react-bootstrap"
+import Image from "next/image"
 
 interface relatedProps {
     topicTrans: TFunction
@@ -87,7 +87,8 @@ export default function RelatedContent({ topicTrans }: relatedProps) {
                                     src={thumbnails[idx]}
                                     alt={`${topic} thumbnail`}
                                     className="w-100 bg-secondary"
-                                    style={{ height: "210px" }}
+                                    height={210}
+                                    width={363}
                                 />
                             </Card.Body>
                             <Card.Body className="m-2 p-1">
