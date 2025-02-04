@@ -35,7 +35,7 @@ module.exports = {
     serializeConfig: false,
     /** To avoid issues when deploying to some paas (vercel...) */
     // localePath: typeof window === "undefined" ? require("path").resolve("./public/locales") : "/locales",
-    reloadOnPrerender: true,
+    reloadOnPrerender: isDev,
     backend: {
         loadPath: `${BASE_URL}/api/locales/{{lng}}/{{ns}}.json`,
         request: async function (
@@ -46,7 +46,7 @@ module.exports = {
         ) {
             callback(null, { status: 200, data: await getTranslations(url) })
         },
-        reloadInterval: isDev ? 0 : 1000 * 60 * 60 * 24,
+        reloadInterval: isDev ? 0 : 1000 * 60 * 60 * 12,
     },
     use: isBrowser ? [] : [HttpBackend],
 
