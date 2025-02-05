@@ -33,7 +33,7 @@ const carouselImages: { src: string; title: string }[] = [
     },
 ]
 
-export const getServerSideProps = async ({ locale }: { locale: string }) => {
+export const getStaticProps = async ({ locale }: { locale: string }) => {
     // schedule is from featured-topics.json
     const featuredTopicRef: string = "topics/" + getFeaturedTopic(getSchedule())
 
@@ -43,6 +43,7 @@ export const getServerSideProps = async ({ locale }: { locale: string }) => {
             ...(await serverSideTranslations(locale, ["common", "home", featuredTopicRef], nextI18nextConfig)),
             // Will be passed to the page component as props
         },
+        revalidate: 60 * 60 * 24,
     }
 }
 

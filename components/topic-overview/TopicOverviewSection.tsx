@@ -6,6 +6,7 @@ export interface Topic {
     label: string
     link: string
     disabled?: boolean
+    image?: string
 }
 
 interface TopicOverviewProps {
@@ -48,7 +49,7 @@ export const TopicOverviewSection = ({ title, section, topics }: TopicOverviewPr
                                             <Image
                                                 src={
                                                     !isDisabled
-                                                        ? `/photos/topic-nav/${section}/${topic.link}.png`
+                                                        ? topic.image
                                                         : `/photos/topic-nav/${section}/placeholder.png`
                                                 }
                                                 alt={""}

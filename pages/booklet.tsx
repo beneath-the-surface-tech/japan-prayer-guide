@@ -46,7 +46,7 @@ import bookGifEN from "../public/photos/booklet/BOOK_GIF-en.gif"
 import bookGifJA from "../public/photos/booklet/BOOK_GIF-ja.gif"
 import nextI18nextConfig from "../next-i18next.config"
 
-export async function getServerSideProps({ locale }: any) {
+export async function getStaticProps({ locale }: any) {
     return {
         props: {
             ...(await serverSideTranslations(locale, ["booklet", "common"], nextI18nextConfig)),

@@ -49,6 +49,12 @@ export class PageEntity {
     })
     isLive!: boolean
 
+    @Column({ type: "varchar", nullable: true })
+    category!: string
+
+    @Column({ type: "varchar", nullable: true })
+    topicNumber!: string
+
     @OneToMany(() => PagePhotoEntity, (photo) => photo.page)
     photos!: Relation<PagePhotoEntity>[]
 

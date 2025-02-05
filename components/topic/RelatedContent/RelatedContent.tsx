@@ -38,9 +38,9 @@ export default function RelatedContent({ topicTrans }: relatedProps) {
         },
     ]
 
-    const topics: string[] = topicTrans("related.labels", { returnObjects: true })
-    const links: string[] = topicTrans("related.links", { returnObjects: true })
-    const thumbnails: string[] = topicTrans("related.thumbs", { returnObjects: true })
+    const topics = topicTrans("related.labels", { returnObjects: true }) as string[]
+    const links = topicTrans("related.links", { returnObjects: true }) as string[]
+    const thumbnails = topicTrans("related.thumbs", { returnObjects: true }) as string[]
 
     const onClickPrev = () => {
         slider?.current?.slickPrev()
@@ -74,7 +74,7 @@ export default function RelatedContent({ topicTrans }: relatedProps) {
                 responsive={responsive}
                 ref={slider}
             >
-                {topics.map((topic, idx) => (
+                {topics?.map((topic, idx) => (
                     <Link
                         key={idx + topic}
                         className="d-flex flex-column align-items-center text-decoration-none py-1 px-0"

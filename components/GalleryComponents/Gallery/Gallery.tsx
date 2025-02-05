@@ -69,13 +69,8 @@ function Gallery({
                         if (index % 3 === 0 || (index % 3 === 1 && index === images.length - 1)) {
                             return (
                                 <Row xs={1} sm={1} md={1} lg={1} xl={1} key={index}>
-                                    <div
-                                        className="gallerySpreadImage"
-                                        key={index}
-                                        onClick={() => handleLightBox(index)}
-                                    >
+                                    <div className="gallerySpreadImage" onClick={() => handleLightBox(index)}>
                                         <Image
-                                            key={index}
                                             src={item.src}
                                             width={1800}
                                             height={1200}
@@ -89,11 +84,7 @@ function Gallery({
                         } else if (index % 3 === 1) {
                             return (
                                 <Row xs={2} sm={2} md={2} lg={2} xl={2} key={index}>
-                                    <div
-                                        className="gallerySpreadImage2"
-                                        key={index}
-                                        onClick={() => handleLightBox(index)}
-                                    >
+                                    <div className="gallerySpreadImage2" onClick={() => handleLightBox(index)}>
                                         <Image
                                             key={index}
                                             src={item.src}
@@ -105,11 +96,7 @@ function Gallery({
                                         <div className="galleryImageOverlay"></div>
                                     </div>
                                     {images[index + 1] && (
-                                        <div
-                                            className="gallerySpreadImage2"
-                                            key={index}
-                                            onClick={() => handleLightBox(index + 1)}
-                                        >
+                                        <div className="gallerySpreadImage2" onClick={() => handleLightBox(index + 1)}>
                                             <Image
                                                 key={index + 1}
                                                 src={images[index + 1]?.src}

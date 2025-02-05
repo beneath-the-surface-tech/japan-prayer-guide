@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect } from "react"
 import { Cross } from "../../icons"
+import { Trans } from "next-i18next"
 import Image from "next/image"
 
 interface LightBoxProps {
@@ -50,6 +51,9 @@ const LightBox = ({ index, setImage, images, lightBox, setLightBox, backupImages
         }
     }, [handleSwitch, index])
 
+    const title = images[index].title ?? backupImages?.[index]?.title
+    const alt = images[index].alt ?? backupImages?.[index]?.alt ?? images[index].title ?? backupImages?.[index]?.title
+
     return (
         <div className="lightbox">
             <div className="lightbox-container">
@@ -74,14 +78,11 @@ const LightBox = ({ index, setImage, images, lightBox, setLightBox, backupImages
                         )}
                     </div>
                     <div className="lightbox-box">
-                        <Image
-                            src={images[index].src}
-                            width={1800}
-                            height={1200}
-                            alt={images[index]?.alt || images[index].title}
-                        />
+                        <Image src={images[index].src} width={1800} height={1200} alt={alt} />
                     </div>
-                    <h1 dangerouslySetInnerHTML={{ __html: images[index].title ?? backupImages?.[index]?.title }}></h1>
+                    <h1>
+                        <Trans>{title}</Trans>
+                    </h1>
                     <div className="lightbox-auto lightbox-rightArrow">
                         {index + 1 !== images.length && (
                             <span
