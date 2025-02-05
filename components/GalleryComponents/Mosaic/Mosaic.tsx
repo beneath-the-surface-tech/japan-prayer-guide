@@ -149,6 +149,7 @@ export const Mosaic = ({ images, blocks, uncropped, subTitle }: MosaicProps) => 
                                 index={index}
                                 setImage={setImage}
                                 images={uncropped}
+                                backupImages={images}
                                 lightBox={lightBox}
                                 setLightBox={setLightBox}
                                 setGallery={() => {}}
