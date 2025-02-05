@@ -10,11 +10,12 @@ import { StickyNav } from "../../../components/topic/StickyNav/StickyNav"
 import { LowHighImage } from "../../../components/LowHighImage"
 import bannerHeroHighRes from "../../../public/photos/topic-nav/TOPNAV_HERO.jpg"
 import bannerHeroLowRes from "../../../public/photos/topic-nav/TOPNAV_HERO_LowRes.jpg"
+import nextI18nextConfig from "../../../next-i18next.config"
 
-export async function getStaticProps({ locale }: any) {
+export async function getServerSideProps({ locale }: any) {
     return {
         props: {
-            ...(await serverSideTranslations(locale, ["topic-overview", "common"])),
+            ...(await serverSideTranslations(locale, ["topic-overview", "common"], nextI18nextConfig)),
             // Will be passed to the page component as props
             // About used in content, common used in header
         },
@@ -24,8 +25,8 @@ export async function getStaticProps({ locale }: any) {
 export default function Overview() {
     const { t } = useTranslation("topic-overview")
 
-    let cultureTopics: Topic[] = t("cultureTopics", { returnObjects: true })
-    let churchTopics: Topic[] = t("churchTopics", { returnObjects: true })
+    let cultureTopics: Topic[] = t("cultureTopics", { returnObjects: true }) as Topic[]
+    let churchTopics: Topic[] = t("churchTopics", { returnObjects: true }) as Topic[]
     cultureTopics = Array.isArray(cultureTopics) ? cultureTopics : []
     churchTopics = Array.isArray(churchTopics) ? churchTopics : []
 
@@ -37,7 +38,7 @@ export default function Overview() {
         { refId: "church", label: churchHeading },
     ]
 
-    const heroSubtext: string[] = t("pageSubtitle", { returnObjects: true })
+    const heroSubtext: string[] = t("pageSubtitle", { returnObjects: true }) as string[]
 
     return (
         <>

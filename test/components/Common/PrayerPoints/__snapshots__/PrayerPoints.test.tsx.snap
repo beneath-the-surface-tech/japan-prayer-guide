@@ -38,21 +38,11 @@ exports[`Prayer Points Snapshot test 1`] = `
               />
               prayerSummary.subtitle
             </p>
-            <ul
-              class="bullet-points"
+            <div
               data-testid="prayer-points-points"
             >
-              <li
-                class="my-2 bullet-point"
-              >
-                A
-              </li>
-              <li
-                class="my-2 bullet-point"
-              >
-                B
-              </li>
-            </ul>
+              A,B
+            </div>
             <button
               class="feature-button fs-4 fw-bold bg-white text-secondary-5 text-center border-secondary-5 mt-3 mb-2 btn btn-primary"
               type="button"
@@ -105,21 +95,11 @@ exports[`Prayer Points Snapshot test 1`] = `
             />
             prayerSummary.subtitle
           </p>
-          <ul
-            class="bullet-points"
+          <div
             data-testid="prayer-points-points"
           >
-            <li
-              class="my-2 bullet-point"
-            >
-              A
-            </li>
-            <li
-              class="my-2 bullet-point"
-            >
-              B
-            </li>
-          </ul>
+            A,B
+          </div>
           <button
             class="feature-button fs-4 fw-bold bg-white text-secondary-5 text-center border-secondary-5 mt-3 mb-2 btn btn-primary"
             type="button"

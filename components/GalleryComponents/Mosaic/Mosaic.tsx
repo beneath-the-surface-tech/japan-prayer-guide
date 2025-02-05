@@ -59,12 +59,14 @@ interface MosaicProps {
     images: {
         src: string
         title: string
+        alt?: string
     }[]
-    blocks: number[]
     uncropped: {
         src: string
         title: string
+        alt?: string
     }[]
+    blocks: number[]
     subTitle: string
 }
 

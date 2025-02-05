@@ -44,11 +44,12 @@ import coverEN from "../public/photos/home/hp_cover-en.jpg"
 import coverJA from "../public/photos/home/hp_cover-ja.jpg"
 import bookGifEN from "../public/photos/booklet/BOOK_GIF-en.gif"
 import bookGifJA from "../public/photos/booklet/BOOK_GIF-ja.gif"
+import nextI18nextConfig from "../next-i18next.config"
 
-export async function getStaticProps({ locale }: any) {
+export async function getServerSideProps({ locale }: any) {
     return {
         props: {
-            ...(await serverSideTranslations(locale, ["booklet", "common"])),
+            ...(await serverSideTranslations(locale, ["booklet", "common"], nextI18nextConfig)),
             // Will be passed to the page component as props
             // About used in content, common used in header
         },
@@ -118,8 +119,8 @@ function useBetterMediaQuery(query: string) {
 const TabletOrMobileMediaQuery = "(min-width: 992px)"
 const Booklet: React.FC = () => {
     const { t, i18n } = useTranslation("booklet")
-    const webpageTitle = t("webpageTitle", "Booklet")
-    const introTextParagraphs: string[] = t("introText", { returnObjects: true })
+    const webpageTitle: string = t("webpageTitle", "Booklet")
+    const introTextParagraphs: string[] = t("introText", { returnObjects: true }) as string[]
     const isTabletOrMobile = useBetterMediaQuery(TabletOrMobileMediaQuery)
     const isInEnglish = i18n.language === "en"
     let sampleBookImages

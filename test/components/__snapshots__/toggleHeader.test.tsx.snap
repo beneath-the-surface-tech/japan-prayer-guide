@@ -146,7 +146,7 @@ exports[`ToggleHeader Snapshot test 1`] = `
                   class="mb-4 row"
                 >
                   <div
-                    class="ms-auto hstack gap-3 minBreakpoint-xs"
+                    class="ms-auto hstack gap-3"
                     data-testid="language-switcher"
                     id="language-switch"
                   >
@@ -340,7 +340,7 @@ exports[`ToggleHeader Snapshot test 1`] = `
                 class="mb-4 row"
               >
                 <div
-                  class="ms-auto hstack gap-3 minBreakpoint-xs"
+                  class="ms-auto hstack gap-3"
                   data-testid="language-switcher"
                   id="language-switch"
                 >

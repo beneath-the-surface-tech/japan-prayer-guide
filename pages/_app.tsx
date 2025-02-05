@@ -2,6 +2,7 @@ import { AppProps } from "next/app"
 import { appWithTranslation } from "next-i18next"
 import { Analytics } from "@vercel/analytics/react"
 import "../styles/main.scss"
+import nextI18nextConfig from "../next-i18next.config"
 
 function App({ Component, pageProps }: AppProps) {
     return (
@@ -12,4 +13,4 @@ function App({ Component, pageProps }: AppProps) {
     )
 }
 
-export default appWithTranslation(App)
+export default appWithTranslation(App, nextI18nextConfig)
