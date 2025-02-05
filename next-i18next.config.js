@@ -6,7 +6,7 @@ const { unstable_cache } = require("next/cache")
 
 const isBrowser = typeof window !== "undefined"
 const isDev = process.env.NODE_ENV === "development"
-const BASE_URL = isDev ? "http://localhost:3000" : process.env.API_URL || "https://japan-prayer-guide-beta.vercel.app"
+const BASE_URL = isDev ? "http://localhost:3000" : process.env.API_URL || "https://dev.japanprayerguide.com"
 
 const RETOOL_PATHS = ["/topics/", "topic-overview"]
 
@@ -37,11 +37,16 @@ const getTranslations = unstable_cache(
 
             return getTopicLocaleData(data, localePath)
         } catch (error) {
-            return {}
+            const response = await fetch(url)
+            const data = await response.json()
+
+            console.log(url);
+
+            return data
         }
     },
     ["translations"],
-    { tags: ["translations"], revalidate: isDev ? 1 : 60 * 60 * 24 },
+    { tags: ["translations"], revalidate: isDev ? 1 : undefined },
 )
 
 /**

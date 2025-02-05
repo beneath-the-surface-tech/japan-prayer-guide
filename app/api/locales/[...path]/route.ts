@@ -4,7 +4,7 @@ import { unstable_cache } from "next/cache"
 import { NextResponse } from "next/server"
 import { getDataSource } from "../../../entities/datasource"
 import { PageEntity } from "../../../entities"
-import { mapById } from "../../../utils/objects"
+import { getTopicLocaleData } from "@/app/utils/topics"
 
 const getPages = unstable_cache(
     async () => {
@@ -38,60 +38,10 @@ export async function GET(_req: Request, { params }: { params: Promise<{ path: s
         return NextResponse.json({ status: 400, message: "Invalid path parameter" })
     }
 
-    const [locale, ...pagePath] = path
-
     // Only fetch pages from Retool DB if the path is for a topic.
-    if (pagePath.includes("topics")) {
-        const topic = pagePath.join("/").replace(".json", "")
+    if (path.includes("topics")) {
         const pages = await getPages()
-        const pagesMap = mapById(pages)
-        const topicPage = pages.find((page) => page.path.includes(topic))
-        const topicLocale = topicPage?.topics.find((topic) => topic.locale === locale)
-        const relatedPages = topicPage?.relatedPages.map((related) => related.relatedPageId)
-        const related = relatedPages?.reduce(
-            (acc, relatedPageId) => {
-                const relatedPage = pagesMap[relatedPageId]
-                const relatedTopicLocale = relatedPage?.topics.find((topic) => topic.locale === locale)
-                if (relatedTopicLocale) {
-                    acc.labels.push(relatedTopicLocale.title)
-                    acc.links.push(relatedPage.path)
-                    acc.thumbs.push(relatedPage.heroPhoto ?? "")
-                }
-                return acc
-            },
-            { labels: [], links: [], thumbs: [] } as { labels: string[]; links: string[]; thumbs: string[] },
-        )
-
-        const topicLocaleData = {
-            title: topicLocale?.title,
-            path: topicPage?.path,
-            prayerSummary: topicLocale?.prayerSummary,
-            textBody: topicLocale?.textBody,
-            textBodyAsterisk: topicLocale?.textBodyAsterisk,
-            quote: topicLocale?.quote,
-            downloads: topicLocale?.downloads,
-            galleryType: topicPage?.galleryType,
-            blockOrder: topicPage?.blockOrder,
-            videoSrc: topicLocale?.videoSrc,
-            infographic: topicLocale?.infographic,
-            heroPhoto: topicPage?.heroPhoto,
-            heroFocus: topicPage?.heroFocus,
-            photos: topicPage?.photos
-                .filter((photo) => photo.type === "main")
-                .map((photo) => ({
-                    src: `https://d3rljda0pe0qw5.cloudfront.net/uploads/${photo.photo.image_name}`,
-                    title: photo.photo?.[locale as "en" | "ja"],
-                    alt: photo.photo?.[`alt_${locale}` as "alt_en" | "alt_ja"],
-                })),
-            uncroppedPhotos: topicPage?.photos
-                .filter((photo) => photo.type === "uncropped")
-                .map((photo) => ({
-                    src: `https://d3rljda0pe0qw5.cloudfront.net/uploads/${photo.photo.image_name}`,
-                    title: photo.photo?.[locale as "en" | "ja"],
-                    alt: photo.photo?.[`alt_${locale}` as "alt_en" | "alt_ja"],
-                })),
-            related,
-        }
+        const topicLocaleData = getTopicLocaleData(pages, path.join("/"))
 
         return NextResponse.json(topicLocaleData)
     }
