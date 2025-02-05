@@ -309,6 +309,13 @@
         @include media-breakpoint-down(sm) {
             top: -70px;
         }
+
+        span {
+            color: white!important;
+        }
+        em {
+            color: white!important;
+        }
     }
 
     .lightbox-auto {

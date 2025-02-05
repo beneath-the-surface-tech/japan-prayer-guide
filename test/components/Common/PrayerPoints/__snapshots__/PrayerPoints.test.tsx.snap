@@ -39,6 +39,7 @@ exports[`Prayer Points Snapshot test 1`] = `
               prayerSummary.subtitle
             </p>
             <div
+              class="bullet-points-wrapper"
               data-testid="prayer-points-points"
             >
               A,B
@@ -96,6 +97,7 @@ exports[`Prayer Points Snapshot test 1`] = `
             prayerSummary.subtitle
           </p>
           <div
+            class="bullet-points-wrapper"
             data-testid="prayer-points-points"
           >
             A,B
