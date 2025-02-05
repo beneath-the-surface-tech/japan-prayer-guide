@@ -13,7 +13,6 @@ import { PhotosWrapper } from "../../components/GalleryComponents/PhotosWrapper/
 import PrayerResponse from "../../components/topic/PrayerResponse/PrayerResponse"
 import { StickyNav, Tab } from "../../components/topic/StickyNav/StickyNav"
 import RelatedContent from "../../components/topic/RelatedContent/RelatedContent"
-// import { ReferencesSection } from "../../components/topic/References/References"
 import nextI18nextConfig from "../../next-i18next.config"
 
 export const getServerSideProps: GetServerSideProps = async ({ params, locale }: any) => {
