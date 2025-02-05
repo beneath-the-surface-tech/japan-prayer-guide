@@ -18,7 +18,7 @@ const getTranslations = unstable_cache(
         }
     },
     ["translations"],
-    { tags: ["translations"] },
+    { tags: ["translations"], revalidate: isDev ? 1 : 60 * 60 * 24 },
 )
 
 /**
