@@ -74,7 +74,11 @@ export default function PrayerPoints({ topicTrans, displayStyle }: prayerProps) 
                         <Trans t={t} i18nKey="prayerSummary.subtitle" />
                     </Card.Text>
 
-                    <div dangerouslySetInnerHTML={{ __html: prayerPoints }} data-testid={"prayer-points-points"} />
+                    <div
+                        className="bullet-points-wrapper"
+                        dangerouslySetInnerHTML={{ __html: prayerPoints }}
+                        data-testid={"prayer-points-points"}
+                    />
 
                     {buttonPrompts && (
                         <>

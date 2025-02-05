@@ -13,7 +13,7 @@ import { PhotosWrapper } from "../../components/GalleryComponents/PhotosWrapper/
 import PrayerResponse from "../../components/topic/PrayerResponse/PrayerResponse"
 import { StickyNav, Tab } from "../../components/topic/StickyNav/StickyNav"
 import RelatedContent from "../../components/topic/RelatedContent/RelatedContent"
-import { ReferencesSection } from "../../components/topic/References/References"
+// import { ReferencesSection } from "../../components/topic/References/References"
 import nextI18nextConfig from "../../next-i18next.config"
 
 export const getServerSideProps: GetServerSideProps = async ({ params, locale }: any) => {
@@ -33,31 +33,29 @@ export const getServerSideProps: GetServerSideProps = async ({ params, locale }:
     }
 }
 
-const JsonLink = ({ children = "" }: { children?: string }) => {
-    const url = children
-    const onClick = () => window.open(url, "_blank")
-    return (
-        <a href={url} onClick={onClick}>
-            {url}
-        </a>
-    )
-}
+// const JsonLink = ({ children = "" }: { children?: string }) => {
+//     const url = children
+//     const onClick = () => window.open(url, "_blank")
+//     return (
+//         <a href={url} onClick={onClick}>
+//             {url}
+//         </a>
+//     )
+// }
 
 export default function TopicPage({ localeRef }: { localeRef: string }) {
     const { t } = useTranslation(localeRef)
     const { t: topicCommon } = useTranslation("topic-pages")
 
     // Objects holding translations
-    let textContent = t("textBody", { returnObjects: true }) as string[]
-    textContent = Array.isArray(textContent) ? textContent : []
+    const textContent = t("textBody")
 
-    let textAsterisk = t("textBodyAsterisk", { returnObjects: true }) as string[]
-    textAsterisk = Array.isArray(textAsterisk) ? textAsterisk : []
+    const textAsterisk = t("textBodyAsterisk")
 
     const navTabs: Tab[] = topicCommon("nav", { returnObjects: true }) as Tab[]
 
     const galleryLabel: string = topicCommon("galleryLabel")
-    const factsLabel: string = topicCommon("factsLabel")
+    // const factsLabel: string = topicCommon("factsLabel")
     const galleryClickInstructions: string = topicCommon("galleryClickInstructions")
     const galleryImageText: string = topicCommon("galleryImageText")
     const localeImages: any[] = t("photos", { returnObjects: true }) as any[]
@@ -72,9 +70,9 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
 
     const quote: string = t("quote.content")
 
-    const infographicDesktop: string = t("infographic.desktop")
-    const infographicTablet: string = t("infographic.tablet")
-    const infographicMobile: string = t("infographic.mobile")
+    // const infographicDesktop: string = t("infographic.desktop")
+    // const infographicTablet: string = t("infographic.tablet")
+    // const infographicMobile: string = t("infographic.mobile")
 
     const previousText: string = topicCommon("previousTopic")
     const nextText: string = topicCommon("nextTopic")
@@ -126,18 +124,12 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
                     )}
 
                     <Container className="main-content mt-0">
-                        {textContent.map((text: string, idx: number) => (
-                            <p key={idx + text}>
-                                <Trans components={{ url: <JsonLink /> }}> {text} </Trans>
-                            </p>
-                        ))}
+                        <div dangerouslySetInnerHTML={{ __html: textContent }} />
                     </Container>
                     <Container className="fs-5">
-                        {textAsterisk.map((text: string, idx: number) => (
-                            <p key={idx + text}>
-                                <Trans components={{ url: <JsonLink />, sup: <sup /> }}> {text} </Trans>
-                            </p>
-                        ))}
+                        {textAsterisk !== "textBodyAsterisk" && (
+                            <div dangerouslySetInnerHTML={{ __html: textAsterisk }} />
+                        )}
                     </Container>
 
                     {/* Images */}
@@ -159,7 +151,7 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
 
                     {/* Infographics: Uncomment after conference */}
 
-                    <CollapseBlock title={factsLabel} startOpened={true} galleryType={"infographic"}>
+                    {/* <CollapseBlock title={factsLabel} startOpened={true} galleryType={"infographic"}>
                         <Container className="mt-3 d-flex justify-content-center px-0">
                             <Image className="d-none d-xl-block w-100" src={infographicDesktop} alt="infographic" />
                             <Image
@@ -173,7 +165,7 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
                     <Container className="">
                         <hr />
                         <ReferencesSection />
-                    </Container>
+                    </Container> */}
                     <Container className={"bottom-spacing"}></Container>
                 </Container>
 
