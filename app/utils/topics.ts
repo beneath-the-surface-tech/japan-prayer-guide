@@ -18,10 +18,16 @@ export function getTopicLocaleData(pages: PageEntity[], localePath: string) {
                 acc.labels.push(relatedTopicLocale.title)
                 acc.links.push(relatedPage.path)
                 acc.thumbs.push(relatedPage.heroPhoto ?? "")
+                acc.isLive.push(relatedPage.isLive)
             }
             return acc
         },
-        { labels: [], links: [], thumbs: [] } as { labels: string[]; links: string[]; thumbs: string[] },
+        { labels: [], links: [], thumbs: [], isLive: [] } as {
+            labels: string[]
+            links: string[]
+            thumbs: string[]
+            isLive: boolean[]
+        },
     )
 
     const topicLocaleData = {
