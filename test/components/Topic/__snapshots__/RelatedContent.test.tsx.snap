@@ -47,12 +47,12 @@ exports[`Related Content Snapshot test 1`] = `
                 <div>
                   <a
                     class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                    href="/link4"
+                    href="#"
                     style="width: 100%; display: inline-block;"
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
+                      class="related-topic-card disabled card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -96,7 +96,7 @@ exports[`Related Content Snapshot test 1`] = `
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
+                      class="related-topic-card  card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -135,12 +135,12 @@ exports[`Related Content Snapshot test 1`] = `
                 <div>
                   <a
                     class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                    href="/link6"
+                    href="#"
                     style="width: 100%; display: inline-block;"
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
+                      class="related-topic-card disabled card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -184,7 +184,7 @@ exports[`Related Content Snapshot test 1`] = `
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
+                      class="related-topic-card  card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -223,12 +223,12 @@ exports[`Related Content Snapshot test 1`] = `
                 <div>
                   <a
                     class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                    href="/link2"
+                    href="#"
                     style="width: 100%; display: inline-block;"
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
+                      class="related-topic-card disabled card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -272,7 +272,7 @@ exports[`Related Content Snapshot test 1`] = `
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
+                      class="related-topic-card  card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -311,12 +311,12 @@ exports[`Related Content Snapshot test 1`] = `
                 <div>
                   <a
                     class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                    href="/link4"
+                    href="#"
                     style="width: 100%; display: inline-block;"
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
+                      class="related-topic-card disabled card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -360,7 +360,7 @@ exports[`Related Content Snapshot test 1`] = `
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
+                      class="related-topic-card  card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -399,12 +399,12 @@ exports[`Related Content Snapshot test 1`] = `
                 <div>
                   <a
                     class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                    href="/link6"
+                    href="#"
                     style="width: 100%; display: inline-block;"
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
+                      class="related-topic-card disabled card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -448,7 +448,7 @@ exports[`Related Content Snapshot test 1`] = `
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
+                      class="related-topic-card  card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -487,12 +487,12 @@ exports[`Related Content Snapshot test 1`] = `
                 <div>
                   <a
                     class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                    href="/link2"
+                    href="#"
                     style="width: 100%; display: inline-block;"
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
+                      class="related-topic-card disabled card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -536,7 +536,7 @@ exports[`Related Content Snapshot test 1`] = `
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
+                      class="related-topic-card  card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -575,12 +575,12 @@ exports[`Related Content Snapshot test 1`] = `
                 <div>
                   <a
                     class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                    href="/link4"
+                    href="#"
                     style="width: 100%; display: inline-block;"
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
+                      class="related-topic-card disabled card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -624,7 +624,7 @@ exports[`Related Content Snapshot test 1`] = `
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
+                      class="related-topic-card  card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -663,12 +663,12 @@ exports[`Related Content Snapshot test 1`] = `
                 <div>
                   <a
                     class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                    href="/link6"
+                    href="#"
                     style="width: 100%; display: inline-block;"
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
+                      class="related-topic-card disabled card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -760,12 +760,12 @@ exports[`Related Content Snapshot test 1`] = `
               <div>
                 <a
                   class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                  href="/link4"
+                  href="#"
                   style="width: 100%; display: inline-block;"
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
+                    class="related-topic-card disabled card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -809,7 +809,7 @@ exports[`Related Content Snapshot test 1`] = `
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
+                    class="related-topic-card  card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -848,12 +848,12 @@ exports[`Related Content Snapshot test 1`] = `
               <div>
                 <a
                   class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                  href="/link6"
+                  href="#"
                   style="width: 100%; display: inline-block;"
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
+                    class="related-topic-card disabled card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -897,7 +897,7 @@ exports[`Related Content Snapshot test 1`] = `
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
+                    class="related-topic-card  card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -936,12 +936,12 @@ exports[`Related Content Snapshot test 1`] = `
               <div>
                 <a
                   class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                  href="/link2"
+                  href="#"
                   style="width: 100%; display: inline-block;"
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
+                    class="related-topic-card disabled card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -985,7 +985,7 @@ exports[`Related Content Snapshot test 1`] = `
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
+                    class="related-topic-card  card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -1024,12 +1024,12 @@ exports[`Related Content Snapshot test 1`] = `
               <div>
                 <a
                   class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                  href="/link4"
+                  href="#"
                   style="width: 100%; display: inline-block;"
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
+                    class="related-topic-card disabled card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -1073,7 +1073,7 @@ exports[`Related Content Snapshot test 1`] = `
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
+                    class="related-topic-card  card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -1112,12 +1112,12 @@ exports[`Related Content Snapshot test 1`] = `
               <div>
                 <a
                   class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                  href="/link6"
+                  href="#"
                   style="width: 100%; display: inline-block;"
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
+                    class="related-topic-card disabled card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -1161,7 +1161,7 @@ exports[`Related Content Snapshot test 1`] = `
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
+                    class="related-topic-card  card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -1200,12 +1200,12 @@ exports[`Related Content Snapshot test 1`] = `
               <div>
                 <a
                   class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                  href="/link2"
+                  href="#"
                   style="width: 100%; display: inline-block;"
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
+                    class="related-topic-card disabled card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -1249,7 +1249,7 @@ exports[`Related Content Snapshot test 1`] = `
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
+                    class="related-topic-card  card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -1288,12 +1288,12 @@ exports[`Related Content Snapshot test 1`] = `
               <div>
                 <a
                   class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                  href="/link4"
+                  href="#"
                   style="width: 100%; display: inline-block;"
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
+                    class="related-topic-card disabled card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -1337,7 +1337,7 @@ exports[`Related Content Snapshot test 1`] = `
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
+                    class="related-topic-card  card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -1376,12 +1376,12 @@ exports[`Related Content Snapshot test 1`] = `
               <div>
                 <a
                   class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                  href="/link6"
+                  href="#"
                   style="width: 100%; display: inline-block;"
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
+                    class="related-topic-card disabled card"
                   >
                     <div
                       class="m-0 p-0 card-body"
