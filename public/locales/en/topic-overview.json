@@ -13,16 +13,16 @@
         { "label": "Popular religious practices", "link": "popular-religious-practices", "disabled": false },
         { "label": "Japanese views of Chrisianity", "link": "japanese-views-of-chrisianity", "disabled": true },
         { "label": "Japanese culture and Christianity", "link": "japanese-culture-and-christianity", "disabled": true },
-        { "label": "Ancestor veneration", "link": "ancestor-veneration", "disabled": false },
+        { "label": "Ancestor veneration", "link": "ancestor-veneration", "disabled": true },
         { "label": "Harmony", "link": "harmony", "disabled": true },
         { "label": "Social conformity", "link": "social-conformity", "disabled": false },
         { "label": "Self-reliance and materialism", "link": "self-reliance-and-materialism", "disabled": true },
-        { "label": "Mental and emotional health", "link": "mental-and-emotional-health", "disabled": false },
+        { "label": "Mental and emotional health", "link": "mental-and-emotional-health", "disabled": true },
         { "label": "Aging society", "link": "aging-society", "disabled": true },
         {
             "label": "Politics and international relations",
             "link": "politics-and-international-relations",
-            "disabled": false
+            "disabled": true
         },
         { "label": "Immigration and foreign nationals", "link": "immigration-and-foreign-nationals", "disabled": true },
         { "label": "Natural disasters", "link": "natural-disasters", "disabled": true },
@@ -43,7 +43,7 @@
         { "label": "Daily Christian life and faith", "link": "daily-christian-life-and-faith", "disabled": true },
         { "label": "Japanese overseas", "link": "japanese-overseas", "disabled": true },
         { "label": "Missionary life", "link": "missionary-life", "disabled": true },
-        { "label": "Unity in Christ", "link": "unity-in-christ", "disabled": false },
+        { "label": "Unity in Christ", "link": "unity-in-christ", "disabled": true },
         { "label": "Japanese mission movement", "link": "japanese-mission-movement", "disabled": true },
         { "label": "Prayer for spiritual breakthrough", "link": "prayer-for-spiritual-breakthrough", "disabled": true }
     ]
