@@ -14,6 +14,7 @@ import PrayerResponse from "../../components/topic/PrayerResponse/PrayerResponse
 import { StickyNav, Tab } from "../../components/topic/StickyNav/StickyNav"
 import RelatedContent from "../../components/topic/RelatedContent/RelatedContent"
 import nextI18nextConfig from "../../next-i18next.config"
+import { ReferencesSection } from "@/components/topic/References/References"
 
 export const getServerSideProps: GetServerSideProps = async ({ params, locale }: any) => {
     if (!params) {
@@ -54,7 +55,7 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
     const navTabs: Tab[] = topicCommon("nav", { returnObjects: true }) as Tab[]
 
     const galleryLabel: string = topicCommon("galleryLabel")
-    // const factsLabel: string = topicCommon("factsLabel")
+    const factsLabel: string = topicCommon("factsLabel")
     const galleryClickInstructions: string = topicCommon("galleryClickInstructions")
     const galleryImageText: string = topicCommon("galleryImageText")
     const localeImages: any[] = t("photos", { returnObjects: true }) as any[]
@@ -69,9 +70,9 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
 
     const quote: string = t("quote.content")
 
-    // const infographicDesktop: string = t("infographic.desktop")
-    // const infographicTablet: string = t("infographic.tablet")
-    // const infographicMobile: string = t("infographic.mobile")
+    const infographicDesktop: string = t("infographic.desktop")
+    const infographicTablet: string = t("infographic.tablet")
+    const infographicMobile: string = t("infographic.mobile")
 
     const previousText: string = topicCommon("previousTopic")
     const nextText: string = topicCommon("nextTopic")
@@ -149,22 +150,23 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
                     {/* {timeline !== "timeline" && <h1>timeline</h1>} */}
 
                     {/* Infographics: Uncomment after conference */}
-
-                    {/* <CollapseBlock title={factsLabel} startOpened={true} galleryType={"infographic"}>
-                        <Container className="mt-3 d-flex justify-content-center px-0">
-                            <Image className="d-none d-xl-block w-100" src={infographicDesktop} alt="infographic" />
-                            <Image
-                                className="d-none d-md-block d-xl-none w-100"
-                                src={infographicTablet}
-                                alt="infographic"
-                            />
-                            <Image className="d-block d-md-none w-100" src={infographicMobile} alt="infographic" />
-                        </Container>
-                    </CollapseBlock>
+                    {infographicDesktop && infographicTablet && infographicMobile && (
+                        <CollapseBlock title={factsLabel} startOpened={true} galleryType={"infographic"}>
+                            <Container className="mt-3 d-flex justify-content-center px-0">
+                                <Image className="d-none d-xl-block w-100" src={infographicDesktop} alt="infographic" />
+                                <Image
+                                    className="d-none d-md-block d-xl-none w-100"
+                                    src={infographicTablet}
+                                    alt="infographic"
+                                />
+                                <Image className="d-block d-md-none w-100" src={infographicMobile} alt="infographic" />
+                            </Container>
+                        </CollapseBlock>
+                    )}
                     <Container className="">
                         <hr />
-                        <ReferencesSection />
-                    </Container> */}
+                        <ReferencesSection localeRef={localeRef} />
+                    </Container>
                     <Container className={"bottom-spacing"}></Container>
                 </Container>
 
