@@ -1,6 +1,5 @@
 import Head from "next/head"
-import { getTopicPageIds } from "../../services/staticTopicLoader"
-import { GetStaticProps, GetStaticPaths } from "next"
+import { GetServerSideProps } from "next"
 import { Container, Image } from "react-bootstrap"
 import { ToggleHeader } from "../../components/ToggleHeader"
 import TopicDownloadables from "../../components/topic/TopicDownloadables/TopicDownloadables"
@@ -14,18 +13,9 @@ import { PhotosWrapper } from "../../components/GalleryComponents/PhotosWrapper/
 import PrayerResponse from "../../components/topic/PrayerResponse/PrayerResponse"
 import { StickyNav, Tab } from "../../components/topic/StickyNav/StickyNav"
 import RelatedContent from "../../components/topic/RelatedContent/RelatedContent"
-// import { ReferencesSection } from "../../components/topic/References/References"
+import nextI18nextConfig from "../../next-i18next.config"
 
-export const getStaticPaths: GetStaticPaths = async () => {
-    const paths = getTopicPageIds()
-
-    return {
-        paths,
-        fallback: false,
-    }
-}
-
-export const getStaticProps: GetStaticProps = async ({ params, locale }: any) => {
+export const getServerSideProps: GetServerSideProps = async ({ params, locale }: any) => {
     if (!params) {
         return {
             props: {},
@@ -37,44 +27,42 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }: any) =>
     return {
         props: {
             localeRef,
-            ...(await serverSideTranslations(locale, ["common", "topic-pages", localeRef])),
+            ...(await serverSideTranslations(locale, ["common", "topic-pages", localeRef], nextI18nextConfig)),
         },
     }
 }
 
-const JsonLink = ({ children = "" }: { children?: string }) => {
-    const url = children
-    const onClick = () => window.open(url, "_blank")
-    return (
-        <a href={url} onClick={onClick}>
-            {url}
-        </a>
-    )
-}
+// const JsonLink = ({ children = "" }: { children?: string }) => {
+//     const url = children
+//     const onClick = () => window.open(url, "_blank")
+//     return (
+//         <a href={url} onClick={onClick}>
+//             {url}
+//         </a>
+//     )
+// }
 
 export default function TopicPage({ localeRef }: { localeRef: string }) {
     const { t } = useTranslation(localeRef)
     const { t: topicCommon } = useTranslation("topic-pages")
 
     // Objects holding translations
-    let textContent: string[] = t("textBody", { returnObjects: true })
-    textContent = Array.isArray(textContent) ? textContent : []
+    const textContent = t("textBody")
 
-    let textAsterisk: string[] = t("textBodyAsterisk", { returnObjects: true })
-    textAsterisk = Array.isArray(textAsterisk) ? textAsterisk : []
+    const textAsterisk = t("textBodyAsterisk")
 
-    const navTabs: Tab[] = topicCommon("nav", { returnObjects: true })
+    const navTabs: Tab[] = topicCommon("nav", { returnObjects: true }) as Tab[]
 
     const galleryLabel: string = topicCommon("galleryLabel")
     // const factsLabel: string = topicCommon("factsLabel")
     const galleryClickInstructions: string = topicCommon("galleryClickInstructions")
     const galleryImageText: string = topicCommon("galleryImageText")
-    const localeImages: any[] = t("photos", { returnObjects: true })
+    const localeImages: any[] = t("photos", { returnObjects: true }) as any[]
     const images = Array.isArray(localeImages) && localeImages.length > 0 ? localeImages : null
     // const timeline: string = t("timeline")
     const galleryType: string = t("galleryType")
-    const blockOrder: number[] = t("blockOrder", { returnObjects: true })
-    const uncropped: any[] = t("uncroppedPhotos", { returnObjects: true })
+    const blockOrder: number[] = t("blockOrder", { returnObjects: true }) as number[]
+    const uncropped: any[] = t("uncroppedPhotos", { returnObjects: true }) as any[]
 
     const heroPhoto: string = t("heroPhoto")
     const heroFocus: string = t("heroFocus")
@@ -135,18 +123,12 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
                     )}
 
                     <Container className="main-content mt-0">
-                        {textContent.map((text: string, idx: number) => (
-                            <p key={idx + text}>
-                                <Trans components={{ url: <JsonLink /> }}> {text} </Trans>
-                            </p>
-                        ))}
+                        <div dangerouslySetInnerHTML={{ __html: textContent }} />
                     </Container>
                     <Container className="fs-5">
-                        {textAsterisk.map((text: string, idx: number) => (
-                            <p key={idx + text}>
-                                <Trans components={{ url: <JsonLink /> }}> {text} </Trans>
-                            </p>
-                        ))}
+                        {textAsterisk !== "textBodyAsterisk" && (
+                            <div dangerouslySetInnerHTML={{ __html: textAsterisk }} />
+                        )}
                     </Container>
 
                     {/* Images */}

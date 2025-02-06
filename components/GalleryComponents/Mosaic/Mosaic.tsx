@@ -59,12 +59,14 @@ interface MosaicProps {
     images: {
         src: string
         title: string
+        alt?: string
     }[]
-    blocks: number[]
     uncropped: {
         src: string
         title: string
+        alt?: string
     }[]
+    blocks: number[]
     subTitle: string
 }
 
@@ -147,6 +149,7 @@ export const Mosaic = ({ images, blocks, uncropped, subTitle }: MosaicProps) => 
                                 index={index}
                                 setImage={setImage}
                                 images={uncropped}
+                                backupImages={images}
                                 lightBox={lightBox}
                                 setLightBox={setLightBox}
                                 setGallery={() => {}}

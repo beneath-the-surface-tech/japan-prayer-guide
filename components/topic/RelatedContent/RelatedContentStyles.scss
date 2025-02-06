@@ -55,6 +55,15 @@
     overflow: hidden;
     border-radius: 4px;
 
+    &.disabled {
+        cursor: not-allowed;
+        opacity: 0.8;
+        
+        img {
+            filter: grayscale(100%);
+        }
+    }
+
     img {
         object-fit: cover;
     }

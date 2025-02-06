@@ -212,13 +212,15 @@ $home-paragraph-text-mobile: $home-paragraph-text - 2px;
     }
 
     $bullet-point-factor: 1px;
-    .bullet-point {
-        font-size: $home-paragraph-text;
-        @include media-breakpoint-down(xl) {
-            font-size: $home-paragraph-text-tablet;
-        }
-        @include media-breakpoint-down(md) {
-            font-size: $home-paragraph-text-mobile;
+    .bullet-points-wrapper {
+        li {
+            font-size: $home-paragraph-text;
+            @include media-breakpoint-down(xl) {
+                font-size: $home-paragraph-text-tablet;
+            }
+            @include media-breakpoint-down(md) {
+                font-size: $home-paragraph-text-mobile;
+            }
         }
     }
 

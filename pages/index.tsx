@@ -16,6 +16,7 @@ import bannerHeroLowRes from "../public//photos/home/hp_hero_LowRes.jpg"
 import btsCrane from "../public/photos/home/hp_crane.png"
 import coverEN from "../public/photos/home/hp_cover-en.jpg"
 import coverJA from "../public/photos/home/hp_cover-ja.jpg"
+import * as nextI18nextConfig from "../next-i18next.config"
 
 const carouselImages: { src: string; title: string }[] = [
     {
@@ -39,9 +40,10 @@ export const getStaticProps = async ({ locale }: { locale: string }) => {
     return {
         props: {
             featuredTopicRef,
-            ...(await serverSideTranslations(locale, ["common", "home", featuredTopicRef])),
+            ...(await serverSideTranslations(locale, ["common", "home", featuredTopicRef], nextI18nextConfig)),
             // Will be passed to the page component as props
         },
+        revalidate: 60 * 60 * 24,
     }
 }
 

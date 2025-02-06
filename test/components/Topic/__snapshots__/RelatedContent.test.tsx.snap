@@ -52,8 +52,7 @@ exports[`Related Content Snapshot test 1`] = `
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
-                      style="cursor: not-allowed;"
+                      class="related-topic-card disabled card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -61,8 +60,14 @@ exports[`Related Content Snapshot test 1`] = `
                         <img
                           alt="gh thumbnail"
                           class="w-100 bg-secondary"
-                          src="/link4"
-                          style="height: 210px;"
+                          data-nimg="1"
+                          decoding="async"
+                          height="210"
+                          loading="lazy"
+                          src="/_next/image?url=%2Flink4&w=750&q=75"
+                          srcset="/_next/image?url=%2Flink4&w=384&q=75 1x, /_next/image?url=%2Flink4&w=750&q=75 2x"
+                          style="color: transparent;"
+                          width="363"
                         />
                       </div>
                       <div
@@ -86,13 +91,12 @@ exports[`Related Content Snapshot test 1`] = `
                 <div>
                   <a
                     class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                    href="#"
+                    href="/link5"
                     style="width: 100%; display: inline-block;"
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
-                      style="cursor: not-allowed;"
+                      class="related-topic-card  card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -100,8 +104,14 @@ exports[`Related Content Snapshot test 1`] = `
                         <img
                           alt="ij thumbnail"
                           class="w-100 bg-secondary"
-                          src="/link5"
-                          style="height: 210px;"
+                          data-nimg="1"
+                          decoding="async"
+                          height="210"
+                          loading="lazy"
+                          src="/_next/image?url=%2Flink5&w=750&q=75"
+                          srcset="/_next/image?url=%2Flink5&w=384&q=75 1x, /_next/image?url=%2Flink5&w=750&q=75 2x"
+                          style="color: transparent;"
+                          width="363"
                         />
                       </div>
                       <div
@@ -130,8 +140,7 @@ exports[`Related Content Snapshot test 1`] = `
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
-                      style="cursor: not-allowed;"
+                      class="related-topic-card disabled card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -139,8 +148,14 @@ exports[`Related Content Snapshot test 1`] = `
                         <img
                           alt="kl thumbnail"
                           class="w-100 bg-secondary"
-                          src="/link6"
-                          style="height: 210px;"
+                          data-nimg="1"
+                          decoding="async"
+                          height="210"
+                          loading="lazy"
+                          src="/_next/image?url=%2Flink6&w=750&q=75"
+                          srcset="/_next/image?url=%2Flink6&w=384&q=75 1x, /_next/image?url=%2Flink6&w=750&q=75 2x"
+                          style="color: transparent;"
+                          width="363"
                         />
                       </div>
                       <div
@@ -164,13 +179,12 @@ exports[`Related Content Snapshot test 1`] = `
                 <div>
                   <a
                     class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                    href="#"
+                    href="/link1"
                     style="width: 100%; display: inline-block;"
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
-                      style="cursor: not-allowed;"
+                      class="related-topic-card  card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -178,8 +192,14 @@ exports[`Related Content Snapshot test 1`] = `
                         <img
                           alt="ab thumbnail"
                           class="w-100 bg-secondary"
-                          src="/link1"
-                          style="height: 210px;"
+                          data-nimg="1"
+                          decoding="async"
+                          height="210"
+                          loading="lazy"
+                          src="/_next/image?url=%2Flink1&w=750&q=75"
+                          srcset="/_next/image?url=%2Flink1&w=384&q=75 1x, /_next/image?url=%2Flink1&w=750&q=75 2x"
+                          style="color: transparent;"
+                          width="363"
                         />
                       </div>
                       <div
@@ -208,8 +228,7 @@ exports[`Related Content Snapshot test 1`] = `
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
-                      style="cursor: not-allowed;"
+                      class="related-topic-card disabled card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -217,8 +236,14 @@ exports[`Related Content Snapshot test 1`] = `
                         <img
                           alt="cd thumbnail"
                           class="w-100 bg-secondary"
-                          src="/link2"
-                          style="height: 210px;"
+                          data-nimg="1"
+                          decoding="async"
+                          height="210"
+                          loading="lazy"
+                          src="/_next/image?url=%2Flink2&w=750&q=75"
+                          srcset="/_next/image?url=%2Flink2&w=384&q=75 1x, /_next/image?url=%2Flink2&w=750&q=75 2x"
+                          style="color: transparent;"
+                          width="363"
                         />
                       </div>
                       <div
@@ -242,13 +267,12 @@ exports[`Related Content Snapshot test 1`] = `
                 <div>
                   <a
                     class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                    href="#"
+                    href="/link3"
                     style="width: 100%; display: inline-block;"
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
-                      style="cursor: not-allowed;"
+                      class="related-topic-card  card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -256,8 +280,14 @@ exports[`Related Content Snapshot test 1`] = `
                         <img
                           alt="ef thumbnail"
                           class="w-100 bg-secondary"
-                          src="/link3"
-                          style="height: 210px;"
+                          data-nimg="1"
+                          decoding="async"
+                          height="210"
+                          loading="lazy"
+                          src="/_next/image?url=%2Flink3&w=750&q=75"
+                          srcset="/_next/image?url=%2Flink3&w=384&q=75 1x, /_next/image?url=%2Flink3&w=750&q=75 2x"
+                          style="color: transparent;"
+                          width="363"
                         />
                       </div>
                       <div
@@ -286,8 +316,7 @@ exports[`Related Content Snapshot test 1`] = `
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
-                      style="cursor: not-allowed;"
+                      class="related-topic-card disabled card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -295,8 +324,14 @@ exports[`Related Content Snapshot test 1`] = `
                         <img
                           alt="gh thumbnail"
                           class="w-100 bg-secondary"
-                          src="/link4"
-                          style="height: 210px;"
+                          data-nimg="1"
+                          decoding="async"
+                          height="210"
+                          loading="lazy"
+                          src="/_next/image?url=%2Flink4&w=750&q=75"
+                          srcset="/_next/image?url=%2Flink4&w=384&q=75 1x, /_next/image?url=%2Flink4&w=750&q=75 2x"
+                          style="color: transparent;"
+                          width="363"
                         />
                       </div>
                       <div
@@ -320,13 +355,12 @@ exports[`Related Content Snapshot test 1`] = `
                 <div>
                   <a
                     class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                    href="#"
+                    href="/link5"
                     style="width: 100%; display: inline-block;"
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
-                      style="cursor: not-allowed;"
+                      class="related-topic-card  card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -334,8 +368,14 @@ exports[`Related Content Snapshot test 1`] = `
                         <img
                           alt="ij thumbnail"
                           class="w-100 bg-secondary"
-                          src="/link5"
-                          style="height: 210px;"
+                          data-nimg="1"
+                          decoding="async"
+                          height="210"
+                          loading="lazy"
+                          src="/_next/image?url=%2Flink5&w=750&q=75"
+                          srcset="/_next/image?url=%2Flink5&w=384&q=75 1x, /_next/image?url=%2Flink5&w=750&q=75 2x"
+                          style="color: transparent;"
+                          width="363"
                         />
                       </div>
                       <div
@@ -364,8 +404,7 @@ exports[`Related Content Snapshot test 1`] = `
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
-                      style="cursor: not-allowed;"
+                      class="related-topic-card disabled card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -373,8 +412,14 @@ exports[`Related Content Snapshot test 1`] = `
                         <img
                           alt="kl thumbnail"
                           class="w-100 bg-secondary"
-                          src="/link6"
-                          style="height: 210px;"
+                          data-nimg="1"
+                          decoding="async"
+                          height="210"
+                          loading="lazy"
+                          src="/_next/image?url=%2Flink6&w=750&q=75"
+                          srcset="/_next/image?url=%2Flink6&w=384&q=75 1x, /_next/image?url=%2Flink6&w=750&q=75 2x"
+                          style="color: transparent;"
+                          width="363"
                         />
                       </div>
                       <div
@@ -398,13 +443,12 @@ exports[`Related Content Snapshot test 1`] = `
                 <div>
                   <a
                     class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                    href="#"
+                    href="/link1"
                     style="width: 100%; display: inline-block;"
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
-                      style="cursor: not-allowed;"
+                      class="related-topic-card  card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -412,8 +456,14 @@ exports[`Related Content Snapshot test 1`] = `
                         <img
                           alt="ab thumbnail"
                           class="w-100 bg-secondary"
-                          src="/link1"
-                          style="height: 210px;"
+                          data-nimg="1"
+                          decoding="async"
+                          height="210"
+                          loading="lazy"
+                          src="/_next/image?url=%2Flink1&w=750&q=75"
+                          srcset="/_next/image?url=%2Flink1&w=384&q=75 1x, /_next/image?url=%2Flink1&w=750&q=75 2x"
+                          style="color: transparent;"
+                          width="363"
                         />
                       </div>
                       <div
@@ -442,8 +492,7 @@ exports[`Related Content Snapshot test 1`] = `
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
-                      style="cursor: not-allowed;"
+                      class="related-topic-card disabled card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -451,8 +500,14 @@ exports[`Related Content Snapshot test 1`] = `
                         <img
                           alt="cd thumbnail"
                           class="w-100 bg-secondary"
-                          src="/link2"
-                          style="height: 210px;"
+                          data-nimg="1"
+                          decoding="async"
+                          height="210"
+                          loading="lazy"
+                          src="/_next/image?url=%2Flink2&w=750&q=75"
+                          srcset="/_next/image?url=%2Flink2&w=384&q=75 1x, /_next/image?url=%2Flink2&w=750&q=75 2x"
+                          style="color: transparent;"
+                          width="363"
                         />
                       </div>
                       <div
@@ -476,13 +531,12 @@ exports[`Related Content Snapshot test 1`] = `
                 <div>
                   <a
                     class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                    href="#"
+                    href="/link3"
                     style="width: 100%; display: inline-block;"
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
-                      style="cursor: not-allowed;"
+                      class="related-topic-card  card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -490,8 +544,14 @@ exports[`Related Content Snapshot test 1`] = `
                         <img
                           alt="ef thumbnail"
                           class="w-100 bg-secondary"
-                          src="/link3"
-                          style="height: 210px;"
+                          data-nimg="1"
+                          decoding="async"
+                          height="210"
+                          loading="lazy"
+                          src="/_next/image?url=%2Flink3&w=750&q=75"
+                          srcset="/_next/image?url=%2Flink3&w=384&q=75 1x, /_next/image?url=%2Flink3&w=750&q=75 2x"
+                          style="color: transparent;"
+                          width="363"
                         />
                       </div>
                       <div
@@ -520,8 +580,7 @@ exports[`Related Content Snapshot test 1`] = `
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
-                      style="cursor: not-allowed;"
+                      class="related-topic-card disabled card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -529,8 +588,14 @@ exports[`Related Content Snapshot test 1`] = `
                         <img
                           alt="gh thumbnail"
                           class="w-100 bg-secondary"
-                          src="/link4"
-                          style="height: 210px;"
+                          data-nimg="1"
+                          decoding="async"
+                          height="210"
+                          loading="lazy"
+                          src="/_next/image?url=%2Flink4&w=750&q=75"
+                          srcset="/_next/image?url=%2Flink4&w=384&q=75 1x, /_next/image?url=%2Flink4&w=750&q=75 2x"
+                          style="color: transparent;"
+                          width="363"
                         />
                       </div>
                       <div
@@ -554,13 +619,12 @@ exports[`Related Content Snapshot test 1`] = `
                 <div>
                   <a
                     class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                    href="#"
+                    href="/link5"
                     style="width: 100%; display: inline-block;"
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
-                      style="cursor: not-allowed;"
+                      class="related-topic-card  card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -568,8 +632,14 @@ exports[`Related Content Snapshot test 1`] = `
                         <img
                           alt="ij thumbnail"
                           class="w-100 bg-secondary"
-                          src="/link5"
-                          style="height: 210px;"
+                          data-nimg="1"
+                          decoding="async"
+                          height="210"
+                          loading="lazy"
+                          src="/_next/image?url=%2Flink5&w=750&q=75"
+                          srcset="/_next/image?url=%2Flink5&w=384&q=75 1x, /_next/image?url=%2Flink5&w=750&q=75 2x"
+                          style="color: transparent;"
+                          width="363"
                         />
                       </div>
                       <div
@@ -598,8 +668,7 @@ exports[`Related Content Snapshot test 1`] = `
                     tabindex="-1"
                   >
                     <div
-                      class="related-topic-card card"
-                      style="cursor: not-allowed;"
+                      class="related-topic-card disabled card"
                     >
                       <div
                         class="m-0 p-0 card-body"
@@ -607,8 +676,14 @@ exports[`Related Content Snapshot test 1`] = `
                         <img
                           alt="kl thumbnail"
                           class="w-100 bg-secondary"
-                          src="/link6"
-                          style="height: 210px;"
+                          data-nimg="1"
+                          decoding="async"
+                          height="210"
+                          loading="lazy"
+                          src="/_next/image?url=%2Flink6&w=750&q=75"
+                          srcset="/_next/image?url=%2Flink6&w=384&q=75 1x, /_next/image?url=%2Flink6&w=750&q=75 2x"
+                          style="color: transparent;"
+                          width="363"
                         />
                       </div>
                       <div
@@ -690,8 +765,7 @@ exports[`Related Content Snapshot test 1`] = `
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
-                    style="cursor: not-allowed;"
+                    class="related-topic-card disabled card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -699,8 +773,14 @@ exports[`Related Content Snapshot test 1`] = `
                       <img
                         alt="gh thumbnail"
                         class="w-100 bg-secondary"
-                        src="/link4"
-                        style="height: 210px;"
+                        data-nimg="1"
+                        decoding="async"
+                        height="210"
+                        loading="lazy"
+                        src="/_next/image?url=%2Flink4&w=750&q=75"
+                        srcset="/_next/image?url=%2Flink4&w=384&q=75 1x, /_next/image?url=%2Flink4&w=750&q=75 2x"
+                        style="color: transparent;"
+                        width="363"
                       />
                     </div>
                     <div
@@ -724,13 +804,12 @@ exports[`Related Content Snapshot test 1`] = `
               <div>
                 <a
                   class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                  href="#"
+                  href="/link5"
                   style="width: 100%; display: inline-block;"
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
-                    style="cursor: not-allowed;"
+                    class="related-topic-card  card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -738,8 +817,14 @@ exports[`Related Content Snapshot test 1`] = `
                       <img
                         alt="ij thumbnail"
                         class="w-100 bg-secondary"
-                        src="/link5"
-                        style="height: 210px;"
+                        data-nimg="1"
+                        decoding="async"
+                        height="210"
+                        loading="lazy"
+                        src="/_next/image?url=%2Flink5&w=750&q=75"
+                        srcset="/_next/image?url=%2Flink5&w=384&q=75 1x, /_next/image?url=%2Flink5&w=750&q=75 2x"
+                        style="color: transparent;"
+                        width="363"
                       />
                     </div>
                     <div
@@ -768,8 +853,7 @@ exports[`Related Content Snapshot test 1`] = `
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
-                    style="cursor: not-allowed;"
+                    class="related-topic-card disabled card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -777,8 +861,14 @@ exports[`Related Content Snapshot test 1`] = `
                       <img
                         alt="kl thumbnail"
                         class="w-100 bg-secondary"
-                        src="/link6"
-                        style="height: 210px;"
+                        data-nimg="1"
+                        decoding="async"
+                        height="210"
+                        loading="lazy"
+                        src="/_next/image?url=%2Flink6&w=750&q=75"
+                        srcset="/_next/image?url=%2Flink6&w=384&q=75 1x, /_next/image?url=%2Flink6&w=750&q=75 2x"
+                        style="color: transparent;"
+                        width="363"
                       />
                     </div>
                     <div
@@ -802,13 +892,12 @@ exports[`Related Content Snapshot test 1`] = `
               <div>
                 <a
                   class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                  href="#"
+                  href="/link1"
                   style="width: 100%; display: inline-block;"
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
-                    style="cursor: not-allowed;"
+                    class="related-topic-card  card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -816,8 +905,14 @@ exports[`Related Content Snapshot test 1`] = `
                       <img
                         alt="ab thumbnail"
                         class="w-100 bg-secondary"
-                        src="/link1"
-                        style="height: 210px;"
+                        data-nimg="1"
+                        decoding="async"
+                        height="210"
+                        loading="lazy"
+                        src="/_next/image?url=%2Flink1&w=750&q=75"
+                        srcset="/_next/image?url=%2Flink1&w=384&q=75 1x, /_next/image?url=%2Flink1&w=750&q=75 2x"
+                        style="color: transparent;"
+                        width="363"
                       />
                     </div>
                     <div
@@ -846,8 +941,7 @@ exports[`Related Content Snapshot test 1`] = `
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
-                    style="cursor: not-allowed;"
+                    class="related-topic-card disabled card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -855,8 +949,14 @@ exports[`Related Content Snapshot test 1`] = `
                       <img
                         alt="cd thumbnail"
                         class="w-100 bg-secondary"
-                        src="/link2"
-                        style="height: 210px;"
+                        data-nimg="1"
+                        decoding="async"
+                        height="210"
+                        loading="lazy"
+                        src="/_next/image?url=%2Flink2&w=750&q=75"
+                        srcset="/_next/image?url=%2Flink2&w=384&q=75 1x, /_next/image?url=%2Flink2&w=750&q=75 2x"
+                        style="color: transparent;"
+                        width="363"
                       />
                     </div>
                     <div
@@ -880,13 +980,12 @@ exports[`Related Content Snapshot test 1`] = `
               <div>
                 <a
                   class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                  href="#"
+                  href="/link3"
                   style="width: 100%; display: inline-block;"
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
-                    style="cursor: not-allowed;"
+                    class="related-topic-card  card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -894,8 +993,14 @@ exports[`Related Content Snapshot test 1`] = `
                       <img
                         alt="ef thumbnail"
                         class="w-100 bg-secondary"
-                        src="/link3"
-                        style="height: 210px;"
+                        data-nimg="1"
+                        decoding="async"
+                        height="210"
+                        loading="lazy"
+                        src="/_next/image?url=%2Flink3&w=750&q=75"
+                        srcset="/_next/image?url=%2Flink3&w=384&q=75 1x, /_next/image?url=%2Flink3&w=750&q=75 2x"
+                        style="color: transparent;"
+                        width="363"
                       />
                     </div>
                     <div
@@ -924,8 +1029,7 @@ exports[`Related Content Snapshot test 1`] = `
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
-                    style="cursor: not-allowed;"
+                    class="related-topic-card disabled card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -933,8 +1037,14 @@ exports[`Related Content Snapshot test 1`] = `
                       <img
                         alt="gh thumbnail"
                         class="w-100 bg-secondary"
-                        src="/link4"
-                        style="height: 210px;"
+                        data-nimg="1"
+                        decoding="async"
+                        height="210"
+                        loading="lazy"
+                        src="/_next/image?url=%2Flink4&w=750&q=75"
+                        srcset="/_next/image?url=%2Flink4&w=384&q=75 1x, /_next/image?url=%2Flink4&w=750&q=75 2x"
+                        style="color: transparent;"
+                        width="363"
                       />
                     </div>
                     <div
@@ -958,13 +1068,12 @@ exports[`Related Content Snapshot test 1`] = `
               <div>
                 <a
                   class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                  href="#"
+                  href="/link5"
                   style="width: 100%; display: inline-block;"
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
-                    style="cursor: not-allowed;"
+                    class="related-topic-card  card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -972,8 +1081,14 @@ exports[`Related Content Snapshot test 1`] = `
                       <img
                         alt="ij thumbnail"
                         class="w-100 bg-secondary"
-                        src="/link5"
-                        style="height: 210px;"
+                        data-nimg="1"
+                        decoding="async"
+                        height="210"
+                        loading="lazy"
+                        src="/_next/image?url=%2Flink5&w=750&q=75"
+                        srcset="/_next/image?url=%2Flink5&w=384&q=75 1x, /_next/image?url=%2Flink5&w=750&q=75 2x"
+                        style="color: transparent;"
+                        width="363"
                       />
                     </div>
                     <div
@@ -1002,8 +1117,7 @@ exports[`Related Content Snapshot test 1`] = `
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
-                    style="cursor: not-allowed;"
+                    class="related-topic-card disabled card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -1011,8 +1125,14 @@ exports[`Related Content Snapshot test 1`] = `
                       <img
                         alt="kl thumbnail"
                         class="w-100 bg-secondary"
-                        src="/link6"
-                        style="height: 210px;"
+                        data-nimg="1"
+                        decoding="async"
+                        height="210"
+                        loading="lazy"
+                        src="/_next/image?url=%2Flink6&w=750&q=75"
+                        srcset="/_next/image?url=%2Flink6&w=384&q=75 1x, /_next/image?url=%2Flink6&w=750&q=75 2x"
+                        style="color: transparent;"
+                        width="363"
                       />
                     </div>
                     <div
@@ -1036,13 +1156,12 @@ exports[`Related Content Snapshot test 1`] = `
               <div>
                 <a
                   class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                  href="#"
+                  href="/link1"
                   style="width: 100%; display: inline-block;"
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
-                    style="cursor: not-allowed;"
+                    class="related-topic-card  card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -1050,8 +1169,14 @@ exports[`Related Content Snapshot test 1`] = `
                       <img
                         alt="ab thumbnail"
                         class="w-100 bg-secondary"
-                        src="/link1"
-                        style="height: 210px;"
+                        data-nimg="1"
+                        decoding="async"
+                        height="210"
+                        loading="lazy"
+                        src="/_next/image?url=%2Flink1&w=750&q=75"
+                        srcset="/_next/image?url=%2Flink1&w=384&q=75 1x, /_next/image?url=%2Flink1&w=750&q=75 2x"
+                        style="color: transparent;"
+                        width="363"
                       />
                     </div>
                     <div
@@ -1080,8 +1205,7 @@ exports[`Related Content Snapshot test 1`] = `
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
-                    style="cursor: not-allowed;"
+                    class="related-topic-card disabled card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -1089,8 +1213,14 @@ exports[`Related Content Snapshot test 1`] = `
                       <img
                         alt="cd thumbnail"
                         class="w-100 bg-secondary"
-                        src="/link2"
-                        style="height: 210px;"
+                        data-nimg="1"
+                        decoding="async"
+                        height="210"
+                        loading="lazy"
+                        src="/_next/image?url=%2Flink2&w=750&q=75"
+                        srcset="/_next/image?url=%2Flink2&w=384&q=75 1x, /_next/image?url=%2Flink2&w=750&q=75 2x"
+                        style="color: transparent;"
+                        width="363"
                       />
                     </div>
                     <div
@@ -1114,13 +1244,12 @@ exports[`Related Content Snapshot test 1`] = `
               <div>
                 <a
                   class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                  href="#"
+                  href="/link3"
                   style="width: 100%; display: inline-block;"
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
-                    style="cursor: not-allowed;"
+                    class="related-topic-card  card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -1128,8 +1257,14 @@ exports[`Related Content Snapshot test 1`] = `
                       <img
                         alt="ef thumbnail"
                         class="w-100 bg-secondary"
-                        src="/link3"
-                        style="height: 210px;"
+                        data-nimg="1"
+                        decoding="async"
+                        height="210"
+                        loading="lazy"
+                        src="/_next/image?url=%2Flink3&w=750&q=75"
+                        srcset="/_next/image?url=%2Flink3&w=384&q=75 1x, /_next/image?url=%2Flink3&w=750&q=75 2x"
+                        style="color: transparent;"
+                        width="363"
                       />
                     </div>
                     <div
@@ -1158,8 +1293,7 @@ exports[`Related Content Snapshot test 1`] = `
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
-                    style="cursor: not-allowed;"
+                    class="related-topic-card disabled card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -1167,8 +1301,14 @@ exports[`Related Content Snapshot test 1`] = `
                       <img
                         alt="gh thumbnail"
                         class="w-100 bg-secondary"
-                        src="/link4"
-                        style="height: 210px;"
+                        data-nimg="1"
+                        decoding="async"
+                        height="210"
+                        loading="lazy"
+                        src="/_next/image?url=%2Flink4&w=750&q=75"
+                        srcset="/_next/image?url=%2Flink4&w=384&q=75 1x, /_next/image?url=%2Flink4&w=750&q=75 2x"
+                        style="color: transparent;"
+                        width="363"
                       />
                     </div>
                     <div
@@ -1192,13 +1332,12 @@ exports[`Related Content Snapshot test 1`] = `
               <div>
                 <a
                   class="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
-                  href="#"
+                  href="/link5"
                   style="width: 100%; display: inline-block;"
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
-                    style="cursor: not-allowed;"
+                    class="related-topic-card  card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -1206,8 +1345,14 @@ exports[`Related Content Snapshot test 1`] = `
                       <img
                         alt="ij thumbnail"
                         class="w-100 bg-secondary"
-                        src="/link5"
-                        style="height: 210px;"
+                        data-nimg="1"
+                        decoding="async"
+                        height="210"
+                        loading="lazy"
+                        src="/_next/image?url=%2Flink5&w=750&q=75"
+                        srcset="/_next/image?url=%2Flink5&w=384&q=75 1x, /_next/image?url=%2Flink5&w=750&q=75 2x"
+                        style="color: transparent;"
+                        width="363"
                       />
                     </div>
                     <div
@@ -1236,8 +1381,7 @@ exports[`Related Content Snapshot test 1`] = `
                   tabindex="-1"
                 >
                   <div
-                    class="related-topic-card card"
-                    style="cursor: not-allowed;"
+                    class="related-topic-card disabled card"
                   >
                     <div
                       class="m-0 p-0 card-body"
@@ -1245,8 +1389,14 @@ exports[`Related Content Snapshot test 1`] = `
                       <img
                         alt="kl thumbnail"
                         class="w-100 bg-secondary"
-                        src="/link6"
-                        style="height: 210px;"
+                        data-nimg="1"
+                        decoding="async"
+                        height="210"
+                        loading="lazy"
+                        src="/_next/image?url=%2Flink6&w=750&q=75"
+                        srcset="/_next/image?url=%2Flink6&w=384&q=75 1x, /_next/image?url=%2Flink6&w=750&q=75 2x"
+                        style="color: transparent;"
+                        width="363"
                       />
                     </div>
                     <div

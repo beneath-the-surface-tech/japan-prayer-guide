@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useCallback, useEffect } from "react"
 import { Cross } from "../../icons"
 import { Trans } from "next-i18next"
 import Image from "next/image"
@@ -11,20 +11,28 @@ interface LightBoxProps {
         title: string
         alt?: string
     }[]
+    backupImages?: {
+        src: string
+        title: string
+        alt?: string
+    }[]
     setGallery: React.Dispatch<React.SetStateAction<boolean>>
     setLightBox: React.Dispatch<React.SetStateAction<boolean>>
     lightBox: boolean
 }
 
-const LightBox = ({ index, setImage, images, lightBox, setLightBox }: LightBoxProps) => {
-    const handleSwitch = (type: string) => {
-        if (type === "inc" && index + 1 !== images.length) {
-            setImage(index + 1)
-        }
-        if (type === "dec" && index !== 0) {
-            setImage(index - 1)
-        }
-    }
+const LightBox = ({ index, setImage, images, lightBox, setLightBox, backupImages = [] }: LightBoxProps) => {
+    const handleSwitch = useCallback(
+        (type: string) => {
+            if (type === "inc" && index + 1 !== images.length) {
+                setImage(index + 1)
+            }
+            if (type === "dec" && index !== 0) {
+                setImage(index - 1)
+            }
+        },
+        [images.length, index, setImage],
+    )
 
     useEffect(() => {
         const keyDownHandler = (e: KeyboardEvent) => {
@@ -41,7 +49,10 @@ const LightBox = ({ index, setImage, images, lightBox, setLightBox }: LightBoxPr
         return () => {
             document.removeEventListener("keydown", keyDownHandler)
         }
-    }, [index])
+    }, [handleSwitch, index])
+
+    const title = images[index].title ?? backupImages?.[index]?.title
+    const alt = images[index].alt ?? backupImages?.[index]?.alt ?? images[index].title ?? backupImages?.[index]?.title
 
     return (
         <div className="lightbox">
@@ -67,15 +78,10 @@ const LightBox = ({ index, setImage, images, lightBox, setLightBox }: LightBoxPr
                         )}
                     </div>
                     <div className="lightbox-box">
-                        <Image
-                            src={images[index].src}
-                            width={1800}
-                            height={1200}
-                            alt={images[index]?.alt || images[index].title}
-                        />
+                        <Image src={images[index].src} width={1800} height={1200} alt={alt} />
                     </div>
                     <h1>
-                        <Trans>{images[index].title}</Trans>
+                        <Trans>{title}</Trans>
                     </h1>
                     <div className="lightbox-auto lightbox-rightArrow">
                         {index + 1 !== images.length && (

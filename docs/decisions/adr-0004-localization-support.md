@@ -25,7 +25,7 @@ It's not a trivial matter to add or change language support structure after the 
 ### Additional Information
 
 - NextJS's own doc for internationalized routing https://nextjs.org/docs/advanced-features/i18n-routing
-- next-i18-next for simplified handling of localization via locale folders with .json files 
+- next-i18-next for simplified handling of localization via locale folders with .json files
     - link: https://github.com/i18next/next-i18next
     - sample: https://github.com/i18next/next-i18next/tree/master/examples/simple
 - alternatively (or in addition?) the article content lang support could be handled separately:
@@ -37,7 +37,7 @@ import { useRouter } from 'next/router'
 import { getTopicPaths, getTopicMetadata } from '../../services/staticTopicLoader'
 import { loadMarkdownByLang } from '../../services/markdownService'
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
     const { lang, id } = params
     const topicMetadata = await getTopicMetadata(lang, id)
     let markdownSections: string[] = [];
@@ -45,7 +45,7 @@ export async function getStaticProps({ params }) {
         markdownSections.push(loadMarkdownByLang(topicMetadata.folderPath, fileName, lang));
     });
     topicMetadata.markdownSections = markdownSections;
-    
+
     return { props: { topicMetadata } }
 }
 
@@ -68,7 +68,7 @@ export function loadMarkdownFile(folderPath, filename, language) {
   const staticPageDirectory = path.join(process.cwd(), folderPath);
   const fullPath = path.join(staticPageDirectory, `${filename}-${language}`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
- 
+
   return fileContents;
 };
 ~~~
