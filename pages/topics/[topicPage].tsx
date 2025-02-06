@@ -14,6 +14,7 @@ import PrayerResponse from "../../components/topic/PrayerResponse/PrayerResponse
 import { StickyNav, Tab } from "../../components/topic/StickyNav/StickyNav"
 import RelatedContent from "../../components/topic/RelatedContent/RelatedContent"
 import nextI18nextConfig from "../../next-i18next.config"
+import { ReferencesSection } from "@/components/topic/References/References"
 
 export const getServerSideProps: GetServerSideProps = async ({ params, locale }: any) => {
     if (!params) {
@@ -162,10 +163,10 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
                             </Container>
                         </CollapseBlock>
                     )}
-                    {/* <Container className="">
+                    <Container className="">
                         <hr />
-                        <ReferencesSection />
-                    </Container> */}
+                        <ReferencesSection localeRef={localeRef} />
+                    </Container>
                     <Container className={"bottom-spacing"}></Container>
                 </Container>
 
