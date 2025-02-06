@@ -21,7 +21,7 @@ export default function PrayerPoints({ topicTrans, displayStyle }: prayerProps) 
 
     const prayerPoints: string = topicTrans("prayerSummary")
     const featuredImg: string = topicTrans("heroPhoto") as string
-    const featuredTopicUrl: string = "topics/" + topicTrans("path", "all")
+    const featuredTopicUrl: string = topicTrans("path", "all")
 
     let alignLeft: boolean = false
     let showTitle: boolean = false

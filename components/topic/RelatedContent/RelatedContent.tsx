@@ -14,6 +14,7 @@ interface relatedProps {
 export default function RelatedContent({ topicTrans }: relatedProps) {
     const slider: any = React.useRef(null)
     const { t: common, i18n } = useTranslation("common")
+
     const responsive = [
         {
             breakpoint: 1280,
@@ -38,9 +39,10 @@ export default function RelatedContent({ topicTrans }: relatedProps) {
         },
     ]
 
-    const topics: string[] = topicTrans("related.labels", { returnObjects: true })
-    const links: string[] = topicTrans("related.links", { returnObjects: true })
-    const thumbnails: string[] = topicTrans("related.thumbs", { returnObjects: true })
+    const topics = topicTrans("related.labels", { returnObjects: true }) as string[]
+    const links = topicTrans("related.links", { returnObjects: true }) as string[]
+    const thumbnails = topicTrans("related.thumbs", { returnObjects: true }) as string[]
+    const isLive = topicTrans("related.isLive", { returnObjects: true }) as boolean[]
 
     const onClickPrev = () => {
         slider?.current?.slickPrev()
@@ -74,14 +76,14 @@ export default function RelatedContent({ topicTrans }: relatedProps) {
                 responsive={responsive}
                 ref={slider}
             >
-                {topics.map((topic, idx) => (
+                {topics?.map((topic, idx) => (
                     <Link
                         key={idx + topic}
                         className="d-flex flex-column align-items-center text-decoration-none py-1 px-0"
                         locale={i18n.language}
-                        href={links[idx]}
+                        href={isLive[idx] ? links[idx] : "#"}
                     >
-                        <Card className={"related-topic-card"}>
+                        <Card className={`related-topic-card ${isLive[idx] ? "" : "disabled"}`}>
                             <Card.Body className="m-0 p-0">
                                 <Image
                                     src={thumbnails[idx]}

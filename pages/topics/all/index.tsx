@@ -12,13 +12,14 @@ import bannerHeroHighRes from "../../../public/photos/topic-nav/TOPNAV_HERO.jpg"
 import bannerHeroLowRes from "../../../public/photos/topic-nav/TOPNAV_HERO_LowRes.jpg"
 import nextI18nextConfig from "../../../next-i18next.config"
 
-export async function getServerSideProps({ locale }: any) {
+export async function getStaticProps({ locale }: any) {
     return {
         props: {
             ...(await serverSideTranslations(locale, ["topic-overview", "common"], nextI18nextConfig)),
             // Will be passed to the page component as props
             // About used in content, common used in header
         },
+        revalidate: 60 * 5,
     }
 }
 
