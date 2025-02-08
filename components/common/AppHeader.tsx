@@ -7,15 +7,19 @@ interface AppHeaderProps {
     image?: string
 }
 
-const AppHeader = ({ title, description, pageType, image }: AppHeaderProps) => {
-    /* Construct the absolute URL for the image.
-     *  local, prod -> uses NEXT_PUBLIC_BASE_URL (either from .env.local or from vercel)
-     *  preview, dev -> uses VERCEL_URL (since it's generated on deploy)
+const AppHeader = ({ title, description, pageType, image = "" }: AppHeaderProps) => {
+    /* Construct the required absolute URL for the image.
+     *  local -> uses .env.local's NEXT_PUBLIC_BASE_URL
+     *  preview, dev -> uses pre-prod NEXT_PUBLIC_BASE_URL (tied to VERCEL_URL)
+     *  prod -> uses prod NEXT_PUBLIC_BASE_URL (based on domain)
      */
 
-    const nextPublicBaseUrl = process.env.NEXT_PUBLIC_BASE_URL
-    const baseUrl = nextPublicBaseUrl ? nextPublicBaseUrl : `https://${process.env.VERCEL_URL}`
-    const fullImageUrl = image ? `${baseUrl}${image}` : null
+    let fullImageUrl = null
+    if (image) {
+        // images from retool will be absolute rather than relative
+        const isAbsoluteUrl = image.indexOf("http://") === 0 || image.indexOf("https://") === 0
+        fullImageUrl = isAbsoluteUrl ? image : `${process.env.NEXT_PUBLIC_BASE_URL}${image}`
+    }
 
     return (
         <Head>
