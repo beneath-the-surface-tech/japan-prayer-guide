@@ -86,7 +86,14 @@ const ToggleHeader: React.FC<HeaderProp> = ({ hideShadow = false }: HeaderProp) 
     }, []) // Only do this once, aka hook-ish way of saying didMount
 
     return (
-        <Navbar className={hideShadow ? "" : "shadow-sm"} fixed="top" bg={bg} expand="xl" variant={variant}>
+        <Navbar
+            className={hideShadow ? "" : "shadow-sm"}
+            fixed="top"
+            bg={bg}
+            expand="xl"
+            variant={variant}
+            role="navigation"
+        >
             <Container>
                 <Navbar.Brand href={"/" + i18n.language}>
                     <Image

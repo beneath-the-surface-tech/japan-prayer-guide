@@ -7,6 +7,7 @@ exports[`Footer Snapshot test 1`] = `
     <div>
       <div
         class="w-100 d-xl-none"
+        role="contentinfo"
       >
         <div
           class="bg-primary pt-3 container-fluid"
@@ -179,6 +180,7 @@ exports[`Footer Snapshot test 1`] = `
       </div>
       <div
         class="w-100 d-none d-xl-flex flex-column bg-primary align-items-center"
+        role="contentinfo"
       >
         <div
           class="footer-language w-75 border-bottom border-grey-6 py-4"
@@ -372,6 +374,7 @@ exports[`Footer Snapshot test 1`] = `
   "container": <div>
     <div
       class="w-100 d-xl-none"
+      role="contentinfo"
     >
       <div
         class="bg-primary pt-3 container-fluid"
@@ -544,6 +547,7 @@ exports[`Footer Snapshot test 1`] = `
     </div>
     <div
       class="w-100 d-none d-xl-flex flex-column bg-primary align-items-center"
+      role="contentinfo"
     >
       <div
         class="footer-language w-75 border-bottom border-grey-6 py-4"

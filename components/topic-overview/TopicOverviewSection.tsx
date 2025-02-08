@@ -60,7 +60,7 @@ export const TopicOverviewSection = ({ title, section, topics }: TopicOverviewPr
                                             )}
                                         </div>
                                         <Card.Body className="d-flex topic-nav-card-title p-0">
-                                            <p className="m-0 text-grey-6">
+                                            <p className={"m-0 " + (!isDisabled ? "" : "text-grey-6")}>
                                                 <Trans>{topic.label}</Trans>
                                             </p>
                                         </Card.Body>
