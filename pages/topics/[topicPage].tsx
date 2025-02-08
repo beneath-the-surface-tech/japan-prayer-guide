@@ -1,4 +1,3 @@
-import Head from "next/head"
 import { GetServerSideProps } from "next"
 import { Container, Image } from "react-bootstrap"
 import { ToggleHeader } from "../../components/ToggleHeader"
@@ -15,6 +14,7 @@ import { StickyNav, Tab } from "../../components/topic/StickyNav/StickyNav"
 import RelatedContent from "../../components/topic/RelatedContent/RelatedContent"
 import { ReferencesSection } from "../../components/topic/References/References"
 import nextI18nextConfig from "../../next-i18next.config"
+import AppHeader from "../../components/common/AppHeader"
 
 export const getServerSideProps: GetServerSideProps = async ({ params, locale }: any) => {
     if (!params) {
@@ -82,16 +82,7 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
 
     return (
         <>
-            <Head>
-                <title>{title}</title>
-                <meta name="description" content="Japan prayer guide" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta property="og:title" content={title} />
-                <meta property="og:description" content="30 ways to pray for Japan" />
-                <meta property="og:type" content="article" />
-                <meta property="og:image" content={heroPhoto} />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <AppHeader title={title} description="Japan prayer guide" pageType="article" image={heroPhoto} />
             <main role="main">
                 {/* Header Component */}
                 <ToggleHeader hideShadow={true} />

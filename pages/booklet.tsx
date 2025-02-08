@@ -1,4 +1,3 @@
-import Head from "next/head"
 import Link from "next/link"
 import React from "react"
 import { ToggleHeader } from "../components/ToggleHeader"
@@ -45,6 +44,7 @@ import coverJA from "../public/photos/home/hp_cover-ja.jpg"
 import bookGifEN from "../public/photos/booklet/BOOK_GIF-en.gif"
 import bookGifJA from "../public/photos/booklet/BOOK_GIF-ja.gif"
 import nextI18nextConfig from "../next-i18next.config"
+import AppHeader from "../components/common/AppHeader"
 
 export async function getServerSideProps({ locale }: any) {
     return {
@@ -140,16 +140,7 @@ const Booklet: React.FC = () => {
 
     return (
         <div>
-            <Head>
-                <title>{webpageTitle}</title>
-                <meta name="description" content="Japan prayer guide" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta property="og:title" content={webpageTitle} />
-                <meta property="og:description" content="30 ways to pray for Japan" />
-                <meta property="og:type" content="website" />
-                <meta property="og:image" content={coverEN.src} />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <AppHeader title={webpageTitle} description="tbd" pageType="website" image={coverEN.src} />
             <ToggleHeader />
             <main id="booklet" role="main">
                 <div className="w-100 book-description position-relative" style={{ marginTop: "60px" }}>

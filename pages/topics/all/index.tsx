@@ -1,4 +1,3 @@
-import Head from "next/head"
 import { ToggleHeader } from "../../../components/ToggleHeader"
 import { Trans, useTranslation } from "next-i18next"
 import { Container } from "react-bootstrap"
@@ -11,6 +10,7 @@ import { LowHighImage } from "../../../components/LowHighImage"
 import bannerHeroHighRes from "../../../public/photos/topic-nav/TOPNAV_HERO.jpg"
 import bannerHeroLowRes from "../../../public/photos/topic-nav/TOPNAV_HERO_LowRes.jpg"
 import nextI18nextConfig from "../../../next-i18next.config"
+import AppHeader from "../../../components/common/AppHeader"
 
 export async function getServerSideProps({ locale }: any) {
     return {
@@ -42,19 +42,12 @@ export default function Overview() {
 
     return (
         <>
-            <Head>
-                <title>{webpageTitle}</title>
-                <meta name="description" content="Japan prayer guide" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta property="og:title" content={webpageTitle} />
-                <meta property="og:description" content="test description" />
-                <meta property="og:type" content="website" />
-                <meta property="og:image" content={bannerHeroLowRes.src} />
-                <meta property="og:image:width" content="600" />
-                <meta property="og:image:height" content="400" />
-                <meta property="og:image:type" content="image/png" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <AppHeader
+                title={webpageTitle}
+                description="Japan prayer guide"
+                pageType="website"
+                image={bannerHeroHighRes.src}
+            />
             <main role="main">
                 {/* Header component */}
                 <ToggleHeader hideShadow={true} />

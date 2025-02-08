@@ -1,4 +1,3 @@
-import Head from "next/head"
 import React from "react"
 import { ToggleHeader } from "../components/ToggleHeader"
 import { Container } from "react-bootstrap"
@@ -17,6 +16,7 @@ import omfLogo from "../public/photos/about/about_omf.png"
 import pioneersLogo from "../public/photos/about/about_pioneers.png"
 import NextImage from "../components/common/NextImage/NextImage"
 import nextI18nextConfig from "../next-i18next.config"
+import AppHeader from "../components/common/AppHeader"
 
 export async function getServerSideProps({ locale }: any) {
     return {
@@ -37,16 +37,12 @@ const About: React.FC = () => {
 
     return (
         <div>
-            <Head>
-                <title>{t("webpageTitle")}</title>
-                <meta name="description" content="Japan prayer guide" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta property="og:title" content={webpageTitle} />
-                <meta property="og:description" content="About the prayer initiative" />
-                <meta property="og:type" content="website" />
-                <meta property="og:image" content={bannerHeroHighRes.src} />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <AppHeader
+                title={webpageTitle}
+                description="Japan prayer guide"
+                pageType="website"
+                image={bannerHeroHighRes.src}
+            />
             <main id="about" role="main">
                 <ToggleHeader />
 

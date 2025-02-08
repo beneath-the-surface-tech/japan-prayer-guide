@@ -1,4 +1,3 @@
-import Head from "next/head"
 import { ToggleHeader } from "../components/ToggleHeader"
 import { Button, Container } from "react-bootstrap"
 import { useTranslation, Trans } from "next-i18next"
@@ -17,6 +16,7 @@ import btsCrane from "../public/photos/home/hp_crane.png"
 import coverEN from "../public/photos/home/hp_cover-en.jpg"
 import coverJA from "../public/photos/home/hp_cover-ja.jpg"
 import * as nextI18nextConfig from "../next-i18next.config"
+import AppHeader from "../components/common/AppHeader"
 
 const carouselImages: { src: string; title: string }[] = [
     {
@@ -69,19 +69,13 @@ const Home = ({ featuredTopicRef }: { featuredTopicRef: string }) => {
 
     return (
         <div>
-            <Head>
-                <title>{webpageTitle}</title>
-                <meta name="description" content="Japan prayer guide" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta property="og:title" content={webpageTitle} />
-                <meta property="og:description" content="30 ways to pray for Japan" />
-                <meta property="og:type" content="website" />
-                <meta property="og:image" content={bannerHeroHighRes.src} />
-                <meta property="og:image:width" content="2400" />
-                <meta property="og:image:height" content="1600" />
-                <meta property="og:image:type" content="image/png" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <AppHeader
+                title={webpageTitle}
+                description="30 ways to pray for Japan"
+                pageType="website"
+                image={bannerHeroHighRes.src}
+            />
+
             <main id="home" role="main">
                 <ToggleHeader />
 

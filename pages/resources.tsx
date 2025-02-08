@@ -1,4 +1,3 @@
-import Head from "next/head"
 import React from "react"
 import { ToggleHeader } from "../components/ToggleHeader"
 import { Button, Container, Image } from "react-bootstrap"
@@ -7,6 +6,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import Footer from "../components/Footer"
 import Link from "next/link"
 import nextI18nextConfig from "../next-i18next.config"
+import AppHeader from "../components/common/AppHeader"
 
 export async function getServerSideProps({ locale }: any) {
     return {
@@ -24,15 +24,7 @@ const Downloads: React.FC = () => {
 
     return (
         <div>
-            <Head>
-                <title>{webpageTitle}</title>
-                <meta name="description" content="Japan prayer guide" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta property="og:title" content={webpageTitle} />
-                <meta property="og:description" content="30 ways to pray for Japan" />
-                <meta property="og:type" content="website" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <AppHeader title={webpageTitle} description="tbd" pageType="website" />
             <main id="about" role="main">
                 <ToggleHeader />
 
