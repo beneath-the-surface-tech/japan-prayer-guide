@@ -18,7 +18,7 @@ const AppHeader = ({ title, description, pageType, image = "" }: AppHeaderProps)
     if (image) {
         // images from retool will be absolute rather than relative
         const isAbsoluteUrl = image.indexOf("http://") === 0 || image.indexOf("https://") === 0
-        fullImageUrl = isAbsoluteUrl ? image : `${process.env.NEXT_PUBLIC_BASE_URL}${image}`
+        fullImageUrl = isAbsoluteUrl ? image : "" + process.env.NEXT_PUBLIC_BASE_URL + image
     }
 
     return (
