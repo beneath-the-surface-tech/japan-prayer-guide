@@ -13,6 +13,7 @@ import PrayerResponse from "../../components/topic/PrayerResponse/PrayerResponse
 import { StickyNav, Tab } from "../../components/topic/StickyNav/StickyNav"
 import RelatedContent from "../../components/topic/RelatedContent/RelatedContent"
 import nextI18nextConfig from "../../next-i18next.config"
+import { ReferencesSection } from "@/components/topic/References/References"
 import AppHeader from "../../components/common/AppHeader"
 
 export const getServerSideProps: GetServerSideProps = async ({ params, locale }: any) => {
@@ -55,24 +56,27 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
 
     const title: string = t("title")
     const galleryLabel: string = topicCommon("galleryLabel")
-    // const factsLabel: string = topicCommon("factsLabel")
+    const factsLabel: string = topicCommon("factsLabel")
     const galleryClickInstructions: string = topicCommon("galleryClickInstructions")
     const galleryImageText: string = topicCommon("galleryImageText")
     const localeImages: any[] = t("photos", { returnObjects: true }) as any[]
-    const images = Array.isArray(localeImages) && localeImages.length > 0 ? localeImages : null
+    let images = Array.isArray(localeImages) && localeImages.length > 0 ? localeImages : null
     // const timeline: string = t("timeline")
     const galleryType: string = t("galleryType")
     const blockOrder: number[] = t("blockOrder", { returnObjects: true }) as number[]
-    const uncropped: any[] = t("uncroppedPhotos", { returnObjects: true }) as any[]
+    let uncropped: any[] = t("uncroppedPhotos", { returnObjects: true }) as any[]
+
+    images = Array.isArray(images) ? images.sort((a, b) => a.src.localeCompare(b.src)) : null
+    uncropped = Array.isArray(uncropped) ? uncropped.sort((a, b) => a.src.localeCompare(b.src)) : []
 
     const heroPhoto: string = t("heroPhoto")
     const heroFocus: string = t("heroFocus")
 
     const quote: string = t("quote.content")
 
-    // const infographicDesktop: string = t("infographic.desktop")
-    // const infographicTablet: string = t("infographic.tablet")
-    // const infographicMobile: string = t("infographic.mobile")
+    const infographicDesktop: string = t("infographic.desktop")
+    const infographicTablet: string = t("infographic.tablet")
+    const infographicMobile: string = t("infographic.mobile")
 
     const previousText: string = topicCommon("previousTopic")
     const nextText: string = topicCommon("nextTopic")
@@ -145,22 +149,23 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
                     {/* {timeline !== "timeline" && <h1>timeline</h1>} */}
 
                     {/* Infographics: Uncomment after conference */}
-
-                    {/* <CollapseBlock title={factsLabel} startOpened={true} galleryType={"infographic"}>
-                        <Container className="mt-3 d-flex justify-content-center px-0">
-                            <Image className="d-none d-xl-block w-100" src={infographicDesktop} alt="infographic" />
-                            <Image
-                                className="d-none d-md-block d-xl-none w-100"
-                                src={infographicTablet}
-                                alt="infographic"
-                            />
-                            <Image className="d-block d-md-none w-100" src={infographicMobile} alt="infographic" />
-                        </Container>
-                    </CollapseBlock>
+                    {infographicDesktop && infographicTablet && infographicMobile && (
+                        <CollapseBlock title={factsLabel} startOpened={true} galleryType={"infographic"}>
+                            <Container className="mt-3 d-flex justify-content-center px-0">
+                                <Image className="d-none d-xl-block w-100" src={infographicDesktop} alt="infographic" />
+                                <Image
+                                    className="d-none d-md-block d-xl-none w-100"
+                                    src={infographicTablet}
+                                    alt="infographic"
+                                />
+                                <Image className="d-block d-md-none w-100" src={infographicMobile} alt="infographic" />
+                            </Container>
+                        </CollapseBlock>
+                    )}
                     <Container className="">
                         <hr />
-                        <ReferencesSection />
-                    </Container> */}
+                        <ReferencesSection localeRef={localeRef} />
+                    </Container>
                     <Container className={"bottom-spacing"}></Container>
                 </Container>
 

@@ -29,7 +29,9 @@ export const TopicOverviewSection = ({ title, section, topics }: TopicOverviewPr
                 <Row xl={3} lg={3} md={2} sm={2} xs={2} className="d-flex">
                     {topics.map((topic, idx) => {
                         // assume disabled if not explicitly set to false
-                        const isDisabled: boolean = !(topic.disabled === false)
+                        // const isDisabled: boolean = !(topic.disabled === false)
+                        // THIS IS ONLY FOR DEMOING, DO NOT LET THIS GO TO MAIN
+                        const isDisabled: boolean = topic.label === "Prayer for Spiritual Breakthrough"
                         return (
                             <Col key={topic.link + idx} className="d-flex justify-content-center px-0 px-sm-1 px-md-2">
                                 <Link
