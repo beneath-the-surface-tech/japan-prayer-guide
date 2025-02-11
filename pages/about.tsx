@@ -1,4 +1,3 @@
-import Head from "next/head"
 import React from "react"
 import { ToggleHeader } from "../components/ToggleHeader"
 import { Container } from "react-bootstrap"
@@ -17,6 +16,7 @@ import omfLogo from "../public/photos/about/about_omf.png"
 import pioneersLogo from "../public/photos/about/about_pioneers.png"
 import NextImage from "../components/common/NextImage/NextImage"
 import nextI18nextConfig from "../next-i18next.config"
+import AppHeader from "../components/common/AppHeader"
 
 export async function getStaticProps({ locale }: any) {
     return {
@@ -31,18 +31,19 @@ export async function getStaticProps({ locale }: any) {
 const About: React.FC = () => {
     const { t } = useTranslation("about")
 
+    const webpageTitle = t("webpageTitle", "About") as string
     const introBlurb: string[] = t("introBlurb", { returnObjects: true }) as string[]
     const contextBlurb: string[] = t("contextBlurb", { returnObjects: true }) as string[]
 
     return (
         <div>
-            <Head>
-                <title>{t("webpageTitle")}</title>
-                <meta name="description" content="Japan prayer guide" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-            <main id="about">
+            <AppHeader
+                title={webpageTitle}
+                description="Japan prayer guide"
+                pageType="website"
+                image={bannerHeroHighRes.src}
+            />
+            <main id="about" role="main">
                 <ToggleHeader />
 
                 {/* Hero Section */}
