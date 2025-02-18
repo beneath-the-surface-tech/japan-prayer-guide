@@ -1,4 +1,4 @@
-import { GetServerSideProps } from "next"
+import { GetStaticPaths, GetStaticProps } from "next"
 import { Container, Image } from "react-bootstrap"
 import { ToggleHeader } from "../../components/ToggleHeader"
 import TopicDownloadables from "../../components/topic/TopicDownloadables/TopicDownloadables"
@@ -14,8 +14,18 @@ import { StickyNav, Tab } from "../../components/topic/StickyNav/StickyNav"
 import RelatedContent from "../../components/topic/RelatedContent/RelatedContent"
 import nextI18nextConfig from "../../next-i18next.config"
 import AppHeader from "../../components/common/AppHeader"
+import { getTopicPageIds } from "@/services/staticTopicLoader"
 
-export const getServerSideProps: GetServerSideProps = async ({ params, locale }: any) => {
+export const getStaticPaths: GetStaticPaths = async () => {
+    const paths = getTopicPageIds()
+
+    return {
+        paths,
+        fallback: "blocking",
+    }
+}
+
+export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
     if (!params) {
         return {
             props: {},
@@ -27,8 +37,13 @@ export const getServerSideProps: GetServerSideProps = async ({ params, locale }:
     return {
         props: {
             localeRef,
-            ...(await serverSideTranslations(locale, ["common", "topic-pages", localeRef], nextI18nextConfig)),
+            ...(await serverSideTranslations(
+                locale!,
+                ["common", "topic-overview", "topic-pages", localeRef],
+                nextI18nextConfig,
+            )),
         },
+        revalidate: 60 * 5,
     }
 }
 

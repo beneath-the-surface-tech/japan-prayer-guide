@@ -1,35 +1,8 @@
 import fs from "fs"
 import { resolve } from "path"
-import { unstable_cache } from "next/cache"
 import { NextResponse } from "next/server"
-import { getDataSource } from "../../../entities/datasource"
-import { PageEntity } from "../../../entities"
 import { getTopicLocaleData } from "@/app/utils/topics"
-
-const getPages = unstable_cache(
-    async () => {
-        const dataSource = getDataSource()
-        await dataSource.initialize()
-
-        const pageRepository = dataSource.getRepository(PageEntity)
-
-        const pages = await pageRepository.find({
-            relations: {
-                photos: {
-                    photo: true,
-                },
-                topics: true,
-                relatedPages: true,
-            },
-        })
-
-        await dataSource.destroy()
-
-        return pages
-    },
-    ["pages"],
-    { tags: ["pages"] },
-)
+import { getPages } from "@/app/utils/pages"
 
 export async function GET(_req: Request, { params }: { params: Promise<{ path: string[] }> }) {
     const { path } = await params
