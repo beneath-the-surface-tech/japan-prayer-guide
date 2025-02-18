@@ -5,7 +5,6 @@ import TopicDownloadables from "../../components/topic/TopicDownloadables/TopicD
 import Footer from "../../components/Footer"
 import { Trans, useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import React from "react"
 import PrayerPoints, { PrayerDisplayStyle } from "../../components/common/PrayerPoints/PrayerPoints"
 import CollapseBlock from "../../components/topic/CollapseBlock"
 import { PhotosWrapper } from "../../components/GalleryComponents/PhotosWrapper/PhotosWrapper"
@@ -14,10 +13,13 @@ import { StickyNav, Tab } from "../../components/topic/StickyNav/StickyNav"
 import RelatedContent from "../../components/topic/RelatedContent/RelatedContent"
 import nextI18nextConfig from "../../next-i18next.config"
 import AppHeader from "../../components/common/AppHeader"
-import { getTopicPageIds } from "@/services/staticTopicLoader"
+
+const isDev = process.env.NODE_ENV === "development"
+const BASE_URL = isDev ? "http://localhost:3000" : process.env.API_URL || "https://dev.japanprayerguide.com"
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const paths = getTopicPageIds()
+    const topicPaths = await fetch(`${BASE_URL}/api/topic-paths`)
+    const paths = await topicPaths.json()
 
     return {
         paths,
@@ -43,7 +45,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
                 nextI18nextConfig,
             )),
         },
-        revalidate: 60 * 5,
+        revalidate: 30,
     }
 }
 
