@@ -19,7 +19,7 @@ export async function getStaticProps({ locale }: any) {
             // Will be passed to the page component as props
             // About used in content, common used in header
         },
-        revalidate: 60 * 5,
+        revalidate: 30,
     }
 }
 
