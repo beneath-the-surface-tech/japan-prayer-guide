@@ -49,6 +49,12 @@ export class PageEntity {
     })
     isLive!: boolean
 
+    @Column({
+        name: "isDevLive",
+        default: false,
+    })
+    isDevLive!: boolean
+
     @Column({ type: "varchar", nullable: true })
     category!: string
 

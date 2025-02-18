@@ -71,24 +71,27 @@ export async function getTopicsOverviewLocaleData(pages: PageEntity[], localePat
     const pagesSorted = pages.sort((a, b) => parseInt(a.topicNumber) - parseInt(b.topicNumber))
     const cultureTopics = pagesSorted.filter((page) => page.category === "culture")
     const churchTopics = pagesSorted.filter((page) => page.category === "church")
+    const isDevEnv = process.env.IS_DEV_ENV === "true" || isDev
 
-    topicOverview.cultureTopics = cultureTopics.map((topic, i) => {
+    topicOverview.cultureTopics = cultureTopics.map((topic) => {
         const topicLocale = topic.topics.find((topic) => topic.locale === locale)
+        const isDevLive = typeof topic.isDevLive === "boolean" ? topic.isDevLive : topic.isLive
 
         return {
             label: topicLocale?.title,
             link: topic.path,
-            disabled: isDev ? topicOverview.cultureTopics[i].disabled : !topic.isLive,
+            disabled: isDevEnv ? !isDevLive : !topic.isLive,
             image: topic.heroPhoto,
         }
     })
-    topicOverview.churchTopics = churchTopics.map((topic, i) => {
+    topicOverview.churchTopics = churchTopics.map((topic) => {
         const topicLocale = topic.topics.find((topic) => topic.locale === locale)
+        const isDevLive = typeof topic.isDevLive === "boolean" ? topic.isDevLive : topic.isLive
 
         return {
             label: topicLocale?.title,
             link: topic.path,
-            disabled: isDev ? topicOverview.churchTopics[i].disabled : !topic.isLive,
+            disabled: isDevEnv ? !isDevLive : !topic.isLive,
             image: topic.heroPhoto,
         }
     })
