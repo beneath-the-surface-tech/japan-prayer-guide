@@ -77,14 +77,11 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
     const galleryClickInstructions: string = topicCommon("galleryClickInstructions")
     const galleryImageText: string = topicCommon("galleryImageText")
     const localeImages: any[] = t("photos", { returnObjects: true }) as any[]
-    let images = Array.isArray(localeImages) && localeImages.length > 0 ? localeImages : null
+    const images = Array.isArray(localeImages) && localeImages.length > 0 ? localeImages : null
     // const timeline: string = t("timeline")
     const galleryType: string = t("galleryType")
     const blockOrder: number[] = t("blockOrder", { returnObjects: true }) as number[]
-    let uncropped: any[] = t("uncroppedPhotos", { returnObjects: true }) as any[]
-
-    images = Array.isArray(images) ? images.sort((a, b) => a.src.localeCompare(b.src)) : null
-    uncropped = Array.isArray(uncropped) ? uncropped.sort((a, b) => a.src.localeCompare(b.src)) : []
+    const uncropped: any[] = t("uncroppedPhotos", { returnObjects: true }) as any[]
 
     const heroPhoto: string = t("heroPhoto")
     const heroFocus: string = t("heroFocus")

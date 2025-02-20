@@ -61,30 +61,31 @@ export const ReferencesSection = ({ localeRef }: { localeRef: string }) => {
     const { t: topicCommon } = useTranslation("topic-pages")
 
     const linkLabel: string = topicCommon("references")
-    const references = topic("references")
+    // const references = topic("references")
+    const references = ""
 
-    const photoCredits = DUMMY_DATA.photoCredits
-    const articleReferences = DUMMY_DATA.articleReferences
-    const infographicReferences = DUMMY_DATA.infographicReferences
+    // const photoCredits = DUMMY_DATA.photoCredits
+    // const articleReferences = DUMMY_DATA.articleReferences
+    // const infographicReferences = DUMMY_DATA.infographicReferences
 
-    const hasArticle = articleReferences.length > 0
-    const hasInfographic = infographicReferences.length > 0
+    // const hasArticle = articleReferences.length > 0
+    // const hasInfographic = infographicReferences.length > 0
 
-    const photoCreditsLabel =
-        topicCommon("photoCredits") !== "photoCredits" ? topicCommon("photoCredits") : "Photo credits"
-    const photosByLabel = topicCommon("photosBy") !== "photosBy" ? topicCommon("photosBy") : "Photos by"
-    const articleReferencesLabel =
-        topicCommon("articleReferences") !== "articleReferences"
-            ? topicCommon("articleReferences")
-            : "Article references"
-    const infoReferencesLabel =
-        topicCommon("infographicReferences") !== "infographicReferences"
-            ? topicCommon("infographicReferences")
-            : "Infographic references"
-    const infoDisclaimerLabel =
-        topicCommon("infoDisclaimer") !== "infoDisclaimer"
-            ? topicCommon("infoDisclaimer")
-            : "<i>Listed in order of initial appearance on the infographic</i>"
+    // const photoCreditsLabel =
+    //     topicCommon("photoCredits") !== "photoCredits" ? topicCommon("photoCredits") : "Photo credits"
+    // const photosByLabel = topicCommon("photosBy") !== "photosBy" ? topicCommon("photosBy") : "Photos by"
+    // const articleReferencesLabel =
+    //     topicCommon("articleReferences") !== "articleReferences"
+    //         ? topicCommon("articleReferences")
+    //         : "Article references"
+    // const infoReferencesLabel =
+    //     topicCommon("infographicReferences") !== "infographicReferences"
+    //         ? topicCommon("infographicReferences")
+    //         : "Infographic references"
+    // const infoDisclaimerLabel =
+    //     topicCommon("infoDisclaimer") !== "infoDisclaimer"
+    //         ? topicCommon("infoDisclaimer")
+    //         : "<i>Listed in order of initial appearance on the infographic</i>"
 
     return (
         <div className="d-flex align-items-center gap-2 mt-4 mb-2">
@@ -122,8 +123,7 @@ export const ReferencesSection = ({ localeRef }: { localeRef: string }) => {
                             </div>
                             <div className="slideUp-title">References used in this article</div>
                             <hr className="mt-3 mb-4" />
-                            {/* Photo Credits */}
-                            {references === "references" && (
+                            {/* {references === "references" && (
                                 <>
                                     <div className="reference-header">{photoCreditsLabel}</div>
                                     <div className="reference-body mt-2">
@@ -135,7 +135,6 @@ export const ReferencesSection = ({ localeRef }: { localeRef: string }) => {
                                             {photo}
                                         </div>
                                     ))}
-                                    {/* Article References */}
                                     {hasArticle && (
                                         <>
                                             <div className="reference-header mt-3">{articleReferencesLabel}</div>
@@ -149,7 +148,6 @@ export const ReferencesSection = ({ localeRef }: { localeRef: string }) => {
                                             </ol>
                                         </>
                                     )}
-                                    {/* Infographic References */}
                                     {hasInfographic && (
                                         <>
                                             <div className="reference-header mt-2">{infoReferencesLabel}</div>
@@ -164,9 +162,9 @@ export const ReferencesSection = ({ localeRef }: { localeRef: string }) => {
                                         </>
                                     )}
                                 </>
-                            )}
+                            )} */}
                             <div className={"references-from-retool"}>
-                                {references !== "references" && (
+                                {references && (
                                     <div dangerouslySetInnerHTML={{ __html: references }} />
                                 )}
                             </div>
