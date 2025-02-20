@@ -72,4 +72,7 @@ export class TopicEntity {
     @ManyToOne(() => PageEntity, (page) => page.topics)
     @JoinColumn({ name: "page_id" })
     page!: Relation<PageEntity>
+
+    @Column({ type: "text", nullable: true, default: "" })
+    references!: string
 }

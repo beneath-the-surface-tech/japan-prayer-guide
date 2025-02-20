@@ -61,11 +61,8 @@ export const ReferencesSection = ({ localeRef }: { localeRef: string }) => {
     const { t: topicCommon } = useTranslation("topic-pages")
 
     const linkLabel: string = topicCommon("references")
-    // const photoCredits = topic("photoCredits", { returnObjects: true }) as string[]
-    // const articleReferences = topic("articleReferences", { returnObjects: true }) as any[]
-    // const infographicReferences = topic("infographicReferences", { returnObjects: true }) as any[]
-    const hello = topic("")
-    console.log(hello)
+    const references = topic("references")
+
     const photoCredits = DUMMY_DATA.photoCredits
     const articleReferences = DUMMY_DATA.articleReferences
     const infographicReferences = DUMMY_DATA.infographicReferences
@@ -126,43 +123,53 @@ export const ReferencesSection = ({ localeRef }: { localeRef: string }) => {
                             <div className="slideUp-title">References used in this article</div>
                             <hr className="mt-3 mb-4" />
                             {/* Photo Credits */}
-                            <div className="reference-header">{photoCreditsLabel}</div>
-                            <div className="reference-body mt-2">
-                                {photosByLabel + " "}
-                                <a href="https://www.cherrinayoon.com">Cherrina Yoon</a>
-                            </div>
-                            {photoCredits.map((photo: string) => (
-                                <div key={photo} className="reference-body mt-2">
-                                    {photo}
-                                </div>
-                            ))}
-                            {/* Article References */}
-                            {hasArticle && (
+                            {references === "references" && (
                                 <>
-                                    <div className="reference-header mt-3">{articleReferencesLabel}</div>
-                                    <ol>
-                                        {articleReferences.map((article: any) => (
-                                            <li key={article.body} className="reference-body mt-2">
-                                                <Trans>{article.body}</Trans> <a href={article.link}>{article.link}</a>
-                                            </li>
-                                        ))}
-                                    </ol>
-                                </>
-                            )}
-                            {/* Infographic References */}
-                            {hasInfographic && (
-                                <>
-                                    <div className="reference-header mt-2">{infoReferencesLabel}</div>
+                                    <div className="reference-header">{photoCreditsLabel}</div>
                                     <div className="reference-body mt-2">
-                                        <Trans>{infoDisclaimerLabel}</Trans>
+                                        {photosByLabel + " "}
+                                        <a href="https://www.cherrinayoon.com">Cherrina Yoon</a>
                                     </div>
-                                    {infographicReferences.map((info: any) => (
-                                        <div key={info.body} className="reference-body mt-2 indented">
-                                            <Trans>{info.body}</Trans> <a href={info.link}>{info.link}</a>
+                                    {photoCredits.map((photo: string) => (
+                                        <div key={photo} className="reference-body mt-2">
+                                            {photo}
                                         </div>
                                     ))}
+                                    {/* Article References */}
+                                    {hasArticle && (
+                                        <>
+                                            <div className="reference-header mt-3">{articleReferencesLabel}</div>
+                                            <ol>
+                                                {articleReferences.map((article: any) => (
+                                                    <li key={article.body} className="reference-body mt-2">
+                                                        <Trans>{article.body}</Trans>{" "}
+                                                        <a href={article.link}>{article.link}</a>
+                                                    </li>
+                                                ))}
+                                            </ol>
+                                        </>
+                                    )}
+                                    {/* Infographic References */}
+                                    {hasInfographic && (
+                                        <>
+                                            <div className="reference-header mt-2">{infoReferencesLabel}</div>
+                                            <div className="reference-body mt-2">
+                                                <Trans>{infoDisclaimerLabel}</Trans>
+                                            </div>
+                                            {infographicReferences.map((info: any) => (
+                                                <div key={info.body} className="reference-body mt-2 indented">
+                                                    <Trans>{info.body}</Trans> <a href={info.link}>{info.link}</a>
+                                                </div>
+                                            ))}
+                                        </>
+                                    )}
                                 </>
                             )}
+                            <div className={"references-from-retool"}>
+                                {references !== "references" && (
+                                    <div dangerouslySetInnerHTML={{ __html: references }} />
+                                )}
+                            </div>
                         </div>
                     </Box>
                 </Slide>

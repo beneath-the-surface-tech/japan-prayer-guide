@@ -51,3 +51,21 @@
     line-height: 30px;
 }
 
+.references-from-retool {
+    h2 {
+        font-size: 22px;
+        font-family: $font-family-secondary;
+        font-weight: bold;
+        font-family: $font-family-base;
+    }
+    p {
+        font-size: 18px;
+        font-family: $font-family-base;
+        text-indent: -40px;
+        padding-left: 40px;
+        white-space: pre-line;
+        line-height: 30px;
+        margin-bottom: 1em;
+    }
+}
+
