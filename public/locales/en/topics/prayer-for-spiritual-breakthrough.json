@@ -38,5 +38,6 @@
       {"title": "Title of Era", "type": "era"},
       {"title": "Title of event", "type": "event", "photos": []}
     ],
-    "videoSrc": "https://player.vimeo.com/video/921387464"
+    "videoSrc": "https://player.vimeo.com/video/921387464",
+    "references": ""
 }
