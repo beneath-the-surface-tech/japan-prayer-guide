@@ -54,7 +54,7 @@ const style = {
 //     ],
 // }
 
-export const ReferencesSection = ({ }: { localeRef: string }) => {
+export const ReferencesSection = () => {
     const [open, setOpen] = useState(false)
 
     // const { t: topic } = useTranslation(localeRef)
@@ -164,9 +164,7 @@ export const ReferencesSection = ({ }: { localeRef: string }) => {
                                 </>
                             )} */}
                             <div className={"references-from-retool"}>
-                                {references && (
-                                    <div dangerouslySetInnerHTML={{ __html: references }} />
-                                )}
+                                {references && <div dangerouslySetInnerHTML={{ __html: references }} />}
                             </div>
                         </div>
                     </Box>
