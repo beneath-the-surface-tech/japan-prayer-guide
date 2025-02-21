@@ -36,7 +36,7 @@ export function getTopicLocaleData(pages: PageEntity[], localePath: string) {
         prayerSummary: topicLocale?.prayerSummary,
         textBody: topicLocale?.textBody,
         textBodyAsterisk: topicLocale?.textBodyAsterisk,
-        references: topicLocale?.references || '',
+        references: topicLocale?.references ?? '',
         quote: topicLocale?.quote,
         downloads: topicLocale?.downloads,
         galleryType: topicPage?.galleryType,
