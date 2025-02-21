@@ -54,7 +54,7 @@ const style = {
 //     ],
 // }
 
-export const ReferencesSection = ({localeRef}: {localeRef: string}) => {
+export const ReferencesSection = ({ localeRef }: { localeRef: string }) => {
     const [open, setOpen] = useState(false)
 
     const { t: topic } = useTranslation(localeRef)
