@@ -54,15 +54,14 @@ const style = {
 //     ],
 // }
 
-export const ReferencesSection = () => {
+export const ReferencesSection = ({localeRef}: {localeRef: string}) => {
     const [open, setOpen] = useState(false)
 
-    // const { t: topic } = useTranslation(localeRef)
+    const { t: topic } = useTranslation(localeRef)
     const { t: topicCommon } = useTranslation("topic-pages")
 
     const linkLabel: string = topicCommon("references")
-    // const references = topic("references")
-    const references = ""
+    const references = topic("references")
 
     // const photoCredits = DUMMY_DATA.photoCredits
     // const articleReferences = DUMMY_DATA.articleReferences

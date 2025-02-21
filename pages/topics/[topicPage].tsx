@@ -178,7 +178,7 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
                     )}
                     <Container className="">
                         <hr />
-                        <ReferencesSection />
+                        <ReferencesSection localeRef={localeRef} />
                     </Container>
                     <Container className={"bottom-spacing"}></Container>
                 </Container>
