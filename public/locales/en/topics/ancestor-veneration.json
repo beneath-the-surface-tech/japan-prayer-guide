@@ -66,5 +66,6 @@
         "desktop": "/photos/topics/topic1/topic-1-desktop.svg",
         "tablet": "/photos/topics/topic1/topic-1-tablet.svg",
         "mobile": "/photos/topics/topic1/topic-1-mobile.svg"
-    }
+    },
+    "references": ""
 }

@@ -57,5 +57,6 @@
     "blockOrder": [7, 1, 3, 9],
     "videoSrc": "https://player.vimeo.com/video/87253223?h=54bcde9d3a",
     "heroPhoto": "/photos/topics/topic19/TP19-Hero.jpg",
-    "heroFocus": "60% 50%"
+    "heroFocus": "60% 50%",
+    "references": ""
 }
