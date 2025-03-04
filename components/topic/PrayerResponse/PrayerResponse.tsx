@@ -29,7 +29,10 @@ const PrayerResponse = ({ topicTrans }: { topicTrans: TFunction }) => {
                 <h3 className="mb-3 fw-bold fs-2">
                     <Trans t={common} i18nKey="response.recordingLabel" />
                 </h3>
-                <div className="video-embed" style={!couldLoadVideo ? { height: "350px", paddingBottom: "0!important"}  : {}}>
+                <div
+                    className="video-embed"
+                    style={!couldLoadVideo ? { height: "350px", paddingBottom: "0!important" }  : {}}
+                >
                     {couldLoadVideo ? (
                         <iframe
                             className="d-flex align-content-start"
@@ -46,9 +49,7 @@ const PrayerResponse = ({ topicTrans }: { topicTrans: TFunction }) => {
                             title="Prayer recording"
                         />
                     ) : (
-                        <div className="no-video">
-                            Video coming soon!
-                        </div>
+                        <div className="no-video">Video coming soon!</div>
                     )}
                 </div>
                 <Row>
