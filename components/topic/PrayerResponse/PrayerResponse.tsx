@@ -31,7 +31,7 @@ const PrayerResponse = ({ topicTrans }: { topicTrans: TFunction }) => {
                 </h3>
                 <div
                     className="video-embed"
-                    style={!couldLoadVideo ? { height: "350px", paddingBottom: "0px!important" } : {}}
+                    style={!couldLoadVideo ? { paddingBottom: "0px", height: "350px" } : {}}
                 >
                     {couldLoadVideo ? (
                         <iframe

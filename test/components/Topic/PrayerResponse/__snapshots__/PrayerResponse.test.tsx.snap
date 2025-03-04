@@ -33,7 +33,7 @@ exports[`Responding in Prayer Snapshot test 1`] = `
           </h3>
           <div
             class="video-embed"
-            style="height: 350px;"
+            style="padding-bottom: 0px; height: 350px;"
           >
             <div
               class="no-video"
@@ -127,7 +127,7 @@ exports[`Responding in Prayer Snapshot test 1`] = `
         </h3>
         <div
           class="video-embed"
-          style="height: 350px;"
+          style="padding-bottom: 0px; height: 350px;"
         >
           <div
             class="no-video"
