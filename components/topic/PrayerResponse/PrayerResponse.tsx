@@ -29,10 +29,7 @@ const PrayerResponse = ({ topicTrans }: { topicTrans: TFunction }) => {
                 <h3 className="mb-3 fw-bold fs-2">
                     <Trans t={common} i18nKey="response.recordingLabel" />
                 </h3>
-                <div
-                    className="video-embed"
-                    style={!couldLoadVideo ? { paddingBottom: "0px", height: "350px" } : {}}
-                >
+                <div className="video-embed" style={!couldLoadVideo ? { paddingBottom: "0px", height: "350px" } : {}}>
                     {couldLoadVideo ? (
                         <iframe
                             className="d-flex align-content-start"
