@@ -30,8 +30,6 @@ export function getTopicLocaleData(pages: PageEntity[], localePath: string) {
         },
     )
 
-    console.log("HEY", topicPage?.photos)
-
     const topicLocaleData = {
         title: topicLocale?.title,
         path: topicPage?.path,
@@ -49,7 +47,6 @@ export function getTopicLocaleData(pages: PageEntity[], localePath: string) {
         heroFocus: topicPage?.heroFocus,
         photos: topicPage?.photos
             .filter((photo) => photo.type === "main")
-            .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
             .map((photo) => ({
                 src: `https://d3rljda0pe0qw5.cloudfront.net/uploads/${photo.photo.image_name}`,
                 title: photo.photo?.[locale as "en" | "ja"],
@@ -57,7 +54,6 @@ export function getTopicLocaleData(pages: PageEntity[], localePath: string) {
             })),
         uncroppedPhotos: topicPage?.photos
             .filter((photo) => photo.type === "uncropped")
-            .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
             .map((photo) => ({
                 src: `https://d3rljda0pe0qw5.cloudfront.net/uploads/${photo.photo.image_name}`,
                 title: photo.photo?.[locale as "en" | "ja"],
