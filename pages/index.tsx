@@ -43,7 +43,7 @@ export const getStaticProps = async ({ locale }: { locale: string }) => {
             ...(await serverSideTranslations(locale, ["common", "home", featuredTopicRef], nextI18nextConfig)),
             // Will be passed to the page component as props
         },
-        revalidate: 60 * 60 * 24,
+        revalidate: 30,
     }
 }
 
