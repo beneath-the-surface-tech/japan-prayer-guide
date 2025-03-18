@@ -1,4 +1,3 @@
-import Head from "next/head"
 import React from "react"
 import { ToggleHeader } from "../components/ToggleHeader"
 import { Button, Container } from "react-bootstrap"
@@ -6,6 +5,8 @@ import { I18n, TFunction, Trans, useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import Footer from "../components/Footer"
 import Link from "next/link"
+import nextI18nextConfig from "../next-i18next.config"
+import AppHeader from "../components/common/AppHeader"
 import resources from "../public/locales/en/resources.json"
 import { LowHighImage } from "../components/LowHighImage"
 import Image, { StaticImageData } from "next/image"
@@ -26,7 +27,7 @@ export const getStaticProps = async ({ locale }: { locale: string }) => {
     return {
         props: {
             isPageReady,
-            ...(await serverSideTranslations(locale, ["resources", "common"])),
+            ...(await serverSideTranslations(locale, ["resources", "common"], nextI18nextConfig)),
             // Will be passed to the page component as props
             // About used in content, common used in header
         },
@@ -35,16 +36,12 @@ export const getStaticProps = async ({ locale }: { locale: string }) => {
 
 const Downloads = ({ isPageReady }: { isPageReady: boolean }) => {
     const { t, i18n } = useTranslation("resources")
+    const webpageTitle = t("webpageTitle", "Resources")
 
     return (
         <div>
-            <Head>
-                <title>{t("webpageTitle")}</title>
-                <meta name="description" content="Japan prayer guide" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-            <main id="resources">
+            <AppHeader title={webpageTitle} description="tbd" pageType="website" />
+            <main id="resources" role="main">
                 <ToggleHeader />
 
                 {isPageReady ? <Resources t={t} i18n={i18n} /> : <PageNotReady t={t} />}
@@ -64,7 +61,7 @@ function LinkFromJson({ href, children }: { href: string; children?: React.React
 
 const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
     const heroHeader: string = t("heroHeader")
-    const heroSubtitle: string[] = t("heroSubtitle", { returnObjects: true })
+    const heroSubtitle: string[] = t("heroSubtitle", { returnObjects: true }) as string[]
     const copyrightText: string = t("copyrightText")
 
     const infographicsUrl = t("byMediaUrls.infographicsUrl", "")

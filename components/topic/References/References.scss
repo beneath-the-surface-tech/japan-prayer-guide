@@ -1,0 +1,71 @@
+.slideUp-container {
+    height: calc(100vh - 150px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: $font-family-base;
+}
+
+.slideUp-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    z-index: 10;
+    width: 100%;
+    background-color: white;
+    height: 56px;
+    font-family: $font-family-base;
+}
+
+.slideUp-title {
+    font-size: 24px;
+    font-family: $font-family-secondary;
+    color: $primary;
+    font-weight: bold;
+    font-family: $font-family-base;
+}
+
+.reference-header {
+    font-size: 22px;
+    font-family: $font-family-secondary;
+    font-weight: bold;
+    font-family: $font-family-base;
+}
+
+.reference-body {
+    font-size: 18px;
+    font-family: $font-family-base;
+}
+
+.references-modal:focus {
+    outline: none;
+}
+
+.indented {
+    text-indent: -40px;
+    padding-left: 40px;
+    white-space: pre-line;
+    line-height: 30px;
+}
+
+.references-from-retool {
+    h2 {
+        font-size: 22px;
+        font-family: $font-family-secondary;
+        font-weight: bold;
+        font-family: $font-family-base;
+    }
+    p {
+        font-size: 18px;
+        font-family: $font-family-base;
+        text-indent: -40px;
+        padding-left: 40px;
+        white-space: pre-line;
+        line-height: 30px;
+        margin-bottom: 1em;
+    }
+}
+

@@ -14,6 +14,9 @@
     h2 {
         font-family: $font-family-secondary;
         padding-top: 4rem;
+        @include media-breakpoint-down(md) {
+            padding-top: 2.5rem;
+        }
     }
 
     h3 {

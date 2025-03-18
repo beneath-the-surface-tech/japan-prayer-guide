@@ -6,12 +6,15 @@ exports[`Topic Downloadables Snapshot test 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="d-flex flex-column my-5 container"
+        class="d-flex flex-column my-3 my-md-4 container"
         data-testid="topic-downloadables-container"
         id="topic-downloads"
       >
         <div
-          class="container"
+          class="my-md-2"
+        />
+        <div
+          class="mb-3 mb-md-0 container"
         >
           <h2
             class="fw-bold text-primary mt-4 mb-3"
@@ -285,7 +288,7 @@ exports[`Topic Downloadables Snapshot test 1`] = `
           </div>
         </div>
         <a
-          class="align-self-center w-100"
+          class="align-self-center w-100 mt-2 mt-md-3"
           href="downloads.downloadAllUrl"
           style="max-width: 280px; cursor: not-allowed;"
         >
@@ -302,12 +305,15 @@ exports[`Topic Downloadables Snapshot test 1`] = `
   </body>,
   "container": <div>
     <div
-      class="d-flex flex-column my-5 container"
+      class="d-flex flex-column my-3 my-md-4 container"
       data-testid="topic-downloadables-container"
       id="topic-downloads"
     >
       <div
-        class="container"
+        class="my-md-2"
+      />
+      <div
+        class="mb-3 mb-md-0 container"
       >
         <h2
           class="fw-bold text-primary mt-4 mb-3"
@@ -581,7 +587,7 @@ exports[`Topic Downloadables Snapshot test 1`] = `
         </div>
       </div>
       <a
-        class="align-self-center w-100"
+        class="align-self-center w-100 mt-2 mt-md-3"
         href="downloads.downloadAllUrl"
         style="max-width: 280px; cursor: not-allowed;"
       >

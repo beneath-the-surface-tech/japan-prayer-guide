@@ -7,5 +7,8 @@
         { "refId": "about-topic", "label": "About" },
         { "refId": "prayer-response", "label": "Pray" },
         { "refId": "topic-downloads", "label": "Resources" }
-    ]
+    ],
+    "references": "View all references for this topic",
+    "previousTopic": "Previous Topic",
+    "nextTopic": "Next Topic"
 }

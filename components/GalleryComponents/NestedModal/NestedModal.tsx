@@ -5,7 +5,8 @@ import Slide from "@mui/material/Slide"
 
 import Backdrop from "@mui/material/Backdrop"
 import Gallery from "../Gallery/Gallery"
-import { Image, Row } from "react-bootstrap"
+import { Row } from "react-bootstrap"
+import Image from "next/image"
 
 const style = {
     position: "absolute",
@@ -21,6 +22,7 @@ interface NestedModalProps {
     images: {
         src: string
         title: string
+        alt?: string
     }[]
     subTitle: string
     galleryTitle: string
@@ -49,14 +51,28 @@ export const NestedModal = ({ images, subTitle, galleryTitle, imageText }: Neste
                         if (index !== 3) {
                             return (
                                 <div className="galleryImage" key={index} onClick={handleOpen}>
-                                    <Image key={index} src={item.src} className="galleryImage" alt="logo" />
+                                    <Image
+                                        key={index}
+                                        src={item.src}
+                                        width={1800}
+                                        height={1200}
+                                        className="galleryImage"
+                                        alt={item?.alt || item.title}
+                                    />
                                     <div className="galleryImageOverlay"></div>
                                 </div>
                             )
                         } else {
                             return (
                                 <div className="galleryImage" key={index} onClick={handleOpen}>
-                                    <Image key={index} src={item.src} className="galleryImage" alt="logo" />
+                                    <Image
+                                        key={index}
+                                        src={item.src}
+                                        width={1800}
+                                        height={1200}
+                                        className="galleryImage"
+                                        alt={item?.alt || item.title}
+                                    />
                                     <div className="galleryMoreOverlay">
                                         <div className="galleryMoreNumber">{`+${images.length - 4}`}</div>
                                     </div>

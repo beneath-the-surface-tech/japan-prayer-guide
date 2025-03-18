@@ -62,7 +62,7 @@ describe("Topic Downloadables", () => {
         const topicDownloadablesTitle = screen.getByTestId("topic-downloadables-title")
         const topicDownloadablesLinks = screen.getByTestId("topic-downloadables-links").children
 
-        expect(topicDownloadablesCont).toHaveClass("d-flex", "flex-column", "my-5")
+        expect(topicDownloadablesCont).toHaveClass("d-flex", "flex-column", "my-3")
 
         expect(topicDownloadablesTitle).toHaveTextContent("downloads.title")
         expect(topicDownloadablesTitle).toHaveClass("text-primary", "mt-4", "mb-3", "fw-bold")

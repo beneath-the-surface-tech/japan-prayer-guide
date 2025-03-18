@@ -7,6 +7,7 @@ exports[`ToggleHeader Snapshot test 1`] = `
     <div>
       <nav
         class="shadow-sm navbar navbar-expand-xl navbar-light bg-white fixed-top"
+        role="navigation"
       >
         <div
           class="container"
@@ -145,7 +146,7 @@ exports[`ToggleHeader Snapshot test 1`] = `
                   class="mb-4 row"
                 >
                   <div
-                    class="ms-auto hstack gap-3 minBreakpoint-xs"
+                    class="ms-auto hstack gap-3"
                     data-testid="language-switcher"
                     id="language-switch"
                   >
@@ -200,6 +201,7 @@ exports[`ToggleHeader Snapshot test 1`] = `
   "container": <div>
     <nav
       class="shadow-sm navbar navbar-expand-xl navbar-light bg-white fixed-top"
+      role="navigation"
     >
       <div
         class="container"
@@ -338,7 +340,7 @@ exports[`ToggleHeader Snapshot test 1`] = `
                 class="mb-4 row"
               >
                 <div
-                  class="ms-auto hstack gap-3 minBreakpoint-xs"
+                  class="ms-auto hstack gap-3"
                   data-testid="language-switcher"
                   id="language-switch"
                 >

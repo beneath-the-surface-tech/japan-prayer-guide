@@ -1,4 +1,3 @@
-import Head from "next/head"
 import Link from "next/link"
 import React from "react"
 import { ToggleHeader } from "../components/ToggleHeader"
@@ -44,11 +43,13 @@ import coverEN from "../public/photos/home/hp_cover-en.jpg"
 import coverJA from "../public/photos/home/hp_cover-ja.jpg"
 import bookGifEN from "../public/photos/booklet/BOOK_GIF-en.gif"
 import bookGifJA from "../public/photos/booklet/BOOK_GIF-ja.gif"
+import nextI18nextConfig from "../next-i18next.config"
+import AppHeader from "../components/common/AppHeader"
 
 export async function getStaticProps({ locale }: any) {
     return {
         props: {
-            ...(await serverSideTranslations(locale, ["booklet", "common"])),
+            ...(await serverSideTranslations(locale, ["booklet", "common"], nextI18nextConfig)),
             // Will be passed to the page component as props
             // About used in content, common used in header
         },
@@ -118,7 +119,8 @@ function useBetterMediaQuery(query: string) {
 const TabletOrMobileMediaQuery = "(min-width: 992px)"
 const Booklet: React.FC = () => {
     const { t, i18n } = useTranslation("booklet")
-    const introTextParagraphs: string[] = t("introText", { returnObjects: true })
+    const webpageTitle: string = t("webpageTitle", "Booklet")
+    const introTextParagraphs: string[] = t("introText", { returnObjects: true }) as string[]
     const isTabletOrMobile = useBetterMediaQuery(TabletOrMobileMediaQuery)
     const isInEnglish = i18n.language === "en"
     let sampleBookImages
@@ -138,18 +140,13 @@ const Booklet: React.FC = () => {
 
     return (
         <div>
-            <Head>
-                <title>{t("webpageTitle")}</title>
-                <meta name="description" content="Japan prayer guide" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <AppHeader title={webpageTitle} description="tbd" pageType="website" image={coverEN.src} />
             <ToggleHeader />
-            <main id="booklet">
+            <main id="booklet" role="main">
                 <div className="w-100 book-description position-relative" style={{ marginTop: "60px" }}>
                     <Container>
                         <Row xs={1} sm={1} md={1} xl={2}>
-                            <Col>
+                            <Col className="my-5">
                                 <NextImage
                                     className="book-image book-front-cover"
                                     src={i18n.language == "en" ? coverEN : coverJA}

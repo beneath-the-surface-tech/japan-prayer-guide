@@ -1,4 +1,3 @@
-import Head from "next/head"
 import { ToggleHeader } from "../../../components/ToggleHeader"
 import { Trans, useTranslation } from "next-i18next"
 import { Container } from "react-bootstrap"
@@ -10,25 +9,29 @@ import { StickyNav } from "../../../components/topic/StickyNav/StickyNav"
 import { LowHighImage } from "../../../components/LowHighImage"
 import bannerHeroHighRes from "../../../public/photos/topic-nav/TOPNAV_HERO.jpg"
 import bannerHeroLowRes from "../../../public/photos/topic-nav/TOPNAV_HERO_LowRes.jpg"
+import nextI18nextConfig from "../../../next-i18next.config"
+import AppHeader from "../../../components/common/AppHeader"
 
 export async function getStaticProps({ locale }: any) {
     return {
         props: {
-            ...(await serverSideTranslations(locale, ["topic-overview", "common"])),
+            ...(await serverSideTranslations(locale, ["topic-overview", "common"], nextI18nextConfig)),
             // Will be passed to the page component as props
             // About used in content, common used in header
         },
+        revalidate: 30,
     }
 }
 
 export default function Overview() {
     const { t } = useTranslation("topic-overview")
 
-    let cultureTopics: Topic[] = t("cultureTopics", { returnObjects: true })
-    let churchTopics: Topic[] = t("churchTopics", { returnObjects: true })
+    let cultureTopics: Topic[] = t("cultureTopics", { returnObjects: true }) as Topic[]
+    let churchTopics: Topic[] = t("churchTopics", { returnObjects: true }) as Topic[]
     cultureTopics = Array.isArray(cultureTopics) ? cultureTopics : []
     churchTopics = Array.isArray(churchTopics) ? churchTopics : []
 
+    const webpageTitle = t("webpageTitle", "Topic Overview")
     const cultureHeading = t("cultureHeading")
     const churchHeading = t("churchHeading")
     const navTabs = [
@@ -36,17 +39,17 @@ export default function Overview() {
         { refId: "church", label: churchHeading },
     ]
 
-    const heroSubtext: string[] = t("pageSubtitle", { returnObjects: true })
+    const heroSubtext: string[] = t("pageSubtitle", { returnObjects: true }) as string[]
 
     return (
         <>
-            <Head>
-                <title>{t("webpageTitle")}</title>
-                <meta name="description" content="Japan prayer guide" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-            <main>
+            <AppHeader
+                title={webpageTitle}
+                description="Japan prayer guide"
+                pageType="website"
+                image={bannerHeroHighRes.src}
+            />
+            <main role="main">
                 {/* Header component */}
                 <ToggleHeader hideShadow={true} />
 

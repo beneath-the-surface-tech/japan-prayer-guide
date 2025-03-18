@@ -107,6 +107,7 @@
     $carousel-image-ratio: 1.93;
     .home-carousel-image {
         max-height: $carousel-image-height;
+        width: 100%;
         object-fit: cover;
         aspect-ratio: $carousel-image-ratio;
         @include media-breakpoint-down(xl) {
@@ -115,6 +116,7 @@
         @include media-breakpoint-down(md) {
             max-height: none;
             width: 95%;
+            height: 100%;
         }
     }
 
@@ -132,27 +134,6 @@
     }
 
     .carousel {
-        .carousel-indicators {
-            button {
-                background-color: white;
-                transition: none;
-                opacity: 0.7;
-            }
-            .active {
-                background-color: $secondary-5;
-                transition: none;
-                opacity: 0.7;
-            }
-            @include media-breakpoint-down(md) {
-                margin-bottom: 5px;
-            }
-        }
-        .carousel-indicators [data-bs-target] {
-            height: 5px;
-            @include media-breakpoint-down(md) {
-                height: 4px;
-            }
-        }
         .carousel-control-next,
         .carousel-control-prev {
             color: $secondary-5;
@@ -163,13 +144,13 @@
             background-color: $grey-2;
         }
         .carousel-control-next {
-            right: 9%;
+            right: 3%;
             @include media-breakpoint-down(md) {
                 right: 5%;
             }
         }
         .carousel-control-prev {
-            left: 9%;
+            left: 3%;
             @include media-breakpoint-down(md) {
                 left: 5%;
             }
@@ -231,13 +212,15 @@ $home-paragraph-text-mobile: $home-paragraph-text - 2px;
     }
 
     $bullet-point-factor: 1px;
-    .bullet-point {
-        font-size: $home-paragraph-text;
-        @include media-breakpoint-down(xl) {
-            font-size: $home-paragraph-text-tablet;
-        }
-        @include media-breakpoint-down(md) {
-            font-size: $home-paragraph-text-mobile;
+    .bullet-points-wrapper {
+        li {
+            font-size: $home-paragraph-text;
+            @include media-breakpoint-down(xl) {
+                font-size: $home-paragraph-text-tablet;
+            }
+            @include media-breakpoint-down(md) {
+                font-size: $home-paragraph-text-mobile;
+            }
         }
     }
 
@@ -252,6 +235,9 @@ $home-paragraph-text-mobile: $home-paragraph-text - 2px;
     .feature-button,
     .feature-view-all {
         font-size: 14px;
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 8px;
+        }
     }
 }
 

@@ -6,7 +6,7 @@ exports[`LanguageSwitcher Snapshot test 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="ms-auto hstack gap-3 minBreakpoint-xs"
+        class="ms-auto hstack gap-3"
         data-testid="language-switcher"
         id="language-switch"
       >
@@ -32,7 +32,7 @@ exports[`LanguageSwitcher Snapshot test 1`] = `
   </body>,
   "container": <div>
     <div
-      class="ms-auto hstack gap-3 minBreakpoint-xs"
+      class="ms-auto hstack gap-3"
       data-testid="language-switcher"
       id="language-switch"
     >

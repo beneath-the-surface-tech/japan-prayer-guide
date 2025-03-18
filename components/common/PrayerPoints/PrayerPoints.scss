@@ -86,7 +86,7 @@
             width: 50%;
         }
         @include media-breakpoint-up(xl) {
-            height: 515px;
+            height: 100%;
         }
         @include media-breakpoint-up(xl) {
             width: calc(100% - 550px);

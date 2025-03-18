@@ -1,17 +1,10 @@
 .mosaicGroup {
-    height: 322px;
     width: 50%;
+    aspect-ratio: 1.88;
     box-sizing: border-box;
     margin: 0;
     @include media-breakpoint-down(xl) {
-        height: 400px;
         width: 100%;
-    }
-    @include media-breakpoint-down(md) {
-        height: 322px;
-    }
-    @include media-breakpoint-down(sm) {
-        height: 240px;
     }
 }
 

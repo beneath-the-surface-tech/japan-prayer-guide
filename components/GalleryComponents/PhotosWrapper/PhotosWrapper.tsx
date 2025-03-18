@@ -7,6 +7,7 @@ interface PhotosWrapperProps {
     images: {
         src: string
         title: string
+        alt?: string
     }[]
     blocks?: number[]
     subTitle?: string
@@ -15,6 +16,7 @@ interface PhotosWrapperProps {
     uncropped?: {
         src: string
         title: string
+        alt?: string
     }[]
 }
 
@@ -28,13 +30,13 @@ export const PhotosWrapper = ({
     uncropped = [],
 }: PhotosWrapperProps) => {
     if (type === "mosaic") {
-        return <Mosaic images={images} blocks={blocks} uncropped={uncropped} />
+        return <Mosaic images={images} uncropped={uncropped} subTitle={subTitle} blocks={blocks} />
     }
     if (type === "gallery") {
         return <NestedModal images={images} subTitle={subTitle} galleryTitle={galleryTitle} imageText={imageText} />
     }
     if (type === "carousel") {
-        return <ImageCarousel images={images} topic />
+        return <ImageCarousel images={images} subTitle={subTitle} topic />
     }
     return <></>
 }

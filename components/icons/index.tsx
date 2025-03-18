@@ -86,24 +86,11 @@ const Heart = () => {
 }
 const LeftArrow = () => {
     return (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 32 32"
-            aria-hidden="true"
-            role="presentation"
-            focusable="false"
-            style={{
-                display: "block",
-                fill: "none",
-                height: "12px",
-                width: "12px",
-                stroke: "currentcolor",
-                strokeWidth: 4,
-                overflow: "visible",
-                cursor: "pointer",
-            }}
-        >
-            <path fill="none" d="M20 28 8.7 16.7a1 1 0 0 1 0-1.4L20 4" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+                d="M10.8284 12.0007L15.7782 16.9504L14.364 18.3646L8 12.0007L14.364 5.63672L15.7782 7.05093L10.8284 12.0007Z"
+                fill="black"
+            ></path>
         </svg>
     )
 }
@@ -131,4 +118,15 @@ const RightArrow = () => {
     )
 }
 
-export { Left, Cross, Share, Heart, LeftArrow, RightArrow }
+const Info = () => {
+    return (
+        <svg width="20" height="20" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M13.9998 27.3337C6.63604 27.3337 0.666504 21.3641 0.666504 14.0003C0.666504 6.63653 6.63604 0.666992 13.9998 0.666992C21.3636 0.666992 27.3332 6.63653 27.3332 14.0003C27.3332 21.3641 21.3636 27.3337 13.9998 27.3337ZM13.9998 24.667C19.8909 24.667 24.6665 19.8914 24.6665 14.0003C24.6665 8.10929 19.8909 3.33366 13.9998 3.33366C8.1088 3.33366 3.33317 8.10929 3.33317 14.0003C3.33317 19.8914 8.1088 24.667 13.9998 24.667ZM12.6665 7.33366H15.3332V10.0003H12.6665V7.33366ZM12.6665 12.667H15.3332V20.667H12.6665V12.667Z"
+                fill="#002266"
+            />
+        </svg>
+    )
+}
+
+export { Left, Cross, Share, Heart, LeftArrow, RightArrow, Info }

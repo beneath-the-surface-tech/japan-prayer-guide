@@ -5,7 +5,7 @@
         "After surveying missionaries, pastors, and Christian leaders in Japan, we collected over 500 prayer points and grouped them into topics for Japanese culture and society, and church and mission.",
         "The 30 topics chosen were those prioritized by Japanese leaders as key opportunities and challenges for the gospel in Japan today.",
         "",
-        "Coming soon.\nFull website launch in 2024."
+        "Coming soon.\nFull website launch in 2025."
     ],
     "cultureHeading": "Culture and society",
     "churchHeading": "Church and mission",
@@ -15,7 +15,7 @@
         { "label": "Japanese culture and Christianity", "link": "japanese-culture-and-christianity", "disabled": true },
         { "label": "Ancestor veneration", "link": "ancestor-veneration", "disabled": true },
         { "label": "Harmony", "link": "harmony", "disabled": true },
-        { "label": "Social conformity", "link": "social-conformity", "disabled": true },
+        { "label": "Social conformity", "link": "social-conformity", "disabled": false },
         { "label": "Self-reliance and materialism", "link": "self-reliance-and-materialism", "disabled": true },
         { "label": "Mental and emotional health", "link": "mental-and-emotional-health", "disabled": true },
         { "label": "Aging society", "link": "aging-society", "disabled": true },
@@ -34,7 +34,7 @@
     "churchTopics": [
         { "label": "Struggling churches", "link": "struggling-churches", "disabled": true },
         { "label": "Church planting", "link": "church-planting", "disabled": true },
-        { "label": "Church leadership", "link": "church-leadership", "disabled": true },
+        { "label": "Church leadership", "link": "church-leadership", "disabled": false },
         { "label": "Church in the community", "link": "church-in-the-community", "disabled": true },
         { "label": "Creative ways of ministry", "link": "creative-ways-of-ministry", "disabled": true },
         { "label": "Christianity in rural areas", "link": "christianity-in-rural-areas", "disabled": true },

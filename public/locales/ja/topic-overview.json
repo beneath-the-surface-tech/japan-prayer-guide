@@ -5,7 +5,7 @@
         "日本在住の宣教師、牧師、クリスチャンリーダーたちにアンケートを取ったところ、500以上もの祈祷課題が集まりました。「御心が地にもなるように」では、それらを日本の文化や社会、そして教会や宣教に基づいてテーマごとに分類しています。",
         "選ばれた30のテーマは、今日の日本における福音の重要な機会および課題として、日本のクリスチャンリーダーたちが優先的に取り上げたものです。",
         "",
-        "準備中。\n2024年にウェブサイト完全公開予定。"
+        "準備中。\n2025年にウェブサイト完全公開予定。"
     ],
     "cultureHeading": "文化と社会",
     "churchHeading": "教会と宣教",
@@ -15,7 +15,7 @@
         { "label": "日本文化とキリスト教", "link": "japanese-culture-and-christianity", "disabled": true },
         { "label": "先祖崇拝", "link": "ancestor-veneration", "disabled": true },
         { "label": "和を重んじる文化", "link": "harmony", "disabled": true },
-        { "label": "社会の同調圧力", "link": "social-conformity", "disabled": true },
+        { "label": "社会の同調圧力", "link": "social-conformity", "disabled": false },
         { "label": "自分に頼る生き方と物質主義", "link": "self-reliance-and-materialism", "disabled": true },
         { "label": "精神と心の健康", "link": "mental-and-emotional-health", "disabled": true },
         { "label": "高齢化社会", "link": "aging-society", "disabled": true },
@@ -30,7 +30,7 @@
     "churchTopics": [
         { "label": "伸び悩む教会", "link": "struggling-churches", "disabled": true },
         { "label": "教会開拓", "link": "church-planting", "disabled": true },
-        { "label": "教会のリーダーシップ", "link": "church-leadership", "disabled": true },
+        { "label": "教会のリーダーシップ", "link": "church-leadership", "disabled": false },
         { "label": "地域社会における教会", "link": "church-in-the-community", "disabled": true },
         { "label": "創造的なミニストリー", "link": "creative-ways-of-ministry", "disabled": true },
         { "label": "地方伝道", "link": "christianity-in-rural-areas", "disabled": true },

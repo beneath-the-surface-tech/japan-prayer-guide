@@ -6,6 +6,7 @@ export interface Topic {
     label: string
     link: string
     disabled?: boolean
+    image?: string
 }
 
 interface TopicOverviewProps {
@@ -47,8 +48,8 @@ export const TopicOverviewSection = ({ title, section, topics }: TopicOverviewPr
                                         >
                                             <Image
                                                 src={
-                                                    idx === 0 && section === "culture"
-                                                        ? "/photos/topic-nav/culture/popular-religious-practices.png"
+                                                    !isDisabled
+                                                        ? topic.image
                                                         : `/photos/topic-nav/${section}/placeholder.png`
                                                 }
                                                 alt={""}
@@ -59,7 +60,7 @@ export const TopicOverviewSection = ({ title, section, topics }: TopicOverviewPr
                                             )}
                                         </div>
                                         <Card.Body className="d-flex topic-nav-card-title p-0">
-                                            <p className="m-0 text-grey-6">
+                                            <p className={"m-0 " + (!isDisabled ? "" : "text-grey-6")}>
                                                 <Trans>{topic.label}</Trans>
                                             </p>
                                         </Card.Body>

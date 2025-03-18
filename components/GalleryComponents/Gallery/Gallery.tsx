@@ -5,7 +5,8 @@ import { useEffect } from "react"
 import Modal from "@mui/material/Modal"
 import Slide from "@mui/material/Slide"
 import Box from "@mui/material/Box"
-import { Image, Row } from "react-bootstrap"
+import { Row } from "react-bootstrap"
+import Image from "next/image"
 
 interface GalleryProps {
     index: number
@@ -13,6 +14,7 @@ interface GalleryProps {
     images: {
         src: string
         title: string
+        alt?: string
     }[]
     setGallery: React.Dispatch<React.SetStateAction<boolean>>
     setLightBox: React.Dispatch<React.SetStateAction<boolean>>
@@ -67,12 +69,14 @@ function Gallery({
                         if (index % 3 === 0 || (index % 3 === 1 && index === images.length - 1)) {
                             return (
                                 <Row xs={1} sm={1} md={1} lg={1} xl={1} key={index}>
-                                    <div
-                                        className="gallerySpreadImage"
-                                        key={index}
-                                        onClick={() => handleLightBox(index)}
-                                    >
-                                        <Image key={index} src={item.src} className="galleryImage" alt="logo" />
+                                    <div className="gallerySpreadImage" onClick={() => handleLightBox(index)}>
+                                        <Image
+                                            src={item.src}
+                                            width={1800}
+                                            height={1200}
+                                            className="galleryImage"
+                                            alt={item?.alt || item.title}
+                                        />
                                         <div className="galleryImageOverlay"></div>
                                     </div>
                                 </Row>
@@ -80,25 +84,26 @@ function Gallery({
                         } else if (index % 3 === 1) {
                             return (
                                 <Row xs={2} sm={2} md={2} lg={2} xl={2} key={index}>
-                                    <div
-                                        className="gallerySpreadImage2"
-                                        key={index}
-                                        onClick={() => handleLightBox(index)}
-                                    >
-                                        <Image key={index} src={item.src} className="galleryImage" alt="logo" />
+                                    <div className="gallerySpreadImage2" onClick={() => handleLightBox(index)}>
+                                        <Image
+                                            key={index}
+                                            src={item.src}
+                                            width={1800}
+                                            height={1200}
+                                            className="galleryImage"
+                                            alt={item?.alt || item.title}
+                                        />
                                         <div className="galleryImageOverlay"></div>
                                     </div>
                                     {images[index + 1] && (
-                                        <div
-                                            className="gallerySpreadImage2"
-                                            key={index}
-                                            onClick={() => handleLightBox(index + 1)}
-                                        >
+                                        <div className="gallerySpreadImage2" onClick={() => handleLightBox(index + 1)}>
                                             <Image
                                                 key={index + 1}
                                                 src={images[index + 1]?.src}
+                                                width={1800}
+                                                height={1200}
                                                 className="galleryImage"
-                                                alt="logo"
+                                                alt={images[index + 1]?.alt || images[index + 1]?.title}
                                             />
                                             <div className="galleryImageOverlay"></div>
                                         </div>

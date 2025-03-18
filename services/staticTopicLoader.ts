@@ -29,12 +29,12 @@ function getTopicPageIds() {
     //   }
     // ]
 
-    const topics = loadTopicsFromTopicOverview()
+    const loadedTopics = loadTopicsFromTopicOverview()
 
     let paths: StaticPathWithLocaleType[] = []
     const configLocales = i18nConfig.i18n.locales
 
-    topics.map((topicLink) => {
+    loadedTopics.map((topicLink) => {
         configLocales.forEach((lang) => {
             paths.push({
                 params: {

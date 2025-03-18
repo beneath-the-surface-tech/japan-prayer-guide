@@ -24,10 +24,11 @@ export default function TopicDownloadables({ topicTrans }: downloadProps) {
     return (
         <Container
             data-testid={"topic-downloadables-container"}
-            className="d-flex flex-column my-5"
+            className="d-flex flex-column my-3 my-md-4"
             id="topic-downloads"
         >
-            <Container>
+            <div className="my-md-2"></div>
+            <Container className="mb-3 mb-md-0">
                 <h2 data-testid={"topic-downloadables-title"} className="fw-bold text-primary mt-4 mb-3">
                     <Trans t={t} i18nKey="downloads.title" />
                 </h2>
@@ -47,7 +48,7 @@ export default function TopicDownloadables({ topicTrans }: downloadProps) {
             </Container>
             <Link
                 href={downloadAllUrl}
-                className="align-self-center w-100"
+                className="align-self-center w-100 mt-2 mt-md-3"
                 style={{ maxWidth: "280px", cursor: "not-allowed" }}
                 locale={i18n.language}
             >

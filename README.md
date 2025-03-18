@@ -77,6 +77,8 @@ nvm use && npm i
 
 ### Development
 
+Open the `.env.example` file and fill in the required variables. If you do not have access to Retool, please ask in #eng channel.
+
 Run the development server:
 
 ```bash
@@ -86,6 +88,12 @@ yarn dev
 # or
 pnpm dev
 ```
+
+#### Retool for topic pages
+
+Topic page contents are stored in Retool, and are fetched via the `/api/topics` endpoint. The data is cached until it is invalidated. 
+
+There is a "Clear Cache" button bottom right corner of the page that will invalidate the cache.
 
 Nb: We aim to match the following naming conventions:
 

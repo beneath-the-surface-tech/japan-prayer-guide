@@ -59,15 +59,18 @@ interface MosaicProps {
     images: {
         src: string
         title: string
+        alt?: string
     }[]
-    blocks: number[]
     uncropped: {
         src: string
         title: string
+        alt?: string
     }[]
+    blocks: number[]
+    subTitle: string
 }
 
-export const Mosaic = ({ images, blocks, uncropped }: MosaicProps) => {
+export const Mosaic = ({ images, blocks, uncropped, subTitle }: MosaicProps) => {
     const [lightBox, setLightBox] = React.useState(false)
     const [index, setImage] = React.useState(0)
 
@@ -93,62 +96,68 @@ export const Mosaic = ({ images, blocks, uncropped }: MosaicProps) => {
     const halfBlocks = blocks.length / 2
 
     return (
-        <div className="flex-column" style={{ display: "flex", alignItems: "center" }}>
-            <div
-                className="d-flex align-items-center justify-content-center flex-column d-xl-none"
-                style={{ marginTop: "50px" }}
-            >
-                {calculatedStarts.map((num, idx) => {
-                    const MosaicComponent = blockMap[blocks[idx]].component ?? MosaicBlockOne
-                    return <MosaicComponent key={idx} images={images} startIdx={num} handleOpen={handleOpen} />
-                })}
+        <>
+            <p className="gallerySubtitle" style={{ marginBottom: "-20px", marginLeft: "1px", marginTop: "8px" }}>
+                {subTitle}
+            </p>
+            <div className="flex-column" style={{ display: "flex", alignItems: "center" }}>
+                <div
+                    className="d-flex align-items-center justify-content-center flex-column d-xl-none"
+                    style={{ marginTop: "50px" }}
+                >
+                    {calculatedStarts.map((num, idx) => {
+                        const MosaicComponent = blockMap[blocks[idx]].component ?? MosaicBlockOne
+                        return <MosaicComponent key={idx} images={images} startIdx={num} handleOpen={handleOpen} />
+                    })}
+                </div>
+                <div
+                    className="d-none d-xl-flex w-100 align-items-center justify-content-center p-0"
+                    style={{ marginTop: "50px", boxSizing: "border-box" }}
+                >
+                    {firstHalf.map((num, idx) => {
+                        const MosaicComponent = blockMap[blocks[idx]].component ?? MosaicBlockOne
+                        return <MosaicComponent key={idx} images={images} startIdx={num} handleOpen={handleOpen} />
+                    })}
+                </div>
+                <div
+                    className="d-none d-xl-flex w-100 align-items-center justify-content-center p-0"
+                    style={{ boxSizing: "border-box" }}
+                >
+                    {secondHalf.map((num, idx) => {
+                        const MosaicComponent = blockMap[blocks[idx + halfBlocks]].component ?? MosaicBlockOne
+                        return (
+                            <MosaicComponent
+                                key={idx + halfBlocks}
+                                images={images}
+                                startIdx={num}
+                                handleOpen={handleOpen}
+                            />
+                        )
+                    })}
+                </div>
+                <Modal
+                    open={lightBox}
+                    onClose={() => {
+                        setLightBox(false)
+                    }}
+                    aria-labelledby="child-modal-title"
+                    aria-describedby="child-modal-description"
+                >
+                    <Slide direction="up" in={lightBox} mountOnEnter unmountOnExit>
+                        <Box className="galleryBox">
+                            <LightBox
+                                index={index}
+                                setImage={setImage}
+                                images={uncropped}
+                                backupImages={images}
+                                lightBox={lightBox}
+                                setLightBox={setLightBox}
+                                setGallery={() => {}}
+                            />
+                        </Box>
+                    </Slide>
+                </Modal>
             </div>
-            <div
-                className="d-none d-xl-flex w-100 align-items-center justify-content-center p-0"
-                style={{ marginTop: "50px", boxSizing: "border-box" }}
-            >
-                {firstHalf.map((num, idx) => {
-                    const MosaicComponent = blockMap[blocks[idx]].component ?? MosaicBlockOne
-                    return <MosaicComponent key={idx} images={images} startIdx={num} handleOpen={handleOpen} />
-                })}
-            </div>
-            <div
-                className="d-none d-xl-flex w-100 align-items-center justify-content-center p-0"
-                style={{ boxSizing: "border-box" }}
-            >
-                {secondHalf.map((num, idx) => {
-                    const MosaicComponent = blockMap[blocks[idx + halfBlocks]].component ?? MosaicBlockOne
-                    return (
-                        <MosaicComponent
-                            key={idx + halfBlocks}
-                            images={images}
-                            startIdx={num}
-                            handleOpen={handleOpen}
-                        />
-                    )
-                })}
-            </div>
-            <Modal
-                open={lightBox}
-                onClose={() => {
-                    setLightBox(false)
-                }}
-                aria-labelledby="child-modal-title"
-                aria-describedby="child-modal-description"
-            >
-                <Slide direction="up" in={lightBox} mountOnEnter unmountOnExit>
-                    <Box className="galleryBox">
-                        <LightBox
-                            index={index}
-                            setImage={setImage}
-                            images={uncropped}
-                            lightBox={lightBox}
-                            setLightBox={setLightBox}
-                            setGallery={() => {}}
-                        />
-                    </Box>
-                </Slide>
-            </Modal>
-        </div>
+        </>
     )
 }
