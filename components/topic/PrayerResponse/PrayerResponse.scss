@@ -32,7 +32,7 @@
 
     .video-embed {
         position: relative;
-        padding-bottom: 56.25% !important; /* 16:9 */
+        padding-bottom: 56.25%; /* 16:9 */
         margin-bottom: 30px;
         height: 0;
     }
@@ -45,4 +45,17 @@
         font-family: $font-family-secondary;
         font-weight: 700;
     }
+}
+
+.no-video {
+    height: 100%;
+    width: 100%;
+    background-color: #bcc3cf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: white;
+    font-weight: 700;
+    text-align: center;
 }
