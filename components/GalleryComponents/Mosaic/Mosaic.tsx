@@ -68,11 +68,16 @@ interface MosaicProps {
     }[]
     blocks: number[]
     subTitle: string
+    alwaysDesktop?: boolean
 }
 
-export const Mosaic = ({ images, blocks, uncropped, subTitle }: MosaicProps) => {
+export const Mosaic = ({ images, blocks, uncropped, subTitle, alwaysDesktop = false }: MosaicProps) => {
     const [lightBox, setLightBox] = React.useState(false)
     const [index, setImage] = React.useState(0)
+
+    console.log("images: ", images)
+    console.log("uncropped: ", uncropped)
+    console.log("blocks: ", blocks)
 
     const handleOpen = (__i__: number) => {
         setImage(__i__)
@@ -99,6 +104,10 @@ export const Mosaic = ({ images, blocks, uncropped, subTitle }: MosaicProps) => 
     const secondHalf = calculatedStarts.slice(Math.ceil(calculatedStarts.length / 2))
     const halfBlocks = blocks.length / 2
 
+    console.log("firstHalf: ", firstHalf)
+    console.log("secondHalf: ", secondHalf)
+    console.log("halfBlocks: ", halfBlocks)
+
     return (
         <>
             <p className="gallerySubtitle" style={{ marginBottom: "-20px", marginLeft: "1px", marginTop: "8px" }}>
@@ -106,7 +115,9 @@ export const Mosaic = ({ images, blocks, uncropped, subTitle }: MosaicProps) => 
             </p>
             <div className="flex-column" style={{ display: "flex", alignItems: "center" }}>
                 <div
-                    className="d-flex align-items-center justify-content-center flex-column d-xl-none"
+                    className={`d-flex align-items-center justify-content-center flex-column ${
+                        alwaysDesktop ? "d-none" : "d-xl-none"
+                    }`}
                     style={{ marginTop: "50px" }}
                 >
                     {calculatedStarts.map((num, idx) => {
@@ -115,7 +126,9 @@ export const Mosaic = ({ images, blocks, uncropped, subTitle }: MosaicProps) => 
                     })}
                 </div>
                 <div
-                    className="d-none d-xl-flex w-100 align-items-center justify-content-center p-0"
+                    className={`${
+                        alwaysDesktop ? "d-flex" : "d-none"
+                    } d-xl-flex w-100 align-items-center justify-content-center p-0`}
                     style={{ marginTop: "50px", boxSizing: "border-box" }}
                 >
                     {firstHalf.map((num, idx) => {
@@ -124,7 +137,9 @@ export const Mosaic = ({ images, blocks, uncropped, subTitle }: MosaicProps) => 
                     })}
                 </div>
                 <div
-                    className="d-none d-xl-flex w-100 align-items-center justify-content-center p-0"
+                    className={`${
+                        alwaysDesktop ? "d-flex" : "d-none"
+                    } d-xl-flex w-100 align-items-center justify-content-center p-0`}
                     style={{ boxSizing: "border-box" }}
                 >
                     {secondHalf.map((num, idx) => {
