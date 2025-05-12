@@ -18,16 +18,16 @@ const getTranslations = unstable_cache(
 
         const localePath = url.replace(BASE_URL, "").replace("/api/locales/", "")
 
-        if (!RETOOL_PATHS.some(path => localePath.includes(path))) {
+        if (!RETOOL_PATHS.some((path) => localePath.includes(path))) {
             const file = fs.readFileSync(path.join("public/locales", localePath), "utf8")
             return JSON.parse(file)
         }
-        
+
         try {
             const response = await fetch(`${BASE_URL}/api/locales`, {
                 next: {
-                    tags: ["pages-locales"]
-                }
+                    tags: ["pages-locales"],
+                },
             })
             const data = await response.json()
 

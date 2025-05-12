@@ -16,6 +16,13 @@ export const getPages = unstable_cache(
                 },
                 topics: true,
                 relatedPages: true,
+                timelineEras: {
+                    events: {
+                        photos: {
+                            photo: true,
+                        },
+                    },
+                },
             },
         })
 

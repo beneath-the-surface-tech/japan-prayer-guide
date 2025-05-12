@@ -62,6 +62,32 @@ export function getTopicLocaleData(pages: PageEntity[], localePath: string) {
                 alt: photo.photo?.[`alt_${locale}` as "alt_en" | "alt_ja"],
             })),
         related,
+        timelineEras:
+            topicPage?.timelineEras?.map((era) => ({
+                id: era.id,
+                title: era[`title_${locale}` as "title_en" | "title_ja"],
+                era: era.era,
+                events: era.events
+                    ?.sort((a, b) => a.order - b.order)
+                    .map((event) => ({
+                        id: event.id,
+                        year: event.year,
+                        title: event.title,
+                        order: event.order,
+                        text_body: event[`text_body_${locale}` as "text_body_en" | "text_body_ja"],
+                        galleryType: event.gallery_type,
+                        bgVariant: event.bg_variant,
+                        photos: event.photos
+                            ?.sort((a, b) => a.order - b.order)
+                            .map((photo) => ({
+                                id: photo.id,
+                                order: photo.order,
+                                src: `https://d3rljda0pe0qw5.cloudfront.net/uploads/${photo.photo?.image_name}`,
+                                title: photo.photo?.[locale as "en" | "ja"] || null,
+                                alt: photo.photo?.[`alt_${locale}` as "alt_en" | "alt_ja"] || null,
+                            })),
+                    })),
+            })) || [],
     }
 
     return topicLocaleData
