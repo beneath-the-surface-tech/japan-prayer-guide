@@ -16,8 +16,6 @@ export default function TopicDownloadables({ topicTrans }: downloadProps) {
     const infographicsUrl = topicTrans("downloads.infographicsUrl", "")
     const photographyUrl = topicTrans("downloads.photographyUrl", "")
     const pdfUrl = topicTrans("downloads.pdfUrl", "")
-    const prayerPtsUrl = topicTrans("downloads.prayerPtsUrl", "")
-    const prayerVidUrl = topicTrans("downloads.prayerVidUrl", "")
     const slidesUrl = topicTrans("downloads.slidesUrl", "")
     const downloadAllUrl = topicTrans("downloads.downloadAllUrl", "#")
 
@@ -41,8 +39,6 @@ export default function TopicDownloadables({ topicTrans }: downloadProps) {
                     infographicsUrl={infographicsUrl}
                     photographyUrl={photographyUrl}
                     pdfUrl={pdfUrl}
-                    prayerPtsUrl={prayerPtsUrl}
-                    prayerVidUrl={prayerVidUrl}
                     slidesUrl={slidesUrl}
                 />
             </Container>
