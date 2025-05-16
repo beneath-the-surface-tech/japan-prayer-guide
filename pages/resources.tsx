@@ -31,6 +31,7 @@ export const getStaticProps = async ({ locale }: { locale: string }) => {
             // Will be passed to the page component as props
             // About used in content, common used in header
         },
+        revalidate: 30,
     }
 }
 
@@ -61,18 +62,16 @@ function LinkFromJson({ href, children }: { href: string; children?: React.React
 
 const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
     const heroHeader: string = t("heroHeader")
-    const heroSubtitle: string[] = t("heroSubtitle", { returnObjects: true }) as string[]
+    const heroSubtitle: string = t("heroSubtitle")
     const copyrightText: string = t("copyrightText")
 
     const infographicsUrl = t("byMediaUrls.infographicsUrl", "")
     const photographyUrl = t("byMediaUrls.photographyUrl", "")
     const pdfUrl = t("byMediaUrls.pdfUrl", "")
-    const prayerPtsUrl = t("byMediaUrls.prayerPtsUrl", "")
-    const prayerVidUrl = t("byMediaUrls.prayerVidUrl", "")
     const slidesUrl = t("byMediaUrls.slidesUrl", "")
 
-    const downloadSectionTitle: string = t("downloadSectionTitle")
-    const downloadBlurb: string = t("downloadBlurb")
+    const tutHeading: string = t("tutHeading")
+    const tutDescription: string = t("tutDescription")
 
     const bookletImgAltText: string = t("bookletImgAlt", "background picture of calm waves")
     const bookletRedirectHeading = t("bookletRedirectHeading")
@@ -99,11 +98,9 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                 <h1 className="px-4 px-md-5 px-lg-4 text-white text-center w-75">
                     <Trans>{heroHeader}</Trans>
                 </h1>
-                {heroSubtitle.map((text, idx) => (
-                    <p key={text + idx} className="subtext px-4 px-md-5 px-lg-4 text-white text-center w-75">
-                        <Trans>{text}</Trans>
-                    </p>
-                ))}
+                <p className="subtext px-4 px-md-5 px-lg-4 text-white text-center w-75">
+                    <Trans>{heroSubtitle}</Trans>
+                </p>
 
                 <p className="px-4 px-md-5 px-lg-4 text-grey-6 text-center fst-italic w-75">
                     <Trans components={[<LinkFromJson key={copyrightText.substring(0, 5)} href="/"></LinkFromJson>]}>
@@ -118,29 +115,24 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                     <ImageWithContentFlexCol
                         className="px-sm-2 px-md-2"
                         src={byMediaType}
-                        imgAltKey="byMediaTypeAltText"
+                        imgAltKey="byMediaAltText"
                         headingClass="fs-1"
-                        headingKey="byMediaTypeHeading"
-                        descriptionArrayKey="byMediaTypeDescriptions"
+                        headingKey="byMediaHeading"
+                        descriptionArrayKey="byMediaDescriptions"
                     >
-                        <p className="w-100">
-                            <Trans t={t} i18nKey="mediaTypesDisclaimer" />
-                        </p>
                         <DownloadablesGrid
                             className="d-sm-flex row-cols-sm-2 px-0"
                             infographicsUrl={infographicsUrl}
                             photographyUrl={photographyUrl}
                             pdfUrl={pdfUrl}
-                            prayerPtsUrl={prayerPtsUrl}
-                            prayerVidUrl={prayerVidUrl}
                             slidesUrl={slidesUrl}
                         />
 
                         <p className="w-100 mt-3">
                             <Trans
                                 t={t}
-                                i18nKey="switchLanguage"
-                                components={[<LinkFromJson key="switchLang" href="/"></LinkFromJson>]}
+                                i18nKey="byMediaOtherVersionText"
+                                components={[<LinkFromJson key="byMediaOtherVersionText" href="/"></LinkFromJson>]}
                             />
                         </p>
                     </ImageWithContentFlexCol>
@@ -171,10 +163,10 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
             >
                 <Container className="align-items-center">
                     <h1 className="mt-2 mb-4 pb-2 text-primary about-h1-header text-center">
-                        <Trans>{downloadSectionTitle}</Trans>
+                        <Trans>{tutHeading}</Trans>
                     </h1>
                     <p className="common-p text-center about-body-text">
-                        <Trans>{downloadBlurb}</Trans>
+                        <Trans>{tutDescription}</Trans>
                     </p>
 
                     <Container className="d-flex flex-column flex-lg-row">

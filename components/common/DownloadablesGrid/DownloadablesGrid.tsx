@@ -4,16 +4,13 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Link from "next/link"
 import { Trans, useTranslation } from "next-i18next"
-import { RiDonutChartFill, RiFile3Line, RiImageFill, RiMic2Fill, RiSlideshowLine } from "react-icons/ri"
-import { FaPrayingHands } from "react-icons/fa"
+import { RiDonutChartFill, RiFile3Line, RiImageFill, RiSlideshowLine } from "react-icons/ri"
 
 interface downloadProps {
     className?: string
     infographicsUrl?: string
     photographyUrl?: string
     pdfUrl?: string
-    prayerPtsUrl?: string
-    prayerVidUrl?: string
     slidesUrl?: string
 }
 
@@ -61,8 +58,6 @@ export default function DownloadablesGrid({
     infographicsUrl = "",
     photographyUrl = "",
     pdfUrl = "",
-    prayerPtsUrl = "",
-    prayerVidUrl = "",
     slidesUrl = "",
 }: downloadProps) {
     const { t } = useTranslation("common")
@@ -70,13 +65,11 @@ export default function DownloadablesGrid({
     const infographicsLabel = t("downloads.infographicsLabel")
     const photographyLabel = t("downloads.photographyLabel")
     const pdfLabel = t("downloads.pdfLabel")
-    const prayerPtsLabel = t("downloads.prayerPtsLabel")
-    const prayerVidLabel = t("downloads.prayerVidLabel")
     const slidesLabel = t("downloads.slidesLabel")
 
     return (
         <Row
-            md={3}
+            md={2}
             sm={1}
             className={"grid-row g-3 d-md-flex d-block " + className}
             data-testid={"topic-downloadables-links"}
@@ -93,18 +86,6 @@ export default function DownloadablesGrid({
                 label={photographyLabel}
                 link={photographyUrl}
                 disabled={photographyUrl === ""}
-            />
-            <ResourceCard
-                icon={<FaPrayingHands />}
-                label={prayerPtsLabel}
-                link={prayerPtsUrl}
-                disabled={prayerPtsUrl === ""}
-            />
-            <ResourceCard
-                icon={<RiMic2Fill />}
-                label={prayerVidLabel}
-                link={prayerVidUrl}
-                disabled={prayerVidUrl === ""}
             />
             <ResourceCard
                 icon={<RiSlideshowLine />}
