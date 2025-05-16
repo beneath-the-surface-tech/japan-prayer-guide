@@ -2,55 +2,46 @@
     "enabled": true,
     "webpageTitle": "Resources",
     "heroHeader": "Resources",
-    "heroSubtitle": [
-        "The design, text, and media assets on our website are available to download or stream. We've also prepared a few other helpful tools like presentation slides and PDF files from the booklet.",
-        "Please note that we have applied a Creative Commons BY-NC-ND 4.0 license to all our assets. This means that we welcome you to freely use and redistribute this material in any medium or format, with attribution to this website. However, these assets cannot be adapted or built upon without written permission from OMF Japan or Pioneers Japan, nor can they be used for commercial purposes."
+    "heroSubtitle": "The design, text, and media assets on our website are available to download or stream. We have also prepared a few other helpful tools. Our heart is to share what we have so that many people will be equipped to pray for Japan.",
+    "copyrightText": "We have applied a <0>Creative Commons BY-NC-SA 4.0 license</0> to all our assets. We welcome you to freely use, adapt, or redistribute these resources, with attribution to this website. <1>Please read more about the permissions of this license here.</1>",
+    "byMediaHeading": "Download by media type",
+    "byMediaAltText": "TODO A picture of media types",
+    "byMediaDescriptions": [
+        "The following resources are available to download by media type. Please note that clicking on the resource buttons will take you to an external website (Box) to download.",
+        "You may also <0>find and stream all of the prayer videos here.</0>"
     ],
-    "copyrightText": "This work is licensed under a <0>LICENSE LINK TEXT</0>",
-    "byMediaTypeAltText": "A picture of media types",
-    "byMediaTypeHeading": "Download by media type",
-    "byMediaTypeDescriptions": ["We have a total of 6 media types."],
     "byMediaUrls": {
         "infographicsUrl": "www.google.com",
         "pdfUrl": "www.google.com",
         "photographyUrl": "",
-        "prayerPtsUrl": "www.google.com",
-        "prayerVidUrl": "www.google.com",
         "slidesUrl": ""
     },
-    "switchLanguage": "To view Japanese content visit <0>HERE</0>",
-    "byTopicAltText": "A picture of topics",
+    "byMediaOtherVersionText": "Access the Japanese versions of these resources <0>here</0>.",
     "byTopicHeading": "Download by topic",
+    "byTopicAltText": "A picture of topics",
     "byTopicDescriptions": [
-        "There are two ways to download our resources, by topic or by media type. Please note that the links below will take you to an external site (Box, Vimeo) to access the files. ",
-        "You can also download a simple PDF here of the references that appear on our website."
-    ],
-    "topicBlurb": [
-        "There are two ways to download our resources, by topic or by media type. Please note that the links below will take you to an external site (Box, Vimeo) to access the files.",
-        "You can also download a simple PDF here of the references that appear on our website."
+        "You can also download resources by topic. These resources are also available as individuals links at the bottom of each topic page."
     ],
     "byTopicBtn": "Download by topic",
 
-    "downloadSectionTitle": "How do I download?",
-    "downloadBlurb": "View tutorial here PDF document",
-    "tutAltText1": "",
-    "tut1Heading": " 1. Step up",
+    "tutHeading": "How to download",
+    "tutDescription": "Please note that clicking on the resource buttons will take you to an external website (Box). Follow the instructions below to download resources.",
+    "tut1Heading": "1. Sort and select",
+    "tut1AltText": "TODO",
     "tut1Descriptions": [
-        "There are two ways to download our resources, by topic or by media type. Please note that the links below will take you to an external site (Box, Vimeo) to access the files. ",
-        "You can also download a simple PDF here of the references that appear on our website."
+        "Sort by \"Name\" to find specific files easily. Hover over each file you want to download and click on the \"Select\" box."
     ],
-    "tutAltText2": "",
-    "tut2Heading": " 2. hjkjhkjhkjhk",
-    "tut2Descriptions": [
-        "There are two ways to download our resources, by topic or by media type. Please note that the links below will take you to an external site (Box, Vimeo) to access the files. ",
-        "You can also download a simple PDF here of the references that appear on our website."
-    ],
-    "tutAltText3": "",
-    "tut3Heading": " 3. hjkjhkjhkjhk",
+    "tut2Heading": "2. Download",
+    "tut2AltText": "TODO",
+    "tut2Descriptions": ["Click the download icon on the top right of the page."],
+    "tut3Heading": "3. Access files",
+    "tut3AltText": "TODO",
     "tut3Descriptions": [
-        "There are two ways to download our resources, by topic or by media type. Please note that the links below will take you to an external site (Box, Vimeo) to access the files. ",
-        "You can also download a simple PDF here of the references that appear on our website."
+        "Your files can be found wherever you normally access downloads through your browser or computer."
     ],
+
+    "referencesHeading": "View the references",
+    "referencesDescription": "Credits and references for this website are available to view <0>here</0>. References by topic are also available on each topic page.",
 
     "bookletImgAlt": "background picture of calm waves",
     "bookletRedirectHeading": "Get the prayer booklet",
