@@ -67,7 +67,7 @@ describe("Topic Downloadables", () => {
         expect(topicDownloadablesTitle).toHaveTextContent("downloads.title")
         expect(topicDownloadablesTitle).toHaveClass("text-primary", "mt-4", "mb-3", "fw-bold")
 
-        expect(topicDownloadablesLinks.length).toBe(6)
+        expect(topicDownloadablesLinks.length).toBe(4)
         expect(topicDownloadablesLinks[0]).toHaveTextContent("downloads.infographicsLabel")
         expect(topicDownloadablesLinks[0]).toHaveClass("col")
         expect(topicDownloadablesLinks[0].children[0].getAttribute("href")).toBe("value")
