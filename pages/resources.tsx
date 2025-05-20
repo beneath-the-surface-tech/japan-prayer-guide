@@ -199,7 +199,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
             </div>
 
             {/* References section */}
-            <section id="references">
+            <section id="references" className="py-4 py-md-5">
                 <Container>
                     <h1 className="text-primary">
                         <Trans>{referencesHeading}</Trans>
