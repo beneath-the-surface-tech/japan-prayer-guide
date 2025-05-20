@@ -229,7 +229,7 @@ export const MosaicBlockSeven = ({ images, startIdx, handleOpen }: BlockProps) =
                     <div className="mosaicImageOverlay"></div>
                 </div>
             </Col>
-            <Col xs={4} className="p-0" style={{ height: "100%" }}>
+            <Col xs={4} className="p-0 h-100" style={{ height: "100%" }}>
                 <div
                     style={{ height: "50%", width: "100%" }}
                     className="mosaicImage"
@@ -270,7 +270,7 @@ export const MosaicBlockSeven = ({ images, startIdx, handleOpen }: BlockProps) =
 export const MosaicBlockEight = ({ images, startIdx, handleOpen }: BlockProps) => {
     return (
         <Row xs={2} className="mosaicGroup">
-            <Col xs={6} className="p-0" style={{ height: "100%" }}>
+            <Col xs={6} className="p-0 h-100" style={{ height: "100%" }}>
                 <div
                     style={{ height: "50%", width: "100%" }}
                     className="mosaicImage"
@@ -300,7 +300,7 @@ export const MosaicBlockEight = ({ images, startIdx, handleOpen }: BlockProps) =
                     <div className="mosaicImageOverlay"></div>
                 </div>
             </Col>
-            <Col xs={6} className="p-0">
+            <Col xs={6} className="p-0 h-100">
                 <div
                     style={{ height: "100%", width: "100%" }}
                     className="mosaicImage"
@@ -323,7 +323,7 @@ export const MosaicBlockEight = ({ images, startIdx, handleOpen }: BlockProps) =
 export const MosaicBlockNine = ({ images, startIdx, handleOpen }: BlockProps) => {
     return (
         <Row xs={2} className="mosaicGroup">
-            <Col xs={6} className="p-0" style={{ height: "100%" }}>
+            <Col xs={6} className="p-0 h-100" style={{ height: "100%" }}>
                 <div
                     style={{ height: "100%", width: "100%" }}
                     className="mosaicImage"
@@ -341,7 +341,7 @@ export const MosaicBlockNine = ({ images, startIdx, handleOpen }: BlockProps) =>
                     <div className="mosaicImageOverlay"></div>
                 </div>
             </Col>
-            <Col xs={6} className="p-0" style={{ height: "100%" }}>
+            <Col xs={6} className="p-0 h-100" style={{ height: "100%" }}>
                 <div
                     style={{ height: "50%", width: "100%" }}
                     className="mosaicImage"

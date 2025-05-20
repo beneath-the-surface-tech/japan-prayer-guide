@@ -79,6 +79,10 @@ export const Mosaic = ({ images, blocks, uncropped, subTitle }: MosaicProps) => 
         setLightBox(true)
     }
 
+    // THIS IS A BANDAID FIX, we need to sort the uncropped photos too.
+    const _uncropped = [...(uncropped ?? [])]
+    _uncropped.sort((a, b) => a.src.localeCompare(b.src))
+
     // For smaller than desktop
     let idx = 0
     const calculatedStarts = []
@@ -148,7 +152,7 @@ export const Mosaic = ({ images, blocks, uncropped, subTitle }: MosaicProps) => 
                             <LightBox
                                 index={index}
                                 setImage={setImage}
-                                images={uncropped}
+                                images={_uncropped}
                                 backupImages={images}
                                 lightBox={lightBox}
                                 setLightBox={setLightBox}
