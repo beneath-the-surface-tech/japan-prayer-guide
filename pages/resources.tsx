@@ -23,6 +23,7 @@ import tutImg2 from "../public/photos/about/about_03.png"
 import tutImg3 from "../public/photos/about/about_02.png"
 import DownloadablesGrid from "../components/common/DownloadablesGrid/DownloadablesGrid"
 import { LinkFromJson } from "@/components/common/LinkFromJson"
+import NextImage from "@/components/common/NextImage/NextImage"
 
 export const getStaticProps = async ({ locale }: { locale: string }) => {
     const isPageReady: boolean = resources.enabled
@@ -60,7 +61,10 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
     const heroHeader: string = t("heroHeader")
     const heroSubtitle: string = t("heroSubtitle")
     const copyrightText: string = t("copyrightText")
-    const copyrightUrl: string = t("copyrightUrl")
+    const copyrightUrl: string = t("copyrightUrl", "/")
+
+    const byMediaOtherVersionUrl = t("byMediaOtherVersionUrl", "/")
+    const byTopicBtnUrl = t("byTopicBtnUrl", "/")
 
     const infographicsUrl = t("byMediaUrls.infographicsUrl", "")
     const photographyUrl = t("byMediaUrls.photographyUrl", "")
@@ -104,8 +108,8 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
             </div>
 
             {/* 'Download by' section */}
-            <div id="downloadBy" className="w-100 pb-4 pb-md-5 pt-5 d-flex align-items-center flex-column px-4 px-md-4">
-                <Container className="align-items-center">
+            <div id="downloadBy" className="w-100 d-flex align-items-center flex-column px-4 px-md-4 page-section">
+                <Container>
                     <p className="common-p text-center">
                         <Trans
                             components={[
@@ -117,18 +121,18 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                         </Trans>
                     </p>
 
-                    <Container className="d-flex flex-md-row flex-sm-column mw-100 px-sm-0 px-md-0">
+                    <Container className="d-flex flex-lg-row flex-sm-column justify-content-center mw-100 px-sm-0 px-md-0">
                         <ImageWithContentFlexCol
-                            className="px-sm-2 px-md-2"
+                            className="col-lg-6 col-md-12 flex-sm-column flex-xl-column mb-sm-0 mb-md-0"
                             src={byMediaType}
                             imgAltKey="byMediaAltText"
-                            headingClass="fs-1"
                             headingKey="byMediaHeading"
+                            headerPosition={TextPosition.Responsive}
                             descriptionArrayKey="byMediaDescriptions"
                             descriptionUrlArray={["", VIMEO_URL]}
                         >
                             <DownloadablesGrid
-                                className="d-sm-flex row-cols-sm-2 px-0"
+                                className="d-sm-flex row-cols-sm-2 px-0 my-1"
                                 infographicsUrl={infographicsUrl}
                                 photographyUrl={photographyUrl}
                                 pdfUrl={pdfUrl}
@@ -139,22 +143,27 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                                 <Trans
                                     t={t}
                                     i18nKey="byMediaOtherVersionText"
-                                    components={[<LinkFromJson key="byMediaOtherVersionText" href="/"></LinkFromJson>]}
+                                    components={[
+                                        <LinkFromJson
+                                            key="byMediaOtherVersionText"
+                                            href={byMediaOtherVersionUrl}
+                                        ></LinkFromJson>,
+                                    ]}
                                 />
                             </p>
                         </ImageWithContentFlexCol>
                         <ImageWithContentFlexCol
-                            className="px-sm-2 px-md-2"
+                            className="col-lg-6 col-md-12 flex-sm-column flex-xl-column mb-sm-0 mb-md-0"
                             src={byTopic}
                             imgAltKey="byTopicAltText"
-                            headingClass="fs-1"
                             headingKey="byTopicHeading"
+                            headerPosition={TextPosition.Responsive}
                             descriptionArrayKey="byTopicDescriptions"
                         >
                             <div className="d-inline-flex">
                                 <Link
                                     className="text-white text-center my-2 bg-secondary-5 border-secondary-5 btn btn-primary topic-btn"
-                                    href="/"
+                                    href={byTopicBtnUrl}
                                 >
                                     <Trans t={t} i18nKey="byTopicBtn" />
                                 </Link>
@@ -169,7 +178,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                 id="tutorial"
                 className="bg-secondary-2 w-100 py-4 py-md-5 d-flex align-items-center flex-column px-4 px-md-4"
             >
-                <Container className="align-items-center">
+                <Container>
                     <h1 className="mt-2 mb-4 pb-2 text-primary text-center">
                         <Trans>{tutHeading}</Trans>
                     </h1>
@@ -177,13 +186,13 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                         <Trans>{tutDescription}</Trans>
                     </p>
 
-                    <Container className="d-flex flex-column flex-lg-row">
+                    <Container className="d-flex flex-column flex-lg-row justify-content-center">
                         {tutorialImages.map((img, idx) => {
                             const prefix = "tut" + (idx + 1)
                             return (
                                 <ImageWithContentFlexCol
                                     key={"img" + idx}
-                                    className="my-0 w-auto flex-sm-column flex-md-row flex-lg-column mb-sm-0 mb-md-0"
+                                    className="col-lg-6 col-md-12 flex-sm-column flex-md-row flex-lg-column mb-sm-0 mb-md-0"
                                     src={img}
                                     imgAltKey={prefix + "AltText"}
                                     contentClass="px-md-4"
@@ -201,14 +210,21 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
             {/* References section */}
             <section id="references" className="py-4 py-md-5">
                 <Container>
-                    <h1 className="text-primary">
-                        <Trans>{referencesHeading}</Trans>
-                    </h1>
-                    <p className="common-p">
-                        <Trans components={[<LinkFromJson key="referencesDescription" href="/" />]}>
-                            {referencesDescription}
-                        </Trans>
-                    </p>
+                    <div className="d-flex">
+                        <div className="flex-shrink-0">
+                            <NextImage src={byMediaType} alt="/TODO" className="mb-4 content-image" />
+                        </div>
+                        <div className="flex-grow-1 ms-3">
+                            <h1 className="text-primary">
+                                <Trans>{referencesHeading}</Trans>
+                            </h1>
+                            <p className="common-p">
+                                <Trans components={[<LinkFromJson key="referencesDescription" href="/" />]}>
+                                    {referencesDescription}
+                                </Trans>
+                            </p>
+                        </div>
+                    </div>
                 </Container>
             </section>
 

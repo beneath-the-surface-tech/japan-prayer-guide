@@ -5,9 +5,9 @@ import { StaticImageData } from "next/image"
 import NextImage from "../../common/NextImage/NextImage"
 import { LinkFromJson } from "@/components/common/LinkFromJson"
 
-// Used to position the heading between text either above or below the image
+// Used to position the heading between text either be responsive or always below the image
 export enum TextPosition {
-    Above,
+    Responsive,
     Below,
 }
 
@@ -31,7 +31,7 @@ export default function ImageWithContentFlexCol({
     contentClass = "",
     headingClass = "",
     headingKey,
-    headerPosition = TextPosition.Above,
+    headerPosition = TextPosition.Below,
     descriptionArrayKey,
     descriptionUrlArray = [],
     children,
@@ -43,20 +43,23 @@ export default function ImageWithContentFlexCol({
     let descriptions: string[] = t(descriptionArrayKey, { returnObjects: true }) as string[]
     descriptions = Array.isArray(descriptions) ? descriptions : []
 
+    // Nb - for responsibe we currently assume Top visible for lg and up
+    const bottomHeaderClasses = `text-primary ${headingClass} ${
+        headerPosition === TextPosition.Responsive ? "d-lg-none" : ""
+    }`
+
     return (
         <Container className={"d-flex flex-column my-4 image-content-flex " + className}>
-            {headerPosition === TextPosition.Above && (
-                <h3 className={"text-primary " + headingClass}>
+            {headerPosition === TextPosition.Responsive && (
+                <h3 className={"text-primary d-none d-lg-block" + headingClass}>
                     <Trans>{heading}</Trans>
                 </h3>
             )}
             <NextImage src={src} alt={imgAlt} className={"mb-4 content-image"} />
             <div className={"d-flex flex-column " + contentClass}>
-                {headerPosition === TextPosition.Below && (
-                    <h3 className={"text-primary " + headingClass}>
-                        <Trans>{heading}</Trans>
-                    </h3>
-                )}
+                <h3 className={bottomHeaderClasses}>
+                    <Trans>{heading}</Trans>
+                </h3>
 
                 {descriptions.map((description, idx) => (
                     <p key={description.substring(0, 5) + idx}>

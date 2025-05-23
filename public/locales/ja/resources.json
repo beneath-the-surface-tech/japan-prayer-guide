@@ -12,18 +12,20 @@
         "You may also <0>find and stream all of the prayer videos here.</0>"
     ],
     "byMediaUrls": {
-        "infographicsUrl": "www.google.com",
-        "pdfUrl": "www.google.com",
+        "infographicsUrl": "https://app.box.com/s/k99s92j06qgbp4fnpihq8373t9bx7vgm",
+        "pdfUrl": "https://app.box.com/s/utrqmn7n1b9wcz1tovll0p6za9wlq3gw",
         "photographyUrl": "",
-        "slidesUrl": ""
+        "slidesUrl": "https://app.box.com/s/37lcklejyu5ccqik3s23v55byzkd641c"
     },
     "byMediaOtherVersionText": "Access the Japanese versions of these resources <0>here</0>.",
+    "byMediaOtherVersionUrl": "https://app.box.com/s/84abmy2pba2uawzpsffh9gq7rr0wizd2",
     "byTopicHeading": "Download by topic",
     "byTopicAltText": "A picture of topics",
     "byTopicDescriptions": [
         "You can also download resources by topic. These resources are also available as individuals links at the bottom of each topic page."
     ],
     "byTopicBtn": "Download by topic",
+    "byTopicBtnUrl": "https://app.box.com/s/5bjbdjywrag6fgb9k54j2tuuwbu7fqd6",
 
     "tutHeading": "How to download",
     "tutDescription": "Please note that clicking on the resource buttons will take you to an external website (Box). Follow the instructions below to download resources.",

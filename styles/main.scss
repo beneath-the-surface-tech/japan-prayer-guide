@@ -40,3 +40,17 @@
 .bottom-grey-border {
     border-bottom: 1px #d6dde6 solid;
 }
+
+.page-section {
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+    @include media-breakpoint-down(xl) {
+        margin-top: 48px;
+        margin-bottom: 48px;
+    }
+    @include media-breakpoint-down(md) {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+}
