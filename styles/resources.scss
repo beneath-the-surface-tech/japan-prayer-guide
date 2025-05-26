@@ -2,6 +2,16 @@
 @import "../node_modules/bootstrap/scss/variables";
 
 #resources {
+    p {
+        font-size: $paragraph-text;
+        @include media-breakpoint-down(xl) {
+            font-size: $paragraph-text-tablet;
+        }
+        @include media-breakpoint-down(md) {
+            font-size: $paragraph-text-mobile;
+        }
+    }
+
     #resources-banner {
         height: 490px;
 
@@ -40,16 +50,6 @@
                 margin-bottom: 16px;
             }
         }
-
-        p {
-            font-size: 20px;
-            @include media-breakpoint-down(xl) {
-                font-size: 18px;
-            }
-            @include media-breakpoint-down(md) {
-                font-size: 18px;
-            }
-        }
     }
 
     #downloadBy {
@@ -79,8 +79,8 @@
         .image-content-flex {
             width: 548px;
 
-            @include media-breakpoint-down(md) {
-                width: 352px;
+            @include media-breakpoint-down(lg) {
+                width: 720px;
             }
 
             @include media-breakpoint-down(sm) {

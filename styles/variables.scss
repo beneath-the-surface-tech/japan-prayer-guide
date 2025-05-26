@@ -69,3 +69,7 @@ $grid-breakpoints: (
     xl: 1280px,
     xxl: 1440px,
 );
+
+$paragraph-text: 20px;
+$paragraph-text-tablet: $paragraph-text - 2px;
+$paragraph-text-mobile: $paragraph-text - 2px;

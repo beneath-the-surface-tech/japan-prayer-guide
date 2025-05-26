@@ -23,7 +23,7 @@ import tutImg2 from "../public/photos/about/about_03.png"
 import tutImg3 from "../public/photos/about/about_02.png"
 import DownloadablesGrid from "../components/common/DownloadablesGrid/DownloadablesGrid"
 import { LinkFromJson } from "@/components/common/LinkFromJson"
-import NextImage from "@/components/common/NextImage/NextImage"
+import { FaRegFile } from "react-icons/fa"
 
 export const getStaticProps = async ({ locale }: { locale: string }) => {
     const isPageReady: boolean = resources.enabled
@@ -110,7 +110,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
             {/* 'Download by' section */}
             <div id="downloadBy" className="w-100 d-flex align-items-center flex-column px-4 px-md-4 page-section">
                 <Container>
-                    <p className="common-p text-center">
+                    <p className="text-center">
                         <Trans
                             components={[
                                 <LinkFromJson key="copyrightText0" href={copyrightUrl} />,
@@ -182,7 +182,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                     <h1 className="mt-2 mb-4 pb-2 text-primary text-center">
                         <Trans>{tutHeading}</Trans>
                     </h1>
-                    <p className="common-p text-center">
+                    <p className="text-center">
                         <Trans>{tutDescription}</Trans>
                     </p>
 
@@ -210,15 +210,16 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
             {/* References section */}
             <section id="references" className="py-4 py-md-5">
                 <Container>
-                    <div className="d-flex">
+                    <div className="d-flex align-items-center">
                         <div className="flex-shrink-0">
-                            <NextImage src={byMediaType} alt="/TODO" className="mb-4 content-image" />
+                            {/* temp placeholder icon*/}
+                            <FaRegFile style={{ width: "5rem", height: "5rem" }} />
                         </div>
                         <div className="flex-grow-1 ms-3">
                             <h1 className="text-primary">
                                 <Trans>{referencesHeading}</Trans>
                             </h1>
-                            <p className="common-p">
+                            <p>
                                 <Trans components={[<LinkFromJson key="referencesDescription" href="/" />]}>
                                     {referencesDescription}
                                 </Trans>
