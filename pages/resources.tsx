@@ -14,10 +14,11 @@ import ImageWithContentFlexCol, {
     TextPosition,
 } from "../components/resources/ImageWithContentFlexCol/ImageWithContentFlexCol"
 
-import bannerHeroHighRes from "../public/photos/about/about_hero.jpg"
-import bannerHeroLowRes from "../public/photos/about/about_hero_LowRes.jpg"
+import bannerHeroHighRes from "../public/photos/resources/Resources-candidates-26.jpg"
+import bannerHeroLowRes from "../public/photos/resources/Resources-candidates-26.jpg"
 import byMediaType from "../public/photos/about/about_02.png"
-import byTopic from "../public/photos/about/about_03.png"
+import byTopicEN from "../public/photos/resources/EN-Book-Marketing-04.jpg"
+import byTopicJA from "../public/photos/resources/JA-Book-Marketing-04.jpg"
 import tutImg1 from "../public/photos/about/about_02.png"
 import tutImg2 from "../public/photos/about/about_03.png"
 import tutImg3 from "../public/photos/about/about_02.png"
@@ -154,7 +155,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                         </ImageWithContentFlexCol>
                         <ImageWithContentFlexCol
                             className="col-lg-6 col-md-12 flex-sm-column flex-xl-column mb-sm-0 mb-md-0"
-                            src={byTopic}
+                            src={i18n.language === "en" ? byTopicEN : byTopicJA}
                             imgAltKey="byTopicAltText"
                             headingKey="byTopicHeading"
                             headerPosition={TextPosition.Responsive}
