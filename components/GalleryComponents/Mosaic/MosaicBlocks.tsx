@@ -128,25 +128,25 @@ export const MosaicBlockFive = ({ images, startIdx, handleOpen }: BlockProps) =>
                 <div
                     style={{ height: "100%", width: "100%" }}
                     className="mosaicImage"
-                    key={startIdx + 1}
-                    onClick={() => handleOpen(startIdx + 1)}
+                    key={startIdx}
+                    onClick={() => handleOpen(startIdx)}
                 >
-                    <Img
-                        key={startIdx + 1}
-                        src={images[startIdx + 1].src}
-                        className="mosaicImage"
-                        alt={images[startIdx + 1]?.alt || images[startIdx + 1].title}
-                    />
-                    <div className="mosaicImageOverlay"></div>
-                </div>
-            </Col>
-            <Col xs={8} className="p-0 h-100">
-                <div className="mosaicImage h-100" key={startIdx} onClick={() => handleOpen(startIdx)}>
                     <Img
                         key={startIdx}
                         src={images[startIdx].src}
                         className="mosaicImage"
                         alt={images[startIdx]?.alt || images[startIdx].title}
+                    />
+                    <div className="mosaicImageOverlay"></div>
+                </div>
+            </Col>
+            <Col xs={8} className="p-0 h-100">
+                <div className="mosaicImage h-100" key={startIdx + 1} onClick={() => handleOpen(startIdx + 1)}>
+                    <Img
+                        key={startIdx + 1}
+                        src={images[startIdx + 1].src}
+                        className="mosaicImage"
+                        alt={images[startIdx + 1]?.alt || images[startIdx + 1].title}
                     />
                     <div className="mosaicImageOverlay"></div>
                 </div>
