@@ -275,7 +275,7 @@
         gap: 16px;
     }
     .lightbox-box {
-        height: calc(100% - 20px);
+        height: calc(100% - 60px);
         width: 100%;
         display: flex;
         align-items: center;
@@ -284,13 +284,26 @@
     }
     .lightbox-box img {
         display: block;
-        width: auto;
         max-width: 1400px;
         height: auto;
-        max-height: calc(100% - 10px);
+        max-height: calc(100% - 20px);
         object-fit: cover;
-        @include media-breakpoint-down(xxl) {
+        @include media-breakpoint-down(sm) {
+            max-height: calc(100% - 40px);
+        }
+    }
+
+    .imgWide {
+        width: auto;
+        @include media-breakpoint-down(lg) {
             width: 100%;
+        }
+    }
+
+    .imgTall {
+        width: auto;
+        @include media-breakpoint-down(sm) {
+            height: calc(100% - 120px)!important;
         }
     }
 
@@ -298,16 +311,19 @@
         text-align: center;
         font-size: 16px;
         font-weight: 400;
-        height: 50px;
-        min-height: 50px;
-        max-height: 50px;
+        height: 75px;
+        min-height: 75px;
+        max-height: 75px;
         margin-top: auto;
         margin-bottom: 10px;
         // preserve spaces if tags (like <i> or <sup>) are used throughout
         white-space: pre-wrap;
         position: relative;
         @include media-breakpoint-down(sm) {
-            top: -70px;
+            top: -35px;
+            height: 85px;
+            min-height: 85px;
+            max-height: 85px;
         }
 
         span {

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react"
+import React, { useCallback, useEffect, useState } from "react"
 import { Cross } from "../../icons"
 import { Trans } from "next-i18next"
 import Image from "next/image"
@@ -22,6 +22,8 @@ interface LightBoxProps {
 }
 
 const LightBox = ({ index, setImage, images, lightBox, setLightBox, backupImages = [] }: LightBoxProps) => {
+    const [aspectRatio, setAspect] = useState(1)
+
     const handleSwitch = useCallback(
         (type: string) => {
             if (type === "inc" && index + 1 !== images.length) {
@@ -78,7 +80,15 @@ const LightBox = ({ index, setImage, images, lightBox, setLightBox, backupImages
                         )}
                     </div>
                     <div className="lightbox-box">
-                        <Image src={images[index].src} width={1800} height={1200} alt={alt} />
+                        <Image
+                            //@ts-expect-error for some reason naturalWidth not found.
+                            onLoad={(e) => setAspect(e.target.naturalWidth / e.target.naturalHeight)}
+                            src={images[index].src}
+                            width={1800}
+                            height={1200}
+                            alt={alt}
+                            className={aspectRatio >= 1 ? "imgWide" : "imgTall"}
+                        />
                     </div>
                     <h1>
                         <Trans>{title}</Trans>
