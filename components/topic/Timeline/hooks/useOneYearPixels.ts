@@ -7,8 +7,8 @@ export const useOneYearPixels = () => {
     const lg = useMediaQuery("(min-width: 1904px)")
 
     if (xs) return 1
-    if (sm) return 2
-    if (md) return 3
-    if (lg) return 4
-    return 4
+    if (sm) return 1
+    if (md) return 1
+    if (lg) return 1
+    return 1
 }

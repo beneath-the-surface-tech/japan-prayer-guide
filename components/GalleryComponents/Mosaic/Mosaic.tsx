@@ -75,10 +75,6 @@ export const Mosaic = ({ images, blocks, uncropped, subTitle, alwaysDesktop = fa
     const [lightBox, setLightBox] = React.useState(false)
     const [index, setImage] = React.useState(0)
 
-    console.log("images: ", images)
-    console.log("uncropped: ", uncropped)
-    console.log("blocks: ", blocks)
-
     const handleOpen = (__i__: number) => {
         setImage(__i__)
         setLightBox(true)
@@ -99,10 +95,6 @@ export const Mosaic = ({ images, blocks, uncropped, subTitle, alwaysDesktop = fa
     const firstHalf = calculatedStarts.slice(0, Math.ceil(calculatedStarts.length / 2))
     const secondHalf = calculatedStarts.slice(Math.ceil(calculatedStarts.length / 2))
     const halfBlocks = blocks.length / 2
-
-    console.log("firstHalf: ", firstHalf)
-    console.log("secondHalf: ", secondHalf)
-    console.log("halfBlocks: ", halfBlocks)
 
     return (
         <>

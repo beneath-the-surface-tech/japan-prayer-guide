@@ -1,4 +1,4 @@
-import { FC, useRef, useEffect } from "react"
+import { FC, useRef } from "react"
 import { motion } from "motion/react"
 import styles from "./Timeline.module.css"
 import { TimelineEra } from "../../../pages/topics/[topicPage]"
@@ -15,17 +15,17 @@ const TimelineBar: FC<TimelineBarProps> = ({ activeEra, activeEventIndex, onEven
     const timelineRef = useRef<HTMLDivElement>(null)
 
     // Scroll to active event when it changes
-    useEffect(() => {
-        if (timelineRef.current && activeEra && activeEventIndex >= 0) {
-            const activeEventElement = timelineRef.current.querySelector(`.${styles.activeEvent}`)
+    // useEffect(() => {
+    //     if (timelineRef.current && activeEra && activeEventIndex >= 0) {
+    //         const activeEventElement = timelineRef.current.querySelector(`.${styles.activeEvent}`)
 
-            if (activeEventElement) {
-                activeEventElement.scrollIntoView({
-                    behavior: "smooth",
-                })
-            }
-        }
-    }, [activeEra, activeEventIndex])
+    //         if (activeEventElement) {
+    //             activeEventElement.scrollIntoView({
+    //                 behavior: "smooth",
+    //             })
+    //         }
+    //     }
+    // }, [activeEra, activeEventIndex])
 
     const renderEraEvents = (era: TimelineEra, eraIndex: number) => {
         if (!era.events) return null
@@ -43,7 +43,7 @@ const TimelineBar: FC<TimelineBarProps> = ({ activeEra, activeEventIndex, onEven
                 >
                     <div
                         className={styles.eventDot}
-                        style={{ backgroundColor: isActiveEvent ? "#F46B59" : "#A6A6A6" }}
+                        style={{ backgroundColor: isActiveEvent ? "#F46B59" : "#ffffff" }}
                     />
                     {isActiveEvent && <div className={styles.eventIndicator} />}
                 </motion.div>

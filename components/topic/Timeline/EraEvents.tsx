@@ -3,6 +3,7 @@ import React, { FC, useEffect, useRef } from "react"
 import { TimelineEra } from "../../../pages/topics/[topicPage]"
 import styles from "./Timeline.module.scss"
 import { useTimelineContext } from "./TimelineContext"
+import { Box } from "@mui/material"
 
 export interface EraEventsProps {
     era: TimelineEra
@@ -41,7 +42,7 @@ const EventItem: FC<{
                 height: `${eventGaps.get(event.id) || 0}px`,
             }}
         >
-            <div className={styles.eventDot} style={{ backgroundColor: isActiveEvent ? "#F46B59" : "#A6A6A6" }} />
+            <div className={styles.eventDot} style={{ backgroundColor: isActiveEvent ? "#F46B59" : "#ffffff" }} />
             <motion.div
                 style={{
                     position: "absolute",
@@ -53,7 +54,7 @@ const EventItem: FC<{
                     height,
                     zIndex: 2,
                 }}
-                transition={{ type: "spring", bounce: 0.25 }}
+                transition={{ duration: 0.5 }}
             />
             {isActiveEvent && <div className={styles.eventIndicator} />}
         </div>
@@ -61,22 +62,29 @@ const EventItem: FC<{
 }
 
 const EraEvents: FC<EraEventsProps> = ({ era, activeEra, activeEventIndex, timelineBarRef, eventGaps }) => {
-    const { activeEvent } = useTimelineContext()
     const eventRefs = useRef<Record<number, HTMLDivElement>>({})
+    const activeEraRef = useRef<TimelineEra>(activeEra)
+    const firstEventRef = useRef<HTMLDivElement>()
 
     useEffect(() => {
         const timelineContainerRect = timelineBarRef.current?.getBoundingClientRect()
-        const rect = eventRefs.current[activeEvent?.id || 0]?.getBoundingClientRect()
+        const rect = firstEventRef.current?.getBoundingClientRect()
 
-        if (activeEvent && timelineContainerRect && rect) {
-            const yOffset = rect?.top - timelineContainerRect?.top
+        if (activeEra.era === era.era && timelineContainerRect && rect) {
+            const yOffset = rect?.top - window.innerHeight / 4 - timelineContainerRect?.top
             const translateY = yOffset > 100 ? yOffset - 50 : 0
-            timelineBarRef.current && (timelineBarRef.current.style.transform = `translateY(-${translateY}px)`)
+
+            window.requestAnimationFrame(() => {
+                timelineBarRef.current && (timelineBarRef.current.style.transform = `translateY(-${translateY}px)`)
+            })
+            activeEraRef.current = activeEra
         }
-    }, [activeEvent, timelineBarRef])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [activeEra, timelineBarRef])
 
     return (
         <>
+            <Box ref={firstEventRef} width="100%" />
             {era.events?.map((event, eventIndex) => (
                 <EventItem
                     key={`${era.era}-${event.year}`}

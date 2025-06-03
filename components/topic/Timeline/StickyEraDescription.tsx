@@ -9,15 +9,14 @@ interface StickyEraDescriptionProps {
     stickyRef?: React.RefObject<HTMLDivElement>
 }
 
-const StickyEraDescription: React.FC<StickyEraDescriptionProps> = ({ era, textColor, scrollDirection, stickyRef }) => (
+const StickyEraDescription: React.FC<StickyEraDescriptionProps> = ({ era, textColor, stickyRef }) => (
     <div className={styles.stickyContainer} ref={stickyRef}>
         <motion.div
             initial={{
                 opacity: 0,
-                y: scrollDirection === "up" ? 100 : -100,
             }}
             animate={{ opacity: 1, y: 0, color: textColor }}
-            transition={{ type: "spring", bounce: 0.25 }}
+            transition={{ duration: 0.5 }}
             key={era.era}
         >
             <h2 className={styles.eraYear}>{era.era}</h2>

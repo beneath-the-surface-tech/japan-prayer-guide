@@ -3,7 +3,7 @@
 import { Box } from "@mui/material"
 import { motion } from "motion/react"
 import { FC, useEffect, useMemo, useRef, useState } from "react"
-import { Col, Container } from "react-bootstrap"
+import { Container } from "react-bootstrap"
 import { TimelineEra } from "../../../pages/topics/[topicPage]"
 import EraEvents from "./EraEvents"
 import EventContent from "./EventContent"
@@ -39,11 +39,11 @@ const Timeline: FC = () => {
     const [isTabletMobile, setIsTabletMobile] = useState(false)
 
     const colors = {
-        darkest: "#131a35",
-        darker: "#343F63",
-        neutral: "#727C96",
-        lighter: "#9BA2B0",
-        lightest: "#DFEEFF",
+        darkest: "#0D1E57",
+        darker: "#253E87",
+        neutral: "#2E4FAE",
+        lighter: "#78ABF8",
+        lightest: "#AACBFA",
     }
 
     const textColors = {
@@ -56,6 +56,7 @@ const Timeline: FC = () => {
 
     const backgroundColor = colors[activeEvent.bgVariant as keyof typeof colors]
     const textColor = textColors[activeEvent.bgVariant as keyof typeof textColors]
+    const currentEventIdRef = useRef<number>(0)
 
     const intersectionObserver = useMemo(() => {
         if (typeof window === "undefined") {
@@ -63,7 +64,7 @@ const Timeline: FC = () => {
         }
         const observer = new IntersectionObserver(
             (entries) => {
-                const targetEntry = entries.find((entry) => entry.intersectionRatio > 0.8)
+                const targetEntry = entries.find((entry) => entry.isIntersecting && entry.intersectionRatio > 0.95)
                 const target = targetEntry?.target as HTMLDivElement
 
                 if (target) {
@@ -71,15 +72,18 @@ const Timeline: FC = () => {
                     const event = allEvents.find((event) => event.id === eventId)
                     const era = timelineEras.find((era) => era.events?.some((event) => event.id === eventId))
 
-                    if (event && era) {
-                        setActiveEvent(event)
-                        setActiveEra(era)
-                        setActiveEraIndex(timelineEras.findIndex((era) => era.era === era.era))
-                        setActiveEventIndex(era.events?.findIndex((event) => event.id === eventId) || 0)
+                    if (eventId && event && era) {
+                        if (eventId !== currentEventIdRef.current) {
+                            currentEventIdRef.current = eventId
+                            setActiveEvent(event)
+                            setActiveEra(era)
+                            setActiveEraIndex(timelineEras.findIndex((era) => era.era === era.era))
+                            setActiveEventIndex(era.events?.findIndex((event) => event.id === eventId) || 0)
+                        }
                     }
                 }
             },
-            { threshold: [0, 0.5, 0.8, 0.9, 1] },
+            { threshold: [0.95] },
         )
 
         return observer
@@ -96,8 +100,11 @@ const Timeline: FC = () => {
             }
             lastScrollPositionRef.current = scrollY
         }
+
         window.addEventListener("scroll", handleScroll)
-        return () => window.removeEventListener("scroll", handleScroll)
+        return () => {
+            window.removeEventListener("scroll", handleScroll)
+        }
     }, [])
 
     useEffect(() => {
@@ -110,79 +117,200 @@ const Timeline: FC = () => {
         return () => window.removeEventListener("resize", handleResize)
     }, [])
 
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "ArrowUp") {
+                const prevEventIndex = allEvents.findIndex((event) => event.id === activeEvent.id) - 1
+                const prevEvent = allEvents[prevEventIndex]
+
+                if (prevEvent) {
+                    window.requestAnimationFrame(() => {
+                        window.document.querySelector(`div[data-event-id="${prevEvent.id}"]`)?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        })
+                    })
+                }
+            } else if (event.key === "ArrowDown") {
+                const nextEventIndex = allEvents.findIndex((event) => event.id === activeEvent.id) + 1
+                const nextEvent = allEvents[nextEventIndex]
+
+                if (nextEvent) {
+                    window.requestAnimationFrame(() => {
+                        window.document.querySelector(`div[data-event-id="${nextEvent.id}"]`)?.scrollIntoView({
+                            block: "end",
+                        })
+                    })
+                }
+            }
+        }
+        window.addEventListener("keydown", handleKeyDown)
+        return () => window.removeEventListener("keydown", handleKeyDown)
+    }, [activeEvent.id, activeEventIndex, allEvents])
+
     return (
-        <Container fluid className={styles.timeline} ref={timelineContainerRef}>
-            <motion.div
-                animate={{ backgroundColor: backgroundColor }}
-                transition={{ duration: 0.5 }}
-                className={styles.timelineBackgroundContainer}
-            >
+        <>
+            <Box height="40dvh" className={styles.timelineGradient} width="100%" />
+
+            <Container fluid className={styles.timeline} ref={timelineContainerRef}>
                 <motion.div
-                    className={styles.timelineBackground}
-                    style={{ backgroundImage: `url(${activeEvent.photos?.[activeEvent.photos.length - 1]?.src})` }}
                     animate={{ backgroundColor: backgroundColor }}
                     transition={{ duration: 0.5 }}
-                ></motion.div>
-            </motion.div>
+                    className={styles.timelineBackgroundContainer}
+                >
+                    <motion.div
+                        className={styles.timelineBackground}
+                        style={{
+                            backgroundImage: `url(${activeEvent.photos?.[activeEvent.photos.length - 1]?.src})`,
+                        }}
+                        animate={{
+                            backgroundColor: backgroundColor,
+                            backgroundImage: `url(${activeEvent.photos?.[activeEvent.photos.length - 1]?.src})`,
+                        }}
+                        transition={{ duration: 0.5 }}
+                    ></motion.div>
+                </motion.div>
 
-            <div className={styles.timelineWrapper}>
-                {isTabletMobile ? (
-                    <Box flexDirection="row" display={["flex", "flex", "flex", "none"]}>
-                        {/* Timeline */}
-                        <Col
-                            md={1}
-                            className={`${styles.timelineBarContainer} ${styles.timelineBarDesktop}`}
-                            ref={timelineBarRef}
-                        >
-                            <div className={styles.timelineBar} ref={timelineRef}>
-                                <Box
-                                    position="absolute"
-                                    height={`${timelineRef.current?.scrollHeight}px`}
-                                    width="3px"
-                                    zIndex={2}
+                <Container className={styles.timelineWrapper}>
+                    {isTabletMobile ? (
+                        <Box flexDirection="row" display={["flex", "flex", "flex", "none"]}>
+                            {/* Timeline */}
+                            <Box
+                                width="200px"
+                                className={`${styles.timelineBarContainer} ${styles.timelineBarDesktop}`}
+                                ref={timelineBarRef}
+                            >
+                                <div className={styles.timelineBar} ref={timelineRef}>
+                                    <Box
+                                        position="absolute"
+                                        height={`${timelineRef.current?.scrollHeight}px`}
+                                        width="3px"
+                                        zIndex={2}
+                                    />
+                                    {timelineEras.map((era) => (
+                                        <div key={era.era} className={styles.eraGroup}>
+                                            <div
+                                                className={`${styles.timelineConnector} ${
+                                                    era === activeEra ? styles.activeEraConnector : ""
+                                                }`}
+                                            />
+                                            <EraEvents
+                                                era={era}
+                                                activeEra={activeEra}
+                                                activeEventIndex={activeEventIndex}
+                                                timelineBarRef={timelineRef}
+                                                eventGaps={eventGaps}
+                                            />
+                                        </div>
+                                    ))}
+                                    <Box className={styles.eraGroup} height="70dvh" flexShrink={0}>
+                                        <div className={styles.timelineConnector}>&nbsp;</div>
+                                    </Box>
+                                </div>
+                            </Box>
+
+                            <Box display="flex" flexDirection="column">
+                                {/* Content Area */}
+                                <Box flexGrow={1} maxWidth="1400px">
+                                    <Box className={styles.contentArea}>
+                                        {/* Sticky Era Description */}
+                                        <StickyEraDescription
+                                            era={activeEra}
+                                            textColor={textColor}
+                                            scrollDirection={scrollDirectionRef.current}
+                                            stickyRef={stickyRef}
+                                        />
+
+                                        <motion.div
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            transition={{ type: "spring", bounce: 0.25 }}
+                                            ref={contentRef}
+                                        >
+                                            <EventContent activeEvent={activeEvent} textColor={textColor} />
+                                        </motion.div>
+                                    </Box>
+                                    <Box position="relative" marginTop="calc(270px - 80dvh)">
+                                        {timelineEras.flatMap(
+                                            (era) =>
+                                                era.events?.map((event) => (
+                                                    <TimelineEventContent
+                                                        key={event.id}
+                                                        event={event}
+                                                        intersectionObserver={intersectionObserver}
+                                                    />
+                                                )),
+                                        )}
+                                    </Box>
+                                </Box>
+                            </Box>
+                        </Box>
+                    ) : (
+                        <Box flexDirection={["column", "column", "row"]} display={["none", "none", "none", "flex"]}>
+                            <Box
+                                display="flex"
+                                flexDirection="column"
+                                alignItems="flex-end"
+                                width={["100%", "100%", "200px"]}
+                                flexShrink={0}
+                            >
+                                {/* Sticky Era Description */}
+                                <StickyEraDescription
+                                    era={activeEra}
+                                    textColor={textColor}
+                                    scrollDirection={scrollDirectionRef.current}
+                                    stickyRef={stickyRef}
                                 />
-                                {timelineEras.map((era) => (
-                                    <div key={era.era} className={styles.eraGroup}>
-                                        <div
-                                            className={`${styles.timelineConnector} ${
-                                                era === activeEra ? styles.activeEraConnector : ""
-                                            }`}
-                                        />
-                                        <EraEvents
-                                            era={era}
-                                            activeEra={activeEra}
-                                            activeEventIndex={activeEventIndex}
-                                            timelineBarRef={timelineRef}
-                                            eventGaps={eventGaps}
-                                        />
-                                    </div>
-                                ))}
-                                <Box className={styles.eraGroup} height="70dvh" flexShrink={0} />
-                            </div>
-                        </Col>
+                            </Box>
 
-                        <Box display="flex" flexDirection="column">
+                            {/* Timeline */}
+                            <Box
+                                width="200px"
+                                className={`${styles.timelineBarContainer} ${styles.timelineBarDesktop}`}
+                                ref={timelineBarRef}
+                            >
+                                <div className={styles.timelineBar} ref={timelineRef}>
+                                    <Box
+                                        position="absolute"
+                                        height={`${timelineRef.current?.scrollHeight}px`}
+                                        width="3px"
+                                        zIndex={2}
+                                    />
+                                    {timelineEras.map((era) => (
+                                        <div key={era.era} className={styles.eraGroup}>
+                                            <div
+                                                className={`${styles.timelineConnector} ${
+                                                    era === activeEra ? styles.activeEraConnector : ""
+                                                }`}
+                                            />
+                                            <EraEvents
+                                                era={era}
+                                                activeEra={activeEra}
+                                                activeEventIndex={activeEventIndex}
+                                                timelineBarRef={timelineRef}
+                                                eventGaps={eventGaps}
+                                            />
+                                        </div>
+                                    ))}
+                                    <Box className={styles.eraGroup} height="70dvh" flexShrink={0}>
+                                        <div className={styles.timelineConnector}>&nbsp;</div>
+                                    </Box>
+                                </div>
+                            </Box>
+
                             {/* Content Area */}
                             <Box flexGrow={1} maxWidth="1400px">
-                                <Box className={styles.contentArea}>
-                                    {/* Sticky Era Description */}
-                                    <StickyEraDescription
-                                        era={activeEra}
-                                        textColor={textColor}
-                                        scrollDirection={scrollDirectionRef.current}
-                                        stickyRef={stickyRef}
-                                    />
-
-                                    <motion.div
-                                        initial={{ opacity: 0, y: scrollDirectionRef.current === "up" ? 400 : -400 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ type: "spring", bounce: 0.25 }}
-                                        key={activeEvent.id}
-                                        ref={contentRef}
-                                    >
-                                        <EventContent activeEvent={activeEvent} textColor={textColor} />
-                                    </motion.div>
-                                </Box>
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    key={activeEvent.id}
+                                    className={styles.contentArea}
+                                    transition={{ duration: 0.5, ease: ["easeIn", "easeOut"] }}
+                                    // key={activeEvent.id}
+                                    ref={contentRef}
+                                >
+                                    <EventContent activeEvent={activeEvent} textColor={textColor} />
+                                </motion.div>
                                 <Box position="relative" marginTop="calc(270px - 80dvh)">
                                     {timelineEras.flatMap(
                                         (era) =>
@@ -195,90 +323,13 @@ const Timeline: FC = () => {
                                             )),
                                     )}
                                 </Box>
+                                <Box height="50dvh" />
                             </Box>
                         </Box>
-                    </Box>
-                ) : (
-                    <Box flexDirection={["column", "column", "row"]} display={["none", "none", "none", "flex"]}>
-                        <Box
-                            display="flex"
-                            flexDirection="column"
-                            alignItems="flex-end"
-                            width={["100%", "100%", "300px", "450px"]}
-                            flexShrink={0}
-                        >
-                            {/* Sticky Era Description */}
-                            <StickyEraDescription
-                                era={activeEra}
-                                textColor={textColor}
-                                scrollDirection={scrollDirectionRef.current}
-                                stickyRef={stickyRef}
-                            />
-                        </Box>
-
-                        {/* Timeline */}
-                        <Col
-                            md={1}
-                            className={`${styles.timelineBarContainer} ${styles.timelineBarDesktop}`}
-                            ref={timelineBarRef}
-                        >
-                            <div className={styles.timelineBar} ref={timelineRef}>
-                                <Box
-                                    position="absolute"
-                                    height={`${timelineRef.current?.scrollHeight}px`}
-                                    width="3px"
-                                    zIndex={2}
-                                />
-                                {timelineEras.map((era) => (
-                                    <div key={era.era} className={styles.eraGroup}>
-                                        <div
-                                            className={`${styles.timelineConnector} ${
-                                                era === activeEra ? styles.activeEraConnector : ""
-                                            }`}
-                                        />
-                                        <EraEvents
-                                            era={era}
-                                            activeEra={activeEra}
-                                            activeEventIndex={activeEventIndex}
-                                            timelineBarRef={timelineRef}
-                                            eventGaps={eventGaps}
-                                        />
-                                    </div>
-                                ))}
-                                <Box className={styles.eraGroup} height="70dvh" flexShrink={0} />
-                            </div>
-                        </Col>
-
-                        {/* Content Area */}
-                        <Box flexGrow={1} maxWidth="1400px">
-                            <motion.div
-                                initial={{ opacity: 0, y: scrollDirectionRef.current === "up" ? 400 : -400 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                className={styles.contentArea}
-                                transition={{ type: "spring", bounce: 0.25 }}
-                                key={activeEvent.id}
-                                ref={contentRef}
-                            >
-                                <EventContent activeEvent={activeEvent} textColor={textColor} />
-                            </motion.div>
-                            <Box position="relative" marginTop="calc(270px - 80dvh)">
-                                {timelineEras.flatMap(
-                                    (era) =>
-                                        era.events?.map((event) => (
-                                            <TimelineEventContent
-                                                key={event.id}
-                                                event={event}
-                                                intersectionObserver={intersectionObserver}
-                                            />
-                                        )),
-                                )}
-                            </Box>
-                            <Box height="50dvh" />
-                        </Box>
-                    </Box>
-                )}
-            </div>
-        </Container>
+                    )}
+                </Container>
+            </Container>
+        </>
     )
 }
 
