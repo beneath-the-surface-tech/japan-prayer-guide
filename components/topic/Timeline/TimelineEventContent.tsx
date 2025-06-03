@@ -1,8 +1,6 @@
 import { Box } from "@mui/material"
-import { useScroll } from "motion/react"
-import React, { RefObject, useCallback, useEffect, useRef } from "react"
+import React, { useCallback, useRef } from "react"
 import { TimelineEvent } from "../../../pages/topics/[topicPage]"
-import { useTimelineContext } from "./TimelineContext"
 
 export interface TimelineEventProps {
     event: TimelineEvent
@@ -10,13 +8,7 @@ export interface TimelineEventProps {
 }
 
 const TimelineEventContent: React.FC<TimelineEventProps> = ({ event, intersectionObserver }) => {
-    const { setEventProgressMap } = useTimelineContext()
     const boxRef = useRef<HTMLDivElement>()
-    const { scrollYProgress } = useScroll({
-        target: boxRef as RefObject<HTMLElement>,
-        offset: ["start end", "end end"],
-    })
-
     const refCallback = useCallback(
         (ref: HTMLDivElement) => {
             boxRef.current = ref
@@ -27,20 +19,13 @@ const TimelineEventContent: React.FC<TimelineEventProps> = ({ event, intersectio
         [intersectionObserver],
     )
 
-    useEffect(() => {
-        setEventProgressMap((prev) => {
-            prev[event.id] = scrollYProgress
-            return prev
-        })
-    }, [event.id, scrollYProgress, setEventProgressMap])
-
     return (
         <Box
             display="flex"
             alignItems="center"
             justifyContent="center"
-            pb={4}
-            height="calc(100dvh - 100px)"
+            pb="30px"
+            height="calc(100dvh - 150px)"
             position="relative"
             ref={refCallback}
             data-event-id={event.id}
