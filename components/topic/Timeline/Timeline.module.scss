@@ -12,6 +12,8 @@
 .timelineWrapper {
   position: relative;
   z-index: 1;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .timelineGradient {
@@ -49,7 +51,7 @@
 
   @include media-breakpoint-down(xl) {
     top: 0;
-    padding: 50px 0 20px 0;
+    padding: 0 0 20px 0;
     position: relative;
   }
 }
@@ -62,7 +64,7 @@
   margin-bottom: 0.5rem;
 
   @include media-breakpoint-down(xl) {
-    font-size: 1.5rem;
+    font-size: 3rem;
   }
   @include media-breakpoint-down(md) {
     font-size: 1rem;
@@ -99,6 +101,10 @@
   transition: transform 0.5s ease;
   overflow: hidden;
   flex-shrink: 0;
+
+  @include media-breakpoint-down(xl) {
+    width: 32px;
+  }
 }
 
 .timelineBar {
@@ -185,7 +191,7 @@
 
 /* Content Area styles */
 .contentArea {
-  padding: 50px 30px 0 30px;
+  padding: 70px 30px 0 30px;
   position: sticky;
   top: 100px;
   z-index: 2;
@@ -193,7 +199,7 @@
   overflow-y: hidden;
 
   @include media-breakpoint-down(xl) {
-    top: 50px;
+    padding: 50px 0 0 20px;
   }
 }
 

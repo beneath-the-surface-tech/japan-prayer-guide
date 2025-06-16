@@ -1,24 +1,12 @@
 import { Box } from "@mui/material"
-import React, { useCallback, useRef } from "react"
+import React from "react"
 import { TimelineEvent } from "../../../pages/topics/[topicPage]"
 
 export interface TimelineEventProps {
     event: TimelineEvent
-    intersectionObserver: IntersectionObserver | null
 }
 
-const TimelineEventContent: React.FC<TimelineEventProps> = ({ event, intersectionObserver }) => {
-    const boxRef = useRef<HTMLDivElement>()
-    const refCallback = useCallback(
-        (ref: HTMLDivElement) => {
-            boxRef.current = ref
-            if (ref) {
-                intersectionObserver?.observe(ref)
-            }
-        },
-        [intersectionObserver],
-    )
-
+const TimelineEventContent: React.FC<TimelineEventProps> = ({ event }) => {
     return (
         <Box
             display="flex"
@@ -27,7 +15,7 @@ const TimelineEventContent: React.FC<TimelineEventProps> = ({ event, intersectio
             pb="30px"
             height="calc(100dvh - 150px)"
             position="relative"
-            ref={refCallback}
+            className="timeline-event-content"
             data-event-id={event.id}
         />
     )
