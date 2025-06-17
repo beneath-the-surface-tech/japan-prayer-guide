@@ -37,7 +37,7 @@ export default function TutorialFlexCol({
                 className
             }
         >
-            <NextImage src={src} alt={imgAlt} className="mb-4 content-image" />
+            <NextImage src={src} alt={imgAlt} className="mb-4 content-image" unoptimized={true} />
             <div className={"d-flex flex-column " + contentClass}>
                 <h3 className="text-primary ps-2 mb-3">
                     <Trans>{heading}</Trans>

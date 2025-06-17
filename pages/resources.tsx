@@ -10,17 +10,16 @@ import AppHeader from "../components/common/AppHeader"
 import resources from "../public/locales/en/resources.json"
 import { LowHighImage } from "../components/LowHighImage"
 import Image, { StaticImageData } from "next/image"
-import bannerHeroHighRes from "../public/photos/resources/Resources-candidates-26.jpg"
-import bannerHeroLowRes from "../public/photos/resources/Resources-candidates-26.jpg"
-import byMediaType from "../public/photos/about/about_02.png"
-import byTopicEN from "../public/photos/resources/EN-Book-Marketing-04.jpg"
-import byTopicJA from "../public/photos/resources/JA-Book-Marketing-04.jpg"
-import tutImg1 from "../public/photos/about/about_02.png"
-import tutImg2 from "../public/photos/about/about_03.png"
-import tutImg3 from "../public/photos/about/about_02.png"
+import bannerHeroHighRes from "@/public/photos/resources/Resources-Hero.jpg"
+import bannerHeroLowRes from "@/public/photos/resources/Resources-Hero-LowRes.jpg"
+import byMediaType from "@/public/photos/resources/Resources-Media.jpg"
+import byTopicEN from "@/public/photos/resources/Resources-Book-EN.jpg"
+import byTopicJA from "@/public/photos/resources/Resources-Book-JP.jpg"
+import tutImg1 from "@/public/photos/resources/Resources-gif-1.gif"
+import tutImg2 from "@/public/photos/resources/Resources-gif-2.gif"
+import tutImg3 from "@/public/photos/resources/Resources-gif-3.gif"
 import DownloadablesGrid from "../components/common/DownloadablesGrid/DownloadablesGrid"
 import { LinkFromJson } from "@/components/common/LinkFromJson"
-import { FaRegFile } from "react-icons/fa"
 import DownloadTypeFlexCol from "@/components/resources/DownloadTypeFlexCol/DownloadTypeFlexCol"
 import TutorialFlexCol from "@/components/resources/TutorialFlexCol/TutorialFlexCol"
 
@@ -159,6 +158,8 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                                 <Link
                                     className="text-white text-center my-2 bg-secondary-5 border-secondary-5 btn btn-primary topic-btn"
                                     href={byTopicBtnUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 >
                                     <Trans t={t} i18nKey="byTopicBtn" />
                                 </Link>
