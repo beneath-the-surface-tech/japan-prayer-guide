@@ -40,13 +40,28 @@ export default function Footer() {
                         </Row>
                         <Row className="d-flex justify-content-center align-items-center pt-4 text-white">
                             <IconContext.Provider value={{ size: "25px" }}>
-                                <a className="text-white footer-icon" href={vimeoUrl}>
+                                <a
+                                    className="text-white footer-icon"
+                                    href={vimeoUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     <BsVimeo />
                                 </a>
-                                <a className="text-white footer-icon" href={amazonUrl}>
+                                <a
+                                    className="text-white footer-icon"
+                                    href={amazonUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     <FaAmazon />
                                 </a>
-                                <a className="text-white footer-icon" href={instaUrl}>
+                                <a
+                                    className="text-white footer-icon"
+                                    href={instaUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     <BsInstagram />
                                 </a>
                             </IconContext.Provider>
@@ -90,13 +105,31 @@ export default function Footer() {
                             </Row>
                             <Row className="d-flex align-items-center pt-3 pb-4 text-white">
                                 <IconContext.Provider value={{ size: "25px" }}>
-                                    <a className="text-white footer-icon" href={vimeoUrl} aria-label="Vimeo">
+                                    <a
+                                        className="text-white footer-icon"
+                                        href={vimeoUrl}
+                                        aria-label="Vimeo"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         <BsVimeo />
                                     </a>
-                                    <a className="text-white footer-icon" href={amazonUrl} aria-label="Amazon">
+                                    <a
+                                        className="text-white footer-icon"
+                                        href={amazonUrl}
+                                        aria-label="Amazon"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         <FaAmazon />
                                     </a>
-                                    <a className="text-white footer-icon" href={instaUrl} aria-label="Instagram">
+                                    <a
+                                        className="text-white footer-icon"
+                                        href={instaUrl}
+                                        aria-label="Instagram"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         <BsInstagram />
                                     </a>
                                 </IconContext.Provider>

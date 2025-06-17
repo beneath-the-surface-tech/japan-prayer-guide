@@ -137,12 +137,12 @@ const About: React.FC = () => {
                 {/* Logos */}
                 <Container className="about-logos-container w-100 d-flex justify-content-center align-items-center my-5">
                     <div className="ms-2">
-                        <Link href="https://omf.org/east-asia/japan/">
+                        <Link href="https://omf.org/east-asia/japan/" target="_blank" rel="noopener noreferrer">
                             <Image className="omf-logo" alt="omf logo" src={omfLogo} />
                         </Link>
                     </div>
                     <div className="">
-                        <Link href="https://www.pioneersjapan.org/">
+                        <Link href="https://www.pioneersjapan.org/" target="_blank" rel="noopener noreferrer">
                             <Image className="pioneers-logo" alt="omf logo" src={pioneersLogo} />
                         </Link>
                     </div>

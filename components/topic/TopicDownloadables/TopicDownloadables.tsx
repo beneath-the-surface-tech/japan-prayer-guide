@@ -27,6 +27,8 @@ const ResourceCard = ({ icon, label, link, disabled = false, shrinkWidth = false
                 className={"text-decoration-none"}
                 aria-disabled={disabled}
                 tabIndex={disabled ? -1 : undefined}
+                target="_blank"
+                rel="noopener noreferrer"
             >
                 <Card
                     className={"resource-card shadow-sm border-0 rounded" + (disabled ? " disabled" : "")}
@@ -109,6 +111,8 @@ export default function TopicDownloadables({ topicTrans }: downloadProps) {
                 className="align-self-center w-100 mt-2 mt-md-3"
                 style={{ maxWidth: "280px" }}
                 locale={i18n.language}
+                target="_blank"
+                rel="noopener noreferrer"
             >
                 <Button
                     className="align-self-center w-100 mt-4 px-3 text-white bg-secondary-5 border-secondary-5 fw-bold fs-4 border-0"

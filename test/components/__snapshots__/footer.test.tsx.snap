@@ -113,6 +113,8 @@ exports[`Footer Snapshot test 1`] = `
               <a
                 class="text-white footer-icon"
                 href="footer.vimeoUrl"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <svg
                   fill="currentColor"
@@ -131,6 +133,8 @@ exports[`Footer Snapshot test 1`] = `
               <a
                 class="text-white footer-icon"
                 href="footer.amazonUrl"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <svg
                   fill="currentColor"
@@ -149,6 +153,8 @@ exports[`Footer Snapshot test 1`] = `
               <a
                 class="text-white footer-icon"
                 href="footer.instaUrl"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <svg
                   fill="currentColor"
@@ -311,6 +317,8 @@ exports[`Footer Snapshot test 1`] = `
                   aria-label="Vimeo"
                   class="text-white footer-icon"
                   href="footer.vimeoUrl"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   <svg
                     fill="currentColor"
@@ -330,6 +338,8 @@ exports[`Footer Snapshot test 1`] = `
                   aria-label="Amazon"
                   class="text-white footer-icon"
                   href="footer.amazonUrl"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   <svg
                     fill="currentColor"
@@ -349,6 +359,8 @@ exports[`Footer Snapshot test 1`] = `
                   aria-label="Instagram"
                   class="text-white footer-icon"
                   href="footer.instaUrl"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   <svg
                     fill="currentColor"
@@ -480,6 +492,8 @@ exports[`Footer Snapshot test 1`] = `
             <a
               class="text-white footer-icon"
               href="footer.vimeoUrl"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <svg
                 fill="currentColor"
@@ -498,6 +512,8 @@ exports[`Footer Snapshot test 1`] = `
             <a
               class="text-white footer-icon"
               href="footer.amazonUrl"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <svg
                 fill="currentColor"
@@ -516,6 +532,8 @@ exports[`Footer Snapshot test 1`] = `
             <a
               class="text-white footer-icon"
               href="footer.instaUrl"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <svg
                 fill="currentColor"
@@ -678,6 +696,8 @@ exports[`Footer Snapshot test 1`] = `
                 aria-label="Vimeo"
                 class="text-white footer-icon"
                 href="footer.vimeoUrl"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <svg
                   fill="currentColor"
@@ -697,6 +717,8 @@ exports[`Footer Snapshot test 1`] = `
                 aria-label="Amazon"
                 class="text-white footer-icon"
                 href="footer.amazonUrl"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <svg
                   fill="currentColor"
@@ -716,6 +738,8 @@ exports[`Footer Snapshot test 1`] = `
                 aria-label="Instagram"
                 class="text-white footer-icon"
                 href="footer.instaUrl"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <svg
                   fill="currentColor"
