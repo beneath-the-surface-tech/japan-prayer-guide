@@ -4,10 +4,10 @@
 #resources {
     p {
         font-size: $paragraph-text;
-        @include media-breakpoint-down(xl) {
+        @include media-breakpoint-down(lg) {
             font-size: $paragraph-text-tablet;
         }
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(sm) {
             font-size: $paragraph-text-mobile;
         }
     }
@@ -39,12 +39,12 @@
             max-width: 1120px;
             margin-top: -10px;
             margin-bottom: 32px;
-            @include media-breakpoint-down(xl) {
+            @include media-breakpoint-down(lg) {
                 font-size: 32px;
                 margin-top: -9px;
                 margin-bottom: 32px;
             }
-            @include media-breakpoint-down(md) {
+            @include media-breakpoint-down(sm) {
                 font-size: 24px;
                 margin-top: 32px;
                 margin-bottom: 16px;
@@ -69,10 +69,10 @@
             }
         }
 
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(sm) {
             .grid-row > * {
                 flex: 0 0 auto;
-                width: 50%;
+                width: 100%;
             }
         }
 
@@ -133,7 +133,19 @@
                 }
 
                 @include media-breakpoint-down(sm) {
-                    height: 244px;
+                    height: 183px;
+                }
+            }
+
+            p {
+                font-size: 20px;
+
+                @include media-breakpoint-down(lg) {
+                    font-size: 16px;
+                }
+
+                @include media-breakpoint-down(sm) {
+                    font-size: 18px;
                 }
             }
         }
