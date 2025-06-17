@@ -128,6 +128,7 @@ const Timeline: FC = () => {
                         if (target) {
                             window.scrollTo({
                                 top: target.offsetTop + target.offsetHeight - 100,
+                                behavior: "instant",
                             })
                         }
                     })
@@ -144,6 +145,7 @@ const Timeline: FC = () => {
                         if (target) {
                             window.scrollTo({
                                 top: target.offsetTop + target.offsetHeight - 100,
+                                behavior: "instant",
                             })
                         }
                     })

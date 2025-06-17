@@ -9,7 +9,7 @@ export default function OrderBook() {
     const { t, i18n } = useTranslation("common")
     const language = i18n.language
 
-    const orderRegionsMap: OrderRegionType[] = t("order.regions", { returnObjects: true })
+    const orderRegionsMap: OrderRegionType[] = t("order.regions", { returnObjects: true }) as OrderRegionType[]
 
     function ENSection() {
         return (
