@@ -119,7 +119,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                         </Trans>
                     </p>
 
-                    <Container className="d-flex flex-lg-row flex-sm-column justify-content-center mw-100 px-sm-0 px-md-0">
+                    <Container className="d-flex flex-xl-row flex-column justify-content-center mw-100 px-sm-0 px-md-0">
                         <DownloadTypeFlexCol
                             src={byMediaType}
                             imgAltKey="byMediaAltText"
@@ -172,7 +172,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
             {/* 'How to' section */}
             <div
                 id="tutorial"
-                className="bg-secondary-2 w-100 py-4 py-md-5 d-flex align-items-center flex-column px-4 px-md-4"
+                className="bg-secondary-2 w-100 d-flex align-items-center flex-column px-4 px-md-4 page-section"
             >
                 <Container>
                     <h1 className="mt-2 mb-4 pb-2 text-primary text-center">
@@ -201,7 +201,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
             </div>
 
             {/* References section */}
-            <section id="references" className="py-4 py-md-5">
+            <section id="references" className="page-section">
                 <Container>
                     <div className="d-flex align-items-center">
                         <div className="flex-shrink-0">
