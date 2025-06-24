@@ -33,7 +33,7 @@ export default function TutorialFlexCol({
     return (
         <Container
             className={
-                "col-lg-6 col-md-12 d-flex flex-sm-column flex-md-row flex-lg-column image-content-flex mb-sm-0 mb-md-0" +
+                "d-flex flex-sm-column flex-md-row flex-lg-row flex-xl-column image-content-flex mb-sm-0 mb-md-0 justify-content-center" +
                 className
             }
         >

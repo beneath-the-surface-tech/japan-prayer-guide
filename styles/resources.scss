@@ -117,26 +117,29 @@
 
     #tutorial {
         .image-content-flex {
-            width: 432px;
+            //width: 432px;
 
             @include media-breakpoint-down(xl) {
-                width: 432px;
+                //width: 432px;
             }
 
             @include media-breakpoint-down(md) {
-                width: 437px;
+                //width: 437px;
             }
 
             .content-image {
                 height: 244px;
+                width: 432px;
                 margin-bottom: 0px;
 
                 @include media-breakpoint-down(xl) {
                     height: 198px;
+                    width: 352px;
                 }
 
                 @include media-breakpoint-down(md) {
                     height: 183px;
+                    width: 327px;
                 }
             }
 
@@ -173,6 +176,16 @@
             button {
                 font-size: 14px;
             }
+        }
+    }
+}
+
+#references {
+    h1 {
+        font-size: 32px;
+
+        @include media-breakpoint-down(xl) {
+            font-size: 24px;
         }
     }
 }

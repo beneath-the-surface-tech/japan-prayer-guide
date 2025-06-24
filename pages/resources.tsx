@@ -182,7 +182,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                         <Trans>{tutDescription}</Trans>
                     </p>
 
-                    <Container className="d-flex flex-column flex-lg-row justify-content-center">
+                    <Container className="d-flex flex-column flex-xl-row justify-content-center">
                         {tutorialImages.map((img, idx) => {
                             const prefix = "tut" + (idx + 1)
                             return (
