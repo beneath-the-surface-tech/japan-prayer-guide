@@ -14,19 +14,6 @@ const TimelineBar: FC<TimelineBarProps> = ({ activeEra, activeEventIndex, onEven
     const { timelineEras } = useTimelineContext()
     const timelineRef = useRef<HTMLDivElement>(null)
 
-    // Scroll to active event when it changes
-    // useEffect(() => {
-    //     if (timelineRef.current && activeEra && activeEventIndex >= 0) {
-    //         const activeEventElement = timelineRef.current.querySelector(`.${styles.activeEvent}`)
-
-    //         if (activeEventElement) {
-    //             activeEventElement.scrollIntoView({
-    //                 behavior: "smooth",
-    //             })
-    //         }
-    //     }
-    // }, [activeEra, activeEventIndex])
-
     const renderEraEvents = (era: TimelineEra, eraIndex: number) => {
         if (!era.events) return null
 

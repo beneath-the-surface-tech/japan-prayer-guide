@@ -30,14 +30,18 @@ export const ImageCarousel = ({ images, topic = false, subTitle }: CarouselProps
             <>
                 <div className="topic-carousel-container d-flex flex-column align-items-center position-relative w-100">
                     <div className="home-invite-inner mb-0 mb-md-2" style={{ aspectRatio: "unset", width: "100%" }}>
-                        <p className="gallerySubtitle" style={{ marginLeft: "1px", marginTop: "4px" }}>
-                            {subTitle}
-                        </p>
+                        {subTitle && (
+                            <p className="gallerySubtitle" style={{ marginLeft: "1px", marginTop: "4px" }}>
+                                {subTitle}
+                            </p>
+                        )}
                         <Carousel
                             controls={true}
                             fade={true}
                             interval={4000}
-                            className="w-100 d-flex flex-column justify-content-center align-items-center mt-2 mt-md-4"
+                            className={`w-100 d-flex flex-column justify-content-center align-items-center ${
+                                subTitle ? "mt-2 mt-md-4" : ""
+                            }`}
                         >
                             {images.map((img, index) => (
                                 <CarouselItem className="w-100 d-flex justify-content-center" key={index}>
