@@ -86,7 +86,7 @@ export const Mosaic = ({ images, blocks, uncropped, subTitle, alwaysDesktop = fa
 
     // For smaller than desktop
     let idx = 0
-    const calculatedStarts = []
+    const calculatedStarts: number[] = []
     for (let i = 0; i < blocks.length; i++) {
         if (i == 0) {
             calculatedStarts.push(idx)

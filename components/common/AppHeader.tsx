@@ -14,7 +14,7 @@ const AppHeader = ({ title, description, pageType, image = "" }: AppHeaderProps)
      *  prod -> uses prod NEXT_PUBLIC_BASE_URL (based on domain)
      */
 
-    let fullImageUrl = null
+    let fullImageUrl: string | null = null
     if (image) {
         // images from retool will be absolute rather than relative
         const isAbsoluteUrl = image.indexOf("http://") === 0 || image.indexOf("https://") === 0
