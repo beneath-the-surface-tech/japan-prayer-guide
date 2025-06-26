@@ -5,8 +5,7 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Link from "next/link"
 import { TFunction, Trans, useTranslation } from "next-i18next"
-import { RiDonutChartFill, RiFile3Line, RiImageFill, RiMic2Fill, RiSlideshowLine } from "react-icons/ri"
-import { FaPrayingHands } from "react-icons/fa"
+import { RiDonutChartFill, RiFile3Line, RiImageFill, RiSlideshowLine } from "react-icons/ri"
 
 interface downloadProps {
     topicTrans: TFunction
@@ -28,6 +27,8 @@ const ResourceCard = ({ icon, label, link, disabled = false, shrinkWidth = false
                 className={"text-decoration-none"}
                 aria-disabled={disabled}
                 tabIndex={disabled ? -1 : undefined}
+                target="_blank"
+                rel="noopener noreferrer"
             >
                 <Card
                     className={"resource-card shadow-sm border-0 rounded" + (disabled ? " disabled" : "")}
@@ -57,16 +58,12 @@ export default function TopicDownloadables({ topicTrans }: downloadProps) {
     const infographicsLabel = t("downloads.infographicsLabel")
     const photographyLabel = t("downloads.photographyLabel")
     const pdfLabel = t("downloads.pdfLabel")
-    const prayerPtsLabel = t("downloads.prayerPtsLabel")
-    const prayerVidLabel = t("downloads.prayerVidLabel")
     const slidesLabel = t("downloads.slidesLabel")
 
     // defaults to "" if not available, this is checked for use in ResourceCard
     const infographicsUrl = topicTrans("downloads.infographicsUrl", "")
     const photographyUrl = topicTrans("downloads.photographyUrl", "")
     const pdfUrl = topicTrans("downloads.pdfUrl", "")
-    const prayerPtsUrl = topicTrans("downloads.prayerPtsUrl", "")
-    const prayerVidUrl = topicTrans("downloads.prayerVidUrl", "")
     const slidesUrl = topicTrans("downloads.slidesUrl", "")
     const downloadAllUrl = topicTrans("downloads.downloadAllUrl", "#")
 
@@ -86,7 +83,7 @@ export default function TopicDownloadables({ topicTrans }: downloadProps) {
                 </p>
             </Container>
             <Container>
-                <Row md={3} sm={1} className="g-3 d-md-flex d-block" data-testid={"topic-downloadables-links"}>
+                <Row lg={4} md={2} sm={1} className="g-3 d-md-flex d-block" data-testid={"topic-downloadables-links"}>
                     <ResourceCard
                         icon={<RiDonutChartFill />}
                         label={infographicsLabel}
@@ -101,18 +98,6 @@ export default function TopicDownloadables({ topicTrans }: downloadProps) {
                         disabled={photographyUrl === ""}
                     />
                     <ResourceCard
-                        icon={<FaPrayingHands />}
-                        label={prayerPtsLabel}
-                        link={prayerPtsUrl}
-                        disabled={prayerPtsUrl === ""}
-                    />
-                    <ResourceCard
-                        icon={<RiMic2Fill />}
-                        label={prayerVidLabel}
-                        link={prayerVidUrl}
-                        disabled={prayerVidUrl === ""}
-                    />
-                    <ResourceCard
                         icon={<RiSlideshowLine />}
                         label={slidesLabel}
                         link={slidesUrl}
@@ -124,24 +109,18 @@ export default function TopicDownloadables({ topicTrans }: downloadProps) {
             <Link
                 href={downloadAllUrl}
                 className="align-self-center w-100 mt-2 mt-md-3"
-                style={{ maxWidth: "280px", cursor: "not-allowed" }}
+                style={{ maxWidth: "280px" }}
                 locale={i18n.language}
+                target="_blank"
+                rel="noopener noreferrer"
             >
                 <Button
-                    disabled
-                    className="align-self-center w-100 mt-4 px-3 text-white bg-grey-4 border-secondary-5 fw-bold fs-4 border-0"
+                    className="align-self-center w-100 mt-4 px-3 text-white bg-secondary-5 border-secondary-5 fw-bold fs-4 border-0"
                     variant="primary"
                 >
                     <Trans t={t} i18nKey="downloads.downloadAllBtn" />
                 </Button>
             </Link>
-            {/* <Link
-                href={"/resources"}
-                className="align-self-center my-3 text-secondary-5 fw-bolder fs-5"
-                locale={i18n.language}
-            >
-                <Trans t={t} i18nKey="downloads.viewAllBtn" />
-            </Link> */}
         </Container>
     )
 }
