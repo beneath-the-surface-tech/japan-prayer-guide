@@ -133,11 +133,14 @@
             }
 
             .topic-btn {
+                // padding: 12px;
                 width: 225px;
                 font-weight: 700;
+                // height: 55px;
 
                 @include media-breakpoint-down(md) {
                     width: 168px;
+                    // height: 51px;
                 }
             }
         }
