@@ -9,7 +9,7 @@
     "byMediaAltText": "TODO A picture of media types",
     "byMediaDescriptions": [
         "The following resources are available to download by media type. Please note that clicking on the resource buttons will take you to an external website (Box) to download.",
-        "You may also <0>find and stream all of the prayer videos here.</0>"
+        "You may also <b><0>find and stream all of the prayer videos here.</0></b>"
     ],
     "byMediaUrls": {
         "infographicsUrl": "https://app.box.com/s/24cl68iz3dyrh47t7i1gly6gdnfe2fdo?sortColumn=name&sortDirection=ASC",
@@ -22,7 +22,7 @@
     "byTopicHeading": "Download by topic",
     "byTopicAltText": "A picture of topics",
     "byTopicDescriptions": [
-        "You can also download resources by topic. These resources are also available as individuals links at the bottom of each topic page."
+        "You can also download resources by topic. These resources are also available as individuals links at the bottom of each topic page.<br/><br/>"
     ],
     "byTopicBtn": "Download by topic",
     "byTopicBtnUrl": "https://app.box.com/s/kvhjkpeyix754d5mcpkcpacz90lvtfg6?sortColumn=name&sortDirection=ASC",

@@ -54,7 +54,6 @@ export default function DownloadTypeFlexCol({
                     </p>
                 ))}
             </div>
-            <br />
             {children}
         </Container>
     )

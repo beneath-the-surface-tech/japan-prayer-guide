@@ -2,6 +2,13 @@
 @import "../node_modules/bootstrap/scss/variables";
 
 #resources {
+    h1 {
+        font-family: $font-family-secondary;
+    }
+    h3 {
+        font-family: $font-family-secondary;
+    }
+
     p {
         font-size: $paragraph-text;
         @include media-breakpoint-down(xl) {
@@ -18,6 +25,15 @@
         .subtext {
             @include media-breakpoint-down(md) {
                 width: 100% !important;
+            }
+            font-family: $font-family-base;
+            font-weight: 400;
+            font-size: $home-paragraph-text - 1px;
+            @include media-breakpoint-down(xl) {
+                font-size: $home-paragraph-text-tablet - 1px;
+            }
+            @include media-breakpoint-down(md) {
+                font-size: $home-paragraph-text-mobile - 1px;
             }
         }
 
@@ -55,17 +71,28 @@
     #downloadBy {
         .topic-downloadables {
             // overwrite component styling for resources page
-            flex-direction: column;
+            // flex-direction: column;
             font-size: 0.875rem;
             padding: 5px;
 
             p {
                 text-align: center;
+                color: $secondary-5;
             }
 
             @include media-breakpoint-down(md) {
                 font-size: 0.8rem;
                 padding: 0px;
+            }
+        }
+
+        svg {
+            fill: $secondary-5
+        }
+
+        .resource-card {
+            p {
+                font-size: 18px;
             }
         }
 
@@ -91,6 +118,7 @@
                 margin-top: 1.5rem;
                 margin-bottom: 1.5rem;
                 height: 321px;
+                color: $secondary-5;
 
                 @include media-breakpoint-down(xl) {
                     margin-top: 0rem;
@@ -103,19 +131,28 @@
             }
 
             .topic-btn {
-                padding: 12px;
+                // padding: 12px;
                 width: 225px;
-                height: 55px;
+                font-weight: 700;
+                // height: 55px;
 
                 @include media-breakpoint-down(md) {
                     width: 168px;
-                    height: 51px;
+                    // height: 51px;
                 }
             }
         }
     }
 
     #tutorial {
+        h1 {
+            font-size: 32px;
+
+            @include media-breakpoint-down(xl) {
+                font-size: 24px;
+            }
+        }
+
         .image-content-flex {
             //width: 432px;
 
@@ -167,7 +204,7 @@
         background-size: 100% 133%;
 
         button {
-            font-size: 19px;
+            font-size: 16px;
         }
 
         @include media-breakpoint-down(md) {

@@ -190,7 +190,7 @@ const Booklet: React.FC = () => {
                             <Trans t={t} i18nKey="prayerRedirectHeading" />
                         </h1>
                         <Link href="/topics/all" locale={i18n.language}>
-                            <Button className="text-white">
+                            <Button className="text-white px-3">
                                 <Trans t={t} i18nKey="prayerRedirectButtonText" />
                             </Button>
                         </Link>

@@ -229,7 +229,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                         <Trans>{bookletRedirectHeading}</Trans>
                     </h1>
                     <Link href="/booklet" locale={i18n.language}>
-                        <Button className="bg-secondary-5 border-secondary-5 fw-bold">
+                        <Button className="bg-secondary-5 border-secondary-5 px-3 fw-bold">
                             <Trans>{bookletRedirectBtnText}</Trans>
                         </Button>
                     </Link>

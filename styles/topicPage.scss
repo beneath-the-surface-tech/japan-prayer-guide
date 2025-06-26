@@ -153,11 +153,21 @@ hr {
         height: 1.75rem;
         flex-shrink: 0;
         margin-right: 0.5rem;
+        fill: $secondary-5
+    }
+
+    p {
+        color: $secondary-5
     }
 
     &.disabled {
         background: $grey-4;
         cursor: not-allowed;
-        color: $grey-1;
+        p {
+            color: $grey-1;
+        }
+        svg {
+            fill: $grey-1
+        }
     }
 }
