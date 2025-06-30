@@ -34,6 +34,7 @@ exports[`ToggleHeader Snapshot test 1`] = `
             aria-controls="header-navbar-nav"
             aria-label="Toggle navigation"
             class="navbar-toggler collapsed"
+            data-testid="main-nav-toggle"
             type="button"
           >
             <span
@@ -146,27 +147,43 @@ exports[`ToggleHeader Snapshot test 1`] = `
                   class="mb-4 row"
                 >
                   <div
-                    class="ms-auto hstack gap-3"
+                    class="ms-auto justify-content-center hstack gap-2"
                     data-testid="language-switcher"
                     id="language-switch"
                   >
-                    <a
-                      class="ms-auto text-white "
-                      data-testid="link-english"
-                      href="#english"
+                    <button
+                      aria-controls="header-navbar-nav"
+                      aria-label="Toggle navigation"
+                      class="navbar-toggler collapsed"
+                      type="button"
                     >
-                      English
-                    </a>
+                      <a
+                        class="ms-auto text-white "
+                        data-testid="link-english"
+                        href="#english"
+                        role="button"
+                      >
+                        English
+                      </a>
+                    </button>
                     <div
                       class="vr border opacity-100"
                     />
-                    <a
-                      class="me-auto text-white "
-                      data-testid="link-japanese"
-                      href="#japanese"
+                    <button
+                      aria-controls="header-navbar-nav"
+                      aria-label="Toggle navigation"
+                      class="navbar-toggler collapsed"
+                      type="button"
                     >
-                      日本語
-                    </a>
+                      <a
+                        class="me-auto text-white "
+                        data-testid="link-japanese"
+                        href="#japanese"
+                        role="button"
+                      >
+                        日本語
+                      </a>
+                    </button>
                   </div>
                 </div>
                 <img
@@ -228,6 +245,7 @@ exports[`ToggleHeader Snapshot test 1`] = `
           aria-controls="header-navbar-nav"
           aria-label="Toggle navigation"
           class="navbar-toggler collapsed"
+          data-testid="main-nav-toggle"
           type="button"
         >
           <span
@@ -340,27 +358,43 @@ exports[`ToggleHeader Snapshot test 1`] = `
                 class="mb-4 row"
               >
                 <div
-                  class="ms-auto hstack gap-3"
+                  class="ms-auto justify-content-center hstack gap-2"
                   data-testid="language-switcher"
                   id="language-switch"
                 >
-                  <a
-                    class="ms-auto text-white "
-                    data-testid="link-english"
-                    href="#english"
+                  <button
+                    aria-controls="header-navbar-nav"
+                    aria-label="Toggle navigation"
+                    class="navbar-toggler collapsed"
+                    type="button"
                   >
-                    English
-                  </a>
+                    <a
+                      class="ms-auto text-white "
+                      data-testid="link-english"
+                      href="#english"
+                      role="button"
+                    >
+                      English
+                    </a>
+                  </button>
                   <div
                     class="vr border opacity-100"
                   />
-                  <a
-                    class="me-auto text-white "
-                    data-testid="link-japanese"
-                    href="#japanese"
+                  <button
+                    aria-controls="header-navbar-nav"
+                    aria-label="Toggle navigation"
+                    class="navbar-toggler collapsed"
+                    type="button"
                   >
-                    日本語
-                  </a>
+                    <a
+                      class="me-auto text-white "
+                      data-testid="link-japanese"
+                      href="#japanese"
+                      role="button"
+                    >
+                      日本語
+                    </a>
+                  </button>
                 </div>
               </div>
               <img
