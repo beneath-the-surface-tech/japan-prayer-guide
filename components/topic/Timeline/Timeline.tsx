@@ -22,6 +22,7 @@ const Timeline: FC = () => {
         eventGaps,
         activeEra,
         activeEvent,
+        isLastEvent,
         allEvents,
         activeEventIndex,
         setActiveEvent,
@@ -37,21 +38,18 @@ const Timeline: FC = () => {
     const scrollDirectionRef = useRef<"up" | "down">("down")
     const lastScrollPositionRef = useRef<number>(0)
     const [isTabletMobile, setIsTabletMobile] = useState(false)
-    const { scrollY } = useScroll({ offset: ["200px start", "end end"] })
+    const { scrollY } = useScroll({ offset: ["start start", "end end"] })
 
     useMotionValueEvent(scrollY, "change", (latest) => {
         const timelineEventContent = document.querySelectorAll<HTMLDivElement>(".timeline-event-content")
 
         timelineEventContent.forEach((ev) => {
-            const eventHeight = ev.offsetHeight
             const eventTop = ev.offsetTop
-            const eventBottom = eventTop + eventHeight
             const eventId = parseInt(ev.dataset.eventId as string)
             const event = allEvents.find((event) => event.id === eventId)
             const era = timelineEras.find((era) => era.events?.some((event) => event.id === eventId))
-            const heightOffset = eventHeight / 2
 
-            if (latest >= eventTop + heightOffset && latest <= eventBottom + heightOffset) {
+            if (latest - window.innerHeight >= eventTop - 100) {
                 if (eventId && event && era) {
                     if (eventId !== currentEventIdRef.current) {
                         currentEventIdRef.current = eventId
@@ -127,7 +125,7 @@ const Timeline: FC = () => {
                         )
                         if (target) {
                             window.scrollTo({
-                                top: target.offsetTop + target.offsetHeight - 100,
+                                top: target.offsetTop + target.offsetHeight + 100,
                                 behavior: "instant",
                             })
                         }
@@ -144,7 +142,7 @@ const Timeline: FC = () => {
                         )
                         if (target) {
                             window.scrollTo({
-                                top: target.offsetTop + target.offsetHeight - 100,
+                                top: target.offsetTop + target.offsetHeight + 100,
                                 behavior: "instant",
                             })
                         }
@@ -184,7 +182,7 @@ const Timeline: FC = () => {
                         <Box
                             flexDirection="column"
                             alignItems="flex-end"
-                            width="200px"
+                            width="300px"
                             display={isTabletMobile ? "none" : "flex"}
                             flexShrink={0}
                         >
@@ -233,7 +231,7 @@ const Timeline: FC = () => {
 
                         {/* Content Area */}
                         <Box flexGrow={1} maxWidth="1400px">
-                            <Box className={styles.contentArea}>
+                            <Box className={`${styles.contentArea} ${isLastEvent ? styles.lastEvent : ""}`}>
                                 {isTabletMobile && (
                                     <StickyEraDescription
                                         era={activeEra}
@@ -254,7 +252,7 @@ const Timeline: FC = () => {
                                 </motion.div>
                             </Box>
 
-                            <Box>
+                            <Box position="sticky" top={0}>
                                 <Box height={["150dvh", "150dvh", "150dvh", "60dvh"]} />
                                 {timelineEras.flatMap(
                                     (era) =>
@@ -262,6 +260,7 @@ const Timeline: FC = () => {
                                             <TimelineEventContent key={event.id} event={event} />
                                         )),
                                 )}
+                                {/* <Box height="100dvh" /> */}
                             </Box>
                         </Box>
                     </Box>

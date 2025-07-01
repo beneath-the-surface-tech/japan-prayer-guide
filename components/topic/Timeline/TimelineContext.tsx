@@ -23,6 +23,8 @@ interface TimelineContextType {
     activeEventIndex: number
     totalEvents: number
     eventProgressMap: Record<number, MotionValue<number>>
+    isLastEvent: boolean
+    lastEvent: TimelineEvent
     setEventProgressMap: Dispatch<SetStateAction<Record<number, MotionValue<number>>>>
     nextEvent: (event: TimelineEvent) => TimelineEvent | null
     setActiveEra: (era: TimelineEra) => void
@@ -109,6 +111,14 @@ export const TimelineProvider: React.FC<TimelineProviderProps> = ({ children, ti
         [activeEvent],
     )
 
+    const lastEvent = useMemo(() => {
+        return allEvents[allEvents.length - 1]
+    }, [allEvents])
+
+    const isLastEvent = useMemo(() => {
+        return activeEvent?.id === lastEvent.id
+    }, [activeEvent?.id, lastEvent.id])
+
     return activeEra && activeEvent ? (
         <TimelineContext.Provider
             value={{
@@ -120,6 +130,7 @@ export const TimelineProvider: React.FC<TimelineProviderProps> = ({ children, ti
                 nextEvent,
                 activeEra,
                 activeEvent,
+                lastEvent,
                 activeEraIndex,
                 activeEventIndex,
                 setActiveEra,
@@ -129,6 +140,7 @@ export const TimelineProvider: React.FC<TimelineProviderProps> = ({ children, ti
                 updateActiveEvent,
                 eventProgressMap,
                 setEventProgressMap,
+                isLastEvent,
             }}
         >
             {children}

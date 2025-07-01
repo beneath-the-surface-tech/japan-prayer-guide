@@ -46,7 +46,7 @@
 .stickyContainer {
   position: sticky;
   top: 100px;
-  padding: 50px 0 0 0;
+  padding: 25px 0 0 0;
   width: 100%;
 
   @include media-breakpoint-down(xl) {
@@ -200,6 +200,10 @@
 
   @include media-breakpoint-down(xl) {
     padding: 50px 0 0 20px;
+  }
+
+  &.lastEvent {
+    height: auto;
   }
 }
 

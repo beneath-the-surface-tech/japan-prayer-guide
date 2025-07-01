@@ -8,16 +8,19 @@ export interface TimelineEventProps {
 
 const TimelineEventContent: React.FC<TimelineEventProps> = ({ event }) => {
     return (
-        <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            pb="30px"
-            height="calc(100dvh - 150px)"
-            position="relative"
-            className="timeline-event-content"
-            data-event-id={event.id}
-        />
+        <>
+            {/* {index === 0 && <Box height="80dvh" />} */}
+            <Box
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                pb="30px"
+                height="calc(100dvh - 150px)"
+                position="relative"
+                className="timeline-event-content"
+                data-event-id={event.id}
+            />
+        </>
     )
 }
 
