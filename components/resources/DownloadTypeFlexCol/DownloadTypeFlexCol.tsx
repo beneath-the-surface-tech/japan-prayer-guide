@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react"
-import { Container } from "react-bootstrap"
 import { Trans, useTranslation } from "next-i18next"
 import { StaticImageData } from "next/image"
 import NextImage from "../../common/NextImage/NextImage"
@@ -34,9 +33,7 @@ export default function DownloadTypeFlexCol({
     descriptions = Array.isArray(descriptions) ? descriptions : []
 
     return (
-        <Container
-            className={"col-lg-6 col-md-12 d-flex flex-column my-4 image-content-flex mb-sm-0 mb-md-0" + className}
-        >
+        <div className={"d-flex flex-column my-4 image-content-flex mb-sm-0 mb-md-0" + className}>
             <h3 className="text-primary d-none d-xl-block subheading">
                 <Trans>{heading}</Trans>
             </h3>
@@ -55,6 +52,6 @@ export default function DownloadTypeFlexCol({
                 ))}
             </div>
             {children}
-        </Container>
+        </div>
     )
 }
