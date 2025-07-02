@@ -56,14 +56,21 @@ div.nav-item.dropdown {
     height: $dropdown-button-height;
 }
 
-#language-switch a {
-    font-family: $font-family-secondary;
-    text-decoration: none;
+#language-switch {
+    button.navbar-toggler {
+        border: none;
+        font-size: 16px;
+    }
 
-    &.active-language-link {
-        text-decoration: underline #4592cf 3px;
-        text-underline-position: under;
-        text-underline-offset: 4px;
+    a {
+        font-family: $font-family-secondary;
+        text-decoration: none;
+
+        &.active-language-link {
+            text-decoration: underline #4592cf 3px;
+            text-underline-position: under;
+            text-underline-offset: 4px;
+        }
     }
 }
 

@@ -91,7 +91,7 @@ pnpm dev
 
 #### Retool for topic pages
 
-Topic page contents are stored in Retool, and are fetched via the `/api/topics` endpoint. The data is cached until it is invalidated. 
+Topic page contents are stored in Retool, and are fetched via the `/api/topics` endpoint. The data is cached until it is invalidated.
 
 There is a "Clear Cache" button bottom right corner of the page that will invalidate the cache.
 
@@ -112,6 +112,10 @@ nvm use && npm test
 npm run test -- --watch
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Main component tests make use of snapshots, if you have made an intended change and wish to update the snapshot,
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+npx jest --updateSnapshot
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
