@@ -79,7 +79,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
     const referencesHeading = t("referencesHeading")
     const referencesDescription = t("referencesDescription")
 
-    const tutorialImages: StaticImageData[] = [tutImg1, tutImg2, tutImg3]
+    const tutorialImages: StaticImageData[] = [tutImg1, tutImg2]
 
     return (
         <>
@@ -107,21 +107,23 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
 
             {/* 'Download by' section */}
             <div id="downloadBy" className="w-100 d-flex align-items-center flex-column px-4 px-md-4 page-section">
-                <Container>
-                    <p className="text-center">
-                        <Trans
-                            components={[
-                                <LinkFromJson key="copyrightText0" href={copyrightUrl} />,
-                                <LinkFromJson key="copyrightText1" href={copyrightUrl} />,
-                            ]}
-                        >
-                            {copyrightText}
-                        </Trans>
-                    </p>
-
-                    <div className="row g-4 justify-content-center">
-                        <div className="col-xl-6 col-lg-8 col-md-10">
+                <p className="">
+                    <Trans
+                        components={[
+                            <LinkFromJson key="copyrightText0" href={copyrightUrl} />,
+                            <LinkFromJson key="copyrightText1" href={copyrightUrl} />,
+                        ]}
+                    >
+                        {copyrightText}
+                    </Trans>
+                </p>
+                <div className="d-flex flex-column px-0">
+                {/* <div className="row g-4 justify-content-center"> */}
+                        <div className="col-xl-6 col-lg-8 col-md-10 gap-xl-4">
+                        {/* <div className="d-flex flex-xl-row flex-column justify-content-center mw-100 px-sm-0 px-md-0 gap-xl-4"> */}
+                        {/* <div className="col-xl-6 col-lg-8 col-md-10"> */}
                             <DownloadTypeFlexCol
+                            className="mx-auto mx-xl-0"
                                 src={byMediaType}
                                 imgAltKey="byMediaAltText"
                                 headingKey="byMediaHeading"
@@ -136,41 +138,39 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                                     slidesUrl={slidesUrl}
                                 />
 
-                                <p className="w-100 mt-3">
-                                    <Trans
-                                        t={t}
-                                        i18nKey="byMediaOtherVersionText"
-                                        components={[
-                                            <LinkFromJson
-                                                key="byMediaOtherVersionText"
-                                                href={byMediaOtherVersionUrl}
-                                            ></LinkFromJson>,
-                                        ]}
-                                    />
-                                </p>
-                            </DownloadTypeFlexCol>
-                        </div>
-                        <div className="col-xl-6 col-lg-8 col-md-10">
-                            <DownloadTypeFlexCol
-                                src={i18n.language === "en" ? byTopicEN : byTopicJA}
-                                imgAltKey="byTopicAltText"
-                                headingKey="byTopicHeading"
-                                descriptionArrayKey="byTopicDescriptions"
-                            >
-                                <div className="d-inline-flex">
-                                    <Link
-                                        className="text-white text-center my-2 bg-secondary-5 border-secondary-5 btn btn-primary topic-btn"
-                                        href={byTopicBtnUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <Trans t={t} i18nKey="byTopicBtn" />
-                                    </Link>
-                                </div>
-                            </DownloadTypeFlexCol>
-                        </div>
+                            <p className="w-100 mt-3 mt-md-4 mb-1">
+                                <Trans
+                                    t={t}
+                                    i18nKey="byMediaOtherVersionText"
+                                    components={[
+                                        <LinkFromJson
+                                            key="byMediaOtherVersionText"
+                                            href={byMediaOtherVersionUrl}
+                                        ></LinkFromJson>,
+                                    ]}
+                                />
+                            </p>
+                        </DownloadTypeFlexCol>
+                        <DownloadTypeFlexCol
+                            className="mx-auto mx-xl-0"
+                            src={i18n.language === "en" ? byTopicEN : byTopicJA}
+                            imgAltKey="byTopicAltText"
+                            headingKey="byTopicHeading"
+                            descriptionArrayKey="byTopicDescriptions"
+                        >
+                            <div className="d-inline-flex">
+                                <Link
+                                    className="text-white text-center my-2 bg-secondary-5 border-secondary-5 btn btn-primary topic-btn"
+                                    href={byTopicBtnUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <Trans t={t} i18nKey="byTopicBtn" />
+                                </Link>
+                            </div>
+                        </DownloadTypeFlexCol>
                     </div>
-                </Container>
+                {/* </Container> */}
             </div>
 
             {/* 'How to' section */}
@@ -178,15 +178,14 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                 id="tutorial"
                 className="bg-secondary-2 w-100 d-flex align-items-center flex-column px-4 px-md-4 page-section"
             >
-                <Container>
-                    <h1 className="mt-2 mb-4 pb-2 text-primary text-center">
-                        <Trans>{tutHeading}</Trans>
-                    </h1>
-                    <p className="text-center">
-                        <Trans>{tutDescription}</Trans>
-                    </p>
-
-                    <Container className="d-flex flex-column flex-xl-row justify-content-center">
+                <h1 className="mt-2 mb-4 pb-2 text-primary text-center">
+                    <Trans>{tutHeading}</Trans>
+                </h1>
+                <p className="text-center">
+                    <Trans>{tutDescription}</Trans>
+                </p>
+                <Container className="d-flex flex-column px-0">
+                    <Container className="container-gap d-flex flex-xl-row flex-column justify-content-center align-items-start mt-3">
                         {tutorialImages.map((img, idx) => {
                             const prefix = "tut" + (idx + 1)
                             return (
@@ -194,7 +193,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                                     key={"img" + idx}
                                     src={img}
                                     imgAltKey={prefix + "AltText"}
-                                    contentClass="px-md-4"
+                                    contentClass=""
                                     headingKey={prefix + "Heading"}
                                     descriptionArrayKey={prefix + "Descriptions"}
                                 />
@@ -207,12 +206,12 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
             {/* References section */}
             <section id="references" className="page-section">
                 <Container>
-                    <div className="d-flex align-items-center">
+                    <div className="d-flex align-items-start">
                         <div className="flex-shrink-0">
                             <ReferencesIcon />
                             {/* <FaRegFile style={{ width: "5rem", height: "5rem" }} /> */}
                         </div>
-                        <div className="flex-grow-1 ms-3">
+                        <div className="reference-text flex-grow-1 ms-3">
                             <h1 className="text-primary">
                                 <Trans>{referencesHeading}</Trans>
                             </h1>

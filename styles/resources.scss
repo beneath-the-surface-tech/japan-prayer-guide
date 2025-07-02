@@ -69,10 +69,29 @@
     }
 
     #downloadBy {
+        h3 {
+            @include media-breakpoint-down(xl) {
+                font-size: 24px;
+            }
+            @include media-breakpoint-down(md) {
+                font-size: 20px;
+            }
+        }
+
+        p {
+            max-width: 1134px;
+            @include media-breakpoint-down(xl) {
+                max-width: 720px;
+            }
+            @include media-breakpoint-down(md) {
+                max-width: 327px;
+            }
+        }
         .topic-downloadables {
             // overwrite component styling for resources page
             // flex-direction: column;
             font-size: 0.875rem;
+            margin-top: -8px;
             padding: 5px;
 
             p {
@@ -137,9 +156,10 @@
                 width: 225px;
                 font-weight: 700;
                 // height: 55px;
+                font-size: 16px;
 
                 @include media-breakpoint-down(md) {
-                    width: 168px;
+                    width: 175px;
                     // height: 51px;
                 }
             }
@@ -147,23 +167,43 @@
     }
 
     #tutorial {
+        p {
+            max-width: 1134px;
+            @include media-breakpoint-down(xl) {
+                max-width: 720px;
+            }
+            @include media-breakpoint-down(md) {
+                max-width: 327px;
+            }
+        }
         h1 {
             font-size: 32px;
-
-            @include media-breakpoint-down(xl) {
+            @include media-breakpoint-down(md) {
                 font-size: 24px;
+            }
+        }
+        h3 {
+            font-size: 28px;
+            @include media-breakpoint-down(xl) {
+                font-size: 20px;
+            }
+        }
+        .container-gap {
+            gap: 8rem;
+            @include media-breakpoint-down(xl) {
+                gap: 32px;
             }
         }
 
         .image-content-flex {
-            //width: 432px;
+            // width: 352px;
 
-            @include media-breakpoint-down(xl) {
-                //width: 432px;
+            @include media-breakpoint-up(xl) {
+                width: 432px;
             }
 
             @include media-breakpoint-down(md) {
-                //width: 437px;
+                // width: 437px;
             }
 
             .content-image {
@@ -222,9 +262,27 @@
 #references {
     h1 {
         font-size: 32px;
+        margin-bottom: 12px;
+        max-width: 1000px;
 
         @include media-breakpoint-down(xl) {
             font-size: 24px;
+            max-width: 612px;
+        }
+        @include media-breakpoint-down(md) {
+            max-width: 327px;
+        }
+    }
+    .reference-text {
+        margin-top: -2px;
+        p {
+            max-width: 1000px;
+            @include media-breakpoint-down(xl) {
+                max-width: 612px;
+            }
+            @include media-breakpoint-down(md) {
+                max-width: 327px;
+            }
         }
     }
 }
