@@ -32,6 +32,7 @@ export default function TutorialFlexCol({
     return (
         <div
             className={
+                // "d-flex flex-column flex-md-column flex-lg-row flex-xl-column image-content-flex mb-sm-0 mb-md-0 justify-content-center" +
                 "d-flex flex-column flex-md-row flex-xl-column image-content-flex mb-sm-0 mb-md-0 justify-content-center mx-auto" +
                 className
             }
