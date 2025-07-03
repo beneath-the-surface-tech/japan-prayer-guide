@@ -126,19 +126,20 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                         {/* <div className="col-xl-6 col-lg-8 col-md-10"> */}
                             <DownloadTypeFlexCol
                             className="mx-auto mx-xl-0"
-                                src={byMediaType}
-                                imgAltKey="byMediaAltText"
-                                headingKey="byMediaHeading"
-                                descriptionArrayKey="byMediaDescriptions"
-                                descriptionUrlArray={["", VIMEO_URL]}
-                            >
-                                <DownloadablesGrid
-                                    className="d-sm-flex row-cols-sm-2 px-0 my-1"
-                                    infographicsUrl={infographicsUrl}
-                                    photographyUrl={photographyUrl}
-                                    pdfUrl={pdfUrl}
-                                    slidesUrl={slidesUrl}
-                                />
+                            src={byMediaType}
+                            imgAltKey="byMediaAltText"
+                            headingKey="byMediaHeading"
+                            descriptionArrayKey="byMediaDescriptions"
+                            descriptionUrlArray={["", VIMEO_URL]}
+                        >
+                            <DownloadablesGrid
+                                className="d-sm-flex row-cols-sm-2 px-0 my-1"
+                                infographicsUrl={infographicsUrl}
+                                photographyUrl={photographyUrl}
+                                pdfUrl={pdfUrl}
+                                slidesUrl={slidesUrl}
+                                rowCount={1}
+                            />
 
                             <p className="w-100 mt-3 mt-md-4 mb-1">
                                 <Trans

@@ -134,7 +134,10 @@ hr {
 
 
 .resource-card {
-    min-height: 90px;
+    min-height: 80px;
+    p {
+        font-size: 16px;
+    }
     @include media-breakpoint-down(md) {
         min-height: 70px;
     }

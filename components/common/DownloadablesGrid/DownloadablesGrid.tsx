@@ -12,6 +12,8 @@ interface downloadProps {
     photographyUrl?: string
     pdfUrl?: string
     slidesUrl?: string
+    rowCount?: number
+    smRowCount?: number
 }
 
 interface ResourceProps {
@@ -59,6 +61,8 @@ export default function DownloadablesGrid({
     photographyUrl = "",
     pdfUrl = "",
     slidesUrl = "",
+    rowCount = 1,
+    smRowCount = 2,
 }: downloadProps) {
     const { t } = useTranslation("common")
 
@@ -69,8 +73,8 @@ export default function DownloadablesGrid({
 
     return (
         <Row
-            md={2}
-            sm={1}
+            md={rowCount}
+            sm={smRowCount}
             className={"grid-row g-3 d-md-flex d-block " + className}
             data-testid={"topic-downloadables-links"}
         >
