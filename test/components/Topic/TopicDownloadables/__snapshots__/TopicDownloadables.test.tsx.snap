@@ -34,7 +34,7 @@ exports[`Topic Downloadables Snapshot test 1`] = `
             data-testid="topic-downloadables-links"
           >
             <div
-              class="resource-card col"
+              class="col"
             >
               <a
                 aria-disabled="false"
@@ -79,7 +79,7 @@ exports[`Topic Downloadables Snapshot test 1`] = `
               </a>
             </div>
             <div
-              class="resource-card col"
+              class="col"
             >
               <a
                 aria-disabled="false"
@@ -124,7 +124,7 @@ exports[`Topic Downloadables Snapshot test 1`] = `
               </a>
             </div>
             <div
-              class="resource-card col"
+              class="col"
             >
               <a
                 aria-disabled="false"
@@ -262,7 +262,7 @@ exports[`Topic Downloadables Snapshot test 1`] = `
           data-testid="topic-downloadables-links"
         >
           <div
-            class="resource-card col"
+            class="col"
           >
             <a
               aria-disabled="false"
@@ -307,7 +307,7 @@ exports[`Topic Downloadables Snapshot test 1`] = `
             </a>
           </div>
           <div
-            class="resource-card col"
+            class="col"
           >
             <a
               aria-disabled="false"
@@ -352,7 +352,7 @@ exports[`Topic Downloadables Snapshot test 1`] = `
             </a>
           </div>
           <div
-            class="resource-card col"
+            class="col"
           >
             <a
               aria-disabled="false"
