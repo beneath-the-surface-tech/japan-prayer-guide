@@ -21,6 +21,7 @@ import DownloadablesGrid from "../components/common/DownloadablesGrid/Downloadab
 import { LinkFromJson } from "@/components/common/LinkFromJson"
 import DownloadTypeFlexCol from "@/components/resources/DownloadTypeFlexCol/DownloadTypeFlexCol"
 import TutorialFlexCol from "@/components/resources/TutorialFlexCol/TutorialFlexCol"
+import { Info } from "@/components/icons"
 
 export const getStaticProps = async ({ locale }: { locale: string }) => {
     const isPageReady: boolean = resources.enabled
@@ -109,7 +110,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
             {/* 'Download by' section */}
             <div id="downloadBy" className="w-100 d-flex align-items-center flex-column px-4 px-md-4 page-section">
                 <div className="resources-content-container">
-                    <p className="text-center">
+                    <p className="text-left">
                     <Trans
                         components={[
                             <LinkFromJson key="copyrightText0" href={copyrightUrl} />,
@@ -140,19 +141,6 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                                 slidesUrl={slidesUrl}
                                 rowCount={1}
                             />
-
-                            <p className="w-100 mt-3 mt-md-4 mb-1">
-                                <Trans
-                                    t={t}
-                                    i18nKey="byMediaOtherVersionText"
-                                    components={[
-                                        <LinkFromJson
-                                            key="byMediaOtherVersionText"
-                                            href={byMediaOtherVersionUrl}
-                                        ></LinkFromJson>,
-                                    ]}
-                                />
-                            </p>
                         </DownloadTypeFlexCol>
                         <DownloadTypeFlexCol
                             className="mx-auto mx-xl-0"
@@ -173,6 +161,11 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                             </div>
                         </DownloadTypeFlexCol>
                     </div>
+                    <hr />
+                    <Info />
+                    <a className="fw-bold text-secondary-5 cursor-pointer mx-1" href={byMediaOtherVersionUrl}>
+                        <Trans t={t} i18nKey="byMediaOtherVersionText" components={[]} />
+                    </a>
                 {/* </Container> */}
             </div>
 

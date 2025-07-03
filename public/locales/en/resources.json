@@ -17,8 +17,8 @@
         "photographyUrl": "https://app.box.com/s/g7bro2km3c27lvmxblw5pdxevn532ap9?sortColumn=name&sortDirection=ASC",
         "slidesUrl": "https://drive.google.com/drive/folders/1toEYT93zLkdu73eCN16qnAT19aBnDPwP"
     },
-    "byMediaOtherVersionText": "Access the Japanese versions of these resources <0>here</0>.",
-    "byMediaOtherVersionUrl": "https://app.box.com/s/kd03pbcnt0gwyhhzk2n1nx7qicoiirng?sortColumn=name&sortDirection=ASC",
+    "byMediaOtherVersionText": "Access the Japanese Resources page here",
+    "byMediaOtherVersionUrl": "/ja/resources",
     "byTopicHeading": "Download by topic",
     "byTopicAltText": "A picture of topics",
     "byTopicDescriptions": [
