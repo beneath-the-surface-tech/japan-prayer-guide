@@ -17,7 +17,6 @@ import byTopicEN from "@/public/photos/resources/Resources-Book-EN.jpg"
 import byTopicJA from "@/public/photos/resources/Resources-Book-JP.jpg"
 import tutImg1 from "@/public/photos/resources/Resources-gif-1.gif"
 import tutImg2 from "@/public/photos/resources/Resources-gif-2.gif"
-import tutImg3 from "@/public/photos/resources/Resources-gif-3.gif"
 import DownloadablesGrid from "../components/common/DownloadablesGrid/DownloadablesGrid"
 import { LinkFromJson } from "@/components/common/LinkFromJson"
 import DownloadTypeFlexCol from "@/components/resources/DownloadTypeFlexCol/DownloadTypeFlexCol"
@@ -97,17 +96,20 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                     isMainImage={true}
                 />
 
-                <h1 className="px-4 px-md-5 px-lg-4 text-white text-center w-75">
-                    <Trans>{heroHeader}</Trans>
-                </h1>
-                <p className="subtext px-4 px-md-5 px-lg-4 text-white text-center w-75">
-                    <Trans>{heroSubtitle}</Trans>
-                </p>
+                <div className="resources-content-container d-flex flex-column align-items-center">
+                    <h1 className="px-4 px-md-5 px-lg-4 text-white text-center">
+                        <Trans>{heroHeader}</Trans>
+                    </h1>
+                    <p className="subtext px-4 px-md-5 px-lg-4 text-white text-center">
+                        <Trans>{heroSubtitle}</Trans>
+                    </p>
+                </div>
             </div>
 
             {/* 'Download by' section */}
             <div id="downloadBy" className="w-100 d-flex align-items-center flex-column px-4 px-md-4 page-section">
-                <p className="">
+                <div className="resources-content-container">
+                    <p className="text-center">
                     <Trans
                         components={[
                             <LinkFromJson key="copyrightText0" href={copyrightUrl} />,
@@ -174,18 +176,15 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
             </div>
 
             {/* 'How to' section */}
-            <div
-                id="tutorial"
-                className="bg-secondary-2 w-100 d-flex align-items-center flex-column px-4 px-md-4 page-section"
-            >
-                <h1 className="mt-2 mb-4 pb-2 text-primary text-center">
-                    <Trans>{tutHeading}</Trans>
-                </h1>
-                <p className="text-center">
-                    <Trans>{tutDescription}</Trans>
-                </p>
-                <Container className="d-flex flex-column px-0">
-                    <Container className="container-gap d-flex flex-xl-row flex-column justify-content-center align-items-start mt-3">
+            <div id="tutorial" className="bg-secondary-2 w-100 d-flex align-items-center flex-column page-section">
+                <div className="resources-content-container">
+                    <h1 className="mt-2 mb-4 pb-2 text-primary text-center">
+                        <Trans>{tutHeading}</Trans>
+                    </h1>
+                    <p className="text-center">
+                        <Trans>{tutDescription}</Trans>
+                    </p>
+                    <div className="container-gap d-flex flex-xl-row flex-column justify-content-center align-items-start mt-3">
                         {tutorialImages.map((img, idx) => {
                             const prefix = "tut" + (idx + 1)
                             return (
@@ -199,13 +198,13 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                                 />
                             )
                         })}
-                    </Container>
-                </Container>
+                    </div>
+                </div>
             </div>
 
             {/* References section */}
             <section id="references" className="page-section">
-                <Container>
+                <div className="resources-content-container">
                     <div className="d-flex align-items-start">
                         <div className="flex-shrink-0">
                             <ReferencesIcon />
@@ -222,12 +221,12 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                             </p>
                         </div>
                     </div>
-                </Container>
+                </div>
             </section>
 
             {/* Booklet banner section */}
             <section className="redirect-section d-flex align-items-center" title={bookletImgAltText}>
-                <Container className="text-center text-white">
+                <div className="resources-content-container text-center text-white">
                     <h1 className="mb-sm-3 mb-md-4">
                         <Trans>{bookletRedirectHeading}</Trans>
                     </h1>
@@ -236,7 +235,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                             <Trans>{bookletRedirectBtnText}</Trans>
                         </Button>
                     </Link>
-                </Container>
+                </div>
             </section>
         </>
     )
