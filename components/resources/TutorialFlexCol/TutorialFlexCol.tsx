@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react"
-import { Container } from "react-bootstrap"
 import { Trans, useTranslation } from "next-i18next"
 import { StaticImageData } from "next/image"
 import NextImage from "../../common/NextImage/NextImage"
@@ -33,7 +32,7 @@ export default function TutorialFlexCol({
     return (
         <div
             className={
-                "d-flex flex-column flex-md-column flex-lg-row flex-xl-column image-content-flex mb-sm-0 mb-md-0 justify-content-center" +
+                "d-flex flex-column flex-md-row flex-xl-column image-content-flex mb-sm-0 mb-md-0 justify-content-center mx-auto" +
                 className
             }
         >

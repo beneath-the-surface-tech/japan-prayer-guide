@@ -189,36 +189,87 @@
             }
         }
         .container-gap {
-            gap: 8rem;
+            gap: 2rem;
             @include media-breakpoint-down(xl) {
-                gap: 32px;
+                gap: 2rem;
+            }
+            @include media-breakpoint-down(lg) {
+                gap: 2rem;
+            }
+            @include media-breakpoint-down(md) {
+                gap: 0rem;
             }
         }
 
         .image-content-flex {
-            // width: 352px;
-
+            max-width: 100%;
+            
             @include media-breakpoint-up(xl) {
                 width: 432px;
             }
 
+            @include media-breakpoint-between(md, xl) {
+                width: 100%;
+                max-width: 720px;
+                align-items: center;
+            }
+
+            p {
+                @include media-breakpoint-down(md) {
+                    text-align: left;
+                }
+            }
+
             @include media-breakpoint-down(md) {
-                // width: 437px;
+                width: 100%;
+                max-width: 327px;
+                margin: 0 auto;
+                text-align: center;
             }
 
             .content-image {
-                height: 244px;
-                width: 432px;
-                margin-bottom: 0px;
+                margin-bottom: 1rem;
 
-                @include media-breakpoint-down(xl) {
-                    height: 198px;
-                    width: 352px;
+                @include media-breakpoint-up(xl) {
+                    height: 244px;
+                    width: 432px;
+                }
+
+                @include media-breakpoint-between(md, xl) {
+                    height: 200px;
+                    width: 100%;
+                    max-width: 400px;
+                    margin-right: 2rem;
+                    flex-shrink: 0;
                 }
 
                 @include media-breakpoint-down(md) {
                     height: 183px;
-                    width: 327px;
+                    width: 100%;
+                    max-width: 327px;
+                    margin-right: 0;
+                    margin-bottom: 1rem;
+                }
+            }
+
+            .d-flex.flex-column {
+                @include media-breakpoint-between(md, xl) {
+                    flex: 1;
+                    justify-content: center;
+                }
+
+                @include media-breakpoint-down(md) {
+                    text-align: center;
+                }
+            }
+
+            h3 {
+                @include media-breakpoint-between(md, xl) {
+                    padding-left: 0 !important;
+                }
+
+                @include media-breakpoint-down(md) {
+                    padding-left: 0 !important;
                 }
             }
 
