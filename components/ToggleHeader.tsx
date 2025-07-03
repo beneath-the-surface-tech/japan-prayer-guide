@@ -52,6 +52,11 @@ const ToggleHeader: React.FC<HeaderProp> = ({ hideShadow = false }: HeaderProp) 
         router.push(path, path, options)
     }
 
+    const handleLanguageChangeWithColorToggle = (language: string) => {
+        toggleColorScheme()
+        handleLanguageChange(language)
+    }
+
     // when the Navbar.Collapse is expanded we want to switch to the dark theme
     const [bg, setBg] = useState("white")
     const [variant, setVariant] = useState("light")
@@ -108,7 +113,11 @@ const ToggleHeader: React.FC<HeaderProp> = ({ hideShadow = false }: HeaderProp) 
                         className="d-inline-block align-top header-crane-button"
                     />{" "}
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="header-navbar-nav" onClick={toggleColorScheme} />
+                <Navbar.Toggle
+                    aria-controls="header-navbar-nav"
+                    onClick={toggleColorScheme}
+                    data-testid="main-nav-toggle"
+                />
                 <Navbar.Collapse id="header-navbar-nav">
                     <Container className="mobile-header d-flex flex-column justify-content-between w-auto ms-auto me-0">
                         <Nav className="ml-auto d-md-flex gap-md-3 align-items-xl-center" variant={variant}>
@@ -166,7 +175,7 @@ const ToggleHeader: React.FC<HeaderProp> = ({ hideShadow = false }: HeaderProp) 
                         </Nav>
                         <Container className="d-xl-none text-center mobile-menu-footer">
                             <Row className="mb-4">
-                                <LanguageSwitcher />
+                                <LanguageSwitcher onClickFunc={handleLanguageChangeWithColorToggle} />
                             </Row>
                             <Image alt="Crane logo" src="/wire-logo.png" width="48" height="48" className="mb-2" />{" "}
                             <Row className="mt-2 mb-5">

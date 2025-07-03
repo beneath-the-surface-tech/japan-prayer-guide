@@ -17,6 +17,11 @@
 @import "./resources.scss";
 @import "./topicPage.scss";
 
+// Language support
+:lang(ja) {
+    font-family: $font-family-ja !important;
+}
+
 // Misc
 
 .placeholder-image {

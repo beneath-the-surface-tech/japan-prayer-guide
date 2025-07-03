@@ -4,6 +4,7 @@ import { TopicEntity } from "./Topic.entity"
 import { PageRelatedEntity } from "./PageRelated.entity"
 import { Column, Entity, OneToMany, PrimaryColumn } from "typeorm"
 import type { Relation } from "typeorm"
+import { TimelineEra } from "./TimelineEra.entity"
 
 @Entity("pages")
 export class PageEntity {
@@ -69,4 +70,7 @@ export class PageEntity {
 
     @OneToMany(() => PageRelatedEntity, (related) => related.page)
     relatedPages!: Relation<PageRelatedEntity>[]
+
+    @OneToMany(() => TimelineEra, (era) => era.page)
+    timelineEras!: Relation<TimelineEra>[]
 }

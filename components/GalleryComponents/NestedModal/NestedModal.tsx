@@ -74,7 +74,7 @@ export const NestedModal = ({ images, subTitle, galleryTitle, imageText }: Neste
                                         alt={item?.alt || item.title}
                                     />
                                     <div className="galleryMoreOverlay">
-                                        <div className="galleryMoreNumber">{`+${images.length - 4}`}</div>
+                                        <div className="galleryMoreNumber">{`+${images.length - 3}`}</div>
                                     </div>
                                 </div>
                             )

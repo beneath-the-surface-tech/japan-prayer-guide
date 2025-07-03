@@ -30,7 +30,7 @@ exports[`Topic Downloadables Snapshot test 1`] = `
           class="container"
         >
           <div
-            class="grid-row g-3 d-md-flex d-block undefined row row-cols-md-2 row-cols-sm-1"
+            class="g-3 d-md-flex d-block row row-cols-lg-4 row-cols-md-2 row-cols-sm-1"
             data-testid="topic-downloadables-links"
           >
             <div
@@ -40,6 +40,8 @@ exports[`Topic Downloadables Snapshot test 1`] = `
                 aria-disabled="false"
                 class="text-decoration-none"
                 href="downloads.infographicsUrl"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <div
                   class="resource-card shadow-sm border-0 rounded card"
@@ -83,6 +85,8 @@ exports[`Topic Downloadables Snapshot test 1`] = `
                 aria-disabled="false"
                 class="text-decoration-none"
                 href="downloads.pdfUrl"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <div
                   class="resource-card shadow-sm border-0 rounded card"
@@ -126,6 +130,8 @@ exports[`Topic Downloadables Snapshot test 1`] = `
                 aria-disabled="false"
                 class="text-decoration-none"
                 href="downloads.photographyUrl"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <div
                   class="resource-card shadow-sm border-0 rounded card"
@@ -163,12 +169,14 @@ exports[`Topic Downloadables Snapshot test 1`] = `
               </a>
             </div>
             <div
-              class="resource-card col"
+              class="col"
             >
               <a
                 aria-disabled="false"
                 class="text-decoration-none"
                 href="downloads.slidesUrl"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <div
                   class="resource-card shadow-sm border-0 rounded card"
@@ -210,11 +218,12 @@ exports[`Topic Downloadables Snapshot test 1`] = `
         <a
           class="align-self-center w-100 mt-2 mt-md-3"
           href="downloads.downloadAllUrl"
-          style="max-width: 280px; cursor: not-allowed;"
+          rel="noopener noreferrer"
+          style="max-width: 280px;"
+          target="_blank"
         >
           <button
-            class="align-self-center w-100 mt-4 px-3 text-white bg-grey-4 border-secondary-5 fw-bold fs-4 border-0 btn btn-primary"
-            disabled=""
+            class="align-self-center w-100 mt-4 px-3 text-white bg-secondary-5 border-secondary-5 fw-bold fs-4 border-0 btn btn-primary"
             type="button"
           >
             downloads.downloadAllBtn
@@ -249,7 +258,7 @@ exports[`Topic Downloadables Snapshot test 1`] = `
         class="container"
       >
         <div
-          class="grid-row g-3 d-md-flex d-block undefined row row-cols-md-2 row-cols-sm-1"
+          class="g-3 d-md-flex d-block row row-cols-lg-4 row-cols-md-2 row-cols-sm-1"
           data-testid="topic-downloadables-links"
         >
           <div
@@ -259,6 +268,8 @@ exports[`Topic Downloadables Snapshot test 1`] = `
               aria-disabled="false"
               class="text-decoration-none"
               href="downloads.infographicsUrl"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <div
                 class="resource-card shadow-sm border-0 rounded card"
@@ -302,6 +313,8 @@ exports[`Topic Downloadables Snapshot test 1`] = `
               aria-disabled="false"
               class="text-decoration-none"
               href="downloads.pdfUrl"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <div
                 class="resource-card shadow-sm border-0 rounded card"
@@ -345,6 +358,8 @@ exports[`Topic Downloadables Snapshot test 1`] = `
               aria-disabled="false"
               class="text-decoration-none"
               href="downloads.photographyUrl"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <div
                 class="resource-card shadow-sm border-0 rounded card"
@@ -382,12 +397,14 @@ exports[`Topic Downloadables Snapshot test 1`] = `
             </a>
           </div>
           <div
-            class="resource-card col"
+            class="col"
           >
             <a
               aria-disabled="false"
               class="text-decoration-none"
               href="downloads.slidesUrl"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <div
                 class="resource-card shadow-sm border-0 rounded card"
@@ -429,11 +446,12 @@ exports[`Topic Downloadables Snapshot test 1`] = `
       <a
         class="align-self-center w-100 mt-2 mt-md-3"
         href="downloads.downloadAllUrl"
-        style="max-width: 280px; cursor: not-allowed;"
+        rel="noopener noreferrer"
+        style="max-width: 280px;"
+        target="_blank"
       >
         <button
-          class="align-self-center w-100 mt-4 px-3 text-white bg-grey-4 border-secondary-5 fw-bold fs-4 border-0 btn btn-primary"
-          disabled=""
+          class="align-self-center w-100 mt-4 px-3 text-white bg-secondary-5 border-secondary-5 fw-bold fs-4 border-0 btn btn-primary"
           type="button"
         >
           downloads.downloadAllBtn
