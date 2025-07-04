@@ -28,6 +28,10 @@
     }
     h3 {
         font-family: $font-family-secondary;
+        @include media-breakpoint-up(xl) {
+            font-size: 24px;
+            font-weight: 700;
+        }
     }
 
     p {
@@ -81,7 +85,7 @@
                 margin-bottom: 32px;
             }
             @include media-breakpoint-down(md) {
-                font-size: 24px;
+                // font-size: 24px;
                 margin-top: 32px;
                 margin-bottom: 16px;
             }
@@ -90,8 +94,9 @@
 
     #downloadBy {
         h3 {
+            font-size: 24px;
             @include media-breakpoint-down(xl) {
-                font-size: 24px;
+                font-size: 20px;
             }
             @include media-breakpoint-down(md) {
                 font-size: 20px;
@@ -150,7 +155,7 @@
             }
 
             .content-image {
-                margin-top: 1.5rem;
+                margin-top: 1rem;
                 margin-bottom: 1.5rem;
                 height: 321px;
                 width: auto;
@@ -196,14 +201,14 @@
         h1 {
             font-size: 32px;
             @include media-breakpoint-down(xl) {
-                font-size: 24px;
+                font-size: 32px;
             }
             @include media-breakpoint-down(md) {
                 font-size: 24px;
             }
         }
         h3 {
-            font-size: 28px;
+            // font-size: 28px;
             @include media-breakpoint-down(xl) {
                 font-size: 20px;
             }
@@ -337,7 +342,7 @@
         font-size: 32px;
         margin-bottom: 12px;
 
-        @include media-breakpoint-down(xl) {
+        @include media-breakpoint-down(md) {
             font-size: 24px;
         }
     }
