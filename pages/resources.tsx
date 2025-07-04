@@ -111,62 +111,62 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
             <div id="downloadBy" className="w-100 d-flex align-items-center flex-column px-4 px-md-4 page-section">
                 <div className="resources-content-container">
                     <p className="text-left">
-                    <Trans
-                        components={[
-                            <LinkFromJson key="copyrightText0" href={copyrightUrl} />,
-                            <LinkFromJson key="copyrightText1" href={copyrightUrl} />,
-                        ]}
-                    >
-                        {copyrightText}
-                    </Trans>
-                </p>
-                <div className="d-flex flex-column px-0">
-                {/* <div className="row g-4 justify-content-center"> */}
-                        <div className="col-xl-6 col-lg-8 col-md-10 gap-xl-4">
-                        {/* <div className="d-flex flex-xl-row flex-column justify-content-center mw-100 px-sm-0 px-md-0 gap-xl-4"> */}
-                        {/* <div className="col-xl-6 col-lg-8 col-md-10"> */}
+                        <Trans
+                            components={[
+                                <LinkFromJson key="copyrightText0" href={copyrightUrl} />,
+                                <LinkFromJson key="copyrightText1" href={copyrightUrl} />,
+                            ]}
+                        >
+                            {copyrightText}
+                        </Trans>
+                    </p>
+                    <div className="d-flex flex-column px-0 g-4 justify-content-center mw-100">
+                        <div className="d-flex flex-xl-row flex-column justify-content-center mw-100 px-sm-0 px-md-0 gap-xl-4">
                             <DownloadTypeFlexCol
-                            className="mx-auto mx-xl-0"
-                            src={byMediaType}
-                            imgAltKey="byMediaAltText"
-                            headingKey="byMediaHeading"
-                            descriptionArrayKey="byMediaDescriptions"
-                            descriptionUrlArray={["", VIMEO_URL]}
-                        >
-                            <DownloadablesGrid
-                                className="d-sm-flex row-cols-sm-2 px-0 my-1"
-                                infographicsUrl={infographicsUrl}
-                                photographyUrl={photographyUrl}
-                                pdfUrl={pdfUrl}
-                                slidesUrl={slidesUrl}
-                                rowCount={1}
-                            />
-                        </DownloadTypeFlexCol>
-                        <DownloadTypeFlexCol
-                            className="mx-auto mx-xl-0"
-                            src={i18n.language === "en" ? byTopicEN : byTopicJA}
-                            imgAltKey="byTopicAltText"
-                            headingKey="byTopicHeading"
-                            descriptionArrayKey="byTopicDescriptions"
-                        >
-                            <div className="d-inline-flex">
-                                <Link
-                                    className="text-white text-center my-2 bg-secondary-5 border-secondary-5 btn btn-primary topic-btn"
-                                    href={byTopicBtnUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <Trans t={t} i18nKey="byTopicBtn" />
-                                </Link>
-                            </div>
-                        </DownloadTypeFlexCol>
+                                className="mx-auto mx-xl-0"
+                                src={byMediaType}
+                                imgAltKey="byMediaAltText"
+                                headingKey="byMediaHeading"
+                                descriptionArrayKey="byMediaDescriptions"
+                                descriptionUrlArray={["", VIMEO_URL]}
+                            >
+                                <DownloadablesGrid
+                                    className="d-sm-flex row-cols-sm-2 px-0 my-1"
+                                    infographicsUrl={infographicsUrl}
+                                    photographyUrl={photographyUrl}
+                                    pdfUrl={pdfUrl}
+                                    slidesUrl={slidesUrl}
+                                    rowCount={1}
+                                />
+                            </DownloadTypeFlexCol>
+                            <DownloadTypeFlexCol
+                                className="mx-auto mx-xl-0"
+                                src={i18n.language === "en" ? byTopicEN : byTopicJA}
+                                imgAltKey="byTopicAltText"
+                                headingKey="byTopicHeading"
+                                descriptionArrayKey="byTopicDescriptions"
+                            >
+                                <div className="d-inline-flex">
+                                    <Link
+                                        className="text-white text-center my-2 bg-secondary-5 border-secondary-5 btn btn-primary topic-btn"
+                                        href={byTopicBtnUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <Trans t={t} i18nKey="byTopicBtn" />
+                                    </Link>
+                                </div>
+                            </DownloadTypeFlexCol>
+                        </div>
+                        <hr />
+                        <div>
+                            <Info />
+                            <a className="fw-bold text-secondary-5 cursor-pointer mx-1" href={byMediaOtherVersionUrl}>
+                                <Trans t={t} i18nKey="byMediaOtherVersionText" components={[]} />
+                            </a>
+                        </div>
                     </div>
-                    <hr />
-                    <Info />
-                    <a className="fw-bold text-secondary-5 cursor-pointer mx-1" href={byMediaOtherVersionUrl}>
-                        <Trans t={t} i18nKey="byMediaOtherVersionText" components={[]} />
-                    </a>
-                {/* </Container> */}
+                </div>
             </div>
 
             {/* 'How to' section */}
