@@ -33,12 +33,12 @@ export default function DownloadTypeFlexCol({
     descriptions = Array.isArray(descriptions) ? descriptions : []
 
     return (
-        <div className={"d-flex flex-column my-4 image-content-flex mb-sm-0 mb-md-0" + className}>
+        <div className={"d-flex flex-column my-4 image-content-flex mb-sm-0 mb-md-0 " + className}>
             <h3 className="text-primary d-none d-xl-block subheading">
                 <Trans>{heading}</Trans>
             </h3>
             <NextImage src={src} alt={imgAlt} className={"mx-0 content-image"} />
-            <div className={"d-flex flex-column" + contentClass}>
+            <div className={"d-flex flex-column " + contentClass}>
                 <h3 className="text-primary d-xl-none subheading">
                     <Trans>{heading}</Trans>
                 </h3>

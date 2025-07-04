@@ -22,6 +22,82 @@ import { LinkFromJson } from "@/components/common/LinkFromJson"
 import DownloadTypeFlexCol from "@/components/resources/DownloadTypeFlexCol/DownloadTypeFlexCol"
 import TutorialFlexCol from "@/components/resources/TutorialFlexCol/TutorialFlexCol"
 import { Info } from "@/components/icons"
+import { useLayoutEffect } from "react"
+
+export function useEqualHeight(
+    className: string,
+    mediaQuery = "(min-width: 1280px)", // default breakpoint
+) {
+    useLayoutEffect(() => {
+        if (typeof window === "undefined") return // SSR guard
+        const mql = window.matchMedia(mediaQuery)
+
+        // Core equal-height logic, but gated by mql.matches
+        const sync = () => {
+            const els = Array.from(document.getElementsByClassName(className)) as HTMLElement[]
+
+            if (!els.length) return
+            if (!mql.matches) {
+                // Below breakpoint ⇒ restore natural height
+                els.forEach((el) => (el.style.height = ""))
+                return
+            }
+
+            els.forEach((el) => (el.style.height = "auto")) // reset first
+            const tallest = Math.max(...els.map((el) => el.offsetHeight))
+            els.forEach((el) => (el.style.height = `${tallest}px`))
+        }
+
+        // Initial run and observers
+        sync()
+        const ro = new ResizeObserver(sync)
+        const elsToWatch = Array.from(document.getElementsByClassName(className)) as HTMLElement[]
+        elsToWatch.forEach((el) => ro.observe(el))
+
+        window.addEventListener("resize", sync)
+        mql.addEventListener("change", sync) // react to MQ flips
+
+        // Cleanup
+        return () => {
+            window.removeEventListener("resize", sync)
+            mql.removeEventListener("change", sync)
+            ro.disconnect()
+            elsToWatch.forEach((el) => (el.style.height = ""))
+        }
+    }, [className, mediaQuery])
+}
+
+// /** Makes every element with a given class name match the tallest one */
+// export function useEqualHeight(className: string) {
+//     useLayoutEffect(() => {
+//         const els = Array.from(document.getElementsByClassName(className)) as HTMLElement[]
+//         if (!els.length) return
+
+//         const sync = () => {
+//             // Reset any inline height so we get the natural size first
+//             els.forEach((el) => (el.style.height = "auto"))
+//             const tallest = Math.max(...els.map((el) => el.offsetHeight))
+//             els.forEach((el) => (el.style.height = `${tallest}px`))
+//         }
+
+//         // 1. Initial run
+//         sync()
+
+//         // 2. Watch for content changes
+//         const ro = new ResizeObserver(sync)
+//         els.forEach((el) => ro.observe(el))
+
+//         // 3. Handle window resizing
+//         window.addEventListener("resize", sync)
+
+//         // Cleanup
+//         return () => {
+//             window.removeEventListener("resize", sync)
+//             ro.disconnect()
+//             els.forEach((el) => (el.style.height = ""))
+//         }
+//     }, [className])
+// }
 
 export const getStaticProps = async ({ locale }: { locale: string }) => {
     const isPageReady: boolean = resources.enabled
@@ -55,6 +131,9 @@ const Downloads = ({ isPageReady }: { isPageReady: boolean }) => {
 }
 
 const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
+    // Use the equal height hook to make elements with "equal-height" class the same height
+    useEqualHeight("equal-height")
+
     const VIMEO_URL = "https://vimeo.com/japanprayerguide"
     const heroHeader: string = t("heroHeader")
     const heroSubtitle: string = t("heroSubtitle")
@@ -126,6 +205,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                                 className="mx-auto mx-xl-0"
                                 src={byMediaType}
                                 imgAltKey="byMediaAltText"
+                                contentClass="equal-height"
                                 headingKey="byMediaHeading"
                                 descriptionArrayKey="byMediaDescriptions"
                                 descriptionUrlArray={["", VIMEO_URL]}
@@ -143,12 +223,13 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                                 className="mx-auto mx-xl-0"
                                 src={i18n.language === "en" ? byTopicEN : byTopicJA}
                                 imgAltKey="byTopicAltText"
+                                contentClass="equal-height"
                                 headingKey="byTopicHeading"
                                 descriptionArrayKey="byTopicDescriptions"
                             >
                                 <div className="d-inline-flex">
                                     <Link
-                                        className="text-white text-center my-2 bg-secondary-5 border-secondary-5 btn btn-primary topic-btn"
+                                        className="text-white text-center bg-secondary-5 border-secondary-5 btn btn-primary topic-btn"
                                         href={byTopicBtnUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
