@@ -23,6 +23,10 @@
         margin-top: 2rem;
         font-family: $font-family-secondary;
         line-height: normal;
+        font-size: 24px;
+        @include media-breakpoint-down(md) {
+            font-size: 20px;
+        }
     }
 
     #topic-prayer-topicBottom {
