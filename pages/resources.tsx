@@ -281,7 +281,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
             <section id="references" className="page-section">
                 <div className="resources-content-container">
                     <div className="d-flex align-items-start flex-md-row flex-column">
-                        <div className="flex-shrink-0 align-self-start">
+                        <div className="flex-shrink-0 align-self-start me-2">
                             <Doc />
                             {/* <FaRegFile style={{ width: "5rem", height: "5rem" }} /> */}
                         </div>
