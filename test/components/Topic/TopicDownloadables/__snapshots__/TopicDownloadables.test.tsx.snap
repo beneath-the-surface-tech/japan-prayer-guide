@@ -30,18 +30,16 @@ exports[`Topic Downloadables Snapshot test 1`] = `
           class="container"
         >
           <div
-            class="g-3 d-md-flex d-block row row-cols-lg-4 row-cols-md-2 row-cols-sm-1"
+            class="grid-row g-3 d-md-flex d-block undefined row row-cols-md-4 row-cols-sm-1"
             data-testid="topic-downloadables-links"
           >
             <div
-              class="col"
+              class="resource-card col"
             >
               <a
                 aria-disabled="false"
                 class="text-decoration-none"
                 href="downloads.infographicsUrl"
-                rel="noopener noreferrer"
-                target="_blank"
               >
                 <div
                   class="resource-card shadow-sm border-0 rounded card"
@@ -79,14 +77,12 @@ exports[`Topic Downloadables Snapshot test 1`] = `
               </a>
             </div>
             <div
-              class="col"
+              class="resource-card col"
             >
               <a
                 aria-disabled="false"
                 class="text-decoration-none"
                 href="downloads.pdfUrl"
-                rel="noopener noreferrer"
-                target="_blank"
               >
                 <div
                   class="resource-card shadow-sm border-0 rounded card"
@@ -124,14 +120,12 @@ exports[`Topic Downloadables Snapshot test 1`] = `
               </a>
             </div>
             <div
-              class="col"
+              class="resource-card col"
             >
               <a
                 aria-disabled="false"
                 class="text-decoration-none"
                 href="downloads.photographyUrl"
-                rel="noopener noreferrer"
-                target="_blank"
               >
                 <div
                   class="resource-card shadow-sm border-0 rounded card"
@@ -169,14 +163,12 @@ exports[`Topic Downloadables Snapshot test 1`] = `
               </a>
             </div>
             <div
-              class="col"
+              class="resource-card col"
             >
               <a
                 aria-disabled="false"
                 class="text-decoration-none"
                 href="downloads.slidesUrl"
-                rel="noopener noreferrer"
-                target="_blank"
               >
                 <div
                   class="resource-card shadow-sm border-0 rounded card"
@@ -258,18 +250,16 @@ exports[`Topic Downloadables Snapshot test 1`] = `
         class="container"
       >
         <div
-          class="g-3 d-md-flex d-block row row-cols-lg-4 row-cols-md-2 row-cols-sm-1"
+          class="grid-row g-3 d-md-flex d-block undefined row row-cols-md-4 row-cols-sm-1"
           data-testid="topic-downloadables-links"
         >
           <div
-            class="col"
+            class="resource-card col"
           >
             <a
               aria-disabled="false"
               class="text-decoration-none"
               href="downloads.infographicsUrl"
-              rel="noopener noreferrer"
-              target="_blank"
             >
               <div
                 class="resource-card shadow-sm border-0 rounded card"
@@ -307,14 +297,12 @@ exports[`Topic Downloadables Snapshot test 1`] = `
             </a>
           </div>
           <div
-            class="col"
+            class="resource-card col"
           >
             <a
               aria-disabled="false"
               class="text-decoration-none"
               href="downloads.pdfUrl"
-              rel="noopener noreferrer"
-              target="_blank"
             >
               <div
                 class="resource-card shadow-sm border-0 rounded card"
@@ -352,14 +340,12 @@ exports[`Topic Downloadables Snapshot test 1`] = `
             </a>
           </div>
           <div
-            class="col"
+            class="resource-card col"
           >
             <a
               aria-disabled="false"
               class="text-decoration-none"
               href="downloads.photographyUrl"
-              rel="noopener noreferrer"
-              target="_blank"
             >
               <div
                 class="resource-card shadow-sm border-0 rounded card"
@@ -397,14 +383,12 @@ exports[`Topic Downloadables Snapshot test 1`] = `
             </a>
           </div>
           <div
-            class="col"
+            class="resource-card col"
           >
             <a
               aria-disabled="false"
               class="text-decoration-none"
               href="downloads.slidesUrl"
-              rel="noopener noreferrer"
-              target="_blank"
             >
               <div
                 class="resource-card shadow-sm border-0 rounded card"
