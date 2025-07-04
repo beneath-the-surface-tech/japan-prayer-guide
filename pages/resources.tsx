@@ -280,12 +280,12 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
             {/* References section */}
             <section id="references" className="page-section">
                 <div className="resources-content-container">
-                    <div className="d-flex align-items-start">
-                        <div className="flex-shrink-0">
+                    <div className="d-flex align-items-start flex-md-row flex-column">
+                        <div className="flex-shrink-0 align-self-start">
                             <Doc />
                             {/* <FaRegFile style={{ width: "5rem", height: "5rem" }} /> */}
                         </div>
-                        <div className="reference-text flex-grow-1 ms-3">
+                        <div className="reference-text flex-grow-1 ms-md-3 ms-0 mt-3 mt-md-0">
                             <h1 className="text-primary">
                                 <Trans>{referencesHeading}</Trans>
                             </h1>

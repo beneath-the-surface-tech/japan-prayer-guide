@@ -350,6 +350,12 @@
     .reference-text {
         margin-top: -2px;
     }
+    svg {
+    @include media-breakpoint-down(md) {
+        width: 51px;
+        height: 64px;
+    }
+    }
 }
 
 .sorryContainer {
