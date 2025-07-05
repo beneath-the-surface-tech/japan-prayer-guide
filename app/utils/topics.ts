@@ -30,7 +30,21 @@ export function getTopicLocaleData(pages: PageEntity[], localePath: string) {
         },
     )
 
+    const prevTopicNumber = ((Number(topicPage?.topicNumber) - 2 + 30) % 30) + 1 // wrap around 1 -> 30
+    const nextTopicNumber = (Number(topicPage?.topicNumber) % 30) + 1 // wrap around 30 -> 1
+
+    const [prevTopicPath, nextTopicPath] = [prevTopicNumber, nextTopicNumber].map((topicNumber: number) => {
+        return pages.find((page) => Number(page.topicNumber) == topicNumber)?.path
+    })
+
+    console.log("========yaho==========")
+    console.log(prevTopicPath)
+    console.log(nextTopicPath)
+    console.log("========yaho==========")
+
     const topicLocaleData = {
+        prevTopicPath: prevTopicPath,
+        nextTopicPath: nextTopicPath,
         title: topicLocale?.title,
         path: topicPage?.path,
         prayerSummary: topicLocale?.prayerSummary,

@@ -14,6 +14,7 @@ import RelatedContent from "../../components/topic/RelatedContent/RelatedContent
 import nextI18nextConfig from "../../next-i18next.config"
 import { ReferencesSection } from "@/components/topic/References/References"
 import AppHeader from "../../components/common/AppHeader"
+import Link from "next/link"
 
 const isDev = process.env.NODE_ENV === "development"
 const BASE_URL = isDev ? "http://localhost:3000" : process.env.API_URL || "https://dev.japanprayerguide.com"
@@ -61,7 +62,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
 // }
 
 export default function TopicPage({ localeRef }: { localeRef: string }) {
-    const { t } = useTranslation(localeRef)
+    const { t, i18n } = useTranslation(localeRef)
     const { t: topicCommon } = useTranslation("topic-pages")
 
     // Objects holding translations
@@ -94,6 +95,8 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
 
     const previousText: string = topicCommon("previousTopic")
     const nextText: string = topicCommon("nextTopic")
+    const previousPath = t("prevTopicPath")
+    const nextPath = t("nextTopicPath")
 
     return (
         <>
@@ -207,14 +210,22 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
                     className="prev-next-buttons px-0 d-flex align-items-center justify-content-between"
                     style={{ marginTop: "40px", marginBottom: "40px" }}
                 >
-                    <div className="prev-next-topic d-flex align-items-center gap-2 fw-bold text-decoration-underline text-secondary-5 cursor-pointer">
+                    <Link
+                        href={previousPath}
+                        locale={i18n.language}
+                        className="prev-next-topic d-flex align-items-center gap-2 fw-bold text-decoration-underline text-secondary-5 cursor-pointer"
+                    >
                         <Image alt="left arrow" src="/icons/arrow-left-s-line.svg" height={28} width={28} />
                         {previousText}
-                    </div>
-                    <div className="prev-next-topic d-flex align-items-center gap-2 fw-bold text-decoration-underline text-secondary-5 cursor-pointer">
+                    </Link>
+                    <Link
+                        href={nextPath}
+                        locale={i18n.language}
+                        className="prev-next-topic d-flex align-items-center gap-2 fw-bold text-decoration-underline text-secondary-5 cursor-pointer"
+                    >
                         {nextText}
                         <Image alt="right arrow" src="/icons/arrow-right-s-line.svg" height={28} width={28} />
-                    </div>
+                    </Link>
                 </Container>
 
                 <Footer />
