@@ -45,3 +45,29 @@
 .bottom-grey-border {
     border-bottom: 1px #d6dde6 solid;
 }
+
+.page-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+
+    @include media-breakpoint-down(xl) {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+    @include media-breakpoint-down(md) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+.subheading {
+    font-family: $font-family-base;
+    font-size: 32px;
+
+    @include media-breakpoint-down(lg) {
+        font-size: 24px;
+    }
+    @include media-breakpoint-down(sm) {
+        font-size: 20px;
+    }
+}

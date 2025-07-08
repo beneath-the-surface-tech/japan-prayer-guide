@@ -26,7 +26,7 @@ const PrayerResponse = ({ topicTrans }: { topicTrans: TFunction }) => {
                     <Trans t={common} i18nKey="response.blurb1" />
                 </p>
 
-                <h3 className="mb-3 fw-bold fs-2">
+                <h3 className="mb-3 fw-bold">
                     <Trans t={common} i18nKey="response.recordingLabel" />
                 </h3>
                 <div className="video-embed" style={!couldLoadVideo ? { paddingBottom: "0px", height: "350px" } : {}}>

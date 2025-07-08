@@ -112,10 +112,10 @@ nvm use && npm test
 npm run test -- --watch
 ```
 
-Main component tests make use of snapshots, if you have made an intended change and wish to update the snapshot,
+Most of the component / page test files will have a snapshot test - if the change is intentional, you can update the snapshot with
 
 ```
-npx jest --updateSnapshot
+npm run updateSnapshot
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

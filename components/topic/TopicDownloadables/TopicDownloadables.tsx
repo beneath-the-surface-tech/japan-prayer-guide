@@ -1,64 +1,16 @@
-import React, { ReactNode } from "react"
-import { Container, Card } from "react-bootstrap"
+import React from "react"
+import { Container } from "react-bootstrap"
 import Button from "react-bootstrap/Button"
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
 import Link from "next/link"
 import { TFunction, Trans, useTranslation } from "next-i18next"
-import { RiDonutChartFill, RiFile3Line, RiImageFill, RiSlideshowLine } from "react-icons/ri"
+import DownloadablesGrid from "components/common/DownloadablesGrid/DownloadablesGrid"
 
 interface downloadProps {
     topicTrans: TFunction
 }
 
-interface ResourceProps {
-    disabled?: boolean
-    icon: ReactNode
-    label: string
-    link: string
-    shrinkWidth?: boolean
-}
-
-const ResourceCard = ({ icon, label, link, disabled = false, shrinkWidth = false }: ResourceProps) => {
-    return (
-        <Col key={label}>
-            <Link
-                href={disabled ? "#" : link}
-                className={"text-decoration-none"}
-                aria-disabled={disabled}
-                tabIndex={disabled ? -1 : undefined}
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <Card
-                    className={"resource-card shadow-sm border-0 rounded" + (disabled ? " disabled" : "")}
-                    onClick={(event) => (disabled ? event.preventDefault() : null)}
-                >
-                    <Card.Body
-                        data-testid="topic-downloadables-cards"
-                        className={
-                            "d-flex align-items-center justify-content-center topic-downloadables" +
-                            (disabled ? " disabled" : "")
-                        }
-                    >
-                        {icon}
-                        <p className={"fw-bold my-0" + (shrinkWidth ? " shrinkWidth" : "")}>
-                            <Trans>{label}</Trans>
-                        </p>
-                    </Card.Body>
-                </Card>
-            </Link>
-        </Col>
-    )
-}
-
 export default function TopicDownloadables({ topicTrans }: downloadProps) {
     const { t, i18n } = useTranslation("common")
-
-    const infographicsLabel = t("downloads.infographicsLabel")
-    const photographyLabel = t("downloads.photographyLabel")
-    const pdfLabel = t("downloads.pdfLabel")
-    const slidesLabel = t("downloads.slidesLabel")
 
     // defaults to "" if not available, this is checked for use in ResourceCard
     const infographicsUrl = topicTrans("downloads.infographicsUrl", "")
@@ -83,28 +35,14 @@ export default function TopicDownloadables({ topicTrans }: downloadProps) {
                 </p>
             </Container>
             <Container>
-                <Row lg={4} md={2} sm={1} className="g-3 d-md-flex d-block" data-testid={"topic-downloadables-links"}>
-                    <ResourceCard
-                        icon={<RiDonutChartFill />}
-                        label={infographicsLabel}
-                        link={infographicsUrl}
-                        disabled={infographicsUrl === ""}
-                    />
-                    <ResourceCard icon={<RiFile3Line />} label={pdfLabel} link={pdfUrl} disabled={pdfUrl === ""} />
-                    <ResourceCard
-                        icon={<RiImageFill />}
-                        label={photographyLabel}
-                        link={photographyUrl}
-                        disabled={photographyUrl === ""}
-                    />
-                    <ResourceCard
-                        icon={<RiSlideshowLine />}
-                        label={slidesLabel}
-                        link={slidesUrl}
-                        disabled={slidesUrl === ""}
-                        shrinkWidth={true}
-                    />
-                </Row>
+                <DownloadablesGrid
+                    infographicsUrl={infographicsUrl}
+                    photographyUrl={photographyUrl}
+                    pdfUrl={pdfUrl}
+                    slidesUrl={slidesUrl}
+                    rowCount={4}
+                    smRowCount={1}
+                />
             </Container>
             <Link
                 href={downloadAllUrl}

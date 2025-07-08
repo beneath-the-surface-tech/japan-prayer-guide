@@ -27,7 +27,7 @@ exports[`Responding in Prayer Snapshot test 1`] = `
             response.blurb1
           </p>
           <h3
-            class="mb-3 fw-bold fs-2"
+            class="mb-3 fw-bold"
           >
             response.recordingLabel
           </h3>
@@ -121,7 +121,7 @@ exports[`Responding in Prayer Snapshot test 1`] = `
           response.blurb1
         </p>
         <h3
-          class="mb-3 fw-bold fs-2"
+          class="mb-3 fw-bold"
         >
           response.recordingLabel
         </h3>

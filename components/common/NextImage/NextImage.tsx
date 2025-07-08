@@ -1,8 +1,8 @@
-import Image, { StaticImageData } from "next/image"
+import Image, { ImageProps, StaticImageData } from "next/image"
 import { Container } from "react-bootstrap"
 import styles from "./NextImage.module.css"
 
-interface NextImageProps {
+interface NextImageProps extends ImageProps {
     src: StaticImageData
     alt: string
     className?: string

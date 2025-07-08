@@ -58,10 +58,10 @@ $font-family-ja: "Noto Sans JP", "Noto Sans", "Open Sans", "sans-serif";
 
 // From design library, please prefer media-breakpoint-up/down/only/between to target certain breakpoints
 // See also: https://getbootstrap.com/docs/5.2/layout/breakpoints/#media-queries
-// xs + sm: 365px (mobile)
-// md     : 768px (tablet)
-// lg + xl: 1280px (desktop)
-// xxl    : 1440px (wide screen desktop)
+// mobile   :    0px -  767px   e.g, @include media-breakpoint-down(md)
+// tablet   :  768px - 1279px   e.g, @include media-breakpoint-down(xl)
+// desktop  : 1280px - 1439px   e.g, @include media-breakpoint-down(xxl)
+// xxl      : 1440+px
 $grid-breakpoints: (
     xs: 0,
     sm: 400px,
@@ -70,3 +70,7 @@ $grid-breakpoints: (
     xl: 1280px,
     xxl: 1440px,
 );
+
+$paragraph-text: 20px;
+$paragraph-text-tablet: $paragraph-text - 2px;
+$paragraph-text-mobile: $paragraph-text - 2px;
