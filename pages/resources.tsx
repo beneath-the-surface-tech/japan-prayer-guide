@@ -319,7 +319,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
 const PageNotReady: React.FC<{ t: TFunction }> = ({ t }) => {
     return (
         <Container className="w-100 d-flex flex-column align-items-center justify-content-center gap-4 sorryContainer text-center">
-            <Image alt={"We're sorry"} src="/sorry.png" height="150" />
+            <img alt={"We're sorry"} src="/sorry.png" height="150" />
             <div className="text-center sorryTitle">
                 <Trans t={t} i18nKey="title" />
             </div>
