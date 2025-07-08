@@ -18,7 +18,7 @@
         "title": "英語の冊子を注文する",
         "blurb": "配送先の地域を選択してください",
         "regions": [
-            { "text": "北米", "url": "https://www.davidsonpublishing.org/prayer-guides1.html" },
+            { "text": "北米", "url": "" },
             {
                 "text": "日本",
                 "url": "https://docs.google.com/forms/d/e/1FAIpQLSf03r2GXDfFa17f5ICL_HTy_NuQOpaJcmNgRyFQN10ghgEYqQ/viewform"
