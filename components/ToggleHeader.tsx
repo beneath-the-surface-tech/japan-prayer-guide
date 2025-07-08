@@ -159,7 +159,7 @@ const ToggleHeader: React.FC<HeaderProp> = ({ hideShadow = false }: HeaderProp) 
                             {/* 
                 Need a more extensibile way for future languages but for now this should do
               */}
-                            {i18n.language === "en" ? (
+                            {/* {i18n.language === "en" ? (
                                 <NavDropdown title="English" className="d-none d-xl-flex align-items-center">
                                     <NavDropdown.Item href="" onClick={() => handleLanguageChange("ja")}>
                                         日本語
@@ -171,11 +171,11 @@ const ToggleHeader: React.FC<HeaderProp> = ({ hideShadow = false }: HeaderProp) 
                                         English
                                     </NavDropdown.Item>
                                 </NavDropdown>
-                            )}
+                            )} */}
                         </Nav>
                         <Container className="d-xl-none text-center mobile-menu-footer">
                             <Row className="mb-4">
-                                <LanguageSwitcher onClickFunc={handleLanguageChangeWithColorToggle} />
+                                {/* <LanguageSwitcher onClickFunc={handleLanguageChangeWithColorToggle} /> */}
                             </Row>
                             <Image alt="Crane logo" src="/wire-logo.png" width="48" height="48" className="mb-2" />{" "}
                             <Row className="mt-2 mb-5">
