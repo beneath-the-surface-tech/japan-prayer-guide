@@ -1,9 +1,8 @@
 import React from "react"
 import Image from "next/image"
-import { Container, Nav, Navbar, NavDropdown, Row } from "react-bootstrap"
+import { Container, Nav, Navbar, Row } from "react-bootstrap"
 import { useState, useEffect } from "react"
 import { TFunction, Trans, useTranslation } from "next-i18next"
-import LanguageSwitcher from "./LanguageSwitcher"
 import { useRouter } from "next/router"
 import Link from "next/link"
 
@@ -42,20 +41,20 @@ const ToggleHeader: React.FC<HeaderProp> = ({ hideShadow = false }: HeaderProp) 
     const { i18n } = useTranslation()
     const router = useRouter()
 
-    const handleLanguageChange = (language: string) => {
-        i18n.changeLanguage(language)
-        const path = router.asPath
-        const options = {
-            locale: language,
-        }
+    // const handleLanguageChange = (language: string) => {
+    //     i18n.changeLanguage(language)
+    //     const path = router.asPath
+    //     const options = {
+    //         locale: language,
+    //     }
 
-        router.push(path, path, options)
-    }
+    //     router.push(path, path, options)
+    // }
 
-    const handleLanguageChangeWithColorToggle = (language: string) => {
-        toggleColorScheme()
-        handleLanguageChange(language)
-    }
+    // const handleLanguageChangeWithColorToggle = (language: string) => {
+    //     toggleColorScheme()
+    //     handleLanguageChange(language)
+    // }
 
     // when the Navbar.Collapse is expanded we want to switch to the dark theme
     const [bg, setBg] = useState("white")
@@ -159,7 +158,7 @@ const ToggleHeader: React.FC<HeaderProp> = ({ hideShadow = false }: HeaderProp) 
                             {/* 
                 Need a more extensibile way for future languages but for now this should do
               */}
-                            {i18n.language === "en" ? (
+                            {/* {i18n.language === "en" ? (
                                 <NavDropdown title="English" className="d-none d-xl-flex align-items-center">
                                     <NavDropdown.Item href="" onClick={() => handleLanguageChange("ja")}>
                                         日本語
@@ -171,11 +170,11 @@ const ToggleHeader: React.FC<HeaderProp> = ({ hideShadow = false }: HeaderProp) 
                                         English
                                     </NavDropdown.Item>
                                 </NavDropdown>
-                            )}
+                            )} */}
                         </Nav>
                         <Container className="d-xl-none text-center mobile-menu-footer">
                             <Row className="mb-4">
-                                <LanguageSwitcher onClickFunc={handleLanguageChangeWithColorToggle} />
+                                {/* <LanguageSwitcher onClickFunc={handleLanguageChangeWithColorToggle} /> */}
                             </Row>
                             <Image alt="Crane logo" src="/wire-logo.png" width="48" height="48" className="mb-2" />{" "}
                             <Row className="mt-2 mb-5">

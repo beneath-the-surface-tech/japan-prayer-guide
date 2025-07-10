@@ -37,11 +37,6 @@ export function getTopicLocaleData(pages: PageEntity[], localePath: string) {
         return pages.find((page) => Number(page.topicNumber) == topicNumber)?.path
     })
 
-    console.log("========yaho==========")
-    console.log(prevTopicPath)
-    console.log(nextTopicPath)
-    console.log("========yaho==========")
-
     const topicLocaleData = {
         prevTopicPath: prevTopicPath,
         nextTopicPath: nextTopicPath,

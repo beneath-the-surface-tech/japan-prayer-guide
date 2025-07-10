@@ -1,10 +1,42 @@
 [
     {
-        "start-month-day": "01-01",
-        "topic-name": "popular-religious-practices"
+        "start-month-day": "07-01",
+        "topic-name": "youth-and-young-adults"
+    },
+    {
+        "start-month-day": "08-01",
+        "topic-name": "japanese-views-of-christianity"
+    },
+    {
+        "start-month-day": "09-01",
+        "topic-name": "prayer-for-spiritual-breakthrough"
     },
     {
         "start-month-day": "12-01",
-        "topic-name": "popular-religious-practices"
+        "topic-name": "missionary-life"
+    },
+    {
+        "start-month-day": "01-01",
+        "topic-name": "japanese-culture-and-christianity"
+    },
+    {
+        "start-month-day": "02-01",
+        "topic-name": "ancestor-veneration"
+    },
+    {
+        "start-month-day": "03-01",
+        "topic-name": "harmony"
+    },
+    {
+        "start-month-day": "04-01",
+        "topic-name": "struggling-churches"
+    },
+    {
+        "start-month-day": "05-01",
+        "topic-name": "church-planting"
+    },
+    {
+        "start-month-day": "06-01",
+        "topic-name": "church-in-the-community"
     }
 ]
