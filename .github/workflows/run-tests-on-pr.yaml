@@ -1,42 +1,45 @@
 name: Run tests when PR is made
 run-name: Running tests
 on:
-  pull_request:
-    paths:
-      - "**/*" # This workflow script is required by PRs but will still pass if no javscript changes with paths-filter
+    pull_request:
+        paths:
+            - "**/*" # This workflow script is required by PRs but will still pass if no javscript changes with paths-filter
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [22.11.x]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+    build:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [22.11.x]
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
 
-      - name: Filter for JS/JSX/TSX changes
-        id: filter_changes
-        uses: dorny/paths-filter@v2
-        with:
-          filters: |
-            javascript_changed: 
-              - '**/*.js'
-              - '**/*.jsx'
-              - '**/*.ts'
-              - '**/*.tsx'
-        continue-on-error: true
+            - name: Filter for JS/JSX/TSX changes
+              id: filter_changes
+              uses: dorny/paths-filter@v2
+              with:
+                  filters: |
+                      javascript_changed: 
+                        - '**/*.js'
+                        - '**/*.jsx'
+                        - '**/*.ts'
+                        - '**/*.tsx'
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        if: ${{ steps.filter_changes.outputs.javascript_changed == 'true' }}
-        uses: actions/setup-node@v2
-        with:
-          architecture: "x64"
-          node-version: ${{ matrix.node-version }}
+            - name: Skip if no JS changes
+              if: ${{ steps.filter_changes.outputs.javascript_changed != 'true' }}
+              run: echo "No JavaScript changes detected, skipping tests."
 
-      - name: npm install
-        if: ${{ steps.filter_changes.outputs.javascript_changed == 'true' }}
-        run: npm install
+            - name: Use Node.js ${{ matrix.node-version }}
+              if: ${{ steps.filter_changes.outputs.javascript_changed == 'true' }}
+              uses: actions/setup-node@v2
+              with:
+                  architecture: "x64"
+                  node-version: ${{ matrix.node-version }}
 
-      - name: run npm test
-        if: ${{ steps.filter_changes.outputs.javascript_changed == 'true' }}
-        run: npm test
+            - name: npm install
+              if: ${{ steps.filter_changes.outputs.javascript_changed == 'true' }}
+              run: npm install
+
+            - name: run npm test
+              if: ${{ steps.filter_changes.outputs.javascript_changed == 'true' }}
+              run: npm test
