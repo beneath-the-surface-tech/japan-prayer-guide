@@ -41,6 +41,15 @@ const EventItem: FC<{
             style={{
                 height: `${eventGaps.get(event.id) || 0}px`,
             }}
+            onClick={() => {
+                const eventContainer = document.querySelector<HTMLDivElement>(`div[data-event-id="${event.id}"]`)
+                if (eventContainer) {
+                    window.scrollTo({
+                        top: eventContainer?.offsetTop + eventContainer?.offsetHeight + 100,
+                        behavior: "instant",
+                    })
+                }
+            }}
         >
             <div className={styles.eventDot} style={{ backgroundColor: isActiveEvent ? "#F46B59" : "#ffffff" }} />
             <motion.div

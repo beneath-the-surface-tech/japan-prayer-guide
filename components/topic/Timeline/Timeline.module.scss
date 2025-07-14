@@ -142,10 +142,17 @@
 .timelineEvent {
   position: relative;
   display: flex;
+  cursor: pointer;
   justify-content: center;
   align-items: flex-start;
   width: 100%;
   height: 20px;
+
+  &:hover {
+    .eventDot {
+      background-color: rgb(238, 149, 137) !important;
+    }
+  }
 }
 
 .eventDot {

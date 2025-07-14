@@ -1,6 +1,6 @@
 "use client"
 
-import { Box } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 import { motion, useMotionValueEvent, useScroll } from "motion/react"
 import { FC, useEffect, useRef, useState } from "react"
 import { Container } from "react-bootstrap"
@@ -156,7 +156,14 @@ const Timeline: FC = () => {
 
     return (
         <>
-            <Box height="40dvh" className={styles.timelineGradient} width="100%" />
+            <Box height="40dvh" className={`${styles.timelineGradient} main-content`} width="100%" pt={20}>
+                <Container>
+                    <Typography variant="h5" className="quote" fontSize="24px" textAlign="center" pb={2}>
+                        Timeline of historical Japan events
+                    </Typography>
+                    <p className="text-left">Text that Sarah will provide will go and sit here later</p>
+                </Container>
+            </Box>
 
             <Container fluid className={styles.timeline} ref={timelineContainerRef}>
                 <motion.div
@@ -248,7 +255,11 @@ const Timeline: FC = () => {
                                     // key={activeEvent.id}
                                     ref={contentRef}
                                 >
-                                    <EventContent activeEvent={activeEvent} textColor={textColor} />
+                                    <EventContent
+                                        activeEvent={activeEvent}
+                                        textColor={textColor}
+                                        isLast={isLastEvent}
+                                    />
                                 </motion.div>
                             </Box>
 

@@ -14,6 +14,7 @@ import {
     MosaicBlockEight,
     MosaicBlockNine,
     MosaicBlockThree,
+    MosaicBlockTen,
 } from "./MosaicBlocks"
 
 const blockMap: any = {
@@ -51,6 +52,10 @@ const blockMap: any = {
     },
     9: {
         component: MosaicBlockNine,
+        numImgs: 3,
+    },
+    10: {
+        component: MosaicBlockTen,
         numImgs: 3,
     },
 }
