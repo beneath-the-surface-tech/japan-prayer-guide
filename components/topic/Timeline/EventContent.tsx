@@ -10,9 +10,10 @@ import { Box } from "@mui/material"
 interface EventContentProps {
     activeEvent: TimelineEvent // TimelineEvent, but avoid circular import for now
     textColor: string
+    isLast?: boolean
 }
 
-const EventContent: React.FC<EventContentProps> = ({ activeEvent, textColor }) => (
+const EventContent: React.FC<EventContentProps> = ({ activeEvent, textColor, isLast = false }) => (
     <motion.div className={styles.eventContent} animate={{ color: textColor }}>
         <h3 className={styles.eventYear}>{activeEvent.year}</h3>
         <p className={styles.eventDescription}>{activeEvent.text_body}</p>
@@ -43,13 +44,21 @@ const EventContent: React.FC<EventContentProps> = ({ activeEvent, textColor }) =
                         alwaysDesktop={true}
                     />
                 )}
-                {activeEvent.galleryType === "mosaic" && <CustomMosaicComponent activeEvent={activeEvent} />}
+                {activeEvent.galleryType === "mosaic" && (
+                    <CustomMosaicComponent activeEvent={activeEvent} alwaysDesktop={!isLast} />
+                )}
             </div>
         )}
     </motion.div>
 )
 
-const CustomMosaicComponent = ({ activeEvent }: { activeEvent: TimelineEvent }) => {
+const CustomMosaicComponent = ({
+    activeEvent,
+    alwaysDesktop = false,
+}: {
+    activeEvent: TimelineEvent
+    alwaysDesktop?: boolean
+}) => {
     const imagesPerRow = 9
     const splitPhotos = activeEvent.photos?.reduce((acc: TimelinePhoto[][], photo: TimelinePhoto, index: number) => {
         if (index % imagesPerRow === 0) {
@@ -60,13 +69,12 @@ const CustomMosaicComponent = ({ activeEvent }: { activeEvent: TimelineEvent }) 
         return acc
     }, [])
 
-    console.log(splitPhotos)
-
     return (
         <>
             {splitPhotos?.map((photo: TimelinePhoto[], index: number) => (
                 <Box mt="-55px" position="relative" key={index}>
                     <Mosaic
+                        alwaysDesktop={alwaysDesktop}
                         images={photo.map((photo: TimelinePhoto) => ({
                             src: photo.src,
                             title: photo.title || "",
@@ -77,7 +85,7 @@ const CustomMosaicComponent = ({ activeEvent }: { activeEvent: TimelineEvent }) 
                             title: photo.title || "",
                             alt: photo.alt || "",
                         }))}
-                        blocks={[5, 4, 1, 8]}
+                        blocks={alwaysDesktop ? [4, 4, 4, 4] : index === 0 ? [5, 1, 7, 8] : [10, 4, 4, 1]}
                         subTitle=""
                     />
                 </Box>

@@ -43,7 +43,7 @@ export const MosaicBlockTwo = ({ images, startIdx, handleOpen }: BlockProps) => 
             <div className="mosaicImage" key={startIdx + 1} onClick={() => handleOpen(startIdx + 1)}>
                 <Img
                     key={startIdx + 1}
-                    src={images[startIdx + 1].src}
+                    src={images[startIdx + 1]?.src}
                     className="mosaicImage"
                     alt={images[startIdx + 1]?.alt || images[startIdx + 1].title}
                 />
@@ -75,7 +75,7 @@ export const MosaicBlockThree = ({ images, startIdx, handleOpen }: BlockProps) =
             >
                 <Image
                     key={startIdx + 1}
-                    src={images[startIdx + 1].src}
+                    src={images[startIdx + 1]?.src}
                     width={913}
                     height={1000}
                     className="mosaicImage"
@@ -110,7 +110,7 @@ export const MosaicBlockFour = ({ images, startIdx, handleOpen }: BlockProps) =>
                 >
                     <Img
                         key={startIdx + 1}
-                        src={images[startIdx + 1].src}
+                        src={images[startIdx + 1]?.src}
                         className="mosaicImage"
                         alt={images[startIdx + 1]?.alt || images[startIdx + 1].title}
                     />
@@ -133,7 +133,7 @@ export const MosaicBlockFive = ({ images, startIdx, handleOpen }: BlockProps) =>
                 >
                     <Img
                         key={startIdx + 1}
-                        src={images[startIdx + 1].src}
+                        src={images[startIdx + 1]?.src}
                         className="mosaicImage"
                         alt={images[startIdx + 1]?.alt || images[startIdx + 1].title}
                     />
@@ -181,7 +181,7 @@ export const MosaicBlockSix = ({ images, startIdx, handleOpen }: BlockProps) => 
                 >
                     <Img
                         key={startIdx + 1}
-                        src={images[startIdx + 1].src}
+                        src={images[startIdx + 1]?.src}
                         className="mosaicImage"
                         alt={images[startIdx + 1]?.alt || images[startIdx + 1].title}
                     />
@@ -197,9 +197,9 @@ export const MosaicBlockSix = ({ images, startIdx, handleOpen }: BlockProps) => 
                 >
                     <Img
                         key={startIdx + 2}
-                        src={images[startIdx + 2].src}
+                        src={images[startIdx + 2]?.src}
                         className="mosaicImage"
-                        alt={images[startIdx + 2]?.alt || images[startIdx + 2].title}
+                        alt={images[startIdx + 2]?.alt || images[startIdx + 2]?.title}
                     />
                     <div className="mosaicImageOverlay"></div>
                 </div>
@@ -238,11 +238,11 @@ export const MosaicBlockSeven = ({ images, startIdx, handleOpen }: BlockProps) =
                 >
                     <Image
                         key={startIdx + 1}
-                        src={images[startIdx + 1].src}
+                        src={images[startIdx + 1]?.src}
                         width={1000}
                         height={899}
                         className="mosaicImage"
-                        alt={images[startIdx + 1]?.alt || images[startIdx + 1].title}
+                        alt={images[startIdx + 1]?.alt || images[startIdx + 1]?.title}
                     />
                     <div className="mosaicImageOverlay"></div>
                 </div>
@@ -254,11 +254,11 @@ export const MosaicBlockSeven = ({ images, startIdx, handleOpen }: BlockProps) =
                 >
                     <Image
                         key={startIdx + 2}
-                        src={images[startIdx + 2].src}
+                        src={images[startIdx + 2]?.src}
                         width={1000}
                         height={899}
                         className="mosaicImage"
-                        alt={images[startIdx + 2]?.alt || images[startIdx + 2].title}
+                        alt={images[startIdx + 2]?.alt || images[startIdx + 2]?.title}
                     />
                     <div className="mosaicImageOverlay"></div>
                 </div>
@@ -293,9 +293,9 @@ export const MosaicBlockEight = ({ images, startIdx, handleOpen }: BlockProps) =
                 >
                     <Img
                         key={startIdx + 1}
-                        src={images[startIdx + 1].src}
+                        src={images[startIdx + 1]?.src}
                         className="mosaicImage"
-                        alt={images[startIdx + 1]?.alt || images[startIdx + 1].title}
+                        alt={images[startIdx + 1]?.alt || images[startIdx + 1]?.title}
                     />
                     <div className="mosaicImageOverlay"></div>
                 </div>
@@ -309,9 +309,9 @@ export const MosaicBlockEight = ({ images, startIdx, handleOpen }: BlockProps) =
                 >
                     <Img
                         key={startIdx + 2}
-                        src={images[startIdx + 2].src}
+                        src={images[startIdx + 2]?.src}
                         className="mosaicImage"
-                        alt={images[startIdx + 2]?.alt || images[startIdx + 2].title}
+                        alt={images[startIdx + 2]?.alt || images[startIdx + 2]?.title}
                     />
                     <div className="mosaicImageOverlay"></div>
                 </div>
@@ -350,11 +350,11 @@ export const MosaicBlockNine = ({ images, startIdx, handleOpen }: BlockProps) =>
                 >
                     <Image
                         key={startIdx + 1}
-                        src={images[startIdx + 1].src}
+                        src={images[startIdx + 1]?.src}
                         width={1000}
                         height={518}
                         className="mosaicImage"
-                        alt={images[startIdx + 1]?.alt || images[startIdx + 1].title}
+                        alt={images[startIdx + 1]?.alt || images[startIdx + 1]?.title}
                     />
                     <div className="mosaicImageOverlay"></div>
                 </div>
@@ -370,11 +370,45 @@ export const MosaicBlockNine = ({ images, startIdx, handleOpen }: BlockProps) =>
                         width={1000}
                         height={518}
                         className="mosaicImage"
-                        alt={images[startIdx + 2]?.alt || images[startIdx + 2].title}
+                        alt={images[startIdx + 2]?.alt || images[startIdx + 2]?.title}
                     />
                     <div className="mosaicImageOverlay"></div>
                 </div>
             </Col>
+        </Row>
+    )
+}
+
+export const MosaicBlockTen = ({ images, startIdx, handleOpen }: BlockProps) => {
+    return (
+        <Row xs={3} className="mosaicGroup">
+            <div className="mosaicImage" key={startIdx} onClick={() => handleOpen(startIdx)}>
+                <Img
+                    key={startIdx}
+                    src={images[startIdx].src}
+                    className="mosaicImage"
+                    alt={images[startIdx]?.alt || images[startIdx].title}
+                />
+                <div className="mosaicImageOverlay"></div>
+            </div>
+            <div className="mosaicImage" key={startIdx + 1} onClick={() => handleOpen(startIdx + 1)}>
+                <Img
+                    key={startIdx + 1}
+                    src={images[startIdx + 1]?.src}
+                    className="mosaicImage"
+                    alt={images[startIdx + 1]?.alt || images[startIdx + 1]?.title}
+                />
+                <div className="mosaicImageOverlay"></div>
+            </div>
+            <div className="mosaicImage" key={startIdx + 2} onClick={() => handleOpen(startIdx + 2)}>
+                <Img
+                    key={startIdx + 2}
+                    src={images[startIdx + 2]?.src}
+                    className="mosaicImage"
+                    alt={images[startIdx + 2]?.alt || images[startIdx + 2].title}
+                />
+                <div className="mosaicImageOverlay"></div>
+            </div>
         </Row>
     )
 }
