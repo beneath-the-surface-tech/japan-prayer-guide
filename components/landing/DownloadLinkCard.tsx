@@ -23,7 +23,13 @@ export default function DownloadLinkCard({ downloadText, downloadLink, children 
     return (
         <>
             {downloadLink ? (
-                <Link href={"/" + downloadLink} className="text-decoration-none" locale={i18n.language}>
+                <Link
+                    href={"/" + downloadLink}
+                    className="text-decoration-none"
+                    locale={i18n.language}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <Card text={downloadText}>{children}</Card>
                 </Link>
             ) : (

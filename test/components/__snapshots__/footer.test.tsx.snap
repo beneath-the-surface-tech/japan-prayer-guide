@@ -7,34 +7,12 @@ exports[`Footer Snapshot test 1`] = `
     <div>
       <div
         class="w-100 d-xl-none"
+        role="contentinfo"
       >
         <div
           class="bg-primary pt-3 container-fluid"
           data-testid="footer"
         >
-          <div
-            class="ms-auto hstack gap-3"
-            data-testid="language-switcher"
-            id="language-switch"
-          >
-            <a
-              class="ms-auto text-white "
-              data-testid="link-english"
-              href="#english"
-            >
-              English
-            </a>
-            <div
-              class="vr border opacity-100"
-            />
-            <a
-              class="me-auto text-white "
-              data-testid="link-japanese"
-              href="#japanese"
-            >
-              日本語
-            </a>
-          </div>
           <div
             class="container"
           >
@@ -112,6 +90,8 @@ exports[`Footer Snapshot test 1`] = `
               <a
                 class="text-white footer-icon"
                 href="footer.vimeoUrl"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <svg
                   fill="currentColor"
@@ -130,6 +110,8 @@ exports[`Footer Snapshot test 1`] = `
               <a
                 class="text-white footer-icon"
                 href="footer.amazonUrl"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <svg
                   fill="currentColor"
@@ -148,6 +130,8 @@ exports[`Footer Snapshot test 1`] = `
               <a
                 class="text-white footer-icon"
                 href="footer.instaUrl"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <svg
                   fill="currentColor"
@@ -179,34 +163,11 @@ exports[`Footer Snapshot test 1`] = `
       </div>
       <div
         class="w-100 d-none d-xl-flex flex-column bg-primary align-items-center"
+        role="contentinfo"
       >
         <div
           class="footer-language w-75 border-bottom border-grey-6 py-4"
-        >
-          <div
-            class="ms-auto hstack gap-3"
-            data-testid="language-switcher"
-            id="language-switch"
-          >
-            <a
-              class="ms-auto text-white "
-              data-testid="link-english"
-              href="#english"
-            >
-              English
-            </a>
-            <div
-              class="vr border opacity-100"
-            />
-            <a
-              class="me-auto text-white "
-              data-testid="link-japanese"
-              href="#japanese"
-            >
-              日本語
-            </a>
-          </div>
-        </div>
+        />
         <div
           class="container"
         >
@@ -309,6 +270,8 @@ exports[`Footer Snapshot test 1`] = `
                   aria-label="Vimeo"
                   class="text-white footer-icon"
                   href="footer.vimeoUrl"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   <svg
                     fill="currentColor"
@@ -328,6 +291,8 @@ exports[`Footer Snapshot test 1`] = `
                   aria-label="Amazon"
                   class="text-white footer-icon"
                   href="footer.amazonUrl"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   <svg
                     fill="currentColor"
@@ -347,6 +312,8 @@ exports[`Footer Snapshot test 1`] = `
                   aria-label="Instagram"
                   class="text-white footer-icon"
                   href="footer.instaUrl"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   <svg
                     fill="currentColor"
@@ -372,34 +339,12 @@ exports[`Footer Snapshot test 1`] = `
   "container": <div>
     <div
       class="w-100 d-xl-none"
+      role="contentinfo"
     >
       <div
         class="bg-primary pt-3 container-fluid"
         data-testid="footer"
       >
-        <div
-          class="ms-auto hstack gap-3"
-          data-testid="language-switcher"
-          id="language-switch"
-        >
-          <a
-            class="ms-auto text-white "
-            data-testid="link-english"
-            href="#english"
-          >
-            English
-          </a>
-          <div
-            class="vr border opacity-100"
-          />
-          <a
-            class="me-auto text-white "
-            data-testid="link-japanese"
-            href="#japanese"
-          >
-            日本語
-          </a>
-        </div>
         <div
           class="container"
         >
@@ -477,6 +422,8 @@ exports[`Footer Snapshot test 1`] = `
             <a
               class="text-white footer-icon"
               href="footer.vimeoUrl"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <svg
                 fill="currentColor"
@@ -495,6 +442,8 @@ exports[`Footer Snapshot test 1`] = `
             <a
               class="text-white footer-icon"
               href="footer.amazonUrl"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <svg
                 fill="currentColor"
@@ -513,6 +462,8 @@ exports[`Footer Snapshot test 1`] = `
             <a
               class="text-white footer-icon"
               href="footer.instaUrl"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <svg
                 fill="currentColor"
@@ -544,34 +495,11 @@ exports[`Footer Snapshot test 1`] = `
     </div>
     <div
       class="w-100 d-none d-xl-flex flex-column bg-primary align-items-center"
+      role="contentinfo"
     >
       <div
         class="footer-language w-75 border-bottom border-grey-6 py-4"
-      >
-        <div
-          class="ms-auto hstack gap-3"
-          data-testid="language-switcher"
-          id="language-switch"
-        >
-          <a
-            class="ms-auto text-white "
-            data-testid="link-english"
-            href="#english"
-          >
-            English
-          </a>
-          <div
-            class="vr border opacity-100"
-          />
-          <a
-            class="me-auto text-white "
-            data-testid="link-japanese"
-            href="#japanese"
-          >
-            日本語
-          </a>
-        </div>
-      </div>
+      />
       <div
         class="container"
       >
@@ -674,6 +602,8 @@ exports[`Footer Snapshot test 1`] = `
                 aria-label="Vimeo"
                 class="text-white footer-icon"
                 href="footer.vimeoUrl"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <svg
                   fill="currentColor"
@@ -693,6 +623,8 @@ exports[`Footer Snapshot test 1`] = `
                 aria-label="Amazon"
                 class="text-white footer-icon"
                 href="footer.amazonUrl"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <svg
                   fill="currentColor"
@@ -712,6 +644,8 @@ exports[`Footer Snapshot test 1`] = `
                 aria-label="Instagram"
                 class="text-white footer-icon"
                 href="footer.instaUrl"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <svg
                   fill="currentColor"

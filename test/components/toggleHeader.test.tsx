@@ -52,8 +52,8 @@ describe("ToggleHeader", () => {
     })
 
     test("clicking the Navbar.Toggle toggles the color scheme to the dark variant", () => {
-        const { getByRole } = render(<ToggleHeader />)
-        const toggleButton = getByRole("button", { name: "Toggle navigation" })
+        const { getByTestId, getByRole } = render(<ToggleHeader />)
+        const toggleButton = getByTestId("main-nav-toggle")
         fireEvent.click(toggleButton)
         const navbar = getByRole("navigation")
         expect(navbar).toHaveClass("bg-primary")
@@ -61,8 +61,8 @@ describe("ToggleHeader", () => {
     })
 
     test("clicking the Navbar.Toggle twice toggles the color scheme back to the light variant", () => {
-        const { getByRole } = render(<ToggleHeader />)
-        const toggleButton = getByRole("button", { name: "Toggle navigation" })
+        const { getByTestId, getByRole } = render(<ToggleHeader />)
+        const toggleButton = getByTestId("main-nav-toggle")
         fireEvent.click(toggleButton)
         fireEvent.click(toggleButton)
         const navbar = getByRole("navigation")

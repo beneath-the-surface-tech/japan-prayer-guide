@@ -9,7 +9,7 @@ export default function OrderBook() {
     const { t, i18n } = useTranslation("common")
     const language = i18n.language
 
-    const orderRegionsMap: OrderRegionType[] = t("order.regions", { returnObjects: true })
+    const orderRegionsMap = t("order.regions", { returnObjects: true }) as OrderRegionType[]
 
     function ENSection() {
         return (
@@ -32,9 +32,13 @@ export default function OrderBook() {
                 <div className="d-flex flex-column flex-md-row align-items-center gap-3 mb-2">
                     {orderRegionsMap.map((region) => (
                         <Link
-                            className="fs-5 fw-bold bg-secondary-5 text-white text-center region text-decoration-none"
+                            className={`fs-5 fw-bold bg-secondary-5 text-white text-center region text-decoration-none ${
+                                region.url === "" && "disabled btn"
+                            }`}
                             href={region.url}
                             key={region.text}
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
                             <Trans>{region.text}</Trans>
                         </Link>
@@ -43,6 +47,8 @@ export default function OrderBook() {
                 <Link
                     className="fs-4 text-secondary-5 fw-bold text-decoration-underline mb-4"
                     href="https://www.amazon.com/dp/B099KSSY79"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     <Trans t={t} i18nKey="order.prompt" />
                 </Link>
@@ -68,6 +74,8 @@ export default function OrderBook() {
                 <Link
                     className="fs-5 japan-order bg-grey-2 text-center text-secondary-5 border-secondary-5 fw-bold fs-5 mb-1 p-2 text-decoration-none border rounded"
                     href="https://docs.google.com/forms/d/e/1FAIpQLSf03r2GXDfFa17f5ICL_HTy_NuQOpaJcmNgRyFQN10ghgEYqQ/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     <Trans t={t} i18nKey="order.form" />
                 </Link>

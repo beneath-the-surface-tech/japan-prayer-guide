@@ -4,9 +4,11 @@
     }
 
     p {
-        font-size: 20px;
-        @include media-breakpoint-down(md) {
-            font-size: 18px;
+        font-size: 18px;
+    }
+    .resource-card {
+        p {
+            font-size: 16px;
         }
     }
 

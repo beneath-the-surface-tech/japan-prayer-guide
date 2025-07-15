@@ -9,16 +9,12 @@
         "blurb": "私たちの働きは、日本における福音前進のために祈ることができるよう神の民を呼びかけ、整えることです。",
         "home": "ホーム"
     },
-    "prayerSummary": {
-        "subtitle": "祈りましょう",
-        "readMore": "もっと詳しく",
-        "viewAll": "全てのテーマを見る"
-    },
+    "prayerSummary": { "subtitle": "祈りましょう", "readMore": "もっと詳しく", "viewAll": "全てのテーマを見る" },
     "order": {
         "title": "英語の冊子を注文する",
         "blurb": "配送先の地域を選択してください",
         "regions": [
-            { "text": "北米", "url": "https://www.davidsonpublishing.org/prayer-guides1.html" },
+            { "text": "北米", "url": "" },
             {
                 "text": "日本",
                 "url": "https://docs.google.com/forms/d/e/1FAIpQLSf03r2GXDfFa17f5ICL_HTy_NuQOpaJcmNgRyFQN10ghgEYqQ/viewform"
@@ -52,10 +48,7 @@
         "downloadAllBtn": "準備中",
         "viewAllBtn": "資料をすべて見る"
     },
-    "relatedTopics": {
-        "heading": "関連テーマ",
-        "viewAll": "すべてのテーマを見る"
-    },
+    "relatedTopics": { "heading": "関連テーマ", "viewAll": "すべてのテーマを見る" },
     "footer": {
         "vimeoUrl": "https://vimeo.com/japanprayerguide",
         "amazonUrl": "https://www.amazon.co.jp/BENEATH-SURFACE-WAYS-JAPAN-English-ebook/dp/B099KSSY79/",
@@ -67,9 +60,7 @@
         "link4": "資料",
         "link5": "活動紹介",
         "tagline": "私たちの働きは、日本における福音前進のために祈ることができるよう神の民を呼びかけ、整えることです。",
-        "copyright": "© 2024 御心が地にもなるように　転載禁止"
+        "copyright": "© 2025 御心が地にもなるように　転載禁止"
     },
-    "errors": {
-        "videoLoadError": "Could not load embed video"
-    }
+    "errors": { "videoLoadError": "Could not load embed video" }
 }

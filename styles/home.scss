@@ -206,8 +206,14 @@ $home-paragraph-text-mobile: $home-paragraph-text - 2px;
 
 #featuredTopicSection {
     .container {
-        @include media-breakpoint-down(lg) {
-            max-width: none;
+        max-width: 1115px;
+        
+        @include media-breakpoint-down(xl) {
+            max-width: 896px;
+        }
+        
+        @include media-breakpoint-down(sm) {
+            max-width: 100%;
         }
     }
 

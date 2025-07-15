@@ -5,7 +5,6 @@ import { IconContext } from "react-icons/lib"
 import { BsInstagram, BsVimeo } from "react-icons/bs"
 import { FaAmazon } from "react-icons/fa"
 import Link from "next/link"
-import LanguageSwitcher from "./LanguageSwitcher"
 import { Col } from "react-bootstrap"
 import { Trans, useTranslation } from "next-i18next"
 import Image from "next/image"
@@ -22,9 +21,9 @@ export default function Footer() {
         // mobile and large sizes
         <>
             {/* Small screens footer starts here */}
-            <div className="w-100 d-xl-none">
+            <div className="w-100 d-xl-none" role="contentinfo">
                 <Container fluid className="bg-primary pt-3" data-testid="footer">
-                    <LanguageSwitcher />
+                    {/* <LanguageSwitcher /> */}
                     {/* This second inner container keeps the footer max-width matched to the header. */}
                     <Container>
                         <Row className="d-flex justify-content-center mt-4">
@@ -40,13 +39,28 @@ export default function Footer() {
                         </Row>
                         <Row className="d-flex justify-content-center align-items-center pt-4 text-white">
                             <IconContext.Provider value={{ size: "25px" }}>
-                                <a className="text-white footer-icon" href={vimeoUrl}>
+                                <a
+                                    className="text-white footer-icon"
+                                    href={vimeoUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     <BsVimeo />
                                 </a>
-                                <a className="text-white footer-icon" href={amazonUrl}>
+                                <a
+                                    className="text-white footer-icon"
+                                    href={amazonUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     <FaAmazon />
                                 </a>
-                                <a className="text-white footer-icon" href={instaUrl}>
+                                <a
+                                    className="text-white footer-icon"
+                                    href={instaUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     <BsInstagram />
                                 </a>
                             </IconContext.Provider>
@@ -62,9 +76,9 @@ export default function Footer() {
             {/* Large screens footer starts here */}
             {/* Test ids need to be modified to stop duplicates */}
 
-            <div className="w-100 d-none d-xl-flex flex-column bg-primary align-items-center">
+            <div className="w-100 d-none d-xl-flex flex-column bg-primary align-items-center" role="contentinfo">
                 <div className="footer-language w-75 border-bottom border-grey-6 py-4">
-                    <LanguageSwitcher />
+                    {/* <LanguageSwitcher /> */}
                 </div>
                 <Container>
                     <Container fluid className="bg-primary pt-3 d-flex" data-testid="footer-2">
@@ -90,13 +104,31 @@ export default function Footer() {
                             </Row>
                             <Row className="d-flex align-items-center pt-3 pb-4 text-white">
                                 <IconContext.Provider value={{ size: "25px" }}>
-                                    <a className="text-white footer-icon" href={vimeoUrl} aria-label="Vimeo">
+                                    <a
+                                        className="text-white footer-icon"
+                                        href={vimeoUrl}
+                                        aria-label="Vimeo"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         <BsVimeo />
                                     </a>
-                                    <a className="text-white footer-icon" href={amazonUrl} aria-label="Amazon">
+                                    <a
+                                        className="text-white footer-icon"
+                                        href={amazonUrl}
+                                        aria-label="Amazon"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         <FaAmazon />
                                     </a>
-                                    <a className="text-white footer-icon" href={instaUrl} aria-label="Instagram">
+                                    <a
+                                        className="text-white footer-icon"
+                                        href={instaUrl}
+                                        aria-label="Instagram"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         <BsInstagram />
                                     </a>
                                 </IconContext.Provider>

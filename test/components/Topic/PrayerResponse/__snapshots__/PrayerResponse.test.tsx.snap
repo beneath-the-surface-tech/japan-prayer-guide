@@ -27,15 +27,18 @@ exports[`Responding in Prayer Snapshot test 1`] = `
             response.blurb1
           </p>
           <h3
-            class="mb-3 fw-bold fs-2"
+            class="mb-3 fw-bold"
           >
             response.recordingLabel
           </h3>
           <div
             class="video-embed"
+            style="padding-bottom: 0px; height: 350px;"
           >
-            <div>
-              errors.videoLoadError
+            <div
+              class="no-video"
+            >
+              Video coming soon!
             </div>
           </div>
           <div
@@ -118,15 +121,18 @@ exports[`Responding in Prayer Snapshot test 1`] = `
           response.blurb1
         </p>
         <h3
-          class="mb-3 fw-bold fs-2"
+          class="mb-3 fw-bold"
         >
           response.recordingLabel
         </h3>
         <div
           class="video-embed"
+          style="padding-bottom: 0px; height: 350px;"
         >
-          <div>
-            errors.videoLoadError
+          <div
+            class="no-video"
+          >
+            Video coming soon!
           </div>
         </div>
         <div

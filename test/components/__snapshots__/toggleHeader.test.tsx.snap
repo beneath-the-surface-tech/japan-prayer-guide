@@ -7,6 +7,7 @@ exports[`ToggleHeader Snapshot test 1`] = `
     <div>
       <nav
         class="shadow-sm navbar navbar-expand-xl navbar-light bg-white fixed-top"
+        role="navigation"
       >
         <div
           class="container"
@@ -33,6 +34,7 @@ exports[`ToggleHeader Snapshot test 1`] = `
             aria-controls="header-navbar-nav"
             aria-label="Toggle navigation"
             class="navbar-toggler collapsed"
+            data-testid="main-nav-toggle"
             type="button"
           >
             <span
@@ -124,50 +126,13 @@ exports[`ToggleHeader Snapshot test 1`] = `
                     </span>
                   </a>
                 </div>
-                <div
-                  class="d-none d-xl-flex align-items-center nav-item dropdown"
-                >
-                  <a
-                    aria-expanded="false"
-                    class="dropdown-toggle nav-link"
-                    href="#"
-                    role="button"
-                    tabindex="0"
-                  >
-                    日本語
-                  </a>
-                </div>
               </div>
               <div
                 class="d-xl-none text-center mobile-menu-footer container"
               >
                 <div
                   class="mb-4 row"
-                >
-                  <div
-                    class="ms-auto hstack gap-3"
-                    data-testid="language-switcher"
-                    id="language-switch"
-                  >
-                    <a
-                      class="ms-auto text-white "
-                      data-testid="link-english"
-                      href="#english"
-                    >
-                      English
-                    </a>
-                    <div
-                      class="vr border opacity-100"
-                    />
-                    <a
-                      class="me-auto text-white "
-                      data-testid="link-japanese"
-                      href="#japanese"
-                    >
-                      日本語
-                    </a>
-                  </div>
-                </div>
+                />
                 <img
                   alt="Crane logo"
                   class="mb-2"
@@ -200,6 +165,7 @@ exports[`ToggleHeader Snapshot test 1`] = `
   "container": <div>
     <nav
       class="shadow-sm navbar navbar-expand-xl navbar-light bg-white fixed-top"
+      role="navigation"
     >
       <div
         class="container"
@@ -226,6 +192,7 @@ exports[`ToggleHeader Snapshot test 1`] = `
           aria-controls="header-navbar-nav"
           aria-label="Toggle navigation"
           class="navbar-toggler collapsed"
+          data-testid="main-nav-toggle"
           type="button"
         >
           <span
@@ -317,50 +284,13 @@ exports[`ToggleHeader Snapshot test 1`] = `
                   </span>
                 </a>
               </div>
-              <div
-                class="d-none d-xl-flex align-items-center nav-item dropdown"
-              >
-                <a
-                  aria-expanded="false"
-                  class="dropdown-toggle nav-link"
-                  href="#"
-                  role="button"
-                  tabindex="0"
-                >
-                  日本語
-                </a>
-              </div>
             </div>
             <div
               class="d-xl-none text-center mobile-menu-footer container"
             >
               <div
                 class="mb-4 row"
-              >
-                <div
-                  class="ms-auto hstack gap-3"
-                  data-testid="language-switcher"
-                  id="language-switch"
-                >
-                  <a
-                    class="ms-auto text-white "
-                    data-testid="link-english"
-                    href="#english"
-                  >
-                    English
-                  </a>
-                  <div
-                    class="vr border opacity-100"
-                  />
-                  <a
-                    class="me-auto text-white "
-                    data-testid="link-japanese"
-                    href="#japanese"
-                  >
-                    日本語
-                  </a>
-                </div>
-              </div>
+              />
               <img
                 alt="Crane logo"
                 class="mb-2"

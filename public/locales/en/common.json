@@ -9,16 +9,15 @@
         "blurb": "We exist to call and equip God's people to pray for spiritual breakthrough in Japan.",
         "home": "Home"
     },
-    "prayerSummary": {
-        "subtitle": "Pray",
-        "readMore": "Learn more",
-        "viewAll": "View all topics"
-    },
+    "prayerSummary": { "subtitle": "Pray", "readMore": "Learn more", "viewAll": "View all topics" },
     "order": {
         "title": "Order the English booklet",
         "blurb": "Select your shipping destination",
         "regions": [
-            { "text": "North America", "url": "https://www.davidsonpublishing.org/prayer-guides1.html" },
+            {
+                "text": "North America",
+                "url": ""
+            },
             {
                 "text": "Japan",
                 "url": "https://docs.google.com/forms/d/e/1FAIpQLSf03r2GXDfFa17f5ICL_HTy_NuQOpaJcmNgRyFQN10ghgEYqQ/viewform"
@@ -52,13 +51,10 @@
         "prayerPtsLabel": "Prayer points",
         "prayerVidLabel": "Prayer recording",
         "slidesLabel": "Presentation slides",
-        "downloadAllBtn": "Coming soon",
+        "downloadAllBtn": "Download all",
         "viewAllBtn": "View all website resources"
     },
-    "relatedTopics": {
-        "heading": "Related topics",
-        "viewAll": "View all topics"
-    },
+    "relatedTopics": { "heading": "Related topics", "viewAll": "View all topics" },
     "footer": {
         "vimeoUrl": "https://vimeo.com/japanprayerguide",
         "amazonUrl": "https://www.amazon.com/BENEATH-SURFACE-WAYS-PRAY-JAPAN-ebook/dp/B099KSSY79",
@@ -70,9 +66,7 @@
         "link4": "Resources",
         "link5": "About",
         "tagline": "We exist to call and equip God's people to pray for spiritual breakthrough in Japan.",
-        "copyright": "Copyright © 2024 Beneath the Surface. All rights reserved."
+        "copyright": "Copyright © 2025 Beneath the Surface. All rights reserved."
     },
-    "errors": {
-        "videoLoadError": "Could not load embed video"
-    }
+    "errors": { "videoLoadError": "Could not load embed video" }
 }

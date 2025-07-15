@@ -1,6 +1,360 @@
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 
+// Resources content container for width constraints
+.resources-content-container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 876px;
+    
+    @include media-breakpoint-down(xl) {
+        max-width: 751px;
+    }
+    
+    @include media-breakpoint-down(md) {
+        max-width: 540px;
+        padding: 0 1rem;
+    }
+    
+    @include media-breakpoint-down(sm) {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+}
+
+#resources {
+    h1 {
+        font-family: $font-family-secondary;
+    }
+    h3 {
+        font-family: $font-family-secondary;
+        @include media-breakpoint-up(xl) {
+            font-size: 24px;
+            font-weight: 700;
+        }
+    }
+
+    p {
+        font-size: $paragraph-text;
+        @include media-breakpoint-down(xl) {
+            font-size: $paragraph-text-tablet;
+        }
+        @include media-breakpoint-down(md) {
+            font-size: $paragraph-text-mobile;
+        }
+    }
+
+    #resources-banner {
+        height: 490px;
+
+        .subtext {
+            @include media-breakpoint-down(md) {
+                width: 100% !important;
+            }
+            font-family: $font-family-base;
+            font-weight: 400;
+            font-size: $home-paragraph-text - 1px;
+            @include media-breakpoint-down(xl) {
+                font-size: $home-paragraph-text-tablet - 1px;
+            }
+            @include media-breakpoint-down(md) {
+                font-size: $home-paragraph-text-mobile - 1px;
+            }
+        }
+
+        img {
+            object-fit: cover;
+            object-position: 60% 80%;
+            width: 100%;
+            height: 490px;
+            z-index: -1;
+
+            @include media-breakpoint-down(md) {
+                height: 500px;
+            }
+        }
+
+        h1 {
+            font-size: 40px;
+            font-family: $font-family-secondary;
+            margin-top: -10px;
+            margin-bottom: 32px;
+            @include media-breakpoint-down(xl) {
+                font-size: 32px;
+                margin-top: -9px;
+                margin-bottom: 32px;
+            }
+            @include media-breakpoint-down(md) {
+                // font-size: 24px;
+                margin-top: 32px;
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    #downloadBy {
+        h3 {
+            font-size: 24px;
+            @include media-breakpoint-down(md) {
+                font-size: 20px;
+            }
+        }
+
+        .topic-downloadables {
+            // overwrite component styling for resources page
+            // flex-direction: column;
+            font-size: 0.875rem;
+            margin-top: -8px;
+            padding: 5px;
+
+            p {
+                text-align: center;
+                color: $secondary-5;
+            }
+
+            @include media-breakpoint-down(md) {
+                font-size: 0.8rem;
+                padding: 0px;
+            }
+        }
+
+        svg {
+            fill: $secondary-5
+        }
+
+        .resource-card {
+            p {
+                font-size: 16px;
+            }
+        }
+
+        @include media-breakpoint-down(md) {
+            .grid-row > * {
+                flex: 0 0 auto;
+                width: 100%;
+            }
+        }
+
+        .image-content-flex {
+            max-width: 100%;
+            
+            @include media-breakpoint-up(xl) {
+                flex: 1;
+                max-width: calc(50% - 1rem);
+            }
+
+            @include media-breakpoint-down(xl) {
+                max-width: 100%;
+            }
+
+            @include media-breakpoint-down(md) {
+                max-width: 100%;
+            }
+
+            .content-image {
+                margin-top: 1rem;
+                margin-bottom: 1.5rem;
+                height: 321px;
+                width: auto;
+                color: $secondary-5;
+                aspect-ratio: 547 / 307;
+                height: auto;
+
+                @include media-breakpoint-down(xl) {
+                    margin-top: 0rem;
+                    aspect-ratio: 720 / 373;
+                }
+
+                @include media-breakpoint-down(md) {
+                    aspect-ratio: 327 / 183;
+                }
+            }
+
+            .topic-btn {
+                // padding: 12px;
+                width: 225px;
+                font-weight: 700;
+                // height: 55px;
+                font-size: 16px;
+                margin-top: 12px;
+
+                @include media-breakpoint-down(md) {
+                    width: 175px;
+                    // height: 51px;
+                }
+            }
+        }
+    }
+
+    #tutorial {
+        p {
+            max-width: 1134px;
+            @include media-breakpoint-down(xl) {
+                max-width: 720px;
+            }
+            // @include media-breakpoint-down(md) {
+            //     max-width: 327px;
+            // }
+        }
+        h1 {
+            font-size: 32px;
+            @include media-breakpoint-down(xl) {
+                font-size: 32px;
+            }
+            @include media-breakpoint-down(md) {
+                font-size: 24px;
+            }
+        }
+        h3 {
+            // font-size: 28px;
+            @include media-breakpoint-down(md) {
+                font-size: 20px;
+            }
+        }
+        .container-gap {
+            gap: 2rem;
+            @include media-breakpoint-down(xl) {
+                gap: 2rem;
+            }
+            @include media-breakpoint-down(lg) {
+                gap: 2rem;
+            }
+            @include media-breakpoint-down(md) {
+                gap: 0rem;
+            }
+        }
+
+        .image-content-flex {
+            max-width: 100%;
+            margin: 0 auto;
+            
+            @include media-breakpoint-up(xl) {
+                width: 432px;
+            }
+
+            @include media-breakpoint-between(md, xl) {
+                width: 100%;
+                align-items: center;
+            }
+
+            p {
+                @include media-breakpoint-down(md) {
+                    text-align: left;
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+                width: 100%;
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            .content-image {
+                margin-bottom: 1rem;
+                margin-left: auto;
+                margin-right: auto;
+
+                @include media-breakpoint-up(xl) {
+                    height: 244px;
+                    width: 432px;
+                }
+
+                @include media-breakpoint-between(md, xl) {
+                    height: 200px;
+                    width: 100%;
+                    max-width: 400px;
+                    margin-right: 2rem;
+                    flex-shrink: 0;
+                }
+
+                @include media-breakpoint-down(md) {
+                    // height: 183px;
+                    width: 100%;
+                    aspect-ratio: 327 / 183;
+                    // max-width: 100%;
+                    margin-right: auto;
+                    margin-bottom: 1rem;
+                }
+            }
+
+            .d-flex.flex-column {
+                @include media-breakpoint-between(md, xl) {
+                    flex: 1;
+                    justify-content: center;
+                }
+
+                @include media-breakpoint-down(md) {
+                    text-align: center;
+                }
+            }
+
+            h3 {
+                @include media-breakpoint-between(md, xl) {
+                    padding-left: 0 !important;
+                }
+
+                @include media-breakpoint-down(md) {
+                    padding-left: 0 !important;
+                }
+            }
+
+            p {
+                font-size: 20px;
+
+                @include media-breakpoint-down(xl) {
+                    font-size: 16px;
+                }
+
+                @include media-breakpoint-down(md) {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    .redirect-section {
+        max-width: 100vw !important;
+        height: 400px;
+
+        background-image: url("../public/photos/booklet/Rectangle 237.png");
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: 100% 133%;
+
+        button {
+            font-size: 16px;
+        }
+
+        @include media-breakpoint-down(md) {
+            height: 335px;
+
+            button {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+#references {
+    h1 {
+        font-size: 32px;
+        margin-bottom: 12px;
+
+        @include media-breakpoint-down(md) {
+            font-size: 24px;
+        }
+    }
+    .reference-text {
+        margin-top: -2px;
+    }
+    svg {
+    @include media-breakpoint-down(md) {
+        width: 51px;
+        height: 64px;
+    }
+    }
+}
+
 .sorryContainer {
     height: 80vh;
 }
