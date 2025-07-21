@@ -115,7 +115,7 @@ const Home = ({ featuredTopicRef }: { featuredTopicRef: string }) => {
 
                 {/* Bible Verse */}
                 <Container className="home-verse-container d-flex flex-column w-100 mx-0 px-0">
-                    <div className="d-flex flex-column w-100 bg-grey-7 px-4 py-4">
+                    <div className="d-flex flex-column w-100 px-4 py-4">
                         <h2 className="common-p w-100 text-white text-center mt-5">
                             <Trans t={t} i18nKey="bibleVerse" />
                         </h2>
@@ -144,7 +144,7 @@ const Home = ({ featuredTopicRef }: { featuredTopicRef: string }) => {
                 </Container>
 
                 {/* Featured topic */}
-                <Container fluid id="featuredTopicSection" className="py-5 bg-secondary-2">
+                <Container fluid id="featuredTopicSection" className="py-5">
                     <Container className="d-flex flex-column align-items-center justify-content-center">
                         <h1 className="home-common-h1 pb-1">
                             <Trans t={t} i18nKey="featuredTopicTitle" />
@@ -182,7 +182,7 @@ const Home = ({ featuredTopicRef }: { featuredTopicRef: string }) => {
 
                 {/* Downloads snippet */}
                 <div
-                    className="bg-secondary-2 w-100 d-flex align-items-center flex-column justify-content-center p-4"
+                    className="downloads-bg w-100 d-flex align-items-center flex-column justify-content-center p-4"
                     style={{ height: "auto" }}
                 >
                     {/* Placeholder for future image */}
