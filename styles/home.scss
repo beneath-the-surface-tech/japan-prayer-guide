@@ -174,7 +174,7 @@ $home-paragraph-text-tablet: $home-paragraph-text - 1px;
 $home-paragraph-text-mobile: $home-paragraph-text - 2px;
 .home-verse-container {
     background-image: url('../public/patterns/Waves1.svg');
-    background-size: cover;
+    background-size: auto;
     background-repeat: repeat;
     max-width: none;
     h2 {
@@ -209,7 +209,7 @@ $home-paragraph-text-mobile: $home-paragraph-text - 2px;
 
 #featuredTopicSection {
     background-image: url('../public/patterns/Pattern3.svg');
-    background-size: cover;
+    background-size: auto;
     background-repeat: repeat;
     .container {
         max-width: 1115px;
@@ -389,6 +389,6 @@ $home-paragraph-text-mobile: $home-paragraph-text - 2px;
 
 .downloads-bg {
     background-image: url('../public/patterns/Waves2.svg');
-    background-size: cover;
     background-repeat: repeat;
+    background-size: auto;
 }
