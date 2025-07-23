@@ -327,7 +327,7 @@ const PageNotReady: React.FC<{ t: TFunction }> = ({ t }) => {
                 <Trans t={t} i18nKey="message" />
             </div>
             <Link href={"/"}>
-                <Button className="text-secondary-5 border-secondary-5 bg-white">
+                <Button className="text-secondary-5 border-secondary-5 bgkkk-white">
                     <Trans t={t} i18nKey="back" />
                 </Button>
             </Link>
