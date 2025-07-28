@@ -12,7 +12,7 @@
     "prayerSummary": { "subtitle": "Pray", "readMore": "Learn more", "viewAll": "View all topics" },
     "order": {
         "title": "Order the English booklet",
-        "blurb": "Select your shipping destination",
+        "blurb": "Select shipping destination",
         "regions": [
             {
                 "text": "North America",
