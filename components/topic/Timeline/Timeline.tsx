@@ -1,6 +1,6 @@
 "use client"
 
-import { Box, Typography } from "@mui/material"
+import { Box } from "@mui/material"
 import { motion, useMotionValueEvent, useScroll } from "motion/react"
 import { FC, useEffect, useRef, useState } from "react"
 import { Container } from "react-bootstrap"
@@ -156,12 +156,22 @@ const Timeline: FC = () => {
 
     return (
         <>
-            <Box height="40dvh" className={`${styles.timelineGradient} main-content`} width="100%" pt={20}>
+            <Box height="40dvh" className={`${styles.timelineGradient}`} width="100%" pt={20}>
                 <Container>
-                    <Typography variant="h5" className="quote" fontSize="24px" textAlign="center" pb={2}>
-                        Timeline of historical Japan events
-                    </Typography>
-                    <p className="text-left">Text that Sarah will provide will go and sit here later</p>
+                    <p className="quote text-primary-blue text-center" style={{ fontSize: "24px" }}>
+                        <strong>Timeline of Christianity in Japan</strong>
+                    </p>
+                    <p className="text-left" style={{ fontSize: "1.125rem" }}>
+                        We&apos;ve created this timeline to highlight some key events in the history of Christianity in
+                        Japan, with an emphasis on missionary history.
+                    </p>
+
+                    <p className="text-left" style={{ fontSize: "1.125rem" }}>
+                        It has been almost 500 years since the name of Jesus was first proclaimed in Japan. Since then,
+                        the Japanese church has persevered through long periods of persecution and hardship. Today, less
+                        than one percent of Japan&apos;s population is Christian. We long for a breakthrough of
+                        God&apos;s Word and his Spirit across Japan! Will you join us in prayer?
+                    </p>
                 </Container>
             </Box>
 
