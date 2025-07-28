@@ -48,11 +48,19 @@
         background-color: rgba(0, 34, 102, 0.3);
         background-size: cover;
         background-position: center;
-        background-image: url("../public/photos/booklet/Rectangle 237.png");
         background-blend-mode: multiply;
         text-align: center;
         padding-bottom: 100px;
         align-items: center;
+
+        .booklet-hero {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
 
         .book-image {
             width: 427px;
@@ -303,4 +311,22 @@
             max-width: 1140px;
         }
     }
+}
+
+.choose-language {
+    min-width: 472px;
+    height: 48px;
+    font-size: 18px;
+    font-family: $font-family-base;
+    color: $grey-8;
+    @include media-breakpoint-down(md) {
+        min-width: 293px;
+        height: 33px;
+        font-size: 14px;
+    }
+}
+
+.menu-items {
+    color: $grey-8;
+    font-family: $font-family-base;
 }

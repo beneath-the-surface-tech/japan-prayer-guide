@@ -6,7 +6,7 @@ import { useTranslation, Trans } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import Footer from "../components/Footer"
 import ImagePagination from "../components/image-pagination/ImagePagination"
-import OrderBook from "../components/common/OrderBook"
+import { OrderBookV2 } from "../components/common/OrderBook"
 import BookPageImageEN1 from "../public/photos/booklet/pagination/en/Book - Slider 1 EN.jpg"
 import BookPageImageEN2 from "../public/photos/booklet/pagination/en/Book - Slider 2 EN.jpg"
 import BookPageImageEN3 from "../public/photos/booklet/pagination/en/Book - Slider 3 EN.jpg"
@@ -45,6 +45,9 @@ import bookGifEN from "../public/photos/booklet/BOOK_GIF-en.gif"
 import bookGifJA from "../public/photos/booklet/BOOK_GIF-ja.gif"
 import nextI18nextConfig from "../next-i18next.config"
 import AppHeader from "../components/common/AppHeader"
+import bannerHeroHighRes from "../public/photos/booklet/Rectangle 237.png"
+import bannerHeroLowRes from "../public//photos/booklet/BOOKLET_HERO_LowRes.jpg"
+import { LowHighImage } from "@/components/LowHighImage"
 
 export async function getStaticProps({ locale }: any) {
     return {
@@ -144,6 +147,13 @@ const Booklet: React.FC = () => {
             <ToggleHeader />
             <main id="booklet" role="main">
                 <div className="w-100 book-description position-relative" style={{ marginTop: "60px" }}>
+                    <LowHighImage
+                        alt="booklet page hero"
+                        highSrc={bannerHeroHighRes}
+                        src={bannerHeroLowRes}
+                        className="booklet-hero"
+                        isMainImage={true}
+                    />
                     <Container>
                         <Row xs={1} sm={1} md={1} xl={2}>
                             <Col className="my-5">
@@ -183,7 +193,7 @@ const Booklet: React.FC = () => {
                         src={i18n.language === "en" ? bookGifEN : bookGifJA}
                     />
                 </Container>
-                <OrderBook />
+                <OrderBookV2 />
                 <section className="redirect-section d-flex align-items-center" style={{ height: "25rem" }}>
                     <Container className="text-center">
                         <h1>

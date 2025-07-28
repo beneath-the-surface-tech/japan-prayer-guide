@@ -30,7 +30,9 @@
         "prompt": "Order the e-book",
         "japan": "Order the Japanese booklet",
         "warning": "We're only able to ship within Japan at this time.",
-        "form": "Fill out the order form"
+        "form": "Fill out the order form",
+        "titleV2": "Order the prayer booklet",
+        "blurbV2": "Select language"
     },
     "response": {
         "title": "Responding in prayer",
