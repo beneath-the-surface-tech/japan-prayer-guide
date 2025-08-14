@@ -200,7 +200,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                         </Trans>
                     </p>
                     <div className="d-flex flex-column px-0 g-4 justify-content-center mw-100">
-                        <div className="d-flex flex-xl-row flex-column justify-content-center mw-100 px-sm-0 px-md-0 gap-xl-4">
+                        <div className="d-flex flex-xl-row flex-column justify-content-center mw-100 px-sm-0 px-md-0 gap-xl-5">
                             <DownloadTypeFlexCol
                                 className="mx-auto mx-xl-0"
                                 src={byMediaType}
@@ -239,13 +239,15 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                                 </div>
                             </DownloadTypeFlexCol>
                         </div>
-                        <hr />
-                        <div>
+
+                        {/* <hr />
+                        Uncomment when ready.
+                        <div className="d-flex gap-1 align-items-center">
                             <Info />
                             <a className="fw-bold text-secondary-5 cursor-pointer mx-1" href={byMediaOtherVersionUrl}>
                                 <Trans t={t} i18nKey="byMediaOtherVersionText" components={[]} />
                             </a>
-                        </div>
+                        </div>  */}
                     </div>
                 </div>
             </div>
@@ -253,7 +255,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
             {/* 'How to' section */}
             <div id="tutorial" className="bg-secondary-2 w-100 d-flex align-items-center flex-column page-section">
                 <div className="resources-content-container">
-                    <h1 className="mt-2 mb-4 pb-2 text-primary text-center">
+                    <h1 className="mb-2 pb-2 text-primary text-center">
                         <Trans>{tutHeading}</Trans>
                     </h1>
                     <p className="text-center">

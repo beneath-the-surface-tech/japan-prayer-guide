@@ -212,7 +212,7 @@
             }
         }
         .container-gap {
-            gap: 2rem;
+            gap: 3rem;
             @include media-breakpoint-down(xl) {
                 gap: 2rem;
             }
