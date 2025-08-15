@@ -32,6 +32,7 @@ export default function Overview() {
     churchTopics = Array.isArray(churchTopics) ? churchTopics : []
 
     const webpageTitle = t("webpageTitle", "Topic Overview")
+    const heading = t("heading", "Prayer topics")
     const cultureHeading = t("cultureHeading")
     const churchHeading = t("churchHeading")
     const navTabs = [
@@ -43,12 +44,7 @@ export default function Overview() {
 
     return (
         <>
-            <AppHeader
-                title={webpageTitle}
-                description="Japan prayer guide"
-                pageType="website"
-                image={bannerHeroHighRes.src}
-            />
+            <AppHeader title={webpageTitle} description={heading} pageType="website" image={bannerHeroHighRes.src} />
             <main role="main">
                 {/* Header component */}
                 <ToggleHeader hideShadow={true} />
@@ -67,7 +63,7 @@ export default function Overview() {
                     />
                     <Container className="d-flex flex-column align-items-center justify-content-center h-100 topics-header-container">
                         <h1 className="text-black px-3 pb-2 topic-nav-hero-title">
-                            <Trans t={t} i18nKey="heading" />
+                            <Trans>{heading}</Trans>
                         </h1>
                         {heroSubtext.map((text) => (
                             <p

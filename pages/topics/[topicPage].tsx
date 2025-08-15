@@ -73,6 +73,7 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
     const navTabs: Tab[] = topicCommon("nav", { returnObjects: true }) as Tab[]
 
     const title: string = t("title")
+    const metaDescription: string = t("metaDescription")
     const galleryLabel: string = topicCommon("galleryLabel")
     const factsLabel: string = topicCommon("factsLabel")
     const galleryClickInstructions: string = topicCommon("galleryClickInstructions")
@@ -100,7 +101,7 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
 
     return (
         <>
-            <AppHeader title={title} description="Japan prayer guide" pageType="article" image={heroPhoto} />
+            <AppHeader title={title} description={metaDescription} pageType="article" image={heroPhoto} />
             <main role="main">
                 {/* Header Component */}
                 <ToggleHeader hideShadow={true} />

@@ -119,7 +119,7 @@ const Downloads = ({ isPageReady }: { isPageReady: boolean }) => {
 
     return (
         <div>
-            <AppHeader title={webpageTitle} description="tbd" pageType="website" />
+            <AppHeader title={webpageTitle} description={webpageTitle} pageType="website" />
             <main id="resources" role="main">
                 <ToggleHeader />
 
