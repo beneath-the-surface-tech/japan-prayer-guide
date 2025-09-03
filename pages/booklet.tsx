@@ -45,7 +45,7 @@ import bookGifEN from "../public/photos/booklet/BOOK_GIF-en.gif"
 import bookGifJA from "../public/photos/booklet/BOOK_GIF-ja.gif"
 import nextI18nextConfig from "../next-i18next.config"
 import AppHeader from "../components/common/AppHeader"
-import bannerHeroHighRes from "../public/photos/booklet/Rectangle 237.png"
+import bannerHeroHighRes from "../public/photos/booklet/BOOKLET_HERO_FullRes.jpg"
 import bannerHeroLowRes from "../public//photos/booklet/BOOKLET_HERO_LowRes.jpg"
 import { LowHighImage } from "@/components/LowHighImage"
 

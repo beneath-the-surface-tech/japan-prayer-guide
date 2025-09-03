@@ -151,22 +151,103 @@ export function OrderBookV2() {
     function JASection() {
         return (
             <Container className="home-order-section bg-grey-1 d-flex flex-column align-items-center">
+                <h2 className="text-black fs-5 mb-2 d-flex align-items-center gap-1 mt-4 mb-1">
+                    <IconContext.Provider value={{ size: "16px" }}>
+                        <RiInformationLine />
+                    </IconContext.Provider>
+                    <Trans t={t} i18nKey="order.warning" />
+                </h2>
                 <Link
-                    className="fs-5 japan-order bg-grey-1 text-center text-secondary-5 border-secondary-5 fw-bold fs-5 mb-1 mt-4 p-2 text-decoration-none border rounded"
+                    className="fs-5 japan-order bg-grey-1 text-center text-secondary-5 border-secondary-5 fw-bold fs-5 mb-4 p-2 text-decoration-none border rounded"
                     href="https://docs.google.com/forms/d/e/1FAIpQLSf03r2GXDfFa17f5ICL_HTy_NuQOpaJcmNgRyFQN10ghgEYqQ/viewform"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
                     <Trans t={t} i18nKey="order.form" />
                 </Link>
-                <h2 className="text-black fs-5 mb-2 d-flex align-items-center gap-1 mb-4">
-                    <IconContext.Provider value={{ size: "16px" }}>
-                        <RiInformationLine />
-                    </IconContext.Provider>
-                    <Trans t={t} i18nKey="order.warning" />
+            </Container>
+        )
+    }
+
+    function CHSection() {
+        return (
+            <Container className="home-order-section bg-grey-1 d-flex flex-column align-items-center">
+                <Link
+                    className="fs-5 japan-order bg-grey-1 text-center text-secondary-5 border-secondary-5 fw-bold fs-5 mb-4 mt-4 p-2 text-decoration-none border rounded"
+                    href="https://omf.org/hk/book/s7b08/#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <Trans t={t} i18nKey="order.learnMoreAndOrder" />
+                </Link>
+            </Container>
+        )
+    }
+
+    function NOSection() {
+        return (
+            <Container className="home-order-section bg-grey-1 d-flex flex-column align-items-center px-4">
+                <Link
+                    className="fs-5 japan-order bg-grey-1 text-center text-secondary-5 border-secondary-5 fw-bold fs-5 mb-1 mt-4 p-2 text-decoration-none border rounded"
+                    href="https://frikirken.no/bonnekampanje-for-japan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <Trans t={t} i18nKey="order.learnMore" />
+                </Link>
+                <Link
+                    className="fs-4 text-secondary-5 fw-bold text-decoration-underline mt-1 mb-1"
+                    href="https://frikirken.no/site/frikirken.no/files/under-overflaten.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <Trans t={t} i18nKey="order.downloadThePDF" />
+                </Link>
+                <h2 className="text-black fs-5 mb-2 d-flex align-items-center gap-1 mt-1 mb-4 font-italic">
+                    <Trans t={t} i18nKey="order.norwegianBlurb" />
                 </h2>
             </Container>
         )
+    }
+
+    function GASection() {
+        return (
+            <Container className="home-order-section bg-grey-1 d-flex flex-column align-items-center px-4">
+                <Link
+                    className="fs-5 japan-order bg-grey-1 text-center text-secondary-5 border-secondary-5 fw-bold fs-5 mb-1 mt-4 p-2 text-decoration-none border rounded"
+                    href="https://omf.org/de/resource/japan-gebetsheft-hinter-den-kulissen/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <Trans t={t} i18nKey="order.learnMoreAndOrder" />
+                </Link>
+                <Link
+                    className="fs-4 text-secondary-5 fw-bold text-decoration-underline mt-1 mb-1"
+                    href="https://omf.org/de/resource/japan-gebetsheft-hinter-den-kulissen/#:~:text=Read%20the%20magazine%20online"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <Trans t={t} i18nKey="order.viewOnline" />
+                </Link>
+                <h2 className="text-black fs-5 mb-2 d-flex align-items-center gap-1 mt-1 mb-4 font-italic">
+                    <Trans t={t} i18nKey="order.germanBlurb" />
+                </h2>
+            </Container>
+        )
+    }
+
+    const renderOrder = () => {
+        if (dropdown === "en") {
+            return <>{ENSection()}</>
+        } else if (dropdown === "jp") {
+            return <>{JASection()}</>
+        } else if (dropdown === "ch") {
+            return <>{CHSection()}</>
+        } else if (dropdown === "no") {
+            return <>{NOSection()}</>
+        } else if (dropdown === "ga") {
+            return <>{GASection()}</>
+        }
     }
 
     return (
@@ -211,9 +292,18 @@ export function OrderBookV2() {
                     <MenuItem className="menu-items" value="jp">
                         Japanese
                     </MenuItem>
+                    <MenuItem className="menu-items" value="ch">
+                        Chinese (traditional)
+                    </MenuItem>
+                    <MenuItem className="menu-items" value="no">
+                        Norwegian
+                    </MenuItem>
+                    <MenuItem className="menu-items" value="ga">
+                        German
+                    </MenuItem>
                 </Select>
             </Container>
-            {dropdown === "en" ? <>{ENSection()}</> : <>{JASection()}</>}
+            {renderOrder()}
         </Container>
     )
 }

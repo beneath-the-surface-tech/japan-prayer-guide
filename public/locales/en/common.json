@@ -32,7 +32,13 @@
         "warning": "We're only able to ship within Japan at this time.",
         "form": "Fill out the order form",
         "titleV2": "Order the prayer booklet",
-        "blurbV2": "Select language"
+        "blurbV2": "Select language",
+        "learnMore": "Learn more",
+        "learnMoreAndOrder": "Learn more and order",
+        "downloadThePDF": "Download the PDF",
+        "viewOnline": "View online",
+        "norwegianBlurb": "<i>Published in collaboration between eight church and mission organizations in Norway.</i>",
+        "germanBlurb": "<i>Published in collaboration between four mission organizations in Germany and Switzerland.</i>"
     },
     "response": {
         "title": "Responding in prayer",
