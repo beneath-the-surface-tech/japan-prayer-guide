@@ -156,7 +156,7 @@ const Timeline: FC = () => {
 
     return (
         <>
-            <Box height="40dvh" className={`${styles.timelineGradient}`} width="100%" pt={20}>
+            <Box height="40dvh" className={`${styles.timelineGradient}`} width="100%" pt={20} minHeight="fit-content">
                 <Container>
                     <p className="quote text-primary-blue text-center" style={{ fontSize: "24px" }}>
                         <strong>Timeline of Christianity in Japan</strong>
@@ -276,9 +276,13 @@ const Timeline: FC = () => {
                             <Box position="sticky" top={0}>
                                 <Box height={["150dvh", "150dvh", "150dvh", "60dvh"]} />
                                 {timelineEras.flatMap(
-                                    (era) =>
-                                        era.events?.map((event) => (
-                                            <TimelineEventContent key={event.id} event={event} />
+                                    (era, index) =>
+                                        era.events?.map((event, eventIndex) => (
+                                            <TimelineEventContent
+                                                key={event.id}
+                                                index={eventIndex + index * (era?.events?.length || 0)}
+                                                event={event}
+                                            />
                                         )),
                                 )}
                                 {/* <Box height="100dvh" /> */}

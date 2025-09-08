@@ -4,12 +4,13 @@ import { TimelineEvent } from "../../../pages/topics/[topicPage]"
 
 export interface TimelineEventProps {
     event: TimelineEvent
+    index: number
 }
 
-const TimelineEventContent: React.FC<TimelineEventProps> = ({ event }) => {
+const TimelineEventContent: React.FC<TimelineEventProps> = ({ event, index }) => {
     return (
         <>
-            {/* {index === 0 && <Box height="80dvh" />} */}
+            {index === 0 && <Box height="70dvh" />}
             <Box
                 display="flex"
                 alignItems="center"
