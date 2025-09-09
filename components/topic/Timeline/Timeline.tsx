@@ -156,22 +156,22 @@ const Timeline: FC = () => {
 
     return (
         <>
-            <Box height="40dvh" className={`${styles.timelineGradient}`} width="100%" pt={20} minHeight="fit-content">
-                <Container>
-                    <p className="quote text-primary-blue text-center" style={{ fontSize: "24px" }}>
-                        <strong>Timeline of Christianity in Japan</strong>
-                    </p>
-                    <p className="text-left" style={{ fontSize: "1.125rem" }}>
-                        We&apos;ve created this timeline to highlight some key events in the history of Christianity in
-                        Japan, with an emphasis on missionary history.
-                    </p>
+            <Box className={`${styles.timelineGradient}`} width="100%" pt={20} minHeight="fit-content" pb={10}>
+                <Container className="main-section-container px-4">
+                    <p className="quote text-primary-blue text-center">Timeline of Christianity in Japan</p>
+                    <div className="main-content">
+                        <p className="text-left">
+                            We&apos;ve created this timeline to highlight some key events in the history of Christianity
+                            in Japan, with an emphasis on missionary history.
+                        </p>
 
-                    <p className="text-left" style={{ fontSize: "1.125rem" }}>
-                        It has been almost 500 years since the name of Jesus was first proclaimed in Japan. Since then,
-                        the Japanese church has persevered through long periods of persecution and hardship. Today, less
-                        than one percent of Japan&apos;s population is Christian. We long for a breakthrough of
-                        God&apos;s Word and his Spirit across Japan! Will you join us in prayer?
-                    </p>
+                        <p className="text-left">
+                            It has been almost 500 years since the name of Jesus was first proclaimed in Japan. Since
+                            then, the Japanese church has persevered through long periods of persecution and hardship.
+                            Today, less than one percent of Japan&apos;s population is Christian. We long for a
+                            breakthrough of God&apos;s Word and his Spirit across Japan! Will you join us in prayer?
+                        </p>
+                    </div>
                 </Container>
             </Box>
 
