@@ -275,15 +275,14 @@ const Timeline: FC = () => {
 
                             <Box position="sticky" top={0}>
                                 <Box height={["150dvh", "150dvh", "150dvh", "60dvh"]} />
-                                {timelineEras.flatMap(
-                                    (era, index) =>
-                                        era.events?.map((event, eventIndex) => (
-                                            <TimelineEventContent
-                                                key={event.id}
-                                                index={eventIndex + index * (era?.events?.length || 0)}
-                                                event={event}
-                                            />
-                                        )),
+                                {timelineEras.flatMap((era, index) =>
+                                    era.events?.map((event, eventIndex) => (
+                                        <TimelineEventContent
+                                            key={event.id}
+                                            index={eventIndex + index * (era?.events?.length || 0)}
+                                            event={event}
+                                        />
+                                    )),
                                 )}
                                 {/* <Box height="100dvh" /> */}
                             </Box>
