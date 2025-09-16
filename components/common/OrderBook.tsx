@@ -309,11 +309,11 @@ export function OrderBookV2() {
                     <MenuItem className="menu-items" value="ch">
                         Chinese (traditional)
                     </MenuItem>
-                    <MenuItem className="menu-items" value="no">
-                        Norwegian
-                    </MenuItem>
                     <MenuItem className="menu-items" value="ga">
                         German
+                    </MenuItem>
+                    <MenuItem className="menu-items" value="no">
+                        Norwegian
                     </MenuItem>
                 </Select>
             </Container>
