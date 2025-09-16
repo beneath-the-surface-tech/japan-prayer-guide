@@ -5,7 +5,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { getSchedule, getFeaturedTopic } from "../services/featuredTopicSelector"
 import Footer from "../components/Footer"
 import Link from "next/link"
-import OrderBook from "../components/common/OrderBook"
+import { OrderBookV2 } from "../components/common/OrderBook"
 import PrayerPoints, { PrayerDisplayStyle } from "../components/common/PrayerPoints/PrayerPoints"
 import { ImageCarousel } from "../components/GalleryComponents/Carousel/Carousel"
 import { LowHighImage } from "../components/LowHighImage"
@@ -178,7 +178,7 @@ const Home = ({ featuredTopicRef }: { featuredTopicRef: string }) => {
                 </Container>
 
                 {/* Order snippet */}
-                <OrderBook />
+                <OrderBookV2 />
 
                 {/* Downloads snippet */}
                 <div
