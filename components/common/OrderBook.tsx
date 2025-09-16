@@ -6,6 +6,7 @@ import { RiInformationLine } from "react-icons/ri"
 import { OrderRegionType } from "../../pages"
 import { MenuItem, Select } from "@mui/material"
 import { useState } from "react"
+import { FaChevronDown } from "react-icons/fa"
 
 export default function OrderBook() {
     const { t, i18n } = useTranslation("common")
@@ -112,6 +113,7 @@ export function OrderBookV2() {
     const { t, i18n } = useTranslation("common")
     const language = i18n.language
     const [dropdown, setDropdown] = useState(language)
+    const [open, setOpen] = useState(false)
 
     const orderRegionsMap = t("order.regions", { returnObjects: true }) as OrderRegionType[]
 
@@ -250,6 +252,14 @@ export function OrderBookV2() {
         }
     }
 
+    const Icon = () => {
+        return (
+            <div style={{ marginRight: "12px", transform: open ? "rotate(180deg)" : "" }}>
+                <FaChevronDown />
+            </div>
+        )
+    }
+
     return (
         <Container className="d-flex flex-column align-items-center w-100 mt-2 mb-5 no-max-container">
             <Container
@@ -285,6 +295,10 @@ export function OrderBookV2() {
                     value={dropdown}
                     className="mb-4 bg-white choose-language"
                     onChange={(e) => setDropdown(e.target.value)}
+                    IconComponent={Icon}
+                    open={open}
+                    onOpen={() => setOpen(true)}
+                    onClose={() => setOpen(false)}
                 >
                     <MenuItem className="menu-items" value="en">
                         English

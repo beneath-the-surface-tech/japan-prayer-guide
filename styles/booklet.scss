@@ -317,7 +317,7 @@
     min-width: 472px;
     height: 48px;
     font-size: 18px;
-    font-family: $font-family-base;
+    font-family: $font-family-base!important;
     color: $grey-8;
     @include media-breakpoint-down(md) {
         min-width: 293px;
@@ -328,5 +328,9 @@
 
 .menu-items {
     color: $grey-8;
-    font-family: $font-family-base;
+    font-family: $font-family-base!important;
+    font-size: 18px;
+    @include media-breakpoint-down(md) {
+        font-size: 14px;
+    }
 }
