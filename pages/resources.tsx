@@ -187,7 +187,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
             </div>
 
             {/* 'Download by' section */}
-            <div id="downloadBy" className="w-100 d-flex align-items-center flex-column px-4 px-md-4 page-section">
+            <div id="downloadBy" className="w-100 d-flex align-items-center flex-column page-section">
                 <div className="resources-content-container">
                     <p className="text-left">
                         <Trans
@@ -244,7 +244,9 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                         <div className="d-flex gap-1 align-items-center">
                             <Info />
                             {/* <a className="fw-bold text-secondary-5 cursor-pointer mx-1" href={byMediaOtherVersionUrl}> */}
-                            <Trans t={t} i18nKey="byMediaOtherVersionText" components={[]} />
+                            <b>
+                                <Trans t={t} i18nKey="byMediaOtherVersionText" components={[]} />
+                            </b>
                             {/* </a> */}
                         </div>
                     </div>
