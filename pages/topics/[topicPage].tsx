@@ -15,6 +15,30 @@ import nextI18nextConfig from "../../next-i18next.config"
 import { ReferencesSection } from "@/components/topic/References/References"
 import AppHeader from "../../components/common/AppHeader"
 import Link from "next/link"
+import Timeline from "../../components/topic/Timeline/Timeline"
+
+export interface TimelinePhoto {
+    order: number
+    src: string
+    title: string | null
+    alt: string | null
+}
+
+export interface TimelineEvent {
+    id: number
+    year: string | number
+    title: string
+    text_body: string
+    galleryType: string
+    bgVariant: string
+    photos?: TimelinePhoto[]
+}
+
+export interface TimelineEra {
+    title: string
+    era: string
+    events?: TimelineEvent[]
+}
 
 const isDev = process.env.NODE_ENV === "development"
 const BASE_URL = isDev ? "http://localhost:3000" : process.env.API_URL || "https://dev.japanprayerguide.com"
@@ -47,7 +71,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
                 nextI18nextConfig,
             )),
         },
-        revalidate: 30,
+        revalidate: 1,
     }
 }
 
@@ -79,7 +103,7 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
     const galleryImageText: string = topicCommon("galleryImageText")
     const localeImages: any[] = t("photos", { returnObjects: true }) as any[]
     const images = Array.isArray(localeImages) && localeImages.length > 0 ? localeImages : null
-    // const timeline: string = t("timeline")
+    const timelineEras: TimelineEra[] = t("timelineEras", { returnObjects: true }) as TimelineEra[]
     const galleryType: string = t("galleryType")
     const blockOrder: number[] = t("blockOrder", { returnObjects: true }) as number[]
     const uncropped: any[] = t("uncroppedPhotos", { returnObjects: true }) as any[]
@@ -162,9 +186,11 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
                             />
                         </CollapseBlock>
                     )}
-                    {/* Timeline */}
-                    {/* {timeline !== "timeline" && <h1>timeline</h1>} */}
+                </Container>
+                {/* Timeline */}
+                {timelineEras && timelineEras.length > 0 && <Timeline timelineEras={timelineEras} />}
 
+                <Container className="main-section-container">
                     {/* Infographics: Uncomment after conference */}
                     {infographicDesktop && infographicTablet && infographicMobile && (
                         <CollapseBlock title={factsLabel} startOpened={true} galleryType={"infographic"}>

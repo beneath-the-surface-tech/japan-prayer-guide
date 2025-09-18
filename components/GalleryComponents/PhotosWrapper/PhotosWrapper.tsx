@@ -18,6 +18,7 @@ interface PhotosWrapperProps {
         title: string
         alt?: string
     }[]
+    alwaysDesktop?: boolean
 }
 
 export const PhotosWrapper = ({
@@ -28,9 +29,18 @@ export const PhotosWrapper = ({
     galleryTitle = "",
     imageText = "",
     uncropped = [],
+    alwaysDesktop = false,
 }: PhotosWrapperProps) => {
     if (type === "mosaic") {
-        return <Mosaic images={images} uncropped={uncropped} subTitle={subTitle} blocks={blocks} />
+        return (
+            <Mosaic
+                images={images}
+                uncropped={uncropped}
+                subTitle={subTitle}
+                blocks={blocks}
+                alwaysDesktop={alwaysDesktop}
+            />
+        )
     }
     if (type === "gallery") {
         return <NestedModal images={images} subTitle={subTitle} galleryTitle={galleryTitle} imageText={imageText} />

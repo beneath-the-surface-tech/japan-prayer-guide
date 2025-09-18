@@ -37,12 +37,12 @@ describe("Responding in Prayer", () => {
         // This test is to check against unintended changes.
         // If the change is intentional you can update the snapshot with `jest --updateSnapshot`
 
-        const component = render(<PrayerResponse topicTrans={jest.fn()} />)
+        const component = render(<PrayerResponse topicTrans={jest.fn() as any} />)
         expect(component).toMatchSnapshot()
     })
 
     test("Renders a section with the right text inside", () => {
-        render(<PrayerResponse topicTrans={jest.fn()} />)
+        render(<PrayerResponse topicTrans={jest.fn() as any} />)
         const responseSection = screen.getByTestId("prayer-response")
         const responseTitle = responseSection.querySelector("h2")
 

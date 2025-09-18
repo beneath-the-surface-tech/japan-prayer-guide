@@ -24,7 +24,7 @@ jest.mock("next-i18next", () => ({
 }))
 
 const setUpTFunctionMock = (labels: string[], links: string[], thumbnails: string[], isLive: boolean[]) => {
-    const t: TFunction = jest.fn().mockImplementation((key, params) => {
+    const t: any = jest.fn().mockImplementation((key) => {
         if (key === "related.labels") {
             return labels
         } else if (key === "related.links") {
