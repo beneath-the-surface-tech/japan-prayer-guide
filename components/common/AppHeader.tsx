@@ -19,7 +19,8 @@ const AppHeader = ({ title, metaTitle, description, pageType, image = "" }: AppH
     const { t } = useTranslation("common")
     metaTitle = metaTitle || t("metaTitle", "Beneath the Surface")
 
-    let fullImageUrl = null
+    let fullImageUrl: string | null = null
+
     if (image) {
         // images from retool will be absolute rather than relative
         const isAbsoluteUrl = image.indexOf("http://") === 0 || image.indexOf("https://") === 0
