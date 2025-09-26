@@ -142,6 +142,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
 
     // const byMediaOtherVersionUrl = t("byMediaOtherVersionUrl", "/") // Use when reenabling the byMediaOtherVersionText text.
     const byTopicBtnUrl = t("byTopicBtnUrl", "/")
+    const byPrayerVideos = t("byPrayerVideos")
 
     const infographicsUrl = t("byMediaUrls.infographicsUrl", "")
     const photographyUrl = t("byMediaUrls.photographyUrl", "")
@@ -208,7 +209,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                                 contentClass="equal-height"
                                 headingKey="byMediaHeading"
                                 descriptionArrayKey="byMediaDescriptions"
-                                descriptionUrlArray={["", VIMEO_URL]}
+                                descriptionUrlArray={[""]}
                             >
                                 <DownloadablesGrid
                                     className="d-sm-flex row-cols-sm-2 px-0 my-1"
@@ -218,6 +219,16 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                                     slidesUrl={slidesUrl}
                                     rowCount={1}
                                 />
+                                <p className="mt-2">
+                                    <Link
+                                        className="text-secondary-5 text-decoration-underline mb-4"
+                                        href={VIMEO_URL}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <Trans t={t} i18nKey={byPrayerVideos} />
+                                    </Link>
+                                </p>
                             </DownloadTypeFlexCol>
                             <DownloadTypeFlexCol
                                 className="mx-auto mx-xl-0"
@@ -288,7 +299,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                             <Doc />
                             {/* <FaRegFile style={{ width: "5rem", height: "5rem" }} /> */}
                         </div>
-                        <div className="reference-text flex-grow-1 ms-md-3 ms-0 mt-3 mt-md-0">
+                        <div className="reference-text flex-grow-1 ms-md-3 ms-0">
                             <h1 className="text-primary">
                                 <Trans>{referencesHeading}</Trans>
                             </h1>
