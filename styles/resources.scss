@@ -172,15 +172,20 @@
 
             .topic-btn {
                 // padding: 12px;
-                width: 225px;
+                // width: 225px;
+                width: 100%;
                 font-weight: 700;
                 // height: 55px;
                 font-size: 16px;
-                margin-top: 12px;
+                margin-top: 13px;
 
-                @include media-breakpoint-down(md) {
+                @include media-breakpoint-down(xl) {
+                    margin-top: 12px;
                     width: 175px;
                     // height: 51px;
+                }
+                @include media-breakpoint-down(sm) {
+                    width: 100%;
                 }
             }
         }
@@ -212,7 +217,7 @@
             }
         }
         .container-gap {
-            gap: 2rem;
+            gap: 3rem;
             @include media-breakpoint-down(xl) {
                 gap: 2rem;
             }
@@ -345,7 +350,10 @@
         }
     }
     .reference-text {
-        margin-top: -2px;
+        margin-top: 16px;
+        @include media-breakpoint-up(md) {
+            margin-top: 12px;
+       }
     }
     svg {
     @include media-breakpoint-down(md) {

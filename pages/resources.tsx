@@ -140,8 +140,9 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
     const copyrightText: string = t("copyrightText")
     const copyrightUrl: string = t("copyrightUrl", "/")
 
-    const byMediaOtherVersionUrl = t("byMediaOtherVersionUrl", "/")
+    // const byMediaOtherVersionUrl = t("byMediaOtherVersionUrl", "/") // Use when reenabling the byMediaOtherVersionText text.
     const byTopicBtnUrl = t("byTopicBtnUrl", "/")
+    const byPrayerVideos = t("byPrayerVideos")
 
     const infographicsUrl = t("byMediaUrls.infographicsUrl", "")
     const photographyUrl = t("byMediaUrls.photographyUrl", "")
@@ -187,7 +188,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
             </div>
 
             {/* 'Download by' section */}
-            <div id="downloadBy" className="w-100 d-flex align-items-center flex-column px-4 px-md-4 page-section">
+            <div id="downloadBy" className="w-100 d-flex align-items-center flex-column page-section">
                 <div className="resources-content-container">
                     <p className="text-left">
                         <Trans
@@ -200,7 +201,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                         </Trans>
                     </p>
                     <div className="d-flex flex-column px-0 g-4 justify-content-center mw-100">
-                        <div className="d-flex flex-xl-row flex-column justify-content-center mw-100 px-sm-0 px-md-0 gap-xl-4">
+                        <div className="d-flex flex-xl-row flex-column justify-content-center mw-100 px-sm-0 px-md-0 gap-xl-5">
                             <DownloadTypeFlexCol
                                 className="mx-auto mx-xl-0"
                                 src={byMediaType}
@@ -208,7 +209,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                                 contentClass="equal-height"
                                 headingKey="byMediaHeading"
                                 descriptionArrayKey="byMediaDescriptions"
-                                descriptionUrlArray={["", VIMEO_URL]}
+                                descriptionUrlArray={[""]}
                             >
                                 <DownloadablesGrid
                                     className="d-sm-flex row-cols-sm-2 px-0 my-1"
@@ -218,6 +219,16 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                                     slidesUrl={slidesUrl}
                                     rowCount={1}
                                 />
+                                <p className="mt-2">
+                                    <Link
+                                        className="text-secondary-5 text-decoration-underline mb-4"
+                                        href={VIMEO_URL}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <Trans t={t} i18nKey={byPrayerVideos} />
+                                    </Link>
+                                </p>
                             </DownloadTypeFlexCol>
                             <DownloadTypeFlexCol
                                 className="mx-auto mx-xl-0"
@@ -239,12 +250,15 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                                 </div>
                             </DownloadTypeFlexCol>
                         </div>
+
                         <hr />
-                        <div>
+                        <div className="d-flex gap-1 align-items-center">
                             <Info />
-                            <a className="fw-bold text-secondary-5 cursor-pointer mx-1" href={byMediaOtherVersionUrl}>
+                            {/* <a className="fw-bold text-secondary-5 cursor-pointer mx-1" href={byMediaOtherVersionUrl}> */}
+                            <b>
                                 <Trans t={t} i18nKey="byMediaOtherVersionText" components={[]} />
-                            </a>
+                            </b>
+                            {/* </a> */}
                         </div>
                     </div>
                 </div>
@@ -253,7 +267,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
             {/* 'How to' section */}
             <div id="tutorial" className="bg-secondary-2 w-100 d-flex align-items-center flex-column page-section">
                 <div className="resources-content-container">
-                    <h1 className="mt-2 mb-4 pb-2 text-primary text-center">
+                    <h1 className="mb-2 pb-2 text-primary text-center">
                         <Trans>{tutHeading}</Trans>
                     </h1>
                     <p className="text-center">
@@ -285,7 +299,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                             <Doc />
                             {/* <FaRegFile style={{ width: "5rem", height: "5rem" }} /> */}
                         </div>
-                        <div className="reference-text flex-grow-1 ms-md-3 ms-0 mt-3 mt-md-0">
+                        <div className="reference-text flex-grow-1 ms-md-3 ms-0">
                             <h1 className="text-primary">
                                 <Trans>{referencesHeading}</Trans>
                             </h1>
