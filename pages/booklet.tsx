@@ -120,17 +120,20 @@ const TabletOrMobileMediaQuery = "(min-width: 992px)"
 const Booklet: React.FC = () => {
     const { t, i18n } = useTranslation("booklet")
     const webpageTitle: string = t("webpageTitle", "Booklet")
+    const metaDescription: string = t("metaDescription", "Get the prayer booklet")
     const introTextParagraphs: string[] = t("introText", { returnObjects: true }) as string[]
     const isTabletOrMobile = useBetterMediaQuery(TabletOrMobileMediaQuery)
     const isInEnglish = i18n.language === "en"
-    let sampleBookImages
+    let sampleBookImages, coverImage
     if (isInEnglish) {
+        coverImage = coverEN
         if (isTabletOrMobile) {
             sampleBookImages = enDesktopImages
         } else {
             sampleBookImages = enMobileImages
         }
     } else {
+        coverImage = coverJA
         if (isTabletOrMobile) {
             sampleBookImages = jaDesktopImages
         } else {
@@ -140,7 +143,7 @@ const Booklet: React.FC = () => {
 
     return (
         <div>
-            <AppHeader title={webpageTitle} description="tbd" pageType="website" image={coverEN.src} />
+            <AppHeader title={webpageTitle} description={metaDescription} pageType="website" image={coverImage.src} />
             <ToggleHeader />
             <main id="booklet" role="main">
                 <div className="w-100 book-description position-relative" style={{ marginTop: "60px" }}>
@@ -149,7 +152,7 @@ const Booklet: React.FC = () => {
                             <Col className="my-5">
                                 <NextImage
                                     className="book-image book-front-cover"
-                                    src={i18n.language == "en" ? coverEN : coverJA}
+                                    src={coverImage}
                                     alt={t("bookImageAlt")!}
                                 />
                             </Col>

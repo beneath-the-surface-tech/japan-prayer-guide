@@ -1,20 +1,26 @@
 import Head from "next/head"
+import { useTranslation } from "next-i18next"
 
 interface AppHeaderProps {
     title: string
+    metaTitle?: string
     description: string
     pageType: string
     image?: string
 }
 
-const AppHeader = ({ title, description, pageType, image = "" }: AppHeaderProps) => {
+const AppHeader = ({ title, metaTitle, description, pageType, image = "" }: AppHeaderProps) => {
     /* Construct the required absolute URL for the image.
      *  local -> uses .env.local's NEXT_PUBLIC_BASE_URL
      *  preview, dev -> uses pre-prod NEXT_PUBLIC_BASE_URL (tied to VERCEL_URL)
      *  prod -> uses prod NEXT_PUBLIC_BASE_URL (based on domain)
      */
 
+    const { t } = useTranslation("common")
+    metaTitle = metaTitle || t("metaTitle", "Beneath the Surface")
+
     let fullImageUrl: string | null = null
+
     if (image) {
         // images from retool will be absolute rather than relative
         const isAbsoluteUrl = image.indexOf("http://") === 0 || image.indexOf("https://") === 0
@@ -30,7 +36,7 @@ const AppHeader = ({ title, description, pageType, image = "" }: AppHeaderProps)
             <link rel="icon" href="/favicon.ico" />
 
             {/* OpenGraph Meta Tags */}
-            <meta property="og:title" content={title} />
+            <meta property="og:title" content={metaTitle} />
             <meta property="og:description" content={description} />
             <meta property="og:type" content={pageType} />
             {fullImageUrl && <meta property="og:image" content={fullImageUrl} />}

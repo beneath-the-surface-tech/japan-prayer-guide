@@ -32,6 +32,7 @@ const About: React.FC = () => {
     const { t } = useTranslation("about")
 
     const webpageTitle = t("webpageTitle", "About") as string
+    const metaDescription = t("metaDescription", "About the prayer initiative")
     const introBlurb: string[] = t("introBlurb", { returnObjects: true }) as string[]
     const contextBlurb: string[] = t("contextBlurb", { returnObjects: true }) as string[]
 
@@ -39,7 +40,7 @@ const About: React.FC = () => {
         <div>
             <AppHeader
                 title={webpageTitle}
-                description="Japan prayer guide"
+                description={metaDescription}
                 pageType="website"
                 image={bannerHeroHighRes.src}
             />

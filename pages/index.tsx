@@ -56,23 +56,13 @@ const Home = ({ featuredTopicRef }: { featuredTopicRef: string }) => {
     const { t, i18n } = useTranslation("home")
     const { t: featuredTranslation } = useTranslation(featuredTopicRef)
     const webpageTitle = t("webpageTitle", "Beneath the Surface")
-
-    //const downloadList: string[] = homePageTranslation("downloadList", { returnObjects: true })
-
-    // const iconList: ReactNode[] = [
-    //     <RiDonutChartFill key={0} />,
-    //     <RiFile3Line key={1} />,
-    //     <RiImageFill key={2} />,
-    //     <FaPrayingHands key={3} />,
-    //     <RiMic2Fill key={4} />,
-    //     <RiSlideshowLine key={5} />,
-    // ]
+    const metaDescription = t("metaDescription")
 
     return (
         <div>
             <AppHeader
                 title={webpageTitle}
-                description="30 ways to pray for Japan"
+                description={metaDescription}
                 pageType="website"
                 image={bannerHeroHighRes.src}
             />

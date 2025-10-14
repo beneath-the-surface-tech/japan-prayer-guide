@@ -124,7 +124,7 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
 
     return (
         <>
-            <AppHeader title={title} description="Japan prayer guide" pageType="article" image={heroPhoto} />
+            <AppHeader title={title} description={title} pageType="article" image={heroPhoto} />
             <main role="main">
                 {/* Header Component */}
                 <ToggleHeader hideShadow={true} />
