@@ -7,8 +7,8 @@ import Footer from "../components/Footer"
 import Link from "next/link"
 import { LowHighImage } from "../components/LowHighImage"
 import Image from "next/image"
-import bannerHeroHighRes from "../public/photos/about/about_hero.jpg"
-import bannerHeroLowRes from "../public/photos/about/about_hero_LowRes.jpg"
+import bannerHeroHighRes from "../public/photos/about/ABOUT-HERO-FullRes.jpg"
+import bannerHeroLowRes from "../public/photos/about/ABOUT-HERO-LowRes.jpg"
 import about1 from "../public/photos/about/about_01.png"
 import about2 from "../public/photos/about/about_02.png"
 import about3 from "../public/photos/about/about_03.png"
@@ -32,6 +32,7 @@ const About: React.FC = () => {
     const { t } = useTranslation("about")
 
     const webpageTitle = t("webpageTitle", "About") as string
+    const metaDescription = t("metaDescription", "About the prayer initiative")
     const introBlurb: string[] = t("introBlurb", { returnObjects: true }) as string[]
     const contextBlurb: string[] = t("contextBlurb", { returnObjects: true }) as string[]
 
@@ -39,7 +40,7 @@ const About: React.FC = () => {
         <div>
             <AppHeader
                 title={webpageTitle}
-                description="Japan prayer guide"
+                description={metaDescription}
                 pageType="website"
                 image={bannerHeroHighRes.src}
             />

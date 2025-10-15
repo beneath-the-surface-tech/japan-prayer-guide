@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react"
-import { TFunction } from "next-i18next"
 import TopicDownloadables from "../../../../components/topic/TopicDownloadables/TopicDownloadables"
 
 jest.mock("next-i18next", () => ({
@@ -25,7 +24,7 @@ jest.mock("next-i18next", () => ({
 }))
 
 const setUpTFunctionMock = (urls: Record<string, string>) => {
-    const t: TFunction = jest.fn().mockImplementation((key: string) => {
+    const t: any = jest.fn().mockImplementation((key: string) => {
         if (key in urls) {
             return urls[key]
         } else {

@@ -9,10 +9,11 @@
         "blurb": "We exist to call and equip God's people to pray for spiritual breakthrough in Japan.",
         "home": "Home"
     },
+    "metaTitle": "Beneath the Surface",
     "prayerSummary": { "subtitle": "Pray", "readMore": "Learn more", "viewAll": "View all topics" },
     "order": {
         "title": "Order the English booklet",
-        "blurb": "Select your shipping destination",
+        "blurb": "Select shipping destination",
         "regions": [
             {
                 "text": "North America",
@@ -30,7 +31,15 @@
         "prompt": "Order the e-book",
         "japan": "Order the Japanese booklet",
         "warning": "We're only able to ship within Japan at this time.",
-        "form": "Fill out the order form"
+        "form": "Fill out the order form",
+        "titleV2": "Order the prayer booklet",
+        "blurbV2": "Select language",
+        "learnMore": "Learn more",
+        "learnMoreAndOrder": "Learn more and order",
+        "downloadThePDF": "Download the PDF",
+        "viewOnline": "View online",
+        "norwegianBlurb": "<i>Published in collaboration between eight church and mission organizations in Norway.</i>",
+        "germanBlurb": "<i>Published in collaboration between four mission organizations in Germany and Switzerland.</i>"
     },
     "response": {
         "title": "Responding in prayer",
@@ -47,7 +56,7 @@
         "description": "All of the resources for this topic are available to download or stream. Choose which ones you want to download, or download them all for this topic.",
         "infographicsLabel": "Infographics",
         "photographyLabel": "Photography",
-        "pdfLabel": "PDF file",
+        "pdfLabel": "PDF files",
         "prayerPtsLabel": "Prayer points",
         "prayerVidLabel": "Prayer recording",
         "slidesLabel": "Presentation slides",

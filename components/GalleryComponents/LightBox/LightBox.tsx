@@ -23,6 +23,8 @@ interface LightBoxProps {
 
 const LightBox = ({ index, setImage, images, lightBox, setLightBox, backupImages = [] }: LightBoxProps) => {
     const [aspectRatio, setAspect] = useState(1)
+    const [height, setHeight] = useState(10000)
+    const [width, setWidth] = useState(10000)
 
     const handleSwitch = useCallback(
         (type: string) => {
@@ -56,6 +58,8 @@ const LightBox = ({ index, setImage, images, lightBox, setLightBox, backupImages
     const title = images[index].title ?? backupImages?.[index]?.title
     const alt = images[index].alt ?? backupImages?.[index]?.alt ?? images[index].title ?? backupImages?.[index]?.title
 
+    const isSmallPhoto = height < 400 && width < 400
+
     return (
         <div className="lightbox">
             <div className="lightbox-container">
@@ -81,13 +85,21 @@ const LightBox = ({ index, setImage, images, lightBox, setLightBox, backupImages
                     </div>
                     <div className="lightbox-box">
                         <Image
-                            //@ts-expect-error for some reason naturalWidth not found.
-                            onLoad={(e) => setAspect(e.target.naturalWidth / e.target.naturalHeight)}
+                            onLoad={(e) => {
+                                //@ts-expect-error for some reason naturalWidth not found.
+                                setAspect(e.target.naturalWidth / e.target.naturalHeight)
+                                //@ts-expect-error for some reason naturalWidth not found.
+                                setHeight(e.target.naturalHeight)
+                                //@ts-expect-error for some reason naturalWidth not found.
+                                setWidth(e.target.naturalWidth)
+                            }}
                             src={images[index].src}
                             width={1800}
                             height={1200}
                             alt={alt}
-                            className={aspectRatio >= 1 ? "imgWide" : "imgTall"}
+                            className={
+                                (aspectRatio >= 1 ? "imgWide" : "imgTall") + " " + (isSmallPhoto ? "low-res" : "")
+                            }
                         />
                     </div>
                     <h1>
