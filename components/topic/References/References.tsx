@@ -57,7 +57,7 @@ export const ReferencesSection = ({ localeRef }: { localeRef: string }) => {
                                     <Cross />
                                 </span>
                             </div>
-                            <div className="slideUp-title">References used in this article</div>
+                            <div className="slideUp-title">References</div>
                             <hr className="mt-3 mb-4" />
                             <div className={"references-from-retool"}>
                                 {references && <div dangerouslySetInnerHTML={{ __html: references }} />}

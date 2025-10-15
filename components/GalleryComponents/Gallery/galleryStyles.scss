@@ -307,6 +307,23 @@
         }
     }
 
+    .imgWide.low-res {
+        width: auto;
+        min-width: 700px;
+        @include media-breakpoint-down(lg) {
+            width: 100%;
+            min-width: 0px!important;
+        }
+    }
+
+    .imgTall.low-res {
+        min-width: 300px;
+        @include media-breakpoint-down(sm) {
+            height: calc(100% - 120px)!important;
+            min-width: 0px!important;
+        }
+    }
+
     .lightbox-body h1 {
         text-align: center;
         font-size: 16px;

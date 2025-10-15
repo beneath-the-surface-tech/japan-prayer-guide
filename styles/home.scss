@@ -173,7 +173,13 @@ $home-paragraph-text: 20px;
 $home-paragraph-text-tablet: $home-paragraph-text - 1px;
 $home-paragraph-text-mobile: $home-paragraph-text - 2px;
 .home-verse-container {
+    background-image: url('../public/patterns/Waves1.svg');
+    background-size: cover;
+    background-repeat: repeat;
     max-width: none;
+    @include media-breakpoint-down(lg) {
+        background-size: auto
+    }
     h2 {
         font-family: $font-family-secondary;
         font-weight: 300;
@@ -205,6 +211,12 @@ $home-paragraph-text-mobile: $home-paragraph-text - 2px;
 }
 
 #featuredTopicSection {
+    background-image: url('../public/patterns/Pattern3.svg');
+    background-size: cover;
+    background-repeat: repeat;
+    @include media-breakpoint-down(lg) {
+        background-size: auto
+    }
     .container {
         max-width: 1115px;
         
@@ -378,5 +390,14 @@ $home-paragraph-text-mobile: $home-paragraph-text - 2px;
 
     .slick-next {
         right: -10px !important;
+    }
+}
+
+.downloads-bg {
+    background-image: url('../public/patterns/Waves2.svg');
+    background-repeat: repeat;
+    background-size: cover;
+    @include media-breakpoint-down(lg) {
+        background-size: auto
     }
 }
