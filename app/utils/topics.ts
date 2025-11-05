@@ -120,6 +120,7 @@ export async function getTopicsOverviewLocaleData(pages: PageEntity[], localePat
             link: topic.path,
             disabled: isDevEnv ? !isDevLive : !topic.isLive,
             image: topic.heroPhoto,
+            blurDataUrl: topic.blurDataUrl ? topic.blurDataUrl : "none",
         }
     })
     topicOverview.churchTopics = churchTopics.map((topic) => {
@@ -131,6 +132,7 @@ export async function getTopicsOverviewLocaleData(pages: PageEntity[], localePat
             link: topic.path,
             disabled: isDevEnv ? !isDevLive : !topic.isLive,
             image: topic.heroPhoto,
+            blurDataUrl: topic.blurDataUrl ? topic.blurDataUrl : "none",
         }
     })
 

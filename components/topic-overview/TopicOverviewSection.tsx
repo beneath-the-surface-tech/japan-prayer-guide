@@ -1,12 +1,15 @@
 import Link from "next/link"
-import { Card, Container, Row, Col, Image } from "react-bootstrap"
+import { Card, Container, Row, Col } from "react-bootstrap"
 import { Trans, useTranslation } from "next-i18next"
+import Image from "next/image"
 
 export interface Topic {
     label: string
     link: string
     disabled?: boolean
     image?: string
+    highResImage?: string
+    blurDataUrl?: string
 }
 
 interface TopicOverviewProps {
@@ -14,6 +17,9 @@ interface TopicOverviewProps {
     section: string
     topics: Topic[]
 }
+
+const DEFAULT_BLUR =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIklEQVR4nGOICg3qaCrjY2SoLMpkUFFQ/vLr3aFTOwXlxQB0IQmzp7pSJQAAAABJRU5ErkJggg=="
 
 export const TopicOverviewSection = ({ title, section, topics }: TopicOverviewProps) => {
     const { i18n } = useTranslation("common")
@@ -30,6 +36,12 @@ export const TopicOverviewSection = ({ title, section, topics }: TopicOverviewPr
                     {topics.map((topic, idx) => {
                         // assume disabled if not explicitly set to false
                         const isDisabled: boolean = !(topic.disabled === false)
+                        const src =
+                            isDisabled || typeof topic.image === "undefined"
+                                ? `/photos/topic-nav/${section}/placeholder.png`
+                                : topic.image
+                        const blur = topic.blurDataUrl ?? DEFAULT_BLUR
+
                         return (
                             <Col key={topic.link + idx} className="d-flex justify-content-center px-0 px-sm-1 px-md-2">
                                 <Link
@@ -41,20 +53,21 @@ export const TopicOverviewSection = ({ title, section, topics }: TopicOverviewPr
                                         <div
                                             className="position-relative"
                                             style={{
-                                                width: "fit-content",
-                                                height: "fit-content",
+                                                width: "100%",
+                                                aspectRatio: "1.772",
                                                 borderRadius: "8px 8px 0px 0px",
+                                                overflow: "hidden",
                                             }}
                                         >
                                             <Image
-                                                src={
-                                                    !isDisabled
-                                                        ? topic.image
-                                                        : `/photos/topic-nav/${section}/placeholder.png`
-                                                }
-                                                alt={""}
                                                 className="placeholder-nav-img"
+                                                fill
+                                                src={src}
+                                                alt="..."
+                                                placeholder="blur"
+                                                blurDataURL={blur}
                                             />
+
                                             {isDisabled && (
                                                 <div className="disabled-layer position-absolute w-100 h-100 opacity-75" />
                                             )}
