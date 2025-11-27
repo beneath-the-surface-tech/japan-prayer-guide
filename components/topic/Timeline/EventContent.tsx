@@ -85,7 +85,15 @@ const CustomMosaicComponent = ({
                             title: photo.title || "",
                             alt: photo.alt || "",
                         }))}
-                        blocks={alwaysDesktop ? [4, 4, 4, 4] : index === 0 ? [5, 1, 7, 8] : [10, 4, 4, 1]}
+                        blocks={
+                            activeEvent.id === 11
+                                ? [5, 1, 4, 8]
+                                : alwaysDesktop
+                                  ? [4, 4, 4, 4]
+                                  : index === 0
+                                    ? [5, 1, 7, 8]
+                                    : [10, 4, 4, 1]
+                        }
                         subTitle=""
                     />
                 </Box>
