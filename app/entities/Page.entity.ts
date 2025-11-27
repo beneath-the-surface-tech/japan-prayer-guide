@@ -62,6 +62,9 @@ export class PageEntity {
     @Column({ type: "varchar", nullable: true })
     topicNumber!: string
 
+    @Column({ type: "varchar", nullable: true })
+    blurDataUrl!: string
+
     @OneToMany(() => PagePhotoEntity, (photo) => photo.page)
     photos!: Relation<PagePhotoEntity>[]
 

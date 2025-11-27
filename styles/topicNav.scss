@@ -92,6 +92,7 @@
     }
 
     img.placeholder-nav-img {
+        position: static !important;
         aspect-ratio: 1.772 !important;
         object-fit: cover !important;
         width: 100% !important;

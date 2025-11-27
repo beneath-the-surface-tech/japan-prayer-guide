@@ -2,7 +2,7 @@ import Image, { ImageProps, StaticImageData } from "next/image"
 import { useState } from "react"
 
 interface LowHighImageProps extends ImageProps {
-    highSrc: StaticImageData
+    highSrc: string | StaticImageData
     isMainImage?: boolean // large or main images like the hero banner should be preloaded
 }
 
@@ -13,13 +13,20 @@ export const LowHighImage = ({ highSrc, isMainImage = false, src, alt, ...rest }
     const loadingStyle: LoadingValue = isMainImage ? "eager" : "lazy"
     const priorityLoad: boolean = isMainImage ? true : false
 
+    const isStringType = (type: any) => {
+        return typeof type === "string"
+    }
+
+    const srcFill: boolean = isStringType(src) ? true : false // next/Image requires explicit width/height unless fill = true
+    const highSrcFill: boolean = typeof highSrc === "string" ? true : false
+
     // note: d-block and d-none on the next/image component does not seem to work, hence inline styling
     return (
         <>
             <Image
-                placeholder="blur"
                 alt={alt}
                 src={src}
+                fill={srcFill}
                 {...rest}
                 style={{ display: !toggleDisplay ? "block" : "none" }}
             />
@@ -31,6 +38,7 @@ export const LowHighImage = ({ highSrc, isMainImage = false, src, alt, ...rest }
                 onLoad={() => setToggleDisplay(true)}
                 loading={loadingStyle}
                 priority={priorityLoad}
+                fill={highSrcFill}
             />
         </>
     )
