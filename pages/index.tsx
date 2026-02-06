@@ -35,6 +35,7 @@ const carouselImages: { src: string; title: string }[] = [
 
 export const getStaticProps = async ({ locale }: { locale: string }) => {
     // schedule is from featured-topics.json
+    // minor comment for test
     const featuredTopicRef: string = "topics/" + getFeaturedTopic(getSchedule())
 
     return {
