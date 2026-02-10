@@ -1,0 +1,74 @@
+.lightbox {
+    height: 100vh;
+    background: #000;
+    width: 100%;
+    box-sizing: content-box;
+}
+.lightbox svg{
+    color: #ffffff;
+}
+.container{
+    width: 95%;
+    margin: 0 auto; 
+    padding-top: 20px;
+}
+.header {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    color: #ffffff;
+}
+.headRight{
+    display: flex;
+    gap: 12px;
+    cursor: pointer;
+}
+.headRight span{
+    cursor: pointer;
+}
+.headLeft{
+    display: flex;
+    gap: 6px;
+}
+.headLeft span{
+    cursor: pointer;
+}
+.headLeft svg{
+    cursor: pointer;
+}
+.body {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: #ffffff;
+}
+.box {
+    max-height: calc(100vh - 100px);
+    margin: auto;
+}
+.box img {
+    display: block;
+    max-height: calc(100vh - 200px);
+}
+
+.box h1{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.auto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.arrow {
+    padding: 14px;
+    border: 1px solid #efefef;
+    border-radius: 100%;
+}
+
+.arrow:hover {
+    background: #d1d1d17c;
+}
