@@ -1,6 +1,5 @@
 import React from "react"
 import { motion } from "motion/react"
-import { Image } from "react-bootstrap"
 import styles from "./Timeline.module.scss"
 import { PhotosWrapper } from "@/components/GalleryComponents/PhotosWrapper/PhotosWrapper"
 import { Mosaic } from "@/components/GalleryComponents/Mosaic/Mosaic"
@@ -20,12 +19,26 @@ const EventContent: React.FC<EventContentProps> = ({ activeEvent, textColor, isL
         {activeEvent.photos && activeEvent.photos.length > 0 && (
             <div className={styles.eventImageContainer}>
                 {activeEvent.galleryType === "single" && (
-                    <Image
-                        src={activeEvent.photos[0].src}
-                        alt={activeEvent.photos[0].alt || ""}
-                        fluid
-                        className={styles.eventImage}
-                    />
+                    <div className={styles.eventImage}>
+                        <PhotosWrapper
+                            type="single"
+                            images={[
+                                {
+                                    src: activeEvent.photos[0].src || "",
+                                    title: activeEvent.photos[0].title || "",
+                                    alt: activeEvent.photos[0].alt || "",
+                                },
+                            ]}
+                            uncropped={[
+                                {
+                                    src: activeEvent.photos[0].src || "",
+                                    title: activeEvent.photos[0].title || "",
+                                    alt: activeEvent.photos[0].alt || "",
+                                },
+                            ]}
+                            blocks={[1]}
+                        />
+                    </div>
                 )}
                 {activeEvent.galleryType !== "single" && activeEvent.galleryType !== "mosaic" && (
                     <PhotosWrapper
