@@ -1,6 +1,7 @@
 import { ImageCarousel } from "../Carousel/Carousel"
 import { Mosaic } from "../Mosaic/Mosaic"
 import { NestedModal } from "../NestedModal/NestedModal"
+import { SingleImage } from "../SinglePhoto/SinglePhoto"
 
 interface PhotosWrapperProps {
     type: string
@@ -48,5 +49,5 @@ export const PhotosWrapper = ({
     if (type === "carousel") {
         return <ImageCarousel images={images} subTitle={subTitle} topic />
     }
-    return <></>
+    return <SingleImage img={images[0]} subTitle={subTitle} />
 }
