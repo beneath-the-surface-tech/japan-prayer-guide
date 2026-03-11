@@ -149,11 +149,12 @@ exports[`Footer Snapshot test 1`] = `
               </a>
             </div>
             <div
-              class="text-center py-4 px-3 row"
+              class="text-center py-4 px-3 d-flex justify-content-center row"
             >
               <p
                 class="text-white fs-6 fw-light footer-copyright"
                 data-testid="copyright"
+                style="max-width: 260px;"
               >
                 footer.copyright
               </p>
@@ -176,7 +177,7 @@ exports[`Footer Snapshot test 1`] = `
             data-testid="footer-2"
           >
             <div
-              class="d-flex flex-column justify-content-center mt-4 mb-3 px-4 col-sm-4"
+              class="d-flex flex-column justify-content-center mt-4 mb-3 px-4 col-sm-5"
             >
               <div
                 class="mb-4 row"
@@ -234,7 +235,7 @@ exports[`Footer Snapshot test 1`] = `
               </div>
             </div>
             <div
-              class="col-sm-6"
+              class="col-sm-5"
             />
             <div
               class="my-4 pl-5 col-sm-2"
@@ -481,11 +482,12 @@ exports[`Footer Snapshot test 1`] = `
             </a>
           </div>
           <div
-            class="text-center py-4 px-3 row"
+            class="text-center py-4 px-3 d-flex justify-content-center row"
           >
             <p
               class="text-white fs-6 fw-light footer-copyright"
               data-testid="copyright"
+              style="max-width: 260px;"
             >
               footer.copyright
             </p>
@@ -508,7 +510,7 @@ exports[`Footer Snapshot test 1`] = `
           data-testid="footer-2"
         >
           <div
-            class="d-flex flex-column justify-content-center mt-4 mb-3 px-4 col-sm-4"
+            class="d-flex flex-column justify-content-center mt-4 mb-3 px-4 col-sm-5"
           >
             <div
               class="mb-4 row"
@@ -566,7 +568,7 @@ exports[`Footer Snapshot test 1`] = `
             </div>
           </div>
           <div
-            class="col-sm-6"
+            class="col-sm-5"
           />
           <div
             class="my-4 pl-5 col-sm-2"
