@@ -65,8 +65,12 @@ export default function Footer() {
                                 </a>
                             </IconContext.Provider>
                         </Row>
-                        <Row className="text-center py-4 px-3">
-                            <p className="text-white fs-6 fw-light footer-copyright" data-testid={"copyright"}>
+                        <Row className="text-center py-4 px-3 d-flex justify-content-center">
+                            <p
+                                className="text-white fs-6 fw-light footer-copyright"
+                                style={{ maxWidth: "260px" }}
+                                data-testid={"copyright"}
+                            >
                                 <Trans t={t} i18nKey="footer.copyright" />
                             </p>
                         </Row>
@@ -82,7 +86,7 @@ export default function Footer() {
                 </div>
                 <Container>
                     <Container fluid className="bg-primary pt-3 d-flex" data-testid="footer-2">
-                        <Col className="d-flex flex-column justify-content-center mt-4 mb-3 px-4" sm={4}>
+                        <Col className="d-flex flex-column justify-content-center mt-4 mb-3 px-4" sm={5}>
                             <Row className="mb-4">
                                 <LinksList additional="1" />
                             </Row>
@@ -92,7 +96,7 @@ export default function Footer() {
                                 </p>
                             </Row>
                         </Col>
-                        <Col sm={6}></Col>
+                        <Col sm={5}></Col>
                         <Col sm={2} className="my-4 pl-5">
                             <Row className="d-flex align-items-center pt-2 pb-2">
                                 <Image style={{ height: "72px", width: "96px" }} src={craneLogo} alt="logo"></Image>
