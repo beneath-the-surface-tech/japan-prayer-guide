@@ -61,7 +61,7 @@
         "link4": "資料",
         "link5": "活動紹介",
         "tagline": "私たちの働きは、日本における福音前進のために祈ることができるよう神の民を呼びかけ、整えることです。",
-        "copyright": "© 2026 御心が地にもなるように　転載禁止"
+        "copyright": "© {{year}} 御心が地にもなるように　転載禁止"
     },
     "errors": { "videoLoadError": "Could not load embed video" }
 }
