@@ -15,6 +15,7 @@ export default function Footer() {
     const vimeoUrl: string = t("footer.vimeoUrl", "")
     const amazonUrl: string = t("footer.amazonUrl", "")
     const instaUrl: string = t("footer.instaUrl", "")
+    const currentYear = new Date().getFullYear()
 
     return (
         // Footer needs to be two separate things I THINK because the order of components is different between
@@ -67,7 +68,7 @@ export default function Footer() {
                         </Row>
                         <Row className="text-center py-4 px-3">
                             <p className="text-white fs-6 fw-light footer-copyright" data-testid={"copyright"}>
-                                <Trans t={t} i18nKey="footer.copyright" />
+                                <Trans t={t} i18nKey="footer.copyright" values={{ year: currentYear }} />
                             </p>
                         </Row>
                     </Container>
@@ -88,7 +89,7 @@ export default function Footer() {
                             </Row>
                             <Row className="pt-3 px-2">
                                 <p className="text-white fs-5 fw-light footer-copyright" data-testid={"copyright-2"}>
-                                    <Trans t={t} i18nKey="footer.copyright" />
+                                    <Trans t={t} i18nKey="footer.copyright" values={{ year: currentYear }} />
                                 </p>
                             </Row>
                         </Col>
