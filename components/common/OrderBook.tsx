@@ -238,6 +238,21 @@ export function OrderBookV2() {
         )
     }
 
+    function KOSection() {
+        return (
+            <Container className="home-order-section bg-grey-1 d-flex flex-column align-items-center">
+                <Link
+                    className="fs-5 japan-order bg-grey-1 text-center text-secondary-5 border-secondary-5 fw-bold fs-5 mb-4 mt-4 p-2 text-decoration-none border rounded"
+                    href="https://omf.org/kr/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <Trans t={t} i18nKey="order.learnMoreAndOrder" />
+                </Link>
+            </Container>
+        )
+    }
+
     const renderOrder = () => {
         if (dropdown === "en") {
             return <>{ENSection()}</>
@@ -249,6 +264,8 @@ export function OrderBookV2() {
             return <>{NOSection()}</>
         } else if (dropdown === "ga") {
             return <>{GASection()}</>
+        } else if (dropdown === "ko") {
+            return <>{KOSection()}</>
         }
     }
 
@@ -314,6 +331,9 @@ export function OrderBookV2() {
                     </MenuItem>
                     <MenuItem className="menu-items" value="no">
                         Norwegian
+                    </MenuItem>
+                    <MenuItem className="menu-items" value="ko">
+                        Korean
                     </MenuItem>
                 </Select>
             </Container>
