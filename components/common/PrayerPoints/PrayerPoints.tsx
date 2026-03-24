@@ -22,6 +22,7 @@ export default function PrayerPoints({ topicTrans, displayStyle }: prayerProps) 
     const prayerPoints: string = topicTrans("prayerSummary")
     const featuredImg: string = topicTrans("heroPhoto") as string
     const featuredTopicUrl: string = topicTrans("path", "all")
+    const focus = topicTrans("heroFocus")
 
     let alignLeft: boolean = false
     let showTitle: boolean = false
@@ -59,7 +60,14 @@ export default function PrayerPoints({ topicTrans, displayStyle }: prayerProps) 
                     " prayer-points-card"
                 }
             >
-                {showImg && <Card.Img variant="top" src={featuredImg} className="prayer-img" />}
+                {showImg && (
+                    <Card.Img
+                        variant="top"
+                        src={featuredImg}
+                        className="prayer-img"
+                        style={{ objectPosition: focus }}
+                    />
+                )}
                 <Card.Body data-testid="prayer-points-body" className={style}>
                     {showTitle && (
                         <Card.Text
