@@ -16,6 +16,7 @@ exports[`Prayer Points Snapshot test 1`] = `
           <img
             class="card-img-top prayer-img"
             src="A,B"
+            style="object-position: A,B;"
           />
           <div
             class="featured card-body"
@@ -74,6 +75,7 @@ exports[`Prayer Points Snapshot test 1`] = `
         <img
           class="card-img-top prayer-img"
           src="A,B"
+          style="object-position: A,B;"
         />
         <div
           class="featured card-body"
