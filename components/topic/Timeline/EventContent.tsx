@@ -15,7 +15,7 @@ interface EventContentProps {
 const EventContent: React.FC<EventContentProps> = ({ activeEvent, textColor, isLast = false }) => (
     <motion.div className={styles.eventContent} animate={{ color: textColor }}>
         <h3 className={styles.eventYear}>{activeEvent.year}</h3>
-        <p className={styles.eventDescription}>{activeEvent.text_body}</p>
+        <p className={styles.eventDescription} dangerouslySetInnerHTML={{ __html: activeEvent.text_body }} />
         {activeEvent.photos && activeEvent.photos.length > 0 && (
             <div className={styles.eventImageContainer}>
                 {activeEvent.galleryType === "single" && (
