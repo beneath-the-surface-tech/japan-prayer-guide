@@ -75,12 +75,12 @@ export function getTopicLocaleData(pages: PageEntity[], localePath: string) {
             topicPage?.timelineEras?.map((era) => ({
                 id: era.id,
                 title: era[`title_${locale}` as "title_en" | "title_ja"],
-                era: era.era,
+                era: era[`era_${locale}`] || era.era,
                 events: era.events
                     ?.sort((a, b) => a.order - b.order)
                     .map((event) => ({
                         id: event.id,
-                        year: event.year,
+                        year: event[`year_${locale}`] || event.year,
                         title: event.title,
                         order: event.order,
                         text_body: event[`text_body_${locale}` as "text_body_en" | "text_body_ja"],
