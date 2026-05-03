@@ -7,11 +7,14 @@ export class TimelineEra {
     @typeorm.PrimaryGeneratedColumn()
     id!: number
 
-    @typeorm.Column({ name: "title_en", type: "text", nullable: true })
-    title_en?: string
-
     @typeorm.Column({ type: "text", nullable: true })
     era?: string
+
+    @typeorm.Column({ name: "era_ja", type: "text", nullable: true })
+    era_ja?: string
+
+    @typeorm.Column({ name: "title_en", type: "text", nullable: true })
+    title_en?: string
 
     @typeorm.Column({ name: "title_ja", type: "text", nullable: true })
     title_ja?: string

@@ -25,6 +25,9 @@ export class TimelineEvents {
     @typeorm.Column({ type: "text", nullable: true })
     year?: string
 
+    @typeorm.Column({ name: "year_ja", type: "text", nullable: true })
+    year_ja?: string
+
     @typeorm.Column({ type: "text", nullable: true })
     title?: string
 
