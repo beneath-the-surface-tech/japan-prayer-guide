@@ -200,9 +200,11 @@ const Home = ({ featuredTopicRef }: { featuredTopicRef: string }) => {
             </IconContext.Provider>
           </Container> */}
 
-                    <Button className="fw-bold coming-soon-button fs-4 bg-grey-4 text-white px-3 text-center border-0 mt-3 mb-3 w-100">
-                        <Trans t={t} i18nKey="comingSoon" />
-                    </Button>
+                    <a href="https://www.japanprayerguide.com/resources">
+                        <Button className="fw-bold coming-soon-button fs-4 bg-secondary-5 border-secondary-5 text-white px-3 text-center border-0 mt-3 mb-3 w-100">
+                            <Trans t={t} i18nKey="comingSoon" />
+                        </Button>
+                    </a>
                 </div>
 
                 {/* Beneath the Surface initiative - About snippet */}
