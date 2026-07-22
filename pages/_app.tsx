@@ -5,6 +5,8 @@ import "../styles/main.scss"
 import nextI18nextConfig from "../next-i18next.config"
 import { ClearCacheButton } from "@/components/dev/ClearCacheButton"
 
+// Test Comment
+
 function App({ Component, pageProps }: AppProps) {
     return (
         <>
