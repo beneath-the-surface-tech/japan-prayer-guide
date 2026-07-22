@@ -129,10 +129,8 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
     if (timelineEras && timelineEras.length > 0) {
         sortedEras = [...(timelineEras ?? [])]
         if (sortedEras.length > 0 && sortedEras[0]?.id) {
-            console.log("here?")
             sortedEras.sort((a, b) => (a?.id ?? 0) - (b?.id ?? 0))
         } else if (sortedEras.length > 0 && sortedEras[0].era) {
-            console.log("or here?")
             // backup, incase
             const finalOrder: TimelineEra[] = []
             for (let i = 0; i < ERA_ORDER.length; i++) {
