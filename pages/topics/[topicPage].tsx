@@ -45,7 +45,6 @@ export interface TimelineEra {
     title: string
     era: string
     events?: TimelineEvent[]
-    id?: number
 }
 
 const isDev = process.env.NODE_ENV === "development"
@@ -130,19 +129,22 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
     const previousPath = t("prevTopicPath")
     const nextPath = t("nextTopicPath")
 
-    let sortedEras = [...(timelineEras ?? [])]
-    if (sortedEras.length > 0 && sortedEras[0].id) {
-        sortedEras.sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
-    } else if (sortedEras.length > 0 && sortedEras[0].era) {
-        // backup, incase
-        const finalOrder: TimelineEra[] = []
-        for (let i = 0; i < ERA_ORDER.length; i++) {
-            const toAdd = sortedEras.find((era) => era.era.includes(ERA_ORDER[i]))
-            if (toAdd) {
-                finalOrder.push(toAdd)
+    let sortedEras: TimelineEra[] = []
+    if (timelineEras && timelineEras.length > 0) {
+        sortedEras = [...(timelineEras ?? [])]
+        if (sortedEras.length > 0 && sortedEras[0]?.id) {
+            sortedEras.sort((a, b) => (a?.id ?? 0) - (b?.id ?? 0))
+        } else if (sortedEras.length > 0 && sortedEras[0].era) {
+            // backup, incase
+            const finalOrder: TimelineEra[] = []
+            for (let i = 0; i < ERA_ORDER.length; i++) {
+                const toAdd = sortedEras.find((era) => era.era.includes(ERA_ORDER[i]))
+                if (toAdd) {
+                    finalOrder.push(toAdd)
+                }
             }
+            sortedEras = finalOrder
         }
-        sortedEras = finalOrder
     }
 
     return (
