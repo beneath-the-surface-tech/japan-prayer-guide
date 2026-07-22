@@ -17,6 +17,13 @@ import AppHeader from "../../components/common/AppHeader"
 import Link from "next/link"
 import Timeline from "../../components/topic/Timeline/Timeline"
 
+const ERA_ORDER = [
+    "1549",
+    "1853",
+    "1946",
+    "2012"
+]
+
 export interface TimelinePhoto {
     order: number
     src: string
@@ -38,6 +45,7 @@ export interface TimelineEra {
     title: string
     era: string
     events?: TimelineEvent[]
+    id?: number
 }
 
 const isDev = process.env.NODE_ENV === "development"
@@ -122,6 +130,21 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
     const previousPath = t("prevTopicPath")
     const nextPath = t("nextTopicPath")
 
+    let sortedEras = [...(timelineEras ?? [])]
+    if (sortedEras.length > 0 && sortedEras[0].id) {
+        sortedEras.sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
+    } else if (sortedEras.length > 0 && sortedEras[0].era) {
+        // backup, incase
+        const finalOrder: TimelineEra[] = []
+        for (let i = 0; i < ERA_ORDER.length; i++) {
+            const toAdd = sortedEras.find((era) => era.era.includes(ERA_ORDER[i]))
+            if (toAdd) {
+                finalOrder.push(toAdd)
+            }
+        }
+        sortedEras = finalOrder
+    }
+
     return (
         <>
             <AppHeader title={title} description={title} pageType="article" image={heroPhoto} />
@@ -188,7 +211,7 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
                     )}
                 </Container>
                 {/* Timeline */}
-                {timelineEras && timelineEras.length > 0 && <Timeline timelineEras={timelineEras} />}
+                {sortedEras && sortedEras.length > 0 && <Timeline timelineEras={sortedEras} />}
 
                 <Container className="main-section-container">
                     {/* Infographics: Uncomment after conference */}
