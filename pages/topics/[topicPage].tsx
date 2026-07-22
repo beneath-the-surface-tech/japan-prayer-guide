@@ -17,12 +17,7 @@ import AppHeader from "../../components/common/AppHeader"
 import Link from "next/link"
 import Timeline from "../../components/topic/Timeline/Timeline"
 
-const ERA_ORDER = [
-    "1549",
-    "1853",
-    "1946",
-    "2012"
-]
+const ERA_ORDER = ["1549", "1853", "1946", "2012"]
 
 export interface TimelinePhoto {
     order: number
@@ -45,6 +40,7 @@ export interface TimelineEra {
     title: string
     era: string
     events?: TimelineEvent[]
+    id?: number
 }
 
 const isDev = process.env.NODE_ENV === "development"
@@ -133,8 +129,10 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
     if (timelineEras && timelineEras.length > 0) {
         sortedEras = [...(timelineEras ?? [])]
         if (sortedEras.length > 0 && sortedEras[0]?.id) {
+            console.log("here?")
             sortedEras.sort((a, b) => (a?.id ?? 0) - (b?.id ?? 0))
         } else if (sortedEras.length > 0 && sortedEras[0].era) {
+            console.log("or here?")
             // backup, incase
             const finalOrder: TimelineEra[] = []
             for (let i = 0; i < ERA_ORDER.length; i++) {
