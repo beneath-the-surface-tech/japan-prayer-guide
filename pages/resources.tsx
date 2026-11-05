@@ -134,7 +134,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
     // Use the equal height hook to make elements with "equal-height" class the same height
     useEqualHeight("equal-height")
 
-    const VIMEO_URL = "https://vimeo.com/japanprayerguide"
+    const YOUTUBE_URL = "https://www.youtube.com/@japanprayerguide"
     const heroHeader: string = t("heroHeader")
     const heroSubtitle: string = t("heroSubtitle")
     const copyrightText: string = t("copyrightText")
@@ -222,7 +222,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                                 <p className="mt-2">
                                     <Link
                                         className="text-secondary-5 text-decoration-underline mb-4"
-                                        href={VIMEO_URL}
+                                        href={YOUTUBE_URL}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
