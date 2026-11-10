@@ -3,8 +3,8 @@
     "webpageTitle": "資料",
     "heroHeader": "資料",
     "heroSubtitle": "当ウェブサイトのデザイン、テキスト、メディア素材は、ダウンロードまたはストリーミングでご利用いただけます。 私たちの願いは、これらの資料を通して多くの方々が日本のための祈りに招かれ、整えられることです。",
-    "copyrightText": "We have applied a <0>Creative Commons BY-NC-ND 4.0 license</0> to our downloadable assets. We welcome you to freely use or redistribute these resources for ministry or prayer within the parameters of the license. For other usage, please contact us beforehand. Read more about the permissions of the license <1>here</1>.",
-    "copyrightUrl": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "copyrightText": "当サイトでダウンロードできる素材には、<0>クリエイティブ・コモンズ 表示-非営利-改変禁止 4.0 国際ライセンス</0>（CC BY-NC-ND 4.0）を適用しています。ライセンスの範囲内であれば、祈りやミニストリーのために、これらの素材を自由にご利用・再配布いただけます。それ以外の目的でご利用の場合は、事前にご相談ください。",
+    "copyrightUrl": "https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja",
     "byMediaHeading": "メディアタイプ別ダウンロード",
     "byMediaAltText": "TODO A picture of media types",
     "byMediaDescriptions": [

@@ -192,10 +192,7 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                 <div className="resources-content-container">
                     <p className="text-left">
                         <Trans
-                            components={[
-                                <LinkFromJson key="copyrightText0" href={copyrightUrl} />,
-                                <LinkFromJson key="copyrightText1" href={copyrightUrl} />,
-                            ]}
+                            components={[<LinkFromJson key="copyrightText0" href={copyrightUrl} />]}
                         >
                             {copyrightText}
                         </Trans>
