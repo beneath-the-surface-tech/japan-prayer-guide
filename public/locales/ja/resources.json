@@ -10,7 +10,7 @@
     "byMediaDescriptions": [
         "以下の資料はメディアタイプ別にダウンロードいただけます。ボタンをクリックすると、外部サイト（BoxまたはGoogleドライブ）へ移動します。"
     ],
-    "byPrayerVideos": "Prayer recordings are available to stream here.",
+    "byPrayerVideos": "祈りの音声の視聴はこちらから",
     "byMediaUrls": {
         "infographicsUrl": "https://app.box.com/s/k99s92j06qgbp4fnpihq8373t9bx7vgm?sortColumn=name&sortDirection=ASC",
         "pdfUrl": "https://app.box.com/s/utrqmn7n1b9wcz1tovll0p6za9wlq3gw?sortColumn=name&sortDirection=ASC",
@@ -27,8 +27,8 @@
     "byTopicBtn": "テーマ別ダウンロード",
     "byTopicBtnUrl": "https://app.box.com/s/5bjbdjywrag6fgb9k54j2tuuwbu7fqd6?sortColumn=name&sortDirection=ASC",
 
-    "tutHeading": "How to download",
-    "tutDescription": "Follow the instructions below to download resources on Box.",
+    "tutHeading": "ダウンロード方法",
+    "tutDescription": "Boxから資料をダウンロードするには、下記の手順に従ってください。",
     "tut1Heading": "Select and download",
     "tut1AltText": "TODO",
     "tut1Descriptions": [
