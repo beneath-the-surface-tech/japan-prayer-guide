@@ -29,15 +29,15 @@
 
     "tutHeading": "ダウンロード方法",
     "tutDescription": "Boxから資料をダウンロードするには、下記の手順に従ってください。",
-    "tut1Heading": "Select and download",
+    "tut1Heading": "ファイルを選択してダウンロードする",
     "tut1AltText": "TODO",
     "tut1Descriptions": [
-        "Hover over each file you want to download and click on the \"Select\" box. Then click the download icon on the top right of the page."
+        "ダウンロードしたい各ファイルにカーソルを合わせ、「選択」ボックスをクリックします。次に、ページ右上のダウンロードアイコンをクリックしてください。"
     ],
-    "tut2Heading": "Access files",
+    "tut2Heading": "ファイルを表示する",
     "tut2AltText": "TODO",
     "tut2Descriptions": [
-        "Your files can be found wherever you normally access downloads through your browser or computer."
+        "ダウンロードしたファイルは、お使いのブラウザやデバイスのダウンロードフォルダから確認できます。"
     ],
 
     "referencesHeading": "参考資料を確認する",
