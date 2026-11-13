@@ -8,7 +8,7 @@
     "byMediaHeading": "メディアタイプ別ダウンロード",
     "byMediaAltText": "TODO A picture of media types",
     "byMediaDescriptions": [
-        "The following resources are available to download by media type. Please note that clicking on the resource buttons will take you to an external website (Box or Google Drive) to download."
+        "以下の資料はメディアタイプ別にダウンロードいただけます。ボタンをクリックすると、外部サイト（BoxまたはGoogleドライブ）へ移動します。"
     ],
     "byPrayerVideos": "Prayer recordings are available to stream here.",
     "byMediaUrls": {
@@ -22,7 +22,7 @@
     "byTopicHeading": "テーマ別ダウンロード",
     "byTopicAltText": "A picture of topics",
     "byTopicDescriptions": [
-        "The resources are also available to download by topic. You can additionally find individual links to these resources at the bottom of each topic page."
+        "資料はテーマ別にもダウンロードできます。また、資料の個別リンクは、各テーマページの下部にも掲載しています。"
     ],
     "byTopicBtn": "テーマ別ダウンロード",
     "byTopicBtnUrl": "https://app.box.com/s/5bjbdjywrag6fgb9k54j2tuuwbu7fqd6?sortColumn=name&sortDirection=ASC",
