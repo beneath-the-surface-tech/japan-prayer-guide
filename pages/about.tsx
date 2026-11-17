@@ -29,7 +29,7 @@ export async function getStaticProps({ locale }: any) {
 }
 
 const About: React.FC = () => {
-    const { t } = useTranslation("about")
+    const { t, i18n } = useTranslation("about")
 
     const webpageTitle = t("webpageTitle", "About") as string
     const metaDescription = t("metaDescription", "About the prayer initiative")
@@ -109,7 +109,11 @@ const About: React.FC = () => {
                 {/* Verse section */}
                 <div className="w-100 py-5 px-4 bg-grey-7">
                     <Container className="w-100 about-verse">
-                        <h2 className="common-p text-white text-center fst-italic mt-3">
+                        <h2
+                            className={`common-p text-white text-center ${
+                                i18n.language === "ja" ? "fst-normal" : "fst-italic"
+                            } mt-3`}
+                        >
                             <Trans t={t} i18nKey="bible.content" />
                         </h2>
                         <h3 className="text-white text-center about-passage-location mt-4 mb-2">
