@@ -1,6 +1,6 @@
 {
     "galleryLabel": "Photo gallery",
-    "galleryClickInstructions": "Click photos to enlarge and view captions.",
+    "galleryClickInstructions": "Click photos to enlarge and view captions. (Not all photos may have captions.)",
     "galleryImageText": "## images",
     "factsLabel": "More facts about this topic",
     "nav": [
@@ -9,6 +9,6 @@
         { "refId": "topic-downloads", "label": "Resources" }
     ],
     "references": "View all references for this topic",
-    "previousTopic": "Previous Topic",
-    "nextTopic": "Next Topic"
+    "previousTopic": "Previous topic",
+    "nextTopic": "Next topic"
 }
