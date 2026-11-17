@@ -1,14 +1,14 @@
 {
     "galleryLabel": "ギャラリー",
-    "galleryClickInstructions": "写真をクリックして拡大・キャプションを表示します。",
+    "galleryClickInstructions": "写真をクリックして拡大・キャプションを表示します。（キャプションのない写真もあります。）",
     "galleryImageText": "写真##件",
-    "factsLabel": "More facts about this topic",
+    "factsLabel": "さらに詳しく",
     "nav": [
         { "refId": "about-topic", "label": "テーマ" },
         { "refId": "prayer-response", "label": "祈り" },
         { "refId": "topic-downloads", "label": "資料" }
     ],
-    "references": "このトピックの参考文献をすべて表示",
-    "previousTopic": "Previous Topic",
-    "nextTopic": "Next Topic"
+    "references": "テーマの参考資料を見る",
+    "previousTopic": "前のテーマ",
+    "nextTopic": "次のテーマ"
 }
