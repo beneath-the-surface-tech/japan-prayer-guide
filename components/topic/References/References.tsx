@@ -17,7 +17,7 @@ const style = {
 export const ReferencesSection = ({ localeRef }: { localeRef: string }) => {
     const [open, setOpen] = useState(false)
 
-    const { t: topic } = useTranslation(localeRef)
+    const { t: topic, i18n } = useTranslation(localeRef)
     const { t: topicCommon } = useTranslation("topic-pages")
 
     const linkLabel: string = topicCommon("references")
@@ -57,7 +57,7 @@ export const ReferencesSection = ({ localeRef }: { localeRef: string }) => {
                                     <Cross />
                                 </span>
                             </div>
-                            <div className="slideUp-title">References</div>
+                            <div className="slideUp-title">{i18n.language === "ja" ? "参考資料" : "References"}</div>
                             <hr className="mt-3 mb-4" />
                             <div className={"references-from-retool"}>
                                 {references && <div dangerouslySetInnerHTML={{ __html: references }} />}
