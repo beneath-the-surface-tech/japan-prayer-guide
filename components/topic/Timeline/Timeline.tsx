@@ -162,7 +162,7 @@ const Timeline: FC = () => {
             <Box className={`${styles.timelineGradient}`} width="100%" pt={20} minHeight="fit-content" pb={10}>
                 <Container className="main-section-container px-4">
                     <p className="quote text-primary-blue text-center">
-                        {isJapanese ? "日本キリスト教：4つの時代" : "Christianity in Japan: Four Eras"}
+                        {isJapanese ? "日本のキリスト教：4つの時代" : "Christianity in Japan: Four Eras"}
                     </p>
                     <div className="main-content">
                         <p className="text-left">
