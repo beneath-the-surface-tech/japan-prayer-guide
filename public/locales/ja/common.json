@@ -10,10 +10,10 @@
         "home": "ホーム"
     },
     "metaTitle": "御心が地にもなるように",
-    "prayerSummary": { "subtitle": "祈りましょう", "readMore": "もっと詳しく", "viewAll": "全てのテーマを見る" },
+    "prayerSummary": { "subtitle": "祈りましょう", "readMore": "もっと詳しく", "viewAll": "すべてのテーマを見る" },
     "order": {
         "title": "英語の冊子を注文する",
-        "blurb": "配送先の地域を選択してください",
+        "blurb": "配送先を選択してください",
         "regions": [
             { "text": "北米", "url": "" },
             {
@@ -22,10 +22,18 @@
             },
             { "text": "その他", "url": "https://uk.10ofthose.com/product/9780853631965/beneath-the-surface-paperback" }
         ],
-        "prompt": "英語の eBook を注文する",
+        "prompt": "英語の電子書籍を注文する",
         "japan": "日本語の冊子を注文する",
         "warning": "現在は国内発送のみ承っています。",
-        "form": "注文フォームを入力する"
+        "form": "注文フォームを入力する",
+        "titleV2": "祈りの冊子を注文する",
+        "blurbV2": "言語を選択してください",
+        "learnMore": "もっと詳しく",
+        "learnMoreAndOrder": "もっと詳しく",
+        "downloadThePDF": "PDFをダウンロード",
+        "viewOnline": "PDFをブラウザで表示",
+        "germanBlurb": "ドイツおよびスイスの4つの宣教団体の協力で制作されました。",
+        "norwegianBlurb": "ノルウェー国内の8つの宣教団体および教団の協力で制作されました。"
     },
     "response": {
         "title": "祈りの応答",
