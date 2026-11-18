@@ -3,6 +3,7 @@
 import { Box } from "@mui/material"
 import { motion, useMotionValueEvent, useScroll } from "motion/react"
 import { FC, useEffect, useRef, useState } from "react"
+import { useTranslation } from "next-i18next"
 import { Container } from "react-bootstrap"
 import { TimelineEra } from "../../../pages/topics/[topicPage]"
 import EraEvents from "./EraEvents"
@@ -17,6 +18,8 @@ interface TimelineProps {
 }
 
 const Timeline: FC = () => {
+    const { i18n } = useTranslation()
+    const isJapanese = i18n.language === "ja"
     const {
         timelineEras,
         eventGaps,
@@ -158,18 +161,20 @@ const Timeline: FC = () => {
         <>
             <Box className={`${styles.timelineGradient}`} width="100%" pt={20} minHeight="fit-content" pb={10}>
                 <Container className="main-section-container px-4">
-                    <p className="quote text-primary-blue text-center">Timeline of Christianity in Japan</p>
+                    <p className="quote text-primary-blue text-center">
+                        {isJapanese ? "日本キリスト教：4つの時代" : "Christianity in Japan: Four Eras"}
+                    </p>
                     <div className="main-content">
                         <p className="text-left">
-                            We&apos;ve created this timeline to highlight some key events in the history of Christianity
-                            in Japan, with an emphasis on missionary history.
+                            {isJapanese
+                                ? "この年表では、宣教史に焦点を当てながら、4つの時代における日本のキリスト教を概観します。ここからは、日本でイエスの御名が初めて宣べ伝えられてから、500年近く経つことがわかります。以来、日本の教会は深い忍耐をもって迫害や困難を乗り越え、たゆまず歩んできました。"
+                                : "This timeline gives an overview of Christianity in Japan across four eras, with an emphasis on missionary history. In it, you will see that it has been almost 500 years since the name of Jesus was first proclaimed in Japan. Since then, the Japanese church has persevered through long periods of persecution and hardship."}
                         </p>
 
                         <p className="text-left">
-                            It has been almost 500 years since the name of Jesus was first proclaimed in Japan. Since
-                            then, the Japanese church has persevered through long periods of persecution and hardship.
-                            Today, less than one percent of Japan&apos;s population is Christian. We long for a
-                            breakthrough of God&apos;s Word and his Spirit across Japan! Will you join us in prayer?
+                            {isJapanese
+                                ? "今日、日本のクリスチャン人口は、全体の1パーセントに及びません。私たちは、日本のために祈ってくださる多くの方々と共に、福音が、そして神の御国が、この地で大きく前進するのを見たいと切に願っています。そのためには、熱心な信仰の祈りが必要であると信じます。この祈りに、あなたも加わりませんか？"
+                                : "Today, less than one percent of Japan's population is Christian. Together with many people praying for Japan, we long to see a significant breakthrough of the gospel and God's kingdom here. We believe that committed prayers of faith are needed for this. Will you join us?"}
                         </p>
                     </div>
                 </Container>
