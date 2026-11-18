@@ -225,7 +225,7 @@ export function OrderBookV2() {
                 </Link>
                 <Link
                     className="fs-4 text-secondary-5 fw-bold text-decoration-underline mt-1 mb-1"
-                    href="https://omf.org/de/resource/japan-gebetsheft-hinter-den-kulissen/#:~:text=Read%20the%20magazine%20online"
+                    href="https://www.yumpu.com/de/document/read/65623747/japan-hinter-den-kulissen-gebetsimpulse-fur-30-tage"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
@@ -241,7 +241,7 @@ export function OrderBookV2() {
     const renderOrder = () => {
         if (dropdown === "en") {
             return <>{ENSection()}</>
-        } else if (dropdown === "jp") {
+        } else if (dropdown === "ja") {
             return <>{JASection()}</>
         } else if (dropdown === "ch") {
             return <>{CHSection()}</>
@@ -301,19 +301,19 @@ export function OrderBookV2() {
                     onClose={() => setOpen(false)}
                 >
                     <MenuItem className="menu-items" value="en">
-                        English
+                        {language === "ja" ? "英語" : "English"}
                     </MenuItem>
-                    <MenuItem className="menu-items" value="jp">
-                        Japanese
+                    <MenuItem className="menu-items" value="ja">
+                        {language === "ja" ? "日本語" : "Japanese"}
                     </MenuItem>
                     <MenuItem className="menu-items" value="ch">
-                        Chinese (traditional)
+                        {language === "ja" ? "中国語（繁体字）" : "Chinese (traditional)"}
                     </MenuItem>
                     <MenuItem className="menu-items" value="ga">
-                        German
+                        {language === "ja" ? "ドイツ語" : "German"}
                     </MenuItem>
                     <MenuItem className="menu-items" value="no">
-                        Norwegian
+                        {language === "ja" ? "ノルウェー語" : "Norwegian"}
                     </MenuItem>
                 </Select>
             </Container>
