@@ -200,9 +200,11 @@ const Home = ({ featuredTopicRef }: { featuredTopicRef: string }) => {
             </IconContext.Provider>
           </Container> */}
 
-                    <Button className="fw-bold coming-soon-button fs-4 bg-grey-4 text-white px-3 text-center border-0 mt-3 mb-3 w-100">
-                        <Trans t={t} i18nKey="comingSoon" />
-                    </Button>
+                    <Link href="/resources" locale={i18n.language}>
+                        <Button className="fw-bold coming-soon-button fs-4 bg-grey-4 text-white px-3 text-center border-0 mt-3 mb-3 w-100">
+                            <Trans t={t} i18nKey="comingSoon" />
+                        </Button>
+                    </Link>
                 </div>
 
                 {/* Beneath the Surface initiative - About snippet */}
