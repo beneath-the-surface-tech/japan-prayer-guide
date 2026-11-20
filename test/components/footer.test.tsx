@@ -5,7 +5,7 @@ jest.mock("next-i18next", () => ({
     // this mock makes sure any components using the translate hook can use it without a warning being shown
     useTranslation: () => {
         return {
-            t: (str: any) => str,
+            t: (str: any, options?: any) => (options?.year ? `${str} ${options.year}` : str),
             i18n: {
                 changeLanguage: () => new Promise(() => {}),
                 language: "en",
@@ -43,7 +43,7 @@ describe("Footer", () => {
         const copyright = screen.getByTestId("copyright")
         // expect(copyright).toHaveTextContent("Copyright © 2021 Beneath the Surface. All rights reserved.");
         // Can't seem to make it render the right text content
-        expect(copyright).toHaveTextContent("footer.copyright")
+        expect(copyright).toHaveTextContent(`footer.copyright ${new Date().getFullYear()}`)
     })
 
     test("Certain components have a max-width (so that they are not too stretched in desktop view", () => {

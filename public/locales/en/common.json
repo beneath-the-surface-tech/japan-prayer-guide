@@ -75,7 +75,7 @@
         "link4": "Resources",
         "link5": "About",
         "tagline": "We exist to call and equip God's people to pray for spiritual breakthrough in Japan.",
-        "copyright": "Copyright © 2026 Beneath the Surface. All rights reserved."
+        "copyright": "Copyright © {{year}} Beneath the Surface. All rights reserved."
     },
     "errors": { "videoLoadError": "Could not load embed video" }
 }
