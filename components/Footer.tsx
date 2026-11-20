@@ -2,7 +2,7 @@ import React from "react"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import { IconContext } from "react-icons/lib"
-import { BsInstagram, BsVimeo } from "react-icons/bs"
+import { BsInstagram, BsYoutube } from "react-icons/bs"
 import { FaAmazon } from "react-icons/fa"
 import Link from "next/link"
 import { Col } from "react-bootstrap"
@@ -12,7 +12,7 @@ import craneLogo from "../public/wire-logo.png"
 
 export default function Footer() {
     const { t } = useTranslation("common")
-    const vimeoUrl: string = t("footer.vimeoUrl", "")
+    const youtubeUrl: string = t("footer.youtubeUrl", "")
     const amazonUrl: string = t("footer.amazonUrl", "")
     const instaUrl: string = t("footer.instaUrl", "")
 
@@ -41,11 +41,12 @@ export default function Footer() {
                             <IconContext.Provider value={{ size: "25px" }}>
                                 <a
                                     className="text-white footer-icon"
-                                    href={vimeoUrl}
+                                    href={youtubeUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label="YouTube"
                                 >
-                                    <BsVimeo />
+                                    <BsYoutube />
                                 </a>
                                 <a
                                     className="text-white footer-icon"
@@ -110,12 +111,12 @@ export default function Footer() {
                                 <IconContext.Provider value={{ size: "25px" }}>
                                     <a
                                         className="text-white footer-icon"
-                                        href={vimeoUrl}
-                                        aria-label="Vimeo"
+                                        href={youtubeUrl}
+                                        aria-label="YouTube"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <BsVimeo />
+                                        <BsYoutube />
                                     </a>
                                     <a
                                         className="text-white footer-icon"
