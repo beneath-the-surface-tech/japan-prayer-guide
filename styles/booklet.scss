@@ -75,6 +75,10 @@
             }
             @include media-breakpoint-down(md) {
                 max-height: 418px;
+
+                img {
+                    object-fit: contain;
+                }
             }
         }
         .book-text {
