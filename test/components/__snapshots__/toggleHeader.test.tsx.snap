@@ -14,7 +14,7 @@ exports[`ToggleHeader Snapshot test 1`] = `
         >
           <a
             class="navbar-brand"
-            href="/undefined"
+            href="/en"
           >
             <img
               alt="header.brandAlt"
@@ -23,8 +23,8 @@ exports[`ToggleHeader Snapshot test 1`] = `
               decoding="async"
               height="384"
               loading="lazy"
-              src="/_next/image?url=%2Fbts-crane-wht-logo-undefined.png&w=3840&q=75"
-              srcset="/_next/image?url=%2Fbts-crane-wht-logo-undefined.png&w=3840&q=75 1x"
+              src="/_next/image?url=%2Fbts-crane-wht-logo-en.png&w=3840&q=75"
+              srcset="/_next/image?url=%2Fbts-crane-wht-logo-en.png&w=3840&q=75 1x"
               style="color: transparent;"
               width="2136"
             />
@@ -126,6 +126,19 @@ exports[`ToggleHeader Snapshot test 1`] = `
                     </span>
                   </a>
                 </div>
+                <div
+                  class="d-none d-xl-flex align-items-center nav-item dropdown"
+                >
+                  <a
+                    aria-expanded="false"
+                    class="dropdown-toggle nav-link"
+                    href="#"
+                    role="button"
+                    tabindex="0"
+                  >
+                    English
+                  </a>
+                </div>
               </div>
               <div
                 class="d-xl-none text-center mobile-menu-footer container"
@@ -212,7 +225,7 @@ exports[`ToggleHeader Snapshot test 1`] = `
       >
         <a
           class="navbar-brand"
-          href="/undefined"
+          href="/en"
         >
           <img
             alt="header.brandAlt"
@@ -221,8 +234,8 @@ exports[`ToggleHeader Snapshot test 1`] = `
             decoding="async"
             height="384"
             loading="lazy"
-            src="/_next/image?url=%2Fbts-crane-wht-logo-undefined.png&w=3840&q=75"
-            srcset="/_next/image?url=%2Fbts-crane-wht-logo-undefined.png&w=3840&q=75 1x"
+            src="/_next/image?url=%2Fbts-crane-wht-logo-en.png&w=3840&q=75"
+            srcset="/_next/image?url=%2Fbts-crane-wht-logo-en.png&w=3840&q=75 1x"
             style="color: transparent;"
             width="2136"
           />
@@ -322,6 +335,19 @@ exports[`ToggleHeader Snapshot test 1`] = `
                   >
                     header.about
                   </span>
+                </a>
+              </div>
+              <div
+                class="d-none d-xl-flex align-items-center nav-item dropdown"
+              >
+                <a
+                  aria-expanded="false"
+                  class="dropdown-toggle nav-link"
+                  href="#"
+                  role="button"
+                  tabindex="0"
+                >
+                  English
                 </a>
               </div>
             </div>

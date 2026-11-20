@@ -8,6 +8,7 @@ jest.mock("react-i18next", () => ({
             t: (str: any) => str,
             i18n: {
                 changeLanguage: () => new Promise(() => {}),
+                language: "en",
             },
         }
     },
@@ -63,6 +64,14 @@ describe("ToggleHeader", () => {
     test("renders a language switcher in the mobile menu", () => {
         render(<ToggleHeader />)
         expect(screen.getByTestId("language-switcher")).toBeInTheDocument()
+    })
+
+    test("renders a language dropdown in the desktop navigation", () => {
+        render(<ToggleHeader />)
+        const languageDropdown = screen.getByRole("navigation").querySelector(".dropdown")
+
+        expect(languageDropdown).toHaveClass("d-none", "d-xl-flex")
+        expect(languageDropdown).toHaveTextContent("English")
     })
 
     test("clicking the Navbar.Toggle twice toggles the color scheme back to the light variant", () => {

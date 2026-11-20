@@ -1,6 +1,6 @@
 import React from "react"
 import Image from "next/image"
-import { Container, Nav, Navbar, Row } from "react-bootstrap"
+import { Container, Nav, Navbar, NavDropdown, Row } from "react-bootstrap"
 import { useState, useEffect } from "react"
 import { TFunction, Trans, useTranslation } from "next-i18next"
 import { useRouter } from "next/router"
@@ -156,10 +156,7 @@ const ToggleHeader: React.FC<HeaderProp> = ({ hideShadow = false }: HeaderProp) 
                                 href="/about"
                                 locale={i18n.language}
                             />
-                            {/* 
-                Need a more extensibile way for future languages but for now this should do
-              */}
-                            {/* {i18n.language === "en" ? (
+                            {i18n.language === "en" ? (
                                 <NavDropdown title="English" className="d-none d-xl-flex align-items-center">
                                     <NavDropdown.Item href="" onClick={() => handleLanguageChange("ja")}>
                                         日本語
@@ -171,7 +168,7 @@ const ToggleHeader: React.FC<HeaderProp> = ({ hideShadow = false }: HeaderProp) 
                                         English
                                     </NavDropdown.Item>
                                 </NavDropdown>
-                            )} */}
+                            )}
                         </Nav>
                         <Container className="d-xl-none text-center mobile-menu-footer">
                             <Row className="mb-4">
