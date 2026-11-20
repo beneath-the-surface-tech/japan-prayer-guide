@@ -46,6 +46,11 @@ describe("Footer", () => {
         expect(copyright).toHaveTextContent(`footer.copyright ${new Date().getFullYear()}`)
     })
 
+    test("Renders a language switcher in both footer layouts", () => {
+        render(<Footer />)
+        expect(screen.getAllByTestId("language-switcher")).toHaveLength(2)
+    })
+
     test("Certain components have a max-width (so that they are not too stretched in desktop view", () => {
         render(<Footer />)
         const linksList = screen.getByTestId("linksList")

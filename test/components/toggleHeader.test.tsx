@@ -1,4 +1,4 @@
-import { render, fireEvent } from "@testing-library/react"
+import { render, fireEvent, screen } from "@testing-library/react"
 import { ToggleHeader } from "../../components/ToggleHeader"
 
 jest.mock("react-i18next", () => ({
@@ -58,6 +58,11 @@ describe("ToggleHeader", () => {
         const navbar = getByRole("navigation")
         expect(navbar).toHaveClass("bg-primary")
         expect(navbar).toHaveClass("navbar-dark")
+    })
+
+    test("renders a language switcher in the mobile menu", () => {
+        render(<ToggleHeader />)
+        expect(screen.getByTestId("language-switcher")).toBeInTheDocument()
     })
 
     test("clicking the Navbar.Toggle twice toggles the color scheme back to the light variant", () => {

@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import { TFunction, Trans, useTranslation } from "next-i18next"
 import { useRouter } from "next/router"
 import Link from "next/link"
+import LanguageSwitcher from "./LanguageSwitcher"
 
 const NavLinkWithLocale = ({
     trans,
@@ -41,21 +42,6 @@ const ToggleHeader: React.FC<HeaderProp> = ({ hideShadow = false }: HeaderProp) 
     const { i18n } = useTranslation()
     const router = useRouter()
 
-    // const handleLanguageChange = (language: string) => {
-    //     i18n.changeLanguage(language)
-    //     const path = router.asPath
-    //     const options = {
-    //         locale: language,
-    //     }
-
-    //     router.push(path, path, options)
-    // }
-
-    // const handleLanguageChangeWithColorToggle = (language: string) => {
-    //     toggleColorScheme()
-    //     handleLanguageChange(language)
-    // }
-
     // when the Navbar.Collapse is expanded we want to switch to the dark theme
     const [bg, setBg] = useState("white")
     const [variant, setVariant] = useState("light")
@@ -63,6 +49,21 @@ const ToggleHeader: React.FC<HeaderProp> = ({ hideShadow = false }: HeaderProp) 
     const toggleColorScheme = () => {
         setBg(bg === "white" ? "primary" : "white")
         setVariant(variant === "light" ? "dark" : "light")
+    }
+
+    const handleLanguageChange = (language: string) => {
+        i18n.changeLanguage(language)
+        const path = router.asPath
+        const options = {
+            locale: language,
+        }
+
+        router.push(path, path, options)
+    }
+
+    const handleLanguageChangeWithColorToggle = (language: string) => {
+        toggleColorScheme()
+        handleLanguageChange(language)
     }
 
     // Without this useEffect, when you're in tablet/mobile width and the menu
@@ -174,7 +175,7 @@ const ToggleHeader: React.FC<HeaderProp> = ({ hideShadow = false }: HeaderProp) 
                         </Nav>
                         <Container className="d-xl-none text-center mobile-menu-footer">
                             <Row className="mb-4">
-                                {/* <LanguageSwitcher onClickFunc={handleLanguageChangeWithColorToggle} /> */}
+                                <LanguageSwitcher onClickFunc={handleLanguageChangeWithColorToggle} />
                             </Row>
                             <Image alt="Crane logo" src="/wire-logo.png" width="48" height="48" className="mb-2" />{" "}
                             <Row className="mt-2 mb-5">
