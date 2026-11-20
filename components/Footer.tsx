@@ -11,10 +11,11 @@ import Image from "next/image"
 import craneLogo from "../public/wire-logo.png"
 
 export default function Footer() {
-    const { t } = useTranslation("common")
+    const { t, i18n } = useTranslation("common")
     const youtubeUrl: string = t("footer.youtubeUrl", "")
     const amazonUrl: string = t("footer.amazonUrl", "")
     const instaUrl: string = t("footer.instaUrl", "")
+    const isJapanese = i18n.language.startsWith("ja")
 
     return (
         // Footer needs to be two separate things I THINK because the order of components is different between
@@ -68,7 +69,7 @@ export default function Footer() {
                         </Row>
                         <Row className="text-center py-4 px-3 d-flex justify-content-center">
                             <p
-                                className="text-white fs-6 fw-light footer-copyright"
+                                className={`text-white ${isJapanese ? "footer-copyright-ja" : "fs-6"} fw-light footer-copyright`}
                                 style={{ maxWidth: "260px" }}
                                 data-testid={"copyright"}
                             >
