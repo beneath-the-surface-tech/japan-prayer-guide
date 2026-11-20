@@ -259,6 +259,10 @@
                 margin-left: auto;
                 margin-right: auto;
 
+                img {
+                    object-position: center -2px;
+                }
+
                 @include media-breakpoint-up(xl) {
                     height: 244px;
                     width: 432px;
