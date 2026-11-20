@@ -14,7 +14,7 @@ exports[`ToggleHeader Snapshot test 1`] = `
         >
           <a
             class="navbar-brand"
-            href="/undefined"
+            href="/en"
           >
             <img
               alt="header.brandAlt"
@@ -23,8 +23,8 @@ exports[`ToggleHeader Snapshot test 1`] = `
               decoding="async"
               height="384"
               loading="lazy"
-              src="/_next/image?url=%2Fbts-crane-wht-logo-undefined.png&w=3840&q=75"
-              srcset="/_next/image?url=%2Fbts-crane-wht-logo-undefined.png&w=3840&q=75 1x"
+              src="/_next/image?url=%2Fbts-crane-wht-logo-en.png&w=3840&q=75"
+              srcset="/_next/image?url=%2Fbts-crane-wht-logo-en.png&w=3840&q=75 1x"
               style="color: transparent;"
               width="2136"
             />
@@ -126,13 +126,66 @@ exports[`ToggleHeader Snapshot test 1`] = `
                     </span>
                   </a>
                 </div>
+                <div
+                  class="d-none d-xl-flex align-items-center nav-item dropdown"
+                >
+                  <a
+                    aria-expanded="false"
+                    class="dropdown-toggle nav-link"
+                    href="#"
+                    role="button"
+                    tabindex="0"
+                  >
+                    English
+                  </a>
+                </div>
               </div>
               <div
                 class="d-xl-none text-center mobile-menu-footer container"
               >
                 <div
                   class="mb-4 row"
-                />
+                >
+                  <div
+                    class="ms-auto justify-content-center hstack gap-2"
+                    data-testid="language-switcher"
+                    id="language-switch"
+                  >
+                    <button
+                      aria-controls="header-navbar-nav"
+                      aria-label="Toggle navigation"
+                      class="navbar-toggler collapsed"
+                      type="button"
+                    >
+                      <a
+                        class="ms-auto text-white "
+                        data-testid="link-english"
+                        href="#english"
+                        role="button"
+                      >
+                        English
+                      </a>
+                    </button>
+                    <div
+                      class="vr border opacity-100"
+                    />
+                    <button
+                      aria-controls="header-navbar-nav"
+                      aria-label="Toggle navigation"
+                      class="navbar-toggler collapsed"
+                      type="button"
+                    >
+                      <a
+                        class="me-auto text-white "
+                        data-testid="link-japanese"
+                        href="#japanese"
+                        role="button"
+                      >
+                        日本語
+                      </a>
+                    </button>
+                  </div>
+                </div>
                 <img
                   alt="Crane logo"
                   class="mb-2"
@@ -172,7 +225,7 @@ exports[`ToggleHeader Snapshot test 1`] = `
       >
         <a
           class="navbar-brand"
-          href="/undefined"
+          href="/en"
         >
           <img
             alt="header.brandAlt"
@@ -181,8 +234,8 @@ exports[`ToggleHeader Snapshot test 1`] = `
             decoding="async"
             height="384"
             loading="lazy"
-            src="/_next/image?url=%2Fbts-crane-wht-logo-undefined.png&w=3840&q=75"
-            srcset="/_next/image?url=%2Fbts-crane-wht-logo-undefined.png&w=3840&q=75 1x"
+            src="/_next/image?url=%2Fbts-crane-wht-logo-en.png&w=3840&q=75"
+            srcset="/_next/image?url=%2Fbts-crane-wht-logo-en.png&w=3840&q=75 1x"
             style="color: transparent;"
             width="2136"
           />
@@ -284,13 +337,66 @@ exports[`ToggleHeader Snapshot test 1`] = `
                   </span>
                 </a>
               </div>
+              <div
+                class="d-none d-xl-flex align-items-center nav-item dropdown"
+              >
+                <a
+                  aria-expanded="false"
+                  class="dropdown-toggle nav-link"
+                  href="#"
+                  role="button"
+                  tabindex="0"
+                >
+                  English
+                </a>
+              </div>
             </div>
             <div
               class="d-xl-none text-center mobile-menu-footer container"
             >
               <div
                 class="mb-4 row"
-              />
+              >
+                <div
+                  class="ms-auto justify-content-center hstack gap-2"
+                  data-testid="language-switcher"
+                  id="language-switch"
+                >
+                  <button
+                    aria-controls="header-navbar-nav"
+                    aria-label="Toggle navigation"
+                    class="navbar-toggler collapsed"
+                    type="button"
+                  >
+                    <a
+                      class="ms-auto text-white "
+                      data-testid="link-english"
+                      href="#english"
+                      role="button"
+                    >
+                      English
+                    </a>
+                  </button>
+                  <div
+                    class="vr border opacity-100"
+                  />
+                  <button
+                    aria-controls="header-navbar-nav"
+                    aria-label="Toggle navigation"
+                    class="navbar-toggler collapsed"
+                    type="button"
+                  >
+                    <a
+                      class="me-auto text-white "
+                      data-testid="link-japanese"
+                      href="#japanese"
+                      role="button"
+                    >
+                      日本語
+                    </a>
+                  </button>
+                </div>
+              </div>
               <img
                 alt="Crane logo"
                 class="mb-2"

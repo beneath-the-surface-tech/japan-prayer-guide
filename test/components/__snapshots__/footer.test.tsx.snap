@@ -14,6 +14,45 @@ exports[`Footer Snapshot test 1`] = `
           data-testid="footer"
         >
           <div
+            class="ms-auto justify-content-center hstack gap-2"
+            data-testid="language-switcher"
+            id="language-switch"
+          >
+            <button
+              aria-controls="header-navbar-nav"
+              aria-label="Toggle navigation"
+              class="navbar-toggler collapsed"
+              type="button"
+            >
+              <a
+                class="ms-auto text-white "
+                data-testid="link-english"
+                href="#english"
+                role="button"
+              >
+                English
+              </a>
+            </button>
+            <div
+              class="vr border opacity-100"
+            />
+            <button
+              aria-controls="header-navbar-nav"
+              aria-label="Toggle navigation"
+              class="navbar-toggler collapsed"
+              type="button"
+            >
+              <a
+                class="me-auto text-white "
+                data-testid="link-japanese"
+                href="#japanese"
+                role="button"
+              >
+                日本語
+              </a>
+            </button>
+          </div>
+          <div
             class="container"
           >
             <div
@@ -169,7 +208,47 @@ exports[`Footer Snapshot test 1`] = `
       >
         <div
           class="footer-language w-75 border-bottom border-grey-6 py-4"
-        />
+        >
+          <div
+            class="ms-auto justify-content-center hstack gap-2"
+            data-testid="language-switcher"
+            id="language-switch"
+          >
+            <button
+              aria-controls="header-navbar-nav"
+              aria-label="Toggle navigation"
+              class="navbar-toggler collapsed"
+              type="button"
+            >
+              <a
+                class="ms-auto text-white "
+                data-testid="link-english"
+                href="#english"
+                role="button"
+              >
+                English
+              </a>
+            </button>
+            <div
+              class="vr border opacity-100"
+            />
+            <button
+              aria-controls="header-navbar-nav"
+              aria-label="Toggle navigation"
+              class="navbar-toggler collapsed"
+              type="button"
+            >
+              <a
+                class="me-auto text-white "
+                data-testid="link-japanese"
+                href="#japanese"
+                role="button"
+              >
+                日本語
+              </a>
+            </button>
+          </div>
+        </div>
         <div
           class="container"
         >
@@ -348,6 +427,45 @@ exports[`Footer Snapshot test 1`] = `
         data-testid="footer"
       >
         <div
+          class="ms-auto justify-content-center hstack gap-2"
+          data-testid="language-switcher"
+          id="language-switch"
+        >
+          <button
+            aria-controls="header-navbar-nav"
+            aria-label="Toggle navigation"
+            class="navbar-toggler collapsed"
+            type="button"
+          >
+            <a
+              class="ms-auto text-white "
+              data-testid="link-english"
+              href="#english"
+              role="button"
+            >
+              English
+            </a>
+          </button>
+          <div
+            class="vr border opacity-100"
+          />
+          <button
+            aria-controls="header-navbar-nav"
+            aria-label="Toggle navigation"
+            class="navbar-toggler collapsed"
+            type="button"
+          >
+            <a
+              class="me-auto text-white "
+              data-testid="link-japanese"
+              href="#japanese"
+              role="button"
+            >
+              日本語
+            </a>
+          </button>
+        </div>
+        <div
           class="container"
         >
           <div
@@ -503,7 +621,47 @@ exports[`Footer Snapshot test 1`] = `
     >
       <div
         class="footer-language w-75 border-bottom border-grey-6 py-4"
-      />
+      >
+        <div
+          class="ms-auto justify-content-center hstack gap-2"
+          data-testid="language-switcher"
+          id="language-switch"
+        >
+          <button
+            aria-controls="header-navbar-nav"
+            aria-label="Toggle navigation"
+            class="navbar-toggler collapsed"
+            type="button"
+          >
+            <a
+              class="ms-auto text-white "
+              data-testid="link-english"
+              href="#english"
+              role="button"
+            >
+              English
+            </a>
+          </button>
+          <div
+            class="vr border opacity-100"
+          />
+          <button
+            aria-controls="header-navbar-nav"
+            aria-label="Toggle navigation"
+            class="navbar-toggler collapsed"
+            type="button"
+          >
+            <a
+              class="me-auto text-white "
+              data-testid="link-japanese"
+              href="#japanese"
+              role="button"
+            >
+              日本語
+            </a>
+          </button>
+        </div>
+      </div>
       <div
         class="container"
       >

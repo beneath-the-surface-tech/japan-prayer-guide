@@ -8,6 +8,7 @@ import Link from "next/link"
 import { Col } from "react-bootstrap"
 import { Trans, useTranslation } from "next-i18next"
 import Image from "next/image"
+import LanguageSwitcher from "./LanguageSwitcher"
 import craneLogo from "../public/wire-logo.png"
 
 export default function Footer() {
@@ -25,7 +26,7 @@ export default function Footer() {
             {/* Small screens footer starts here */}
             <div className="w-100 d-xl-none" role="contentinfo">
                 <Container fluid className="bg-primary pt-3" data-testid="footer">
-                    {/* <LanguageSwitcher /> */}
+                    <LanguageSwitcher />
                     {/* This second inner container keeps the footer max-width matched to the header. */}
                     <Container>
                         <Row className="d-flex justify-content-center mt-4">
@@ -85,7 +86,7 @@ export default function Footer() {
 
             <div className="w-100 d-none d-xl-flex flex-column bg-primary align-items-center" role="contentinfo">
                 <div className="footer-language w-75 border-bottom border-grey-6 py-4">
-                    {/* <LanguageSwitcher /> */}
+                    <LanguageSwitcher />
                 </div>
                 <Container>
                     <Container fluid className="bg-primary pt-3 d-flex" data-testid="footer-2">
