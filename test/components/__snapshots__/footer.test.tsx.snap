@@ -157,7 +157,7 @@ exports[`Footer Snapshot test 1`] = `
                 data-testid="copyright"
                 style="max-width: 260px;"
               >
-                footer.copyright
+                footer.copyright 2026
               </p>
             </div>
           </div>
@@ -231,7 +231,7 @@ exports[`Footer Snapshot test 1`] = `
                   class="text-white fs-5 fw-light footer-copyright"
                   data-testid="copyright-2"
                 >
-                  footer.copyright
+                  footer.copyright 2026
                 </p>
               </div>
             </div>
@@ -491,7 +491,7 @@ exports[`Footer Snapshot test 1`] = `
               data-testid="copyright"
               style="max-width: 260px;"
             >
-              footer.copyright
+              footer.copyright 2026
             </p>
           </div>
         </div>
@@ -565,7 +565,7 @@ exports[`Footer Snapshot test 1`] = `
                 class="text-white fs-5 fw-light footer-copyright"
                 data-testid="copyright-2"
               >
-                footer.copyright
+                footer.copyright 2026
               </p>
             </div>
           </div>

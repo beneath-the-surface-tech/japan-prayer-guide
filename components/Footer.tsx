@@ -16,6 +16,7 @@ export default function Footer() {
     const amazonUrl: string = t("footer.amazonUrl", "")
     const instaUrl: string = t("footer.instaUrl", "")
     const isJapanese = i18n.language.startsWith("ja")
+    const copyright = t("footer.copyright", { year: new Date().getFullYear() })
 
     return (
         // Footer needs to be two separate things I THINK because the order of components is different between
@@ -73,7 +74,7 @@ export default function Footer() {
                                 style={{ maxWidth: "260px" }}
                                 data-testid={"copyright"}
                             >
-                                <Trans t={t} i18nKey="footer.copyright" />
+                                {copyright}
                             </p>
                         </Row>
                     </Container>
@@ -94,7 +95,7 @@ export default function Footer() {
                             </Row>
                             <Row className="pt-3 px-2">
                                 <p className="text-white fs-5 fw-light footer-copyright" data-testid={"copyright-2"}>
-                                    <Trans t={t} i18nKey="footer.copyright" />
+                                    {copyright}
                                 </p>
                             </Row>
                         </Col>
