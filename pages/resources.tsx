@@ -21,7 +21,7 @@ import DownloadablesGrid from "../components/common/DownloadablesGrid/Downloadab
 import { LinkFromJson } from "@/components/common/LinkFromJson"
 import DownloadTypeFlexCol from "@/components/resources/DownloadTypeFlexCol/DownloadTypeFlexCol"
 import TutorialFlexCol from "@/components/resources/TutorialFlexCol/TutorialFlexCol"
-import { Info, Doc } from "@/components/icons"
+import { Doc } from "@/components/icons"
 import { useLayoutEffect } from "react"
 
 export function useEqualHeight(
@@ -140,7 +140,6 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
     const copyrightText: string = t("copyrightText")
     const copyrightUrl: string = t("copyrightUrl", "/")
 
-    // const byMediaOtherVersionUrl = t("byMediaOtherVersionUrl", "/") // Use when reenabling the byMediaOtherVersionText text.
     const byTopicBtnUrl = t("byTopicBtnUrl", "/")
     const byPrayerVideos = t("byPrayerVideos")
 
@@ -249,16 +248,6 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                                     </Link>
                                 </div>
                             </DownloadTypeFlexCol>
-                        </div>
-
-                        <hr />
-                        <div className="d-flex gap-1 align-items-center">
-                            <Info />
-                            {/* <a className="fw-bold text-secondary-5 cursor-pointer mx-1" href={byMediaOtherVersionUrl}> */}
-                            <b>
-                                <Trans t={t} i18nKey="byMediaOtherVersionText" components={[]} />
-                            </b>
-                            {/* </a> */}
                         </div>
                     </div>
                 </div>
