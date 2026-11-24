@@ -1,7 +1,6 @@
 import React from "react"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
-import { IconContext } from "react-icons/lib"
 import { BsInstagram, BsYoutube } from "react-icons/bs"
 import { FaAmazon } from "react-icons/fa"
 import Link from "next/link"
@@ -40,33 +39,31 @@ export default function Footer() {
                             </p>
                         </Row>
                         <Row className="d-flex justify-content-center align-items-center pt-4 text-white">
-                            <IconContext.Provider value={{ size: "25px" }}>
-                                <a
-                                    className="text-white footer-icon"
-                                    href={youtubeUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="YouTube"
-                                >
-                                    <BsYoutube />
-                                </a>
-                                <a
-                                    className="text-white footer-icon"
-                                    href={amazonUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <FaAmazon />
-                                </a>
-                                <a
-                                    className="text-white footer-icon"
-                                    href={instaUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <BsInstagram />
-                                </a>
-                            </IconContext.Provider>
+                            <a
+                                className="text-white footer-icon"
+                                href={youtubeUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="YouTube"
+                            >
+                                <BsYoutube size="25px" />
+                            </a>
+                            <a
+                                className="text-white footer-icon"
+                                href={amazonUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaAmazon size="25px" />
+                            </a>
+                            <a
+                                className="text-white footer-icon"
+                                href={instaUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <BsInstagram size="25px" />
+                            </a>
                         </Row>
                         <Row className="text-center py-4 px-3 d-flex justify-content-center">
                             <p
@@ -110,35 +107,33 @@ export default function Footer() {
                                 </p>
                             </Row>
                             <Row className="d-flex align-items-center pt-3 pb-4 text-white">
-                                <IconContext.Provider value={{ size: "25px" }}>
-                                    <a
-                                        className="text-white footer-icon"
-                                        href={youtubeUrl}
-                                        aria-label="YouTube"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <BsYoutube />
-                                    </a>
-                                    <a
-                                        className="text-white footer-icon"
-                                        href={amazonUrl}
-                                        aria-label="Amazon"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <FaAmazon />
-                                    </a>
-                                    <a
-                                        className="text-white footer-icon"
-                                        href={instaUrl}
-                                        aria-label="Instagram"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <BsInstagram />
-                                    </a>
-                                </IconContext.Provider>
+                                <a
+                                    className="text-white footer-icon"
+                                    href={youtubeUrl}
+                                    aria-label="YouTube"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <BsYoutube size="25px" />
+                                </a>
+                                <a
+                                    className="text-white footer-icon"
+                                    href={amazonUrl}
+                                    aria-label="Amazon"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <FaAmazon size="25px" />
+                                </a>
+                                <a
+                                    className="text-white footer-icon"
+                                    href={instaUrl}
+                                    aria-label="Instagram"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <BsInstagram size="25px" />
+                                </a>
                             </Row>
                         </Col>
                     </Container>
