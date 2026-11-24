@@ -1,85 +1,33 @@
-import { getFeaturedTopic, FeaturedEntryType } from "../../services/featuredTopicSelector"
+import { getFeaturedTopic, getSchedule } from "../../services/featuredTopicSelector"
 
-// the service uses Moment, but as it is a wrapper for Date, we can still mock the method for getting 'today'
-const mockToday = (date: Date): void => {
-    const originalDate = Date
+describe("featured topic selector", () => {
+    const topics = ["first", "second", "third"]
 
-    // mock Date so that it only returns a mocked 'today' date, but behaves as usual for other invocations
-    global.Date = jest.fn(function () {
-        if (arguments.length === 0) {
-            return date
-        }
-        return new originalDate(...arguments)
-    }) as any
-}
-
-describe("Month Selector", () => {
-    test("Should return a topic where the start date is 'today'", () => {
-        const mockDate = new Date("2023-02-14T08:00:00")
-        console.log(mockDate)
-        mockToday(mockDate)
-
-        const testSchedule: FeaturedEntryType[] = [
-            { startDate: "01-01", topicName: "Topic A" },
-            { startDate: "02-14", topicName: "Topic B" },
-        ]
-        const file = getFeaturedTopic(testSchedule)
-
-        expect(file).toBe("Topic B")
+    test("changes topics at the start of each UTC month", () => {
+        expect(getFeaturedTopic(topics, new Date("2026-12-01T00:00:00Z"))).toBe("first")
+        expect(getFeaturedTopic(topics, new Date("2026-12-31T23:59:59Z"))).toBe("first")
+        expect(getFeaturedTopic(topics, new Date("2027-01-01T00:00:00Z"))).toBe("second")
     })
 
-    test("'today' should be after the returned topic's start date, but before the next topic's start date", () => {
-        // topic A > today > topic B ==> returns A
-        const mockDate = new Date("2023-03-17")
-        mockToday(mockDate)
-
-        const testSchedule: FeaturedEntryType[] = [
-            { startDate: "01-01", topicName: "Topic A" },
-            { startDate: "03-18", topicName: "Topic B" },
-        ]
-        const file = getFeaturedTopic(testSchedule)
-
-        expect(file).toBe("Topic A")
+    test("wraps around before and after the start of the cycle", () => {
+        expect(getFeaturedTopic(topics, new Date("2026-11-30T23:59:59Z"))).toBe("third")
+        expect(getFeaturedTopic(topics, new Date("2027-03-01T00:00:00Z"))).toBe("first")
     })
 
-    test("Should cover the case of going into new year and return the most recently passed topic", () => {
-        // topic A (dec) > today (jan) > topic B (feb) ==> returns A
-        const mockDate = new Date("2023-01-04")
-        mockToday(mockDate)
+    test("features all 30 scheduled topics once before repeating", () => {
+        const schedule = getSchedule()
+        expect(schedule).toHaveLength(30)
+        expect(new Set(schedule).size).toBe(30)
 
-        const testSchedule: FeaturedEntryType[] = [
-            { startDate: "01-05", topicName: "Topic A" },
-            { startDate: "12-18", topicName: "Topic B" },
-        ]
-        const file = getFeaturedTopic(testSchedule)
-
-        expect(file).toBe("Topic B")
+        schedule.forEach((topic, index) => {
+            expect(getFeaturedTopic(schedule, new Date(Date.UTC(2026, 11 + index, 1)))).toBe(topic)
+        })
+        expect(getFeaturedTopic(schedule, new Date("2029-06-01T00:00:00Z"))).toBe(schedule[0])
     })
 
-    test("Should treat Feb 29th as 28th on non-leap years", () => {
-        const mockDate = new Date("2023-04-15")
-        mockToday(mockDate)
-
-        const testSchedule: FeaturedEntryType[] = [
-            { startDate: "01-01", topicName: "Topic A" },
-            { startDate: "02-29", topicName: "Topic B" },
-        ]
-        const file = getFeaturedTopic(testSchedule)
-
-        expect(file).toBe("Topic B")
-    })
-
-    test("should ignore entries with invalid dates that can't be parsed", () => {
-        const mockDate = new Date("2023-11-20")
-        mockToday(mockDate)
-
-        const testSchedule: FeaturedEntryType[] = [
-            { startDate: "invalid", topicName: "Topic A" },
-            { startDate: "09-02", topicName: "Topic B" },
-            { startDate: "50-15", topicName: "Topic C" },
-        ]
-        const file = getFeaturedTopic(testSchedule)
-
-        expect(file).toBe("Topic B")
+    test("rejects an empty schedule", () => {
+        expect(() => getFeaturedTopic([], new Date("2026-12-01T00:00:00Z"))).toThrow(
+            "The featured topic schedule is empty",
+        )
     })
 })
