@@ -249,7 +249,6 @@ const Resources: React.FC<{ t: TFunction; i18n: I18n }> = ({ t, i18n }) => {
                                 </div>
                             </DownloadTypeFlexCol>
                         </div>
-
                     </div>
                 </div>
             </div>
