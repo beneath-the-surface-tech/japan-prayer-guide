@@ -1,5 +1,12 @@
 import { render, screen } from "@testing-library/react"
+import type { ReactNode } from "react"
 import Footer from "../../components/Footer"
+
+// Simulate the icons not receiving the footer's context during the initial render.
+jest.mock("react-icons/lib", () => ({
+    ...jest.requireActual("react-icons/lib"),
+    IconContext: { Provider: ({ children }: { children: ReactNode }) => children },
+}))
 
 jest.mock("next-i18next", () => ({
     // this mock makes sure any components using the translate hook can use it without a warning being shown
@@ -36,6 +43,19 @@ describe("Footer", () => {
         const footer = screen.getByTestId("footer")
         expect(footer).toHaveClass("bg-primary")
         expect(footer).toHaveClass("container-fluid")
+    })
+
+    test("Sizes social icons without relying on icon context in either layout", () => {
+        render(<Footer />)
+
+        for (const footerId of ["footer", "footer-2"]) {
+            const icons = screen.getByTestId(footerId).querySelectorAll(".footer-icon svg")
+            expect(icons).toHaveLength(3)
+            for (const icon of icons) {
+                expect(icon).toHaveAttribute("width", "25px")
+                expect(icon).toHaveAttribute("height", "25px")
+            }
+        }
     })
 
     test("Renders the correct text in the footer", () => {
