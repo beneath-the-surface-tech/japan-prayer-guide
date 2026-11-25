@@ -40,8 +40,9 @@ export default function TopicDownloadables({ topicTrans }: downloadProps) {
                     photographyUrl={photographyUrl}
                     pdfUrl={pdfUrl}
                     slidesUrl={slidesUrl}
-                    rowCount={4}
+                    rowCount={1}
                     smRowCount={1}
+                    xlRowCount={4}
                 />
             </Container>
             <Link
