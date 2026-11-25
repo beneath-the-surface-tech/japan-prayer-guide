@@ -7,6 +7,7 @@ import Footer from "../components/Footer"
 import Link from "next/link"
 import nextI18nextConfig from "../next-i18next.config"
 import AppHeader from "../components/common/AppHeader"
+import { shareImages } from "@/lib/shareImage"
 import resources from "../public/locales/en/resources.json"
 import { LowHighImage } from "../components/LowHighImage"
 import { StaticImageData } from "next/image"
@@ -116,10 +117,16 @@ export const getStaticProps = async ({ locale }: { locale: string }) => {
 const Downloads = ({ isPageReady }: { isPageReady: boolean }) => {
     const { t, i18n } = useTranslation("resources")
     const webpageTitle = t("webpageTitle", "Resources")
+    const metaDescription = t("metaDescription", "Prayer resources to download or stream")
 
     return (
         <div>
-            <AppHeader title={webpageTitle} description={webpageTitle} pageType="website" />
+            <AppHeader
+                title={webpageTitle}
+                description={metaDescription}
+                pageType="website"
+                image={shareImages.resources}
+            />
             <main id="resources" role="main">
                 <ToggleHeader />
 

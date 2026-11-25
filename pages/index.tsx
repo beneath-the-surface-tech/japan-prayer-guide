@@ -17,6 +17,7 @@ import coverEN from "../public/photos/home/hp_cover-en.jpg"
 import coverJA from "../public/photos/home/hp_cover-ja.jpg"
 import * as nextI18nextConfig from "../next-i18next.config"
 import AppHeader from "../components/common/AppHeader"
+import { shareImages } from "@/lib/shareImage"
 
 const carouselImages: { src: string; title: string }[] = [
     {
@@ -59,12 +60,7 @@ const Home = ({ featuredTopicRef }: { featuredTopicRef: string }) => {
 
     return (
         <div>
-            <AppHeader
-                title={webpageTitle}
-                description={metaDescription}
-                pageType="website"
-                image={bannerHeroHighRes.src}
-            />
+            <AppHeader title={webpageTitle} description={metaDescription} pageType="website" image={shareImages.home} />
 
             <main id="home" role="main">
                 <ToggleHeader />

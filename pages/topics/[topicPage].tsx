@@ -14,6 +14,7 @@ import RelatedContent from "../../components/topic/RelatedContent/RelatedContent
 import nextI18nextConfig from "../../next-i18next.config"
 import { ReferencesSection } from "@/components/topic/References/References"
 import AppHeader from "../../components/common/AppHeader"
+import { topicShareImage } from "@/lib/shareImage"
 import Link from "next/link"
 import Timeline from "../../components/topic/Timeline/Timeline"
 
@@ -88,6 +89,18 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
 //     )
 // }
 
+/** First prayer point as plain text, for the link-preview description.
+ *  prayerSummary is an HTML list ("<ul><li>…</li></ul>") from the database, or an array in older locale files. */
+const firstPrayerPoint = (prayerSummary: unknown): string => {
+    const first = Array.isArray(prayerSummary)
+        ? String(prayerSummary[0] ?? "")
+        : (String(prayerSummary ?? "").match(/<li[^>]*>([\s\S]*?)<\/li>/i)?.[1] ?? "")
+    return first
+        .replace(/<[^>]*>/g, "")
+        .replace(/\s+/g, " ")
+        .trim()
+}
+
 export default function TopicPage({ localeRef }: { localeRef: string }) {
     const { t, i18n } = useTranslation(localeRef)
     const { t: topicCommon } = useTranslation("topic-pages")
@@ -112,6 +125,8 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
     const uncropped: any[] = t("uncroppedPhotos", { returnObjects: true }) as any[]
 
     const heroPhoto: string = t("heroPhoto")
+    const shareImage = topicShareImage(heroPhoto)
+    const metaDescription = firstPrayerPoint(t("prayerSummary", { returnObjects: true })) || title
     const heroFocus: string = t("heroFocus")
 
     const quote: string = t("quote.content")
@@ -145,7 +160,13 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
 
     return (
         <>
-            <AppHeader title={title} description={title} pageType="article" image={heroPhoto} />
+            <AppHeader
+                title={title}
+                description={metaDescription}
+                pageType="article"
+                image={shareImage ?? heroPhoto}
+                imageIsShareSize={shareImage !== null}
+            />
             <main role="main">
                 {/* Header Component */}
                 <ToggleHeader hideShadow={true} />

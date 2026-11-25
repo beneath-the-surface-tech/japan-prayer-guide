@@ -17,6 +17,7 @@ import pioneersLogo from "../public/photos/about/about_pioneers.png"
 import NextImage from "../components/common/NextImage/NextImage"
 import nextI18nextConfig from "../next-i18next.config"
 import AppHeader from "../components/common/AppHeader"
+import { shareImages } from "@/lib/shareImage"
 
 export async function getStaticProps({ locale }: any) {
     return {
@@ -42,7 +43,7 @@ const About: React.FC = () => {
                 title={webpageTitle}
                 description={metaDescription}
                 pageType="website"
-                image={bannerHeroHighRes.src}
+                image={shareImages.about}
             />
             <main id="about" role="main">
                 <ToggleHeader />
