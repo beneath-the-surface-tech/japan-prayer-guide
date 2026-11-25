@@ -106,44 +106,15 @@ const jaMobileImages: PaginationSrcType[] = [
     { src: MobileBookPageImageJA10 },
 ]
 
-function useBetterMediaQuery(query: string) {
-    const [matches, setMatches] = React.useState<boolean>()
-
-    React.useEffect(() => {
-        const mediaQueryList = window.matchMedia(query)
-        const listener = () => setMatches(!!mediaQueryList.matches)
-        listener()
-        mediaQueryList.addEventListener("change", listener)
-        return () => mediaQueryList.removeEventListener("change", listener)
-    }, [query])
-
-    return matches
-}
-
-const TabletOrMobileMediaQuery = "(min-width: 992px)"
 const Booklet: React.FC = () => {
     const { t, i18n } = useTranslation("booklet")
     const webpageTitle: string = t("webpageTitle", "Booklet")
     const metaDescription: string = t("metaDescription", "Get the prayer booklet")
     const introTextParagraphs: string[] = t("introText", { returnObjects: true }) as string[]
-    const isTabletOrMobile = useBetterMediaQuery(TabletOrMobileMediaQuery)
     const isInEnglish = i18n.language === "en"
-    let sampleBookImages, coverImage
-    if (isInEnglish) {
-        coverImage = coverEN
-        if (isTabletOrMobile) {
-            sampleBookImages = enDesktopImages
-        } else {
-            sampleBookImages = enMobileImages
-        }
-    } else {
-        coverImage = coverJA
-        if (isTabletOrMobile) {
-            sampleBookImages = jaDesktopImages
-        } else {
-            sampleBookImages = jaMobileImages
-        }
-    }
+    const coverImage = isInEnglish ? coverEN : coverJA
+    const desktopBookImages = isInEnglish ? enDesktopImages : jaDesktopImages
+    const mobileBookImages = isInEnglish ? enMobileImages : jaMobileImages
 
     return (
         <div>
@@ -192,7 +163,7 @@ const Booklet: React.FC = () => {
                 </div>
                 <Container id="prayer-sample" className="py-5">
                     <Container className="page-container py-3">
-                        <ImagePagination pages={sampleBookImages} TabletOrMobileMediaQuery={TabletOrMobileMediaQuery} />
+                        <ImagePagination desktopPages={desktopBookImages} mobilePages={mobileBookImages} />
                     </Container>
                 </Container>
                 <Container className="booklet-gif mb-5">

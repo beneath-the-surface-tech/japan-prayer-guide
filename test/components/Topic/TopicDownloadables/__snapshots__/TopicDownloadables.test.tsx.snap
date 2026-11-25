@@ -30,7 +30,7 @@ exports[`Topic Downloadables Snapshot test 1`] = `
           class="container"
         >
           <div
-            class="grid-row g-3 d-md-flex d-block undefined row row-cols-md-4 row-cols-sm-1"
+            class="grid-row g-3 d-md-flex d-block undefined row row-cols-xl-4 row-cols-md-1 row-cols-sm-1"
             data-testid="topic-downloadables-links"
           >
             <div
@@ -250,7 +250,7 @@ exports[`Topic Downloadables Snapshot test 1`] = `
         class="container"
       >
         <div
-          class="grid-row g-3 d-md-flex d-block undefined row row-cols-md-4 row-cols-sm-1"
+          class="grid-row g-3 d-md-flex d-block undefined row row-cols-xl-4 row-cols-md-1 row-cols-sm-1"
           data-testid="topic-downloadables-links"
         >
           <div
