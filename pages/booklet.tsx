@@ -45,6 +45,7 @@ import bookGifEN from "../public/photos/booklet/BOOK_GIF-en.gif"
 import bookGifJA from "../public/photos/booklet/BOOK_GIF-ja.gif"
 import nextI18nextConfig from "../next-i18next.config"
 import AppHeader from "../components/common/AppHeader"
+import { shareImages } from "@/lib/shareImage"
 import bannerHeroHighRes from "../public/photos/booklet/BOOKLET_HERO_FullRes.jpg"
 import bannerHeroLowRes from "../public//photos/booklet/BOOKLET_HERO_LowRes.jpg"
 import { LowHighImage } from "@/components/LowHighImage"
@@ -117,7 +118,12 @@ const Booklet: React.FC = () => {
 
     return (
         <div>
-            <AppHeader title={webpageTitle} description={metaDescription} pageType="website" image={coverImage.src} />
+            <AppHeader
+                title={webpageTitle}
+                description={metaDescription}
+                pageType="website"
+                image={shareImages.booklet}
+            />
             <ToggleHeader />
             <main id="booklet" role="main">
                 <div className="w-100 book-description position-relative" style={{ marginTop: "60px" }}>

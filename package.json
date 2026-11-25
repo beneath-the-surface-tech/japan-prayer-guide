@@ -45,6 +45,7 @@
     "reflect-metadata": "^0.2.2",
     "sass-embedded": "^1.80.6",
     "server-only": "^0.0.1",
+    "sharp": "^0.34.2",
     "slick-carousel": "^1.8.1",
     "typeorm": "^0.3.20"
   },

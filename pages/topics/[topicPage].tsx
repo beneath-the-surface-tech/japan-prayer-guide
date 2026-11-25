@@ -14,6 +14,7 @@ import RelatedContent from "../../components/topic/RelatedContent/RelatedContent
 import nextI18nextConfig from "../../next-i18next.config"
 import { ReferencesSection } from "@/components/topic/References/References"
 import AppHeader from "../../components/common/AppHeader"
+import { topicShareImage } from "@/lib/shareImage"
 import Link from "next/link"
 import Timeline from "../../components/topic/Timeline/Timeline"
 
@@ -112,6 +113,7 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
     const uncropped: any[] = t("uncroppedPhotos", { returnObjects: true }) as any[]
 
     const heroPhoto: string = t("heroPhoto")
+    const shareImage = topicShareImage(heroPhoto)
     const heroFocus: string = t("heroFocus")
 
     const quote: string = t("quote.content")
@@ -145,7 +147,13 @@ export default function TopicPage({ localeRef }: { localeRef: string }) {
 
     return (
         <>
-            <AppHeader title={title} description={title} pageType="article" image={heroPhoto} />
+            <AppHeader
+                title={title}
+                description={title}
+                pageType="article"
+                image={shareImage ?? heroPhoto}
+                imageIsShareSize={shareImage !== null}
+            />
             <main role="main">
                 {/* Header Component */}
                 <ToggleHeader hideShadow={true} />

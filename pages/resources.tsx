@@ -7,6 +7,7 @@ import Footer from "../components/Footer"
 import Link from "next/link"
 import nextI18nextConfig from "../next-i18next.config"
 import AppHeader from "../components/common/AppHeader"
+import { shareImages } from "@/lib/shareImage"
 import resources from "../public/locales/en/resources.json"
 import { LowHighImage } from "../components/LowHighImage"
 import { StaticImageData } from "next/image"
@@ -119,7 +120,12 @@ const Downloads = ({ isPageReady }: { isPageReady: boolean }) => {
 
     return (
         <div>
-            <AppHeader title={webpageTitle} description={webpageTitle} pageType="website" />
+            <AppHeader
+                title={webpageTitle}
+                description={webpageTitle}
+                pageType="website"
+                image={shareImages.resources}
+            />
             <main id="resources" role="main">
                 <ToggleHeader />
 

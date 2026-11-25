@@ -11,6 +11,7 @@ import bannerHeroHighRes from "../../../public/photos/topic-nav/TOPNAV_HERO.jpg"
 import bannerHeroLowRes from "../../../public/photos/topic-nav/TOPNAV_HERO_LowRes.jpg"
 import nextI18nextConfig from "../../../next-i18next.config"
 import AppHeader from "../../../components/common/AppHeader"
+import { shareImages } from "@/lib/shareImage"
 
 export async function getStaticProps({ locale }: any) {
     return {
@@ -44,7 +45,7 @@ export default function Overview() {
 
     return (
         <>
-            <AppHeader title={webpageTitle} description={heading} pageType="website" image={bannerHeroHighRes.src} />
+            <AppHeader title={webpageTitle} description={heading} pageType="website" image={shareImages.topics} />
             <main role="main">
                 {/* Header component */}
                 <ToggleHeader hideShadow={true} />
