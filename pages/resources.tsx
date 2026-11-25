@@ -117,13 +117,12 @@ export const getStaticProps = async ({ locale }: { locale: string }) => {
 const Downloads = ({ isPageReady }: { isPageReady: boolean }) => {
     const { t, i18n } = useTranslation("resources")
     const webpageTitle = t("webpageTitle", "Resources")
-    const metaDescription = t("metaDescription", "Prayer resources to download or stream")
 
     return (
         <div>
             <AppHeader
                 title={webpageTitle}
-                description={metaDescription}
+                description={webpageTitle}
                 pageType="website"
                 image={shareImages.resources}
             />

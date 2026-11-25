@@ -18,7 +18,7 @@ export const shareImages = {
     about: "/share/about.jpg",
     topics: "/share/topics.jpg",
     resources: "/share/resources.jpg",
-    booklet: { en: "/share/booklet-en.jpg", ja: "/share/booklet-ja.jpg" },
+    booklet: "/share/booklet.jpg",
 }
 
 /** Absolute URL on this site, as og:url and og:image require */

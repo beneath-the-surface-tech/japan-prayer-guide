@@ -151,7 +151,7 @@ const Booklet: React.FC = () => {
                 title={webpageTitle}
                 description={metaDescription}
                 pageType="website"
-                image={isInEnglish ? shareImages.booklet.en : shareImages.booklet.ja}
+                image={shareImages.booklet}
             />
             <ToggleHeader />
             <main id="booklet" role="main">

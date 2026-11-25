@@ -40,7 +40,7 @@ const AppHeader = ({ title, description, pageType, image = "", imageIsShareSize 
             <link rel="icon" href="/favicon.ico" />
 
             {/* OpenGraph Meta Tags (link previews in chat apps and social sites) */}
-            <meta property="og:title" content={title} />
+            <meta property="og:title" content={siteName} />
             <meta property="og:description" content={description} />
             <meta property="og:type" content={pageType} />
             <meta property="og:site_name" content={siteName} />
